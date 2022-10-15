@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
+
+<body>
+    <main class="row">
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-header card bg-secondary text-white">
+                    <div class="panel-title" th:utext="${p.name}"></div>
+                </div>
+                <div class="card-body">
+                    <a th:href="@{|/product/detail/${p.id}|}">
+                        <img th:src="@{|/assets/images/${p.image}|}">
+                    </a>
+                </div>
+                <div class="card-footer text-right">
+                    <b class="pull-left">$[[${p.price}]]</b>
+                    <button th:attr="ng-click=@{|cart.add(${p.id})|}" class="btn btn-success">
+                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-danger" style="border-radius: 45px; ">
+                <i class="fa-solid fa-angles-up"></i>
+            </button>
+            <button class="btn btn-primary" style="border-radius: 45px;">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="btn btn-success">1 of 5</button>
+            <button class="btn btn-primary" style="border-radius: 45px;">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button class="btn btn-danger" style="border-radius: 45px;">
+                <i class="fa-solid fa-angles-down"></i>
+            </button>
+        </div>
+    </main>
+</body>
+
+</html>

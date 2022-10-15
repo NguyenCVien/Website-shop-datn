@@ -1,0 +1,67 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+  <head>
+    <title>Admin-Shop</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/src/main/resources/static/assets/css/Admin.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+<body class="container" >
+    <header class="row">
+        <img alt="" src="/src/main/resources/static/assets/images/banner2.jpg" width="100%" >
+    </header>
+    <div class="row">
+        
+    </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+          <a href=""><img style="width: 130px;" src="/src/main/resources/templates/layout/img/logo2.jpg" alt=""></a>
+          <ul class="navbar-nav">
+            <li class="nav-item mr-3">
+              <a class="nav-link item" href="#">Products</a>
+            </li>
+            <li class="nav-item mr-3">
+              <a class="nav-link item" href="#">Authorizing</a>
+            </li>
+            <li class="nav-item mr-3">
+                <a class="nav-link item" href="#">FeedBack</a>
+              </li>
+            <li class="nav-item item">
+                <a class="nav-link " href="#">Sign Out</a>
+              </li>
+          </ul>
+    </nav>
+        
+          
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div th:replace="${main}"></div>
+            </div>
+          </div>
+        </div>
+           
+        <hr><hr>
+    <footer>
+        <div class="card card-default">
+            <div class="card-body text-center">
+                <h3>Shop-Now &copy;2022.All right reserved</h3>
+            </div>
+        </div>
+    </footer>
+    <!-- User DEFINDED Script -->
+    <script src="/assets/admin/admin-app.js"></script>
+    <script src="/assets/admin/product/product-ctrl.js"></script>
+    <script src="/assets/admin/authority/authority-ctrl.js"></script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
