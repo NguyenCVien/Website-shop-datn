@@ -1,17 +1,10 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
+<html xmlns:th="http://www.thymeleaf.org" 
+    th:replace="~{/assets/index-admin :: dynamic(~{::main})}">
+ 
   <body>
 
-    <section class="row" layout:fragment="content">
+    <section class="row">
       <div class="col-6 offset-3 mt-3 mb-3">
         <form>
           <div class="card">
@@ -22,7 +15,7 @@
               <div class="form-group">
                 <label for="categoryId">Category ID:</label>
                 
-                <input type="text" class="form-control" th:field="*{categoryId}" aria-describedby="categoryIdHid"
+                <input type="text" class="form-control"  aria-describedby="categoryIdHid"
                   placeholder="Category ID" readonly>
                 <small id="categoryIdHid" class="form-text text-muted">Category
                   id is required</small>
@@ -37,10 +30,9 @@
             </div>
             <div class="card-footer text-muted">
               <button type="reset" class="btn btn-secondary">Reset</button>
-              <a th:href="@{/admin/categories/searchpaginated}" class="btn btn-success">List categories</a>
               <button class="btn btn-primary"><i class="fas fa-save"></i>
-                <Span th:if="${category.isEdit}">Update</Span>
-                <Span th:unless="${category.isEdit}">Save</Span>
+                <Span>Update</Span>
+                <Span>Save</Span>
               </button>
             </div>
           </div>
