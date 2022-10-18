@@ -3,19 +3,19 @@
 
 <body>
     <main class="row">
-        <div class="col-sm-3">
+        <div class="col">
             <div class="card">
                 <div class="card-header card bg-secondary text-white">
-                    <div class="panel-title" th:utext="${p.name}"></div>
+                    <div class="panel-title" ></div>
                 </div>
                 <div class="card-body">
-                    <a th:href="@{|/product/detail/${p.id}|}">
-                        <img th:src="@{|/assets/images/${p.image}|}">
+                    <a href="">
+                        <img src="">
                     </a>
                 </div>
                 <div class="card-footer text-right">
-                    <b class="pull-left">$[[${p.price}]]</b>
-                    <button th:attr="ng-click=@{|cart.add(${p.id})|}" class="btn btn-success">
+                    <b class=""></b>
+                    <button  class="btn btn-success">
                         <i class="glyphicon glyphicon-shopping-cart"></i>
                     </button>
                 </div>

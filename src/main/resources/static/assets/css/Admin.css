@@ -2,7 +2,9 @@
     padding: 0;
     margin: 0;
 }
-
+.row{
+    margin-top: 3px;
+}
 .small-img{
     margin-right: 2px;
     max-width:100%; 
@@ -28,4 +30,10 @@
 .item{
     font-weight: bold;
     
+}
+.card .card-header{
+    text-align: center;
+    font-weight: bold;
+    color: blue;
+    font-style: inherit;
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+
+<html xmlns:th="http://www.thymeleaf.org" 
+th:replace="~{/layout/index :: dynamic(~{::main})}">
+
+<body>
+        <main th:object="${itemd}" layout:fragment="content" class="img-css-detail">
+           <div class="row">
+               <div class="panel panel-primary">
+                     <div class="panel-body text center">
+                          <img th:src="@{|/images/ip13.jpeg|}" />    
+                     </div>               
+               </div> 
+               <div class="panel panel-primary">
+                     <div class="panel-body z " >
+                           <lable><p class="m">CHI TIẾT SẢN PHẨM:</p> </lable>
+                          <li class="e">[(*{name})]</li>
+                          <li>[('Price:' +' '+ *{unitPrice} + ' $')]</li>
+                          <li>[('Discount:' +' '+  *{discount} + ' %')]</li>
+                          <li>[(*{category.name})]</li>  
+                     
+                     </div>
+               
+                     <div class="panel-footer text-right">
+                        <div class="row float-right">
+					       <button> <a th:href="@{/admin/products}" style="font-size: 25px;" class="glyphicon glyphicon-circle-arrow-left "></a></button>
+					       <button class="btn btn-success text-right ml-2">
+					        <i class="glyphicon glyphicon-shopping-cart"></i>
+					     </button> 
+					   </div>
+				     </div>
+				</div>
+           </div>
+           
+      
+      
+  </main>
+</body>
+</html>

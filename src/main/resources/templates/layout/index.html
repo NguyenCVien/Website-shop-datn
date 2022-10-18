@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/79be7d9c55.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/src/main/resources/static/assets/css/index.css" />
+  <link rel="stylesheet" href="/assets/css/index.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -16,17 +16,25 @@
 
 <body class="container-fluid">
   <header class="row">
-    <img src="/src/main/resources/static/assets/images/Ảnh chụp màn hình 2022-10-04 233842.jpg" alt="">
+    <img src="/assets/images/Ảnh chụp màn hình 2022-10-04 233842.jpg" alt="">
   </header>
   <nav>
     <ul>
-      <li><a href=""><img style="width: 130px;" src="/src/main/resources/static/assets/images/logo2.jpg" alt=""></a></li>
+      <li><a href=""><img style="width: 130px;" src="/assets/images/logo2.jpg" alt=""></a></li>
       <li><input type="text" placeholder="Bạn tìm gì..."><button ><i class="fa fa-search"></i></button></li>
       <li><a href=""></a><button><i class="fas fa-shopping-cart "></i> Giỏ hàng</button></li>
       <li><a href="">Lịch sử <br> đơn hàng</a></li>
       <li><a href="">Đăng nhập</a></li>
       <li><a href="">Đăng kí</a></li>
-      <li><a href="">Ngôn ngữ <i class="fas fa-sort-down"></i></a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Ngôn ngữ</i></a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Link 1</a>
+            <a class="dropdown-item" href="#">Link 2</a>
+            <a class="dropdown-item" href="#">Link 3</a>
+          </div>
+        </li>
+      </li>
       <li><a href="">Hỏi đáp</a></li>
     </ul>
   </nav>
@@ -48,7 +56,7 @@
   
 <div class="row">
   <div class="col">
-    <img src="/src/main/resources/static/assets/images/banner qc.jpg" alt=""
+    <img src="/assets/images/banner qc.jpg" alt=""
     width="100%">
   </div>
 </div>
