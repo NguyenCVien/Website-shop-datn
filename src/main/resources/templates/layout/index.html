@@ -1,451 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/79be7d9c55.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/assets/css/shopping-cart-app.css" />
-  
-  <title>Document</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/54f0cb7e4a.js"
+	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/79be7d9c55.js"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="/src/main/resources/static/assets/css/index.css" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
+<title>Shop-Now</title>
 </head>
 
-<body class="container">
-  <header class="row">
-    <img src="img/Ảnh chụp màn hình 2022-10-04 233842.jpg" alt="">
-  </header>
-  <div class="container">
-    <nav>
-      <ul>
-        <li><a href=""><img style="width: 130px;" src="img/logo2.jpg" alt=""></a></li>
-        <li><input type="text" placeholder="Bạn tìm gì..."><button class="fas fa-search"></button></li>
-        <li><a href=""></a><button><i class="fas fa-shopping-cart"></i>Giỏ hàng</button></li>
-        <li><a href="">Lịch sử <br> đơn hàng</a></li>
-        <li><a href="">Hỏi đáp</a></li>
-        <li><a href="">Ngôn ngữ <i class="fas fa-sort-down"></i></a></li>
-        <li><a href="">Đăng nhập</a></li>
-        <li><a href="">Đăng ký</a></li>
-      </ul>
-    </nav>
-  </div>
-  <section class="menu-bar">
-    <div class="container">
-      <div class="menu-bar-content">
-        <ul>
-          <li><a href=""><i class="fa-solid fa-mobile-retro"></i>Điện thoại</a></li>
-          <li><a href=""><i class="fa-solid fa-laptop"></i>Lap top</a></li>
-          <li><a href=""><i class="fa-solid fa-tablet"></i>Máy tính bản</a></li>
-          <li><a href=""><i class="fa-solid fa-clock"></i>đồng hồ</a></li>
-          <li><a href=""><i class="fa-solid fa-bowl-rice"></i>nồi cơm điện</a></li>
-          <li><a href=""><i class="fa-solid fa-tv"></i>tivi</a></li>
-          <li><a href=""><i class="fa-solid fa-headphones"></i>Phụ kiện <i class="fas fa-sort-down"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <div class="container1">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="img/banner qc.jpg" alt="First slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/Ảnh chụp màn hình 2022-10-04 233842.jpg" alt="Second slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="..." alt="Third slide">
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-    
-    <br>
-    <br>
-    <div class="chinh">
-      <div class="phu">
-        <div class="ten">Chuột DARE</div>
-        <img class="anh" src="img/chuotDARE.jpg" alt="">
-        <div class="tien">191.000Đ</div>
-        <div class="icon">
-        </div>
-      </div>
-    </div>
+<body class="container-fluid">
+	<header class="row">
+		<img
+			src="/src/main/resources/static/assets/images/Ảnh chụp màn hình 2022-10-04 233842.jpg"
+			alt="">
+	</header>
+	<nav>
+		<ul>
+			<li><a href=""><img style="width: 130px;"
+					src="/src/main/resources/static/assets/images/logo2.jpg" alt=""></a></li>
+			<li><input type="text" placeholder="Bạn tìm gì...">
+			<button>
+					<i class="fa fa-search"></i>
+				</button></li>
+			<li><a href=""></a>
+			<button>
+					<i class="fas fa-shopping-cart "></i> Giỏ hàng
+				</button></li>
+			<li><a href="">Lịch sử <br> đơn hàng
+			</a></li>
+			<li><a href="">Đăng nhập</a></li>
+			<li><a href="">Đăng kí</a></li>
+			<li><a href="">Ngôn ngữ <i class="fas fa-sort-down"></i></a></li>
+			<li><a href="">Hỏi đáp</a></li>
+		</ul>
+	</nav>
+	<section class="menu-bar">
+		<div class="container">
+			<div class="menu-bar-content">
+				<ul>
+					<li><a href=""><i class="fa-solid fa-mobile-retro"></i>Điện
+							thoại</a></li>
+					<li><a href=""><i class="fa-solid fa-laptop"></i>Lap top</a></li>
+					<li><a href=""><i class="fa-solid fa-tablet"></i>Máy tính
+							bản</a></li>
+					<li><a href=""><i class="fa-solid fa-clock"></i>đồng hồ</a></li>
+					<li><a href=""><i class="fa-solid fa-bowl-rice"></i>nồi
+							cơm điện</a></li>
+					<li><a href=""><i class="fa-solid fa-tv"></i>tivi</a></li>
+					<li><a href=""><i class="fa-solid fa-headphones"></i>Phụ
+							kiện <i class="fas fa-sort-down"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<<<<<<< HEAD
+	<div class="container1">
+		<div id="carouselExampleIndicators" class="carousel slide"
+			data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0"
+					class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block w-100" src="img/banner qc.jpg"
+						alt="First slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100"
+						src="img/Ảnh chụp màn hình 2022-10-04 233842.jpg"
+						alt="Second slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="..." alt="Third slide">
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators"
+				role="button" data-slide="prev"> <span
+				class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+				class="sr-only">Previous</span>
+			</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
+				role="button" data-slide="next"> <span
+				class="carousel-control-next-icon" aria-hidden="true"></span> <span
+				class="sr-only">Next</span>
+			</a>
+		</div>
 
-    <div class="chinh">
-      <div class="phu">
-        <div class="ten">Iphone 14</div>
-        <img class="anh" src="img/ip14(1).jpg" alt="">
-        <div class="tien">191.000Đ</div>
-        <div class="icon">
-        </div>
-      </div>
-    </div>
+		<br> <br>
+		<div class="chinh">
+			<div class="phu">
+				<div class="ten">Chuột DARE</div>
+				<img class="anh" src="img/chuotDARE.jpg" alt="">
+				<div class="tien">191.000Đ</div>
+				<div class="icon">
+					<div class="row">
+						<div class="col">
+							<img src="/src/main/resources/static/assets/images/banner qc.jpg"
+								alt="" width="100%">
+						</div>
+					</div>
 
-    <div class="chinh">
-      <div class="phu">
-        <div class="ten">Ipad Air4</div>
-        <img class="anh" src="img/ipad air4.jpg" alt="">
-        <div class="tien">191.000Đ</div>
-        <div class="icon">
-        </div>
-      </div>
-    </div>
+					<div class="row">
+						<div class="col">
+							<div th:replace="${main}"></div>
+						</div>
+					</div>
+					<hr>
+					<hr>
+					<footer>
+						<div>
+							<h2>Shopnow hãy mua ngay thôi</h2>
+							<p class="shopee-footer-section__content">
+								<span style="font-size: 12px"><span
+									style="font-family: Roboto, sans-serif"><span
+										style="color: #000000"><span
+											style="background-color: #ffffff">Shop now - ứng dụng
+												mua sắm trực tuyến thú vị, tin cậy, an toàn và miễn phí!
+												Shop now là nền tảng giao dịch trực tuyến hàng đầu ở Đông
+												Nam Á, có trụ sở chính ở Singapore, đã có mặt ở khắp các khu
+												vực&nbsp;</span></span></span><u><b><u>Singapore</u></b></u>,&nbsp;<u><b><u>Malaysia</u></b></u>,&nbsp;<u><b><u>Indonesia</u></b></u>,&nbsp;<u><b><u>Thái
+												Lan</u></b></u>,<b>&nbsp;</b><u><b><u>Philippines</u></b>,</u>&nbsp;<u><b><u>Đài
+												Loan</u></b></u>, <u><u><b><u>Brazil</u></b></u></u>,&nbsp;<b><u>México</u></b>,&nbsp;<b><u>Colombia</u></b>,&nbsp;<b><u>Chile</u></b>,&nbsp;<b><u>Poland</u></b>,&nbsp;<b><u>Spain</u></b>,&nbsp;<b><u>Argentina</u></b>.&nbsp;&nbsp;</span><span
+									style="font-size: 12px"><span
+									style="font-family: Roboto, sans-serif"><span
+										style="color: #000000"><span
+											style="background-color: #ffffff">Với sự đảm bảo của
+												Shop now, bạn sẽ mua hàng trực tuyến an tâm và nhanh chóng
+												hơn bao giờ hết!</span></span></span></span>
+							</p>
 
-    <div class="chinh">
-      <div class="phu">
-        <div class="ten">Máy tính ASUS</div>
-        <img class="anh" src="img/mtasus.webp" alt="">
-        <div class="tien">191.000Đ</div>
-        <div class="icon"></div>
-      </div>
-    </div>
+							<br>
+							<h2 class="shopee-footer-section__heading">
+								<span style="font-size: 12px"><span
+									style="font-family: Roboto, sans-serif"><span
+										style="color: #000000"><b>MUA SẮM VÀ BÁN HÀNG
+												ONLINE ĐƠN GIẢN, NHANH CHÓNG VÀ AN TOÀN</b></span></span></span>
+							</h2>
 
-    <div>
-      <button class="btn btn-info btn-disable"><i class="fa-regular fa-hand-point-up"></i></button>
-      <button  class="btn btn-info btn-disable "><i class="fa-solid fa-hand-point-left"></i></button>
-      <button class="btn btn-info btn-disable"><i class="fa-solid fa-hand-point-right"></i></button>
-      <button class="btn btn-info btn-disable"><i class="fa-regular fa-hand-point-down"></i></button>
-    </div>
-  </div>
+							<p class="shopee-footer-section__content">
+								<span style="font-size: 12px"><span
+									style="font-family: Roboto, sans-serif"><span
+										style="color: #000000">Nếu bạn đang tìm kiếm một trang
+											web để mua và bán hàng trực tuyến thì Shopnow.vn là một sự
+											lựa chọn tuyệt vời dành cho bạn. Bản chất của Shop now là một
+											social E-commerce platform - nền tảng trang web <b>thương
+												mại điện tử</b> tích hợp mạng xã hội. Điều này cho phép người
+											mua và người bán hàng dễ dàng tương tác, trao đổi thông tin
+											về sản phẩm và chương trình khuyến mãi của shop. Nhờ nền tảng
+											đó, việc mua bán trên Shopnow trở nên nhanh chóng và đơn giản
+											hơn. Bạn có thể trò chuyện trực tiếp với nhà bán hàng để hỏi
+											trực tiếp về mặt hàng cần mua. Còn nếu bạn muốn tìm mua những
+											dòng sản phẩm chính hãng, uy tín,
+									</span></span><u><a style="color: inherit" href="https://shopee.vn/mall/"><span
+											style="font-family: Roboto, sans-serif"><b><u>Shopnow
+														Mall</u></b></span></a></u><span style="font-family: Roboto, sans-serif"><span
+										style="color: #000000"> chính là sự lựa chọn lí tưởng
+											dành cho bạn. Để bạn có thể dễ dàng khi tìm hiểu và sử dụng
+											sản phẩm, </span></span><u><a style="color: inherit"
+										href="http://shopee.vn/blog/"><span
+											style="font-family: Roboto, sans-serif"><b><u>Shop
+														now Blog</u></b></span></a></u><span style="font-family: Roboto, sans-serif"><u><a
+											style="color: inherit" href="http://shopee.vn/blog/"> - <b>trang
+													blog thông tin chính thức của Shop now</b></a></u><span
+										style="color: #000000"> - sẽ giúp bạn có thể tìm được
+											cho mình các kiến thức về xu hướng thời trang, review công
+											nghệ, mẹo làm đẹp, tin tức tiêu dùng và deal giá tốt bất ngờ.</span></span></span>
+							</p>
 
-  <hr > <hr >
+							<div class="lzd-footer-width-25" data-spm="sns">
 
-  <footer>
-    <div>
-      <h2>Shopnow hãy mua ngay thôi</h2>
-      <p class="shopee-footer-section__content"><span style="font-size:12px"><span
-            style="font-family:Roboto,sans-serif"><span style="color:#000000"><span
-                style="background-color:#ffffff">Shop now - ứng dụng mua sắm trực tuyến thú vị, tin cậy, an toàn và miễn
-                phí! Shop now là nền tảng giao dịch trực tuyến hàng đầu ở Đông Nam Á, có trụ sở chính ở Singapore, đã có
-                mặt ở khắp các khu
-                vực&nbsp;</span></span></span><u><b><u>Singapore</u></b></u>,&nbsp;<u><b><u>Malaysia</u></b></u>,&nbsp;<u><b><u>Indonesia</u></b></u>,&nbsp;<u><b><u>Thái
-                Lan</u></b></u>,<b>&nbsp;</b><u><b><u>Philippines</u></b>,</u>&nbsp;<u><b><u>Đài Loan</u></b></u>,
-          <u><u><b><u>Brazil</u></b></u></u>,&nbsp;<b><u>México</u></b>,&nbsp;<b><u>Colombia</u></b>,&nbsp;<b><u>Chile</u></b>,&nbsp;<b><u>Poland</u></b>,&nbsp;<b><u>Spain</u></b>,&nbsp;<b><u>Argentina</u></b>.&nbsp;&nbsp;</span><span
-          style="font-size:12px"><span style="font-family:Roboto,sans-serif"><span style="color:#000000"><span
-                style="background-color:#ffffff">Với sự đảm bảo của Shop now, bạn sẽ mua hàng trực tuyến an tâm và nhanh
-                chóng hơn bao giờ hết!</span></span></span></span></p>
-
-      <br>
-      <h2 class="shopee-footer-section__heading"><span style="font-size:12px"><span
-            style="font-family:Roboto,sans-serif"><span style="color:#000000"><b>MUA SẮM VÀ BÁN HÀNG ONLINE ĐƠN GIẢN,
-                NHANH CHÓNG VÀ AN TOÀN</b></span></span></span></h2>
-
-      <p class="shopee-footer-section__content"><span style="font-size:12px"><span
-            style="font-family:Roboto,sans-serif"><span style="color:#000000">Nếu bạn đang tìm kiếm một trang web để mua
-              và bán hàng trực tuyến thì Shopnow.vn là một sự lựa chọn tuyệt vời dành cho bạn. Bản chất của Shop now là
-              một social E-commerce platform - nền tảng trang web <b>thương mại điện tử</b> tích hợp mạng xã hội. Điều
-              này cho phép người mua và người bán hàng dễ dàng tương tác, trao đổi thông tin về sản phẩm và chương trình
-              khuyến mãi của shop. Nhờ nền tảng đó, việc mua bán trên Shopnow trở nên nhanh chóng và đơn giản hơn. Bạn
-              có thể trò chuyện trực tiếp với nhà bán hàng để hỏi trực tiếp về mặt hàng cần mua. Còn nếu bạn muốn tìm
-              mua những dòng sản phẩm chính hãng, uy tín, </span></span><u><a style="color:inherit"
-              href="https://shopee.vn/mall/"><span style="font-family:Roboto,sans-serif"><b><u>Shopnow
-                    Mall</u></b></span></a></u><span style="font-family:Roboto,sans-serif"><span style="color:#000000">
-              chính là sự lựa chọn lí tưởng dành cho bạn. Để bạn có thể dễ dàng khi tìm hiểu và sử dụng sản phẩm,
-            </span></span><u><a style="color:inherit" href="http://shopee.vn/blog/"><span
-                style="font-family:Roboto,sans-serif"><b><u>Shop now Blog</u></b></span></a></u><span
-            style="font-family:Roboto,sans-serif"><u><a style="color:inherit" href="http://shopee.vn/blog/"> - <b>trang
-                  blog thông tin chính thức của Shop now</b></a></u><span style="color:#000000"> - sẽ giúp bạn có thể
-              tìm được cho mình các kiến thức về xu hướng thời trang, review công nghệ, mẹo làm đẹp, tin tức tiêu dùng
-              và deal giá tốt bất ngờ.</span></span></span></p>
-
-      <div class="lzd-footer-width-25" data-spm="sns">
-
-        <div>
-          <h3 class="lzd-footer-title">Kết nối với chúng tôi</h3>
-          <i><img src="img/lhvct.jpg" alt=""></i>
-        </div>
-      </div>
-
-
-
-    </div>
-  </footer>
-
-
-
+								<div>
+									<h3 class="lzd-footer-title">Kết nối với chúng tôi</h3>
+									<i><img src="img/lhvct.jpg" alt=""></i>
+								</div>
+							</div>
+						</div>
+					</footer>
+					<!-- Optional JavaScript -->
+					<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+					<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+						integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+						crossorigin="anonymous"></script>
+					<script
+						src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+						integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+						crossorigin="anonymous"></script>
+					<script
+						src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+						integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+						crossorigin="anonymous"></script>
+					<!-- Icon  -->
+					<script src="/src/main/resources/static/assets/js/all.min.js"></script>
 </body>
 
 </html>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  .container {
-    max-width: 100%;
-    margin: auto;
-  }
-
-  .container1 {
-    max-width: 1200px;
-    margin: auto;
-    padding: 50px 50px;
-  }
-
-  header {
-    background-color: #fff200;
-    text-align: center;
-  }
-
-  /*--------------------nav*/
-  nav {
-    background-color: black;
-    height: 100%;
-    padding: 20px;
-  }
-
-  nav ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  nav ul li,
-  a {
-    color: white;
-    font-size: 15px;
-  }
-
-  nav ul li:nth-child(2) {
-    position: relative;
-  }
-
-  nav ul li:nth-child(2) input {
-    height: 35px;
-    width: 400px;
-    border-radius: 5px;
-    border: none;
-    padding-left: 6px;
-
-  }
-
-  nav ul li:nth-child(2) button {
-    position: absolute;
-    font-size: 20px;
-    color: aqua;
-    background-color: black;
-    line-height: 30px;
-    cursor: pointer;
-    right: -45px;
-    top: -2px;
-    border-radius: 5px;
-    border: 1px solid white;
-    padding: 4px 8px;
-  }
-  nav ul li:nth-child(2) button:hover{
-    background-color: rgb(99, 99, 101);
-  }
-
-  nav ul li:nth-child(3) button {
-    height: 50px;
-    padding: 0 12px;
-    cursor: pointer;
-    background-color: transparent;
-    color: white;
-    border: 1px solid white;
-    border-radius: 5px;
-    transition: all 0.36s ease;
-  }
-
-  nav ul li:nth-child(3) button i {
-    margin-right: 6px;
-  }
-
-  nav ul li:nth-child(3) button:hover {
-    background-color: rgb(99, 99, 101);
-  }
-
-  nav ul li:nth-child(4) {
-    text-align: center;
-  }
-
-  nav ul li:nth-child(4):hover a {
-    color: aqua;
-  }
-
-  @keyframes btnani {
-    from {
-      opacity: 0.4;
-    }
-
-    to {
-      transform: scale(3);
-      opacity: 0;
-    }
-  }
-
-  nav ul li:nth-child(5):hover a {
-    color: aqua;
-  }
-
-  nav ul li:nth-child(6):hover a {
-    color: aqua;
-  }
-
-  nav ul li:nth-child(7):hover a {
-    color: aqua;
-  }
-
-  nav ul li:nth-child(8):hover a {
-    color: aqua;
-  }
-
-  /*-------------------menu bar----------*/
-  .menu-bar {
-
-    background-color: aqua;
-    width: 100%;
-  }
-
-  .menu-bar ul {
-    display: flex;
-    justify-content: space-between;
-
-  }
-
-  .menu-bar ul li a {
-    color: #333;
-    font-size: 16px;
-  }
-
-  .menu-bar ul li a i {
-    margin-right: 8px;
-    font-size: 16px;
-  }
-
-  .menu-bar ul li {
-    padding: 12px 6px;
-    transition: all 0.3s ease;
-  }
-
-  .menu-bar ul li:hover {
-    background-color: white;
-  }
-
-  /*-------------------footer----------*/
-  footer {
-    position: relative;
-    width: 100%;
-    height: auto;
-    padding: 50px 100px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  footer .container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-
-  /*-------------------sản phẩm----------*/
-  .chinh {
-    width: 25%;
-    float: left;
-    background-color: white;
-  }
-
-  .phu {
-    border-radius: 10px;
-    box-shadow: 0 0 5px orchid;
-    margin: 5px;
-    padding: 5px;
-    text-align: center;
-    position: relative;
-  }
-
-  .phu>.ten {
-    font-variant: small-caps;
-    color: red;
-  }
-
-  .phu>.anh {
-    max-width: 98%;
-    height: 150px;
-    margin-bottom: 10px;
-    width: 150px;
-  }
-
-  .phu>.tien {
-    position: absolute;
-    left: 5px;
-    bottom: 5px;
-    font-family: impact;
-    font-size: 25px;
-    color: orange;
-  }
-
-  .phu>.icon {
-    position: absolute;
-    right: 30px;
-    bottom: 5px;
-    width: 50px;
-  }
-
-  .phu>.hot {
-    position: absolute;
-    top: 20px;
-    right: 200px;
-    width: 100px;
-    height: 100px;
-  }
-   /*-------------------nút điều hướng----------*/
-  .btn{
-    position: relative;
-    border: none;
-    display: inline-block;
-    text-decoration: none;
-    background-color: transparent;
-    color: white;
-    padding: 12px 40px;
-    border-radius: 50px;
-    transition: opacity ease-in 0.2s;
-    margin: 20px 10px;
-    right: -320px;
-  }
-  .btn:hover {
-    opacity: 0.8;
-    cursor: pointer;
-    background-color: aquamarine;
-  }
-  .btn-info{
-    background-color: aqua;
-  }
-  .btn-disable{
-    opacity: 0.5s;
-  }
-  /*-------------------thanh ngang----------*/
-  .hr{
-    background-color: aqua;
-  }
-</style>
