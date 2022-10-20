@@ -22,21 +22,20 @@ import lombok.Data;
 
 @SuppressWarnings("serial")
 @Data
-@Entity 
+@Entity
 @Table(name = "Orders")
-public class Order  implements Serializable{
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long orderId;
-	String address;
-	@Temporal(TemporalType.DATE)
-	@Column(name = "Createdate")
-	Date createDate = new Date();
-	@ManyToOne
-	@JoinColumn(name = "Username")
-	Account account;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy = "order")
-	List<OrderDetail> orderDetails;
+public class Order implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long orderId;
+    @ManyToOne
+    @JoinColumn(name = "Username")
+    Account account;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "CreateDay")
+    Date createDay = new Date();
+    String address;
+    @JsonIgnore
+    @OneToMany(mappedBy = "order")
+    List<OrderDetail> orderDetails;
 }
