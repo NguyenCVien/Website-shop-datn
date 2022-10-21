@@ -5,6 +5,9 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.websiteshop.dao.CategoryDAO;
 import com.websiteshop.entity.Category;
 import com.websiteshop.service.CategoryService;
@@ -37,4 +40,10 @@ public class CategoryServiceImpl implements CategoryService {
 //	public void delete(Category entity) {
 //		cdao.delete(entity);
 //	}
+
+//	@Override
+//	public Product findById(Integer id) {
+//		return cdao.findById(id).get();
+//	}
+
 }
