@@ -10,11 +10,11 @@ public class interceptorConfig implements WebMvcConfigurer{
     @Autowired
     GlobalInterceptor globalInterceptor;
     
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(globalInterceptor)
-        .addPathPatterns("/**")
-        .excludePathPatterns("/rest/**","/admin/**","/assets/**");
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(globalInterceptor)
+//        .addPathPatterns("/**")
+//        .excludePathPatterns("/rest/**","/admin/**","/assets/**");
+//    }
 
 }

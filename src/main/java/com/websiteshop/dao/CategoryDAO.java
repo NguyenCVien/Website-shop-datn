@@ -1,11 +1,15 @@
 package com.websiteshop.dao;
 
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.websiteshop.entity.Category;
 
-public interface CategoryDAO extends JpaRepository<Category, String> {
+@Repository
+public interface CategoryDAO extends JpaRepository<Category, Integer> {
 	
-	
+	List<Category>findByNameContaining(String name);
 }
