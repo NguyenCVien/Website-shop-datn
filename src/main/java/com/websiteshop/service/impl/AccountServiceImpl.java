@@ -20,14 +20,17 @@ public class AccountServiceImpl implements AccountService {
 		return adao.findById(username).get();
 	}
 
-	@Override
-	public List<Account> getAdministrators() {
-		return adao.getAdministratiors();
-	}
 
 	@Override
 	public List<Account> findAll() {
 		return adao.findAll();
 	}
 
+	@Override
+	public List<Account> getAdministrators() {
+		//return adao.getAdministratiors();
+		return null;
+	}
+
 }
+

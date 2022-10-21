@@ -27,8 +27,9 @@ public class AuthorityServiceImpl implements AuthorityService {
 
 	@Override
 	public List<Authority> findAuthoritiesOfAdministrators() {
-		List<Account> accounts = acdao.getAdministratiors();
-		return dao.authoritiesOf(accounts);
+//		List<Account> accounts = acdao.getAdministratiors();
+//		return dao.authoritiesOf(accounts);
+		return null;
 	}
 	
 	@Override

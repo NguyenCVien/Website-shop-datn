@@ -44,7 +44,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Order> findByUsername(String username) {
-        return odao.findByUsername(username);
+//        return odao.findByUsername(username);
+    	return null;
     }
 
 }
