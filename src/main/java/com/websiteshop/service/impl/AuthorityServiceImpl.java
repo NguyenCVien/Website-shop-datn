@@ -11,7 +11,6 @@ import com.websiteshop.entity.Account;
 import com.websiteshop.entity.Authority;
 import com.websiteshop.service.AuthorityService;
 
-
 @Service
 public class AuthorityServiceImpl implements AuthorityService {
 	@Autowired
@@ -21,25 +20,24 @@ public class AuthorityServiceImpl implements AuthorityService {
 	AccountDAO acdao;
 
 	@Override
-	public List<AuthorityDAO> findAll() {
+	public List<Authority> findAll() {
 		return dao.findAll();
-	}
-
-	@Override
-	public List<Authority> findAuthoritiesOfAdministrators() {
-//		List<Account> accounts = acdao.getAdministratiors();
-//		return dao.authoritiesOf(accounts);
-		return null;
-	}
-	
-	@Override
-	public void delete(Integer id) {
-		dao.deleteById(id);
-		
 	}
 
 	@Override
 	public Authority create(Authority auth) {
 		return dao.save(auth);
+	}
+
+	@Override
+	public List<Authority> findAuthoritiesOfAdministrators() {
+		List<Account> accounts = acdao.getAdministratiors();
+		return dao.authoritiesOf(accounts);
+	}
+
+	@Override
+	public void delete(Integer id) {
+		dao.deleteById(id);
+		
 	}
 }

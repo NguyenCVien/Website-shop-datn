@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.websiteshop.dao.AuthorityDAO;
 import com.websiteshop.entity.Authority;
 import com.websiteshop.service.AuthorityService;
 
@@ -25,13 +24,13 @@ public class AuthorityRestController {
 	@Autowired
 	AuthorityService authorityService;
 
-//	@GetMapping
-//	public List<AuthorityDAO> findAll(@RequestParam("admin") Optional<Boolean> admin){
-//		if(admin.orElse(false)) {
-//			return authorityService.findAuthoritiesOfAdministrators();
-//		}
-//		return authorityService.findAll();
-//	}
+	@GetMapping
+	public List<Authority> findAll(@RequestParam("admin") Optional<Boolean> admin){
+		if(admin.orElse(false)) {
+			return authorityService.findAuthoritiesOfAdministrators();
+		}
+		return authorityService.findAll();
+	}
 	
 	@PostMapping
 	public Authority post(@RequestBody Authority auth) {

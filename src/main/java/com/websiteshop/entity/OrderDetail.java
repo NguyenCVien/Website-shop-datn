@@ -19,7 +19,7 @@ import lombok.Data;
 public class OrderDetail implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long orderDetailId;
+    Integer orderDetailId;
     @ManyToOne
     @JoinColumn(name = "OrderId")
     Order order;

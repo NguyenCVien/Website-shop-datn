@@ -13,7 +13,8 @@ import lombok.Data;
 
 @SuppressWarnings("serial")
 @Data
-@Entity @Table(name = "FeedBacks")
+@Entity 
+@Table(name = "FeedBacks")
 public class FeedBacks  implements Serializable{
 	@Id	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
