@@ -3,29 +3,25 @@
 th:replace="~{/layout/index :: dynamic(~{::main})}">
 
 <body>
-  <main class="container" >
-    <div class="row">
-        <div th:each="item: ${items}" class="col-sm-3">
-            <div class="card">
-                <div class="card-header card bg-secondary text-white">
-                    <div class="card-title" th:utext="${item.name}"></div>
+    <main class="container-fluid" >
+        <div class="row">
+            <div th:each="item: ${items}" class="col-sm-2">
+                <div class="card">
+                    <div class="card-body">                
+                        <a th:href="@{|/product/detail/${item.productId}|}">					   
+                            <img class="imgindex" th:src="@{|/assets/images/${item.image1}|}"> 
+                        </a>           
+                    </div>
+                    <div class="card-footer">
+                        <div style="font-weight: bold">[(${item.name})]</div>
+                        <div>Giá: [[${item.unitPrice}]]đ</div>
+                        <div>Giảm: [[${item.discount}]]k</div>
+                        <img src="/assets/images/5sao.png">  		  
+                    </div>             
                 </div>
-                <div class="card-body">
-                    <a th:href="@{|/product/detail/${item.productId}|}">					   
-                             <img class="imgindex" th:src="@{|/assets/images/${item.image1}|}" height="100"/> </a>           
-                   
-                </div>
-                <div class="card-footer ">
-                   <lable><div th:utext="'Price:' +' '+ ${item.unitPrice} +' $'"></div> </lable> 
-                   <a th:href="@{|/product/detail/${item.productId}|}" class="btn btn-info">Detail</a>
-                   <button class="btn btn-success"><i class="fas fa-shopping-cart "></i></button>
-                    		  
-                </div>
-               
             </div>
         </div>
-     </div>
-  </main>
+    </main>
 </body>
 
 </html>

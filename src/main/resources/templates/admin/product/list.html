@@ -1,28 +1,18 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org" 
-    th:replace="~{/assets/index-admin :: dynamic(~{::main})}">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
+    th:replace="~{/admin/layout/indexAdmin :: dynamic(~{::main})}">
+  
   <body>
-      
+      <main>
         <div class="card">
           <div class="card-header card bg-secondary text-white" style="text-align: center">
             <h2>Product List</h2>
           </div>
           <div class="card-body">
-            <div th:if="${message != null}" class="alert alert-primary" role="alert">
-              <i>[[${message}]]</i>
-            </div>
+           
             <div class="row mt-2 mb-2">
               <div class="col">
-                <form th:action="@{/admin/products/search}">
+                <form>
                   <div class="form-inline float-left">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control ml-2" name="name" id="name"
@@ -30,11 +20,7 @@
                    <button class="btn btn-outline-primary ml-2"><i class="fa fa-search"></i></button>
                   </div>
                 </form>
-                <div class="tt">
-        <a style="font-size: 25px"
-          class="btn btn-sm btn-outline-danger m-2 float-right  "
-          th:href="@{/admin/products/add}">Add New Products</a>
-      </div>
+    
               </div>
             </div>
             <table class="table table-light  ">
@@ -44,21 +30,25 @@
                     <th>Name</th>
                     <th>Quantity</th>
                     <th>Price</th>
+                    <th>Discount</th>
                     <th>EnteredDate</th>
                     <th>Image</th>
                     <th>Category</th>       
                     <th></th>
+                    
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
+                <tr th:each="item: ${products}">
+                    <td th:utext="${item.productId}"></td>
+                    <td th:utext="${item.name}"></td>
+                    <td th:utext="${item.quantity}"></td>
+                    <td th:utext="${item.unitPrice}"></td>
+                    <td th:utext="${item.discount}"></td>
+                    <td th:utext="${item.EnteredDay}"></td>
+                    <td th:utext="${item.image1}"></td>                
+                    <td ></td>
+                    
                     <td>
                         <div class="btn-group btn-group-xs">
                             <button class="btn btn-warning  mr-2"><i class="fa-regular fa-pen-to-square"></i></button>
@@ -85,10 +75,10 @@
          </button>
           </div>
         </div>
-    
+    </main>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="/src/main/resources/static/assets/js/all.min.js"></script>
+    <script src="/static/assets/js/all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

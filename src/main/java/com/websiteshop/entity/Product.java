@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -41,9 +42,9 @@ public class Product  implements Serializable{
 	@Column(name = "EnteredDay")
 	Date enteredDay = new Date();
 	@ManyToOne
-	@JoinColumn(name = "CategoryId")
+	@JoinColumn(name = "categoryId")
 	Category category;
 	@JsonIgnore
-	@OneToMany(mappedBy = "product")
+	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
 	List<OrderDetail> orderDetails;	
 }

@@ -37,3 +37,10 @@
     color: blue;
     font-style: inherit;
 }
+.banner{
+	width: 1116px;
+	height: 300px;
+	
+	padding-left: 15px;
+	
+}

@@ -11,21 +11,18 @@
   </head>
 
 <body class="container-fluid">
-    
-    
-
           <div class="row">
-            <div class="col-sm-3 card">
+            <div class="col-sm-2 card">
               <div class="card-header">Menu</div>
               <nav id="navbar" class="navbar navbar-light bg-light">
                 
                 <nav class="nav nav-pills flex-column">
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/assets/admin/product/tab.html" role="button" 
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" 
                       aria-haspopup="true" aria-expanded="false">Products</a>
                       <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">List</a>
-                        <a class="dropdown-item" href="#">Add Or Edit</a>
+                        <a class="dropdown-item" th:href="@{/admin/product/list}">List</a>
+                        <a class="dropdown-item" th:href="@{/admin/product/add}">Add </a>
                       </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -54,15 +51,15 @@
               </nav>
             </div> 
 
-            <div class="col-sm-9">
+           <div class="col-sm-10">
               <header class="row ">
-                <img alt="" src="/assets/images/banner2.jpg" width="100%" >
+                <img alt="" src="/assets/images/BannerAdmin2.png" class="banner" >
              </header>
-              <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-                <a href=""><img style="width: 130px;" src="/assets/images/logo2.jpg" alt=""></a>
+              <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-3">
+                <a th:href="@{/admin/home/index}"><img style="width: 130px;" src="/assets/images/logo2.jpg" alt=""></a>
                 <ul class="navbar-nav">
                   <li class="nav-item mr-3">
-                    <a class="nav-link item" href="#">Products</a>
+                    <a class="nav-link item" th:href="@{/admin/product/list}">Products</a>
                   </li>
                   <li class="nav-item mr-3">
                     <a class="nav-link item" href="#">Categories</a>
@@ -76,12 +73,16 @@
                   <li class="nav-item mr-3">
                     <a class="nav-link item" href="#">Statitic</a>
                   </li>
-                  <li class="nav-item item">
+                  <ul>
+                       <li class="nav-item item" >
                       <a class="nav-link " href="#">Sign Out</a>
-                    </li>
+                       </li>
+                  </ul>
                 </ul>
           </nav>
+          
               <div th:replace="${main}"></div>
+              
             </div>          
           </div>
           
@@ -103,5 +104,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/assets/js/all.min.js"></script>
   </body>
 </html>

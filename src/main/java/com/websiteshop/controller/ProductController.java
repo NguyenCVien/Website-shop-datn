@@ -30,10 +30,9 @@ public class ProductController {
             List<Product> list = productService.findAll();
             model.addAttribute("items", list);
         }
-        
-       
         return "product/list";
     }
+    
     @RequestMapping("/product/detail/{productId}")
     public String detail(Model model, @PathVariable("productId") Integer id) {
         Product item = productService.findById(id);
@@ -41,4 +40,6 @@ public class ProductController {
         model.addAttribute("cates", dao.findAll());
         return "product/detail";
     }
+    
+    
 }

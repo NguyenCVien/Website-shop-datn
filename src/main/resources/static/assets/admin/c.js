@@ -1,1 +1,0 @@
-return principal != null ? "home/homeSignedIn" : "home/homeNotSignedIn";
