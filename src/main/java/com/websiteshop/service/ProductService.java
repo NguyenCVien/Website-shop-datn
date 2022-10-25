@@ -19,4 +19,6 @@ public interface ProductService {
 
 	void delete(Integer id);
 
+	List<Product> findByNameContaining(String name);
+
 }

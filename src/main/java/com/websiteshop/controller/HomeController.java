@@ -14,13 +14,14 @@ import com.websiteshop.entity.Product;
 import com.websiteshop.service.ProductService;
 
 @Controller
+@RequestMapping("/")
 public class HomeController {
 	@Autowired
     ProductService productService;
     @Autowired
     CategoryDAO dao;
     
-    @RequestMapping("/")
+    @RequestMapping("")
     	public String list(Model model, @RequestParam("cid") Optional<String> cid) {
             if(cid.isPresent()) {
                 List<Product> list = productService.findByCategoryId(cid.get());
@@ -33,9 +34,4 @@ public class HomeController {
            
             return "product/list";
     }
-
-//    @RequestMapping({ "/admin", "/admin/home/index" })
-//    public String admin() {
-//        return "redirect:/assets/admin/layout/indexAdmin.html";
-//    }
 }

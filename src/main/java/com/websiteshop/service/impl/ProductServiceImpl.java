@@ -9,11 +9,15 @@ import com.websiteshop.dao.ProductDAO;
 import com.websiteshop.entity.Product;
 import com.websiteshop.service.ProductService;
 
-
 @Service
 public class ProductServiceImpl implements ProductService {
 	@Autowired
 	ProductDAO pdao;
+
+	@Override
+	public List<Product> findByNameContaining(String name) {
+		return pdao.findByNameContaining(name);
+	}
 
 	@Override
 	public List<Product> findAll() {
@@ -42,6 +46,6 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public void delete(Integer id) {
-		 pdao.deleteById(id);
+		pdao.deleteById(id);
 	}
 }
