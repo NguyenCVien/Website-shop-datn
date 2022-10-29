@@ -1,52 +1,52 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" 
-th:replace="~{/layout/index :: dynamic(~{::main})}">
+<html xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{/layout/index :: dynamic(~{::main})}">
 
 <body>
-        <main th:object="${item}" class="container" >
-        	<lable><p>CHI TIẾT SẢN PHẨM:</p> </lable>
-           <div class="row">	 
-               <div class="card card-primary">
-                     <div class="card-header text center">
-                          <img th:src="@{|/assets/images/*{image1}|}">   
-                     </div>               
-               </div> 
-               <div class="card card-primary">
-                     <div class="card-body">
-                     	<ul>
-                     	  <li>[('Loại hàng: ' + *{category.name})]</li>
-                          <li>[(*{name})]</li>
-                          <li>[('Giá:' +' '+ *{unitPrice})] <i class="fa-solid fa-coins"></i></li>
-                          <li>[('Giảm giá:' +' '+  *{discount} + 'k')]</li>
-                          
-                        </ul>  
-                     </div>
-                     
-                </div>
-               <div class="card-footer">
-                        <div class="row float-right">
-                            <a th:href="@{/product/list}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
-                            <button th:attr="ng-click=@{|cart.add(${item.productId})|}" class="btn btn-success">
-                                <i class="fas fa-shopping-cart "></i>Thêm vào giỏ hàng
-                            </button> 
-                           
-					   </div>
-				</div>
-			</div>
-			<div class="row">
+    <main th:object="${item}" class="container">
+        <lable><p>CHI TIẾT SẢN PHẨM:</p> </lable>
+        <div class="row">
             <div class="card card-primary">
-                <div class="card-heading">
-                    Hang Cung Loai
+                <div class="card-header text center">
+                    <img class="img-detail" th:src="@{|/assets/images/*{image1}|}" />
                 </div>
+            </div>
+            <div class="card card-primary">
+                <div class="card-body">
+                    <ul>
+                        <li>[('Loại hàng: ' + *{category.name})]</li>
+                        <li>[(*{name})]</li>
+                        <li>[('Giá:' +' '+ *{unitPrice})] <i class="fa-solid fa-coins"></i></li>
+                        <li>[('Giảm giá:' +' '+ *{discount} + 'đ')]</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row float-right">
+                    <a th:href="@{/product/list}" class="btn btn-warning">
+                    <i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+                <button
+                    th:attr="ng-click=@{|cart.add(${item.productId})|}"
+                    class="btn btn-success">
+                    <i class="fas fa-shopping-cart"></i>Thêm vào giỏ hàng
+                </button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card card-primary">
+                <div class="card-heading">Hang Cung Loai</div>
                 <div class="card-body">
                     <ul>
                         <li th:each=" item:*{category.products}">
-                            <a th:href="@{|/product/detail/${item.productId}|}" th:text="${item.name}"></a>
+                            <a th:href="@{|/product/detail/${item.productId}|}"
+                                th:text="${item.name}">
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
- 		 </main>
+    </main>
 </body>
 </html>

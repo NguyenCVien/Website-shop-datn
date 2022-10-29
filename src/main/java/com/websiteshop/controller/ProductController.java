@@ -20,19 +20,19 @@ public class ProductController {
     ProductService productService;
     @Autowired
     CategoryDAO dao;
-    
+
     @RequestMapping("/product/list")
     public String list(Model model, @RequestParam("cid") Optional<String> cid) {
-        if(cid.isPresent()) {
+        if (cid.isPresent()) {
             List<Product> list = productService.findByCategoryId(cid.get());
             model.addAttribute("items", list);
-        }else {
+        } else {
             List<Product> list = productService.findAll();
             model.addAttribute("items", list);
         }
         return "product/list";
     }
-    
+
     @RequestMapping("/product/detail/{productId}")
     public String detail(Model model, @PathVariable("productId") Integer id) {
         Product item = productService.findById(id);
@@ -40,6 +40,5 @@ public class ProductController {
         model.addAttribute("cates", dao.findAll());
         return "product/detail";
     }
-    
-    
+
 }

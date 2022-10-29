@@ -50,11 +50,10 @@
                     </li>
               </nav>
             </div> 
-
-           <div class="col-sm-10">
+            <div class="col-sm-10">
               <header class="row ">
                 <img alt="" src="/assets/images/BannerAdmin2.png" class="banner" >
-             </header>
+              </header>
               <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-3">
                 <a th:href="@{/admin/home/index}"><img style="width: 130px;" src="/assets/images/logo2.jpg" alt=""></a>
                 <ul class="navbar-nav">
@@ -63,6 +62,11 @@
                   </li>
                   <li class="nav-item mr-3">
                     <a class="nav-link item" href="#">Categories</a>
+                  </li>
+
+                <th:block th:if="${#request.remoteUser}">
+                  <li class="nav-item item" >
+                    <a class="nav-link " th:href="@{/security/logoff}">Sign Out</a>
                   </li>
                   <li class="nav-item mr-3">
                     <a class="nav-link item" href="#">Authorizing</a>
@@ -73,10 +77,17 @@
                   <li class="nav-item mr-3">
                     <a class="nav-link item" href="#">Statitic</a>
                   </li>
-                  <ul>
-                       <li class="nav-item item" >
-                      <a class="nav-link " href="#">Sign Out</a>
-                       </li>
+                  <li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}" class="nav-item mr-3">
+                    <a class="nav-link item" th:href="@{/admin}">Administration</a>
+                  </li>
+                </th:block> 
+              <th:block th:unless="${#request.remoteUser}">
+                  <li class="nav-item mr-3">
+                    <a class="nav-link item" th:href="@{/security/login/form}">Login</a>
+                  </li>
+              </th:block>
+                  <ul th:if="${#request.remoteUser}" class="nav navbar-navbar-right">
+                    <li><a th:href="@{/security/logoff}">Welcom [[${#request.remoteUser}]]</a></li>
                   </ul>
                 </ul>
           </nav>

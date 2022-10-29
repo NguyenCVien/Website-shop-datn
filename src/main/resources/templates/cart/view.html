@@ -6,7 +6,7 @@ th:replace="~{/layout/index :: dynamic(~{::main})}">
 <body class="container"> 
     <main>
         <header class="row">
-            <h2 class="alert alert-success">Giỏ hàng của bạn</h2>
+            <h2 class="alert alert-success title-view" >Giỏ hàng của bạn</h2>
         </header>
         <div class="container"> 
             <table class="table table-hover table-condensed"> 
@@ -14,8 +14,8 @@ th:replace="~{/layout/index :: dynamic(~{::main})}">
                     <tr> 
                     <th style="width:10%">Mã sản phẩm</th> 
                     <th style="width:40%">Tên sản phẩm</th> 
-                    <th style="width:10%">Giá</th> 
-                    <th style="width:10%">Giảm</th> 
+                    <th style="width:15%">Giá</th> 
+                    <th style="width:15%">Giảm</th> 
                     <th style="width:10%">Số lượng</th> 
                     <th style="width:20%">Thành tiền</th> 
                     <th style="width:10%"> </th> 
@@ -26,9 +26,9 @@ th:replace="~{/layout/index :: dynamic(~{::main})}">
                     <td>{{item.productId}}</a></td>
                     <td>{{item.name}}</td>
                     <td>{{item.unitPrice | number : 0}}đ</td>
-                    <td>{{item.discount}}k</td>
+                    <td>{{item.discount | number : 0}}đ</td>
                     <td><input ng-change="cart.saveToLocalStorage()" ng-model="item.qty" type="number" min="1" style="width: 60px;"></td>
-                    <td>{{item.qty*(item.unitPrice-item.discount) | number : 0}}</td>
+                    <td>{{item.qty*(item.unitPrice-item.discount) | number : 0}}đ</td>
                     <td>
                     <button ng-click="cart.remove(item.productId)" class="btn btn-sm btn-danger">
                         <i class="fa-regular fa-trash-can"></i>

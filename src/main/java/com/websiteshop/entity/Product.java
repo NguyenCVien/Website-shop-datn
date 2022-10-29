@@ -23,15 +23,16 @@ import lombok.Data;
 
 @SuppressWarnings("serial")
 @Data
-@Entity @Table(name = "Products")
-public class Product  implements Serializable{
-	@Id	
+@Entity
+@Table(name = "Products")
+public class Product implements Serializable {
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer productId;
 	String name;
 	Integer quantity;
-	Float unitPrice;
-	Double discount;
+	Integer unitPrice;
+	Integer discount;
 	String image1;
 	String image2;
 	String image3;
@@ -46,5 +47,5 @@ public class Product  implements Serializable{
 	Category category;
 	@JsonIgnore
 	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-	List<OrderDetail> orderDetails;	
+	List<OrderDetail> orderDetails;
 }

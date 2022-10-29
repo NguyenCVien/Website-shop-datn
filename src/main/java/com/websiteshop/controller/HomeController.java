@@ -30,5 +30,7 @@ public class HomeController {
             model.addAttribute("items", list);
         }
         return "product/list";
+
     }
+
 }

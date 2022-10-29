@@ -39,7 +39,7 @@
 			<li><a th:href="@{/product/list}"><img class="imgHome" src="/assets/images/logo2.jpg" alt=""></a></li>
 			<li><input type="text" placeholder="Bạn tìm gì..."><button ><i class="fa fa-search"></i></button></li>
 			<li> <a th:href="@{/cart/view}">
-				<i class="fas fa-shopping-cart cart"></i></a> Giỏ hàng({{cart.count}} items)	
+				<i class="fas fa-shopping-cart cart"></i></a> Giỏ hàng({{cart.count}} Sản phẩm)	
 			</li>
 			<li><a href="">Lịch sử <br> đơn hàng</a></li>
 			<li><a href="">Đăng nhập</a></li>
@@ -101,7 +101,6 @@
 				<div th:replace="${main}"></div>
 			</div>					
 		</div>	
-
 				<hr><hr>					
 	<footer>
 		<div>

@@ -15,21 +15,21 @@ import lombok.Data;
 
 @SuppressWarnings("serial")
 @Data
-@Entity 
+@Entity
 @Table(name = "Accounts")
-public class Account  implements Serializable{
+public class Account implements Serializable {
 	@Id
-	String username;
-	String password;
-	String fullname;
-	String email;
-	String image;
-	String address;
-	String telePhone;
+	private String username;
+	private String password;
+	private String fullname;
+	private String email;
+	private String image;
+	private String address;
+	private String telePhone;
 	@JsonIgnore
 	@OneToMany(mappedBy = "account")
 	List<Order> orders;
-	
+
 	@JsonIgnore
 	@OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
 	List<Authority> authorities;

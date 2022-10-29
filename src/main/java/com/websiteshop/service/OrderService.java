@@ -7,9 +7,9 @@ import com.websiteshop.entity.Order;
 
 public interface OrderService {
 
-	Order create(JsonNode orderData);
+    // Order create(JsonNode orderData);
 
-	Order findById(Long id);
+    // Order findById(Long id);
 
-	List<Order> findByUsername(String username);
+    // List<Order> findByUsername(String username);
 }

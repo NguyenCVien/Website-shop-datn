@@ -4,19 +4,21 @@ th:replace="~{/layout/index :: dynamic(~{::main})}">
 
 <body>
     <main class="container-fluid" >
-        <div class="row">
+        <div class="row" >
             <div th:each="item: ${items}" class="col-sm-2">
                 <div class="card">
-                    <div class="card-body">                
+                    <div style="text-align: center;" class="card-body" >                
                         <a th:href="@{|/product/detail/${item.productId}|}">					   
                             <img class="imgindex" th:src="@{|/assets/images/${item.image1}|}"> 
                         </a>           
                     </div>
                     <div class="card-footer">
-                        <div style="font-weight: bold">[(${item.name})]</div>
-                        <div>Giá: [[${item.unitPrice}]]đ</div>
-                        <div>Giảm: [[${item.discount}]]k</div>
+                        <div class="name-product">[(${item.name})]</div>
+                        <div class="price">Giá: [[${item.unitPrice}]]đ</div>
+                        <div class="discount">Giảm: [[${item.discount}]]đ</div>
                         <img src="/assets/images/5sao.png">  		  
+                        <a href="#"><i style="width: 35px; height:20px ;" class="fa-regular fa-thumbs-up" ></i></a> 
+                        <!-- <i style="width: 35px; height:20px ;" class="fa-regular fa-thumbs-down"></i> -->
                     </div>             
                 </div>
             </div>
