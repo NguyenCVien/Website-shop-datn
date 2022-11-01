@@ -59,6 +59,7 @@ app.controller("shopping-cart-ctrl", function ($scope, $http) {
     $scope.order = {
         createDate: new Date(),
         address: "",
+        telephone:"", 
         account: { username: $("#username").text() },
         get orderDetails() {
             return $scope.cart.items.map(item => {
@@ -78,7 +79,7 @@ app.controller("shopping-cart-ctrl", function ($scope, $http) {
                 location.href = "/order/detail/" + resp.data.id;
             })
                 .catch(error => {
-                    alert("Đặt hàng lỗi!")
+                    alert("Đặt hàng thất bại!")
                     console.log(error)
                 })
 

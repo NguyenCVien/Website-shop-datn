@@ -99,6 +99,7 @@
 .cart:hover{
   color: rgb(189, 239, 6);
 }
+
   nav ul li:nth-child(3) button:hover {
     background-color: rgb(99, 99, 101);
   }
@@ -262,6 +263,33 @@
   .hr {
     background-color: aqua;
   }
+
+  .cart_sub{
+    width: 347px;
+    height: 86px;
+    background-position:0px 0px;
+    box-shadow:#e1e4e6 0px 1px 0px 0px;
+    color:#444b52;
+    font-size:14px;
+    line-height:18.2px;
+    padding:24px 0px;
+    text-align:center;
+  }
+  .order{
+    align-items:center;
+    background-color:#99090e;
+    border-radius:6px;
+    color:#ffffff;
+    display:inline-flex;
+    flex-direction:column;
+    font-family:roboto;
+    font-size:20px;
+    font-weight:500;
+    justify-content:center;
+    line-height:20px;
+    padding:15px 23px;
+    text-align:center;
+  }
   .back{
     border: none;
   }
@@ -320,4 +348,27 @@
 .imgindex{
   height: 150px;
   width: 150px;
+}
+.km{
+  background-position:0px 0px;
+  color:#cd1817;
+  display:inline-block;
+  font-family:Roboto;
+  font-size:22px;
+  font-weight:700;
+  text-align:left;
+  text-transform:uppercase;
+  cursor: pointer;
+}
+.hotsale{
+  width: 40px;
+  height: 40px;
+  background-position:0px 0px;
+  color:#cd1817;display:inline-block;
+  font-size:28px;
+  font-weight:700;
+  line-height:40px;
+  margin:0px 8px 0px 0px;
+  text-align:left;
+  text-transform:uppercase;
 }

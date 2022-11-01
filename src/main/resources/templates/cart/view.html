@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" 
-th:replace="~{/layout/index :: dynamic(~{::main})}">
+th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 <html>
 
 <body class="container"> 
-    <main>
+    <main th:fragment="shopping_cart">
         <header class="row">
             <h2 class="alert alert-success title-view" >Giỏ hàng của bạn</h2>
         </header>
@@ -39,7 +39,7 @@ th:replace="~{/layout/index :: dynamic(~{::main})}">
                 <tfoot>  
                     <tr> 
                     <td><a th:href="@{/order/checkout}" class="btn btn-primary">
-                        <i class="glyphicon glyphicon-hand-right"></i>Đặt hàng</a>
+                        <i class="glyphicon glyphicon-hand-right"></i>Xác nhận đơn hàng</a>
                     </td>
                     <a th:href="@{/product/list}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
                     <button ng-click="cart.clear()" class="btn btn-danger ml-2">

@@ -18,6 +18,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.websiteshop.entity.Account;
 import com.websiteshop.service.AccountService;
+import com.websiteshop.service.CustomerService;
 
 @Configuration
 @EnableWebSecurity
@@ -58,7 +59,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.authorizeRequests()
                 .antMatchers("/assets/**").permitAll()
-                .antMatchers("/order/**").authenticated()
+                .antMatchers("//order/**").authenticated()
                 .antMatchers("//admin/**").hasAnyRole("STAF", "DIRE")
                 .antMatchers("/rest/authorities").hasRole("DIRE")
                 .anyRequest().permitAll();

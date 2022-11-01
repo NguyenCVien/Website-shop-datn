@@ -21,7 +21,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/79be7d9c55.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="/assets/css/index.css">
+	<link rel="stylesheet" href="/assets/css/index.css" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!--  Angular -->
@@ -44,7 +44,6 @@
 			<li><a href="">Lịch sử <br> đơn hàng</a></li>
 			<li><a href="">Hỏi đáp</a></li>
 			<li><a href="">Đăng kí</a></li>
-			<ul>
 			<li class="nav-item dropdown"> 
 				<a class="nav-link dropdown-toggle mr-5" href="#" id="dropdownId"
 				data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Ngôn ngữ</a>
@@ -53,18 +52,8 @@
 					<a class="dropdown-item">Japan</a>
 				</div>
 			</li>
-		</ul>
 			</li>
-			<th:block th:unless="${#request.remoteUser}">
-                <li class="nav-item mr-3">
-                    <a class="nav-link item" th:href="@{/security/login/form}">Đăng nhập</a>
-                </li>
-            </th:block>
-			<th:block th:if="${#request.remoteUser}">
-				<li class="nav-item item" >
-                    <a class="nav-link " th:href="@{/security/logoff}">Đăng xuất</a>
-                </li>
-			</th:block>
+			<li><a href="">Đăng nhập</a></li>
 		</ul>
 	</nav>
 	<section class="menu-bar">
@@ -84,32 +73,8 @@
 		</div>
 	</section>
 
-		<div class="row">
-			<div class="col-sm-8">
-				<img src="/assets/images/bannerSale.png" alt="" class="n">
-			</div>
-			<div class="col-sm-4">
-				<div class="m mb-2">
-					<img src="/assets/images/banner3.png" alt="" width="100%">
-				</div>
-				<div class="m">
-					<img src="/assets/images/bannerSale22.png" alt="" width="100%">
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col imgSale">
-				<img class="imgSale" src="/assets/images/bannerSale1.png" alt="">
-				<img class="imgSale" src="/assets/images/bannerSale2.png" alt="" >
-				<img class="imgSale" src="/assets/images/bannerSale3.png" alt="" >
-			</div>			
-		</div>
-		<div class="row">
-			<div class="col ml-5 mt-5">
-				<img class="hotsale" src="/assets/images/hotsale.png" alt="">
-				<p class="km">khuyến mãi hot!</p>
-			</div>		
-		</div>
+		
+		
 
 			<br> <br>
 		<!--           main             -->

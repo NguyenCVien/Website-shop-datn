@@ -7,7 +7,7 @@ th:replace="~{/layout/index :: dynamic(~{::main})}">
         <div class="row" >
             <div th:each="item: ${items}" class="col-sm-2">
                 <div class="card">
-                    <div style="text-align: center;" class="card-body" >                
+                    <div class="card-body" >                
                         <a th:href="@{|/product/detail/${item.productId}|}">					   
                             <img class="imgindex" th:src="@{|/assets/images/${item.image1}|}"> 
                         </a>           

@@ -6,5 +6,5 @@ import com.websiteshop.entity.Role;
 
 public interface RoleService {
 
-	public List<Role> findAll();
+	// public List<Role> findAll();
 }

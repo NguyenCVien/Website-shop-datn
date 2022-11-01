@@ -17,7 +17,7 @@ public class OrderController {
 
     @RequestMapping("/order/checkout")
     public String checkout() {
-        return "order/checkout";
+        return "order/Order";
 
     }
 
