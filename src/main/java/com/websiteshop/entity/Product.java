@@ -22,20 +22,27 @@ import lombok.Data;
 
 @SuppressWarnings("serial")
 @Data
-@Entity @Table(name = "Products")
+@Entity 
+@Table(name = "Products")
 public class Product  implements Serializable{
 	@Id	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer id;
+	Integer productId;
 	String name;
-	String image;
-	Double price;
+	Integer quantity;
+	Float unitPrice;
+	Double discount;
+	String image1;
+	String image2;
+	String image3;
+	String image4;
+	String image5;
+	String Discription;
 	@Temporal(TemporalType.DATE)
-	@Column(name = "Createdate")
-	Date createDate = new Date();
-	Boolean available;
+	@Column(name = "EnteredDay")
+	Date enteredDay = new Date();
 	@ManyToOne
-	@JoinColumn(name = "Categoryid")
+	@JoinColumn(name = "CategoryId")
 	Category category;
 	@JsonIgnore
 	@OneToMany(mappedBy = "product")

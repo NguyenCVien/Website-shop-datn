@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+th:replace="~{/layout/index :: dynamic(~{::main})}">
+
+<body>
+        <main th:object="${item}" class="container" >
+        	<lable><p>CHI TIẾT SẢN PHẨM:</p> </lable>
+           <div class="row">	 
+               <div class="card card-primary">
+                     <div class="card-header text center">
+                          <img th:src="@{|/assets/images/*{image1}|}">   
+                     </div>               
+               </div> 
+               <div class="card card-primary">
+                     <div class="card-body">
+                     	<ul>
+                     	  <li>[(*{category.name})]</li>
+                          <li>[(*{name})]</li>
+                          <li>[('Price:' +' '+ *{unitPrice} + ' $')]</li>
+                          <li>[('Discount:' +' '+  *{discount} + ' %')]</li>
+                          
+                        </ul>  
+                     </div>
+                     
+                </div>
+               <div class="card-footer">
+                        <div class="row float-right">
+					       <button class="back"> <a th:href="@{/product/list}" style="font-size: 25px;"><i class="fa-solid fa-circle-left"></i></a></button>
+					       <button class="btn btn-success text-right ml-2">
+					        <i class="fas fa-shopping-cart "></i>
+					     </button> 
+					   </div>
+				</div>
+			</div>
+			<div class="row">
+            <div class="card card-primary">
+                <div class="card-heading">
+                    Hang Cung Loai
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li th:each=" item:*{category.products}">
+                            <a th:href="@{|/product/detail/${item.productId}|}" th:text="${item.name}"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+ 		 </main>
+</body>
+</html>
