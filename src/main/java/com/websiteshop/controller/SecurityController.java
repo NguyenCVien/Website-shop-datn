@@ -21,7 +21,7 @@ public class SecurityController {
     @RequestMapping("/security/login/success")
     public String loginSuccess(Model model) {
         model.addAttribute("message", "Dang nhap thanh cong!");
-        return "admin/product/list";
+        return "security/login";
     }
 
     @RequestMapping("/security/login/error")
@@ -40,6 +40,26 @@ public class SecurityController {
     public String logoff(Model model) {
         model.addAttribute("message", "Ban da dang xuat!");
         return "security/login";
+    }
+
+    @RequestMapping("/security/register")
+    public String register() {
+        return "/admin/dist/register";
+    }
+
+    @RequestMapping("/security/change")
+    public String change() {
+        return "/security/change";
+    }
+
+    @RequestMapping("/security/forgotPassword")
+    public String forgot() {
+        return "/admin/dist/forgotPassword";
+    }
+
+    @RequestMapping("/security/resetPassword")
+    public String resetPass() {
+        return "/admin/dist/resetPassword";
     }
 
 }

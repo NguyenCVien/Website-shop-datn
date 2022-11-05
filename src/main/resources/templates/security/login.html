@@ -38,8 +38,14 @@
                                     <input type="checkbox" name="remember-me"> Remember me?
                                 </label>
                             </div>
+                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                                <a class="small" th:href="@{/security/forgotPassword}">Forgot Password?</a>                      
+                            </div>
+                            <div class="card-footer text-center py-3">
+                                <div class="small"><a th:href="@{/security/register}">Need an account? Sign up!</a></div>
+                            </div>
+                            <div class="message" th:text="${message}"></div>
                             <div class="d-grid mb-2">
-                                <div th:text="${message}"><i class="fa-solid fa-reply-all" ></i></div>
                                 <button type="submit" 
                                         class="btn btn-lg btn-primary btn-login fw-bold text-uppercase my-2">Login
                                 </button>

@@ -32,7 +32,9 @@
 <body class="container-fluid" ng-app="shopping-cart-app" 
 	ng-controller="shopping-cart-ctrl">
 	<div class="row">
-		<img  class="banner1" src="/assets/images/Ảnh chụp màn hình 2022-10-04 233842.jpg" alt="">
+		<div class="col-sm-12">
+			<img  class="banner1" src="/assets/images/Ảnh chụp màn hình 2022-10-04 233842.jpg" alt="">
+		</div>
 	</div>
 	<nav>
 		<ul>
@@ -44,16 +46,36 @@
 			<li><a href="">Lịch sử <br> đơn hàng</a></li>
 			<li><a href="">Hỏi đáp</a></li>
 			<li><a href="">Đăng kí</a></li>
-			<li class="nav-item dropdown"> 
-				<a class="nav-link dropdown-toggle mr-5" href="#" id="dropdownId"
-				data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Ngôn ngữ</a>
-				<div class="dropdown-menu" aria-labelledby="dropdownId">
-					<a class="dropdown-item">English</a>
-					<a class="dropdown-item">Japan</a>
-				</div>
+			
+			<li class="nav-item dropdown navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+				<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ngôn ngữ</a>
+				<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+					<li><a class="dropdown-item" href="#!">English</a></li>
+					<li><a class="dropdown-item" href="#!">Japan</a></li>
+					<li><a class="dropdown-item" href="#!">Koria</a></li>				
+					<li><a class="dropdown-item" href="#!">China</a></li>
+					<li><hr class="dropdown-divider" /></li>  
+					<li><a class="dropdown-item" href="#!">Việt Nam</a></li>
+				</ul>
 			</li>
-			</li>
-			<li><a href="">Đăng nhập</a></li>
+			
+			<th:block th:if="${#request.remoteUser}">
+				<li class="nav-item item" >
+                    <a class="nav-link " th:href="@{/security/logoff}">Đăng xuất</a>
+                </li>
+			</th:block>
+			<th:block th:if="${#request.remoteUser}">
+				<li class="nav-item dropdown navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+					<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+						<li><a class="dropdown-item" href="#!">Cài đặt</a></li>
+						<li><a class="dropdown-item" href="#!">Thông tin cá nhân</a></li>
+						<li><a class="dropdown-item" th:href="@{/security/forgotPassword}">Quên mật khẩu</a></li>
+						<li><hr class="dropdown-divider" /></li>  
+						<li><a class="dropdown-item" href="#!">Đăng xuất</a></li>
+					</ul>
+				</li>
+			</th:block>
 		</ul>
 	</nav>
 	<section class="menu-bar">
@@ -167,6 +189,8 @@ crossorigin="anonymous"></script>
 <!-- Icon  -->
 <script src="/assets/js/all.min.js"></script>
 <script src="/assets/js/shopping-cart-app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

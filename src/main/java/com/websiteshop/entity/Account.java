@@ -33,6 +33,10 @@ public class Account implements Serializable {
 	@JsonIgnore
 	@OneToMany(mappedBy = "account")
 	List<Order> orders;
+//    public Object getAuthorities() {
+//         TODO Auto-generated method stub
+//        return null;
+//    }
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "account", fetch = FetchType.EAGER)

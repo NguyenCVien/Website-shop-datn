@@ -20,10 +20,7 @@
   }
 
 .banner1 {
-    width:1341px;
-    height: 41px;
-    padding-left: 15px;
-    
+  width: 100%;
   }
 
   /*--------------------nav*/
@@ -296,6 +293,7 @@
   /* card */
 .card-body{
 	text-align: center;
+  position: relative;
 }
 .card-footer{
   font-size: 14px;

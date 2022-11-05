@@ -13,7 +13,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                 <thead> 
                     <tr> 
                     <th style="width:10%">Mã sản phẩm</th> 
-                    <th style="width:40%">Tên sản phẩm</th> 
+                    <th style="width:30%">Tên sản phẩm</th> 
                     <th style="width:15%">Giá</th> 
                     <th style="width:15%">Giảm</th> 
                     <th style="width:10%">Số lượng</th> 
@@ -39,11 +39,11 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                 <tfoot>  
                     <tr> 
                     <td><a th:href="@{/order/checkout}" class="btn btn-primary">
-                        <i class="glyphicon glyphicon-hand-right"></i>Xác nhận đơn hàng</a>
+                        <i class="fa-regular fa-calendar-check"></i> Xác nhận đơn hàng</a>
                     </td>
                     <a th:href="@{/product/list}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
                     <button ng-click="cart.clear()" class="btn btn-danger ml-2">
-                        <i class="glyphicon glyphicon-trash"></i>Clear
+                        <i class="fa-regular fa-calendar-xmark"></i> Clear
                     </button>
                     </tr> 
                 </tfoot>              

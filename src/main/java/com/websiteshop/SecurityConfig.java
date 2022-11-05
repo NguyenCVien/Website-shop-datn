@@ -41,8 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             try {
                 Account user = accountService.findById(username);
                 String password = pe.encode(user.getPassword());
-                String[] roles = user.getAuthorities()
-                        .stream()
+                String[] roles = user.getAuthorities().stream()
                         .map(er -> er.getRole().getId())
                         .collect(Collectors.toList()).toArray(new String[0]);
                 return User.withUsername(username).password(password).roles(roles).build();
@@ -59,6 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.authorizeRequests()
                 .antMatchers("/assets/**").permitAll()
+                .antMatchers("/admin/dist/**").permitAll()
                 .antMatchers("//order/**").authenticated()
                 .antMatchers("//admin/**").hasAnyRole("STAF", "DIRE")
                 .antMatchers("/rest/authorities").hasRole("DIRE")

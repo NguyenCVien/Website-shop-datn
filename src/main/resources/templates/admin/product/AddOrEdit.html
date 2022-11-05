@@ -1,126 +1,123 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org" 
-      th:replace="~{/admin/layout/indexAdmin :: dynamic(~{::main})}">
- 
-<body>
-  <main >
-    <div class="card">
-        <div class="card-header card bg-secondary text-white" style="text-align: center">
-            <h2>Edit Products</h2>
-          </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-sm-4 img">
-                    <div class="row">
-                        <label for="image">
-                            <img src="/assets/images/ip13.jpeg" class="big-img" >
-                        </label>           
-                   </div>
-                   <div class="row i">
-                        <div class="col-sm-4 mt-2">
-                            <label for="image">
-                                <img src="/assets/images/realme-9-pro.jpg" class="small-img">
-                            </label> 
-                        </div>
-                        <div class="col-sm-4 mt-2">
-                            <label for="image">
-                                <img src="/assets/images/realme-9-pro.jpg" class="small-img" >
-                            </label> 
-                        </div>
-                        <div class="col-sm-4 mt-2">
-                            <label for="image">
-                                <img src="/assets/images/realme-9-pro.jpg"class="small-img" >
-                            </label>
-                        </div>                   
-                   </div>
-                </div>
+    th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
 
-                <div class="col-sm-8 ses ">
-                    <div class="row">
-                        <div class="form-group col-sm-6 ">
-                            <div>Name</div>
-                            <input
-                            type="text"
-                            name="name"
-                            
-                            class="form-control mt-2" >
+<body>
+    <main >
+        <div class="card">
+            <div class="card-header card bg-secondary text-white" style="text-align: center">
+                <h2>Edit Products</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-4 img">
+                        <div class="row">
+                            <label for="image">
+                                <img src="/assets/images/ip13.jpeg" class="big-img" >
+                            </label>           
                         </div>
-                        <div class="form-group col-sm-6">
-                            <div>Price</div>
-                            <input 
-                            type="text"
-                            name="price"
-                            
-                            class="form-control mt-2">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-sm-6 ">
-                            <div>Image</div>
-                            <input type="file" class="form-control mt-2 choose-img" id="image" >
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <div>Category</div>
-                            <select class="form-control mt-2">
-                                <option>ThucSkin</option>
-                                <option>ThucSkin</option>
-                                <option>ThucSkin</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-sm-6 ">
-                            <div>Create Date</div>
-                            <input type="date" 
-                            name="createDate"
-                           
-                            class="form-control mt-2">
-                        </div>
-                        <div class="form-group col-sm-3">
-                            <div>Quantity</div>
-                            <input type="number" min="0" style="width: 100%; " placeholder="0"
-                             class="form-control mt-2" ></input> 
-                        </div>
-                        <div class="form-group col-sm-3">
-                            <div>Discount</div>
-                            <input type="number" min="0" max="70" placeholder="0" style="width: 100%; "
-                             class="form-control mt-2" ></input> 
+                        <div class="row i">
+                            <div class="col-sm-4 mt-2">
+                                <label for="image">
+                                    <img src="/assets/images/realme-9-pro.jpg" class="small-img">
+                                </label> 
+                            </div>
+                            <div class="col-sm-4 mt-2">
+                                <label for="image">
+                                    <img src="/assets/images/realme-9-pro.jpg" class="small-img" >
+                                </label> 
+                            </div>
+                            <div class="col-sm-4 mt-2">
+                                <label for="image">
+                                    <img src="/assets/images/realme-9-pro.jpg"class="small-img" >
+                                </label>
+                            </div>                   
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>Description</div> 
-                            <textarea type="text" class="mt-2 form-control description"></textarea>
+    
+                    <div class="col-sm-8 ses ">
+                        <div class="row">
+                            <div class="form-group col-sm-6 ">
+                                <div>Name</div>
+                                <input
+                                type="text"
+                                name="name"
+                                
+                                class="form-control mt-2" >
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <div>Price</div>
+                                <input 
+                                type="text"
+                                name="price"
+                                
+                                class="form-control mt-2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6 ">
+                                <div>Image</div>
+                                <input type="file" class="form-control mt-2 choose-img" id="image" >
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <div>Category</div>
+                                <select class="form-control mt-2">
+                                    <option>ThucSkin</option>
+                                    <option>ThucSkin</option>
+                                    <option>ThucSkin</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6 ">
+                                <div>Create Date</div>
+                                <input type="date" name="createDate" class="form-control mt-2">
+                            </div>
+                            <div class="form-group col-sm-3">
+                                <div>Quantity</div>
+                                <input type="number" min="0" style="width: 100%; " placeholder="0"
+                                class="form-control mt-2" ></input> 
+                            </div>
+                            <div class="form-group col-sm-3">
+                                <div>Discount</div>
+                                <input type="number" min="0" max="70" placeholder="0" style="width: 100%; "
+                                class="form-control mt-2" ></input> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div>Description</div> 
+                                <textarea type="text" class="mt-2 form-control description"></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="card-footer text-center mt-5">
+                <button class="btn btn-primary mr-3" type="submit">
+                    Create 
+                    <i class="fa-solid fa-plus" ></i>
+                </button>
+                <button class="btn btn-success mr-3">
+                    Update
+                    <i class="fa-regular fa-pen-to-square"></i>
+                </button>
+                <button class="btn btn-danger mr-3">
+                    Delete
+                    <i class="fa-regular fa-trash-can"></i>
+                </button>
+                <button class="btn btn-info mr-3">
+                    Reset
+                    <i class="fa-regular fa-window-restore"></i>
+                </button>
+            </div>
         </div>
-        <div class="card-footer text-center mt-5">
-            <button class="btn btn-primary mr-3" type="submit">
-                Create 
-                <i class="fa-solid fa-plus" ></i>
-            </button>
-            <button class="btn btn-success mr-3">
-                Update
-                <i class="fa-regular fa-pen-to-square"></i>
-            </button>
-            <button class="btn btn-danger mr-3">
-                Delete
-                <i class="fa-regular fa-trash-can"></i>
-            </button>
-            <button class="btn btn-info mr-3">
-                Reset
-                <i class="fa-regular fa-window-restore"></i>
-            </button>
-        </div>
-      </div>
-   </main>
+    </main>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="/src/main/resources/static/assets/js/all.min.js"></script>
+    <script src="/assets/js/all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>

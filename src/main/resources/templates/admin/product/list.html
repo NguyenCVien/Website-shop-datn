@@ -1,6 +1,6 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org" 
-    th:replace="~{/admin/layout/indexAdmin :: dynamic(~{::main})}">
+    th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
   
   <body>
       <main>
@@ -9,22 +9,21 @@
             <h2>Product List</h2>
           </div>
           <div class="card-body">
-           
             <div class="row mt-2 mb-2">
-              <div class="col">
+              <div class="col-sm-3">
                 <form>
                   <div class="form-inline float-left">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control ml-2" name="name" id="name"
-                     aria-describedby="helpId" placeholder="Name">
-                   <button class="btn btn-outline-primary ml-2"><i class="fa fa-search"></i></button>
+                    <input type="text" class="form-control " name="name" id="name"
+                      aria-describedby="helpId" placeholder="Name">
+                    <button class="btn btn-outline-primary ml-2" ><i class="fa fa-search"></i></button>
                   </div>
                 </form>
     
               </div>
             </div>
-            <table class="table table-light  ">
-              <thead class="bg-info text-white">
+            <table class="table ">
+              <thead class="bg-light ">
                 <tr >
                     <th>ld</th>
                     <th>Name</th>
@@ -60,7 +59,7 @@
             </table>
           </div>
           <div class="card-footer text-center">
-           <button class="btn btn-danger" style="border-radius: 45px; ">
+            <button class="btn btn-danger" style="border-radius: 45px; ">
               <i class="fa-solid fa-angles-up"></i>
           </button>
           <button class="btn btn-primary" style="border-radius: 45px;">
@@ -72,7 +71,7 @@
           </button>
           <button class="btn btn-danger" style="border-radius: 45px;">
             <i class="fa-solid fa-angles-down"></i>
-         </button>
+          </button>
           </div>
         </div>
     </main>
