@@ -15,30 +15,30 @@ import org.hibernate.validator.constraints.Length;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @SuppressWarnings("serial")
 @Data
-@Entity
-@Table(name = "Accounts")
-public class Account implements Serializable {
-	@Id
-	String username;
-	String password;
-	String fullname;
-	String email;
-	String image;
-	String address;
-	String telePhone;
-	@JsonIgnore
-	@OneToMany(mappedBy = "account")
-	List<Order> orders;
-//    public Object getAuthorities() {
-//         TODO Auto-generated method stub
-//        return null;
-//    }
-
-	@JsonIgnore
-	@OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
-	List<Authority> authorities;
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity 
+@Table(name = "accounts")
+public class Account implements Serializable{
+    @Id
+    private String username;
+    private String password;
+    private String fullname;
+    private String email;
+    private String image;
+    private String address;
+    private int telePhone;
+//  @JsonIgnore
+//  @OneToMany(mappedBy = "account")
+//  List<Order> orders;
+//  
+//  @JsonIgnore
+//  @OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
+//  List<Authority> authorities;
 }

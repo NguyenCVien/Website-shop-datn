@@ -3,83 +3,94 @@
     th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
   
   <body>
-      <main>
-        <div class="card">
-          <div class="card-header card bg-secondary text-white" style="text-align: center">
-            <h2>Product List</h2>
-          </div>
-          <div class="card-body">
-            <div class="row mt-2 mb-2">
-              <div class="col-sm-3">
-                <form>
-                  <div class="form-inline float-left">
-                    <label for="name">Name:</label>
-                    <input type="text" class="form-control " name="name" id="name"
-                      aria-describedby="helpId" placeholder="Name">
-                    <button class="btn btn-outline-primary ml-2" ><i class="fa fa-search"></i></button>
-                  </div>
-                </form>
-    
-              </div>
+    <main>
+      <div class="container-fluid px-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            Product List
+        </div>
+        <div class="card-body">
+            <div th:if="${message != null}" class="alert alert-primary"
+                  role="alert"> 
+                <i>[[${message}]]</i>
             </div>
-            <table class="table ">
+            <table id="datatablesSimple">
               <thead class="bg-light ">
-                <tr >
-                    <th>ld</th>
-                    <th>Name</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Discount</th>
-                    <th>EnteredDate</th>
-                    <th>Image</th>
-                    <th>Category</th>       
-                    <th></th>
-                    
+                <tr>
+                  <th>ld</th>
+                  <th>Name</th>
+                  <th>Quantity</th>
+                  <th>Unit Price</th>
+                  <th>Discount</th>
+                  <th>EnteredDate</th>
+                  <th>Image</th>
+                  <th>Category</th>
+                  <th>Edit</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="item: ${products}">
-                    <td th:utext="${item.productId}"></td>
-                    <td th:utext="${item.name}"></td>
-                    <td th:utext="${item.quantity}"></td>
-                    <td th:utext="${item.unitPrice}"></td>
-                    <td th:utext="${item.discount}"></td>
-                    <td th:utext="${item.EnteredDay}"></td>
-                    <td th:utext="${item.image1}"></td>                
-                    <td ></td>
-                    
-                    <td>
-                        <div class="btn-group btn-group-xs">
-                            <button class="btn btn-warning  mr-2"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
-                        </div>
-                    </td>
-                </tr>
+              <tr th:each="item: ${products}">
+                <td th:utext="${item.productId}"></td>
+                <td th:utext="${item.name}"></td>
+                <td th:utext="${item.quantity}"></td>
+                <td th:utext="${item.unitPrice}"></td>
+                <td th:utext="${item.discount}"></td>
+                <td th:utext="${item.EnteredDay}"></td>
+                <td th:utext="${item.image1}"></td>
+                <td th:utext="${item.category.name}"></td>
+                <td>
+                  <div class="btn-group btn-group-xs">
+                    <a class="btn btn-warning mr-2"
+                      th:href="@{'/admin/product/edit/' + ${item.productId}}">
+                      <i class="fa-regular fa-pen-to-square"></i>
+                    </a> 
+                    <a class="btn btn-danger" th:data-id="${item.productId}"
+                      th:data-name="${item.name}"
+                      onclick="showConfirmModalDialog(this.getAttribute('data-id'), this.getAttribute('data-name'))">
+                      <i class="fa-solid fa-trash-can"></i>
+                    </a>
+                  </div>
+                </td>
+              </tr>
             </tbody>
+            		<script>
+						function showConfirmModalDialog(id, name) {
+							$('#productName').text(name);
+							$('#yesOption').attr('href',
+									'/admin/product/delete/' + id);
+							$('#confirmationId').modal('show');
+						}
+					</script>
+					<div class="modal fade" id="confirmationId" tabindex="-1"
+						role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Confirmation</h5>
+									<button type="button" class="close" data-dismiss="modal"
+										aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									Do you want to delete "<span id="productName"></span>"?
+								</div>
+								<div class="modal-footer">
+									<a id="yesOption" type="button" 
+										class="btn btn-danger">Yes
+									</a>
+									<button type="button" class="btn btn-success"
+										data-dismiss="modal">No
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
             </table>
           </div>
-          <div class="card-footer text-center">
-            <button class="btn btn-danger" style="border-radius: 45px; ">
-              <i class="fa-solid fa-angles-up"></i>
-          </button>
-          <button class="btn btn-primary" style="border-radius: 45px;">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button class="btn btn-success">1 of 5</button>
-          <button class="btn btn-primary" style="border-radius: 45px;">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-          <button class="btn btn-danger" style="border-radius: 45px;">
-            <i class="fa-solid fa-angles-down"></i>
-          </button>
-          </div>
         </div>
+      </div>
     </main>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="/static/assets/js/all.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>

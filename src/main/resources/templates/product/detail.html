@@ -2,51 +2,126 @@
 <html xmlns:th="http://www.thymeleaf.org"
     th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 
-<body>
-    <main th:object="${item}" class="container">
-        <lable><p>CHI TIẾT SẢN PHẨM:</p> </lable>
-        <div class="row">
-            <div class="card card-primary">
-                <div class="card-header text center">
-                    <img class="img-detail" th:src="@{|/assets/images/*{image1}|}" />
-                </div>
+    <body>
+        <main th:object="${item}" class="container" >
+            <div class="row"> 
+                <div class="col-sm-4"></div>		
+                Loại hàng: [(*{category.name})]. 	
             </div>
-            <div class="card card-primary">
-                <div class="card-body">
-                    <ul>
-                        <li>[('Loại hàng: ' + *{category.name})]</li>
-                        <li>[(*{name})]</li>
-                        <li>[('Giá:' +' '+ *{unitPrice})] <i class="fa-solid fa-coins"></i></li>
-                        <li>[('Giảm giá:' +' '+ *{discount} + 'đ')]</li>
-                    </ul>
-                </div>
+            <div class="row" >
+                <article class="col-sm-9">
+                    <div class="row poly-cart">
+                        <div class="col-sm-5">
+                            <img style="width: 300px;" th:src="@{|/assets/images/*{image1}|}">   
+                        </div>
+                        <div class="col-sm-7">
+                            <fieldset style="line-height: 30px;">
+                                <legend>Tên sản phẩm: [(*{name})].</legend>
+                                <li>[('Giá:' +' '+ *{unitPrice} )]đ</li>
+                                <li>[('Giảm:' +' '+  *{discount})]đ</li>
+                                <li>số lượng còn: [[*{quantity}]]</li>
+                                <li><span class="badge badge-danger">Mô tả chi tiết: </li> 
+                                    <div class="discription">
+                                        [(*{discription})] 
+                                    </div>                               		                                            
+                                <div class="form-group">
+                                <li><label for="exampleFormControlTextarea1">bình luận</label></li>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>                        
+                            </fieldset>
+                        </div>                       
+                    </div>  
+                    <div class="row">
+                        <div class="col-sm-5">                    
+                            <hr>
+                            <img class="img-thumbnail" style="height: 100px; width: 100px;" th:src="@{|/assets/images/*{image2}|}">   
+                            <img class="img-thumbnail" style="height: 100px; width: 100px;" th:src="@{|/assets/images/*{image3}|}">   
+                            <img class="img-thumbnail" style="height: 100px; width: 100px;" th:src="@{|/assets/images/*{image4}|}"> 
+                        </div>
+                        <div class="col-sm-7">
+                            <a th:href="@{/product/list}" class="btn btn-warning mr-3">
+                            <i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+                            <button
+                            th:attr="ng-click=@{|cart.add(${item.productId})|}"
+                            class="btn btn-success">
+                            <i class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng
+                            </button>  
+                        </div>
+                    </div>
+                </article>
+                <aside class="col-sm-3" style="height: 500px; ">
+                    <div class="card poly-cart " data-toggle="collapse" href="#chungloai">
+                        <div class="card-header" style="cursor: pointer;">
+                            <span class="glyphicon glyphicon-th-list"></span>Mặt hàng cùng loại:
+                        </div>                       
+                            <ul class="list-group card-collapse" id="chungloai">
+                                <li class="list-group-item " th:each=" item:*{category.products}">
+                                    <a th:href="@{|/product/detail/${item.productId}|}" th:text="${item.name}"></a>
+                                </li>
+                            </ul>                       
+                    </div>
+                </aside>               
             </div>
-            <div class="card-footer">
-                <div class="row float-right">
-                    <a th:href="@{/product/list}" class="btn btn-warning">
-                    <i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
-                <button
-                    th:attr="ng-click=@{|cart.add(${item.productId})|}"
-                    class="btn btn-success">
-                    <i class="fas fa-shopping-cart"></i>Thêm vào giỏ hàng
-                </button>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card card-primary">
-                <div class="card-heading">Hang Cung Loai</div>
-                <div class="card-body">
-                    <ul>
-                        <li th:each=" item:*{category.products}">
-                            <a th:href="@{|/product/detail/${item.productId}|}"
-                                th:text="${item.name}">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </main>
+        </main>
 </body>
+</html>
+
+<style>
+    header{
+    position: relative;
+}
+.shopping-mall{
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    font-variant: small-caps;
+}
+.shopping-mall h1{
+    font-family: Impact;
+    font-size: 50px;
+    color: white;
+    letter-spacing: 0.3px;
+    text-shadow: 0 0 10px black;
+    padding-bottom: 0px;
+    border-bottom: 2px dotted gray ;
+    margin: 0px;
+
+}
+.shopping-mall h5{
+    margin-top: 5px;
+    letter-spacing: 0.5;
+}
+
+.poly-cart{
+    margin-top: 5px;
+}
+.poly-cart ul{
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 0px;
+
+}
+.poly-cart img{
+    margin-left: 15px;
+}
+.poly-cart input{
+    margin: 15px;
+    width: 230px;
+}
+
+.form-control{
+    font-size: 15px;
+}
+
+.footer{
+    position: absolute;
+}
+.footer h5{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 3px;
+    border-bottom: 10px dotted gray ;
+    padding-bottom: 5px;
+    margin: 5px;
+}
+</style>
 </html>

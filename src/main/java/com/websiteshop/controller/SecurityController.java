@@ -62,4 +62,9 @@ public class SecurityController {
         return "/admin/dist/resetPassword";
     }
 
+    @RequestMapping("/security/statitic")
+    public String statitic() {
+        return "/admin/dist/statitic";
+    }
+
 }

@@ -29,22 +29,22 @@ public class ProductRestController {
 	}
 
 	@GetMapping("{id}")
-	public Product getOne(@PathVariable("id") Integer id) {
-		return productService.findById(id);
+	public Product getOne(@PathVariable("id") Long id) {
+		return productService.findById(id).get();
 	}
-	
-	@PostMapping
-	public Product create(@RequestBody Product product) {
-		return productService.create(product);
-	}
-	
-	@PutMapping("{id}")
-	public Product update(@PathVariable("id") Integer id, @RequestBody Product product) {
-		return productService.update(product);
-	}
-	
-	@DeleteMapping("{id}")
-	public void delete(@PathVariable("id") Integer id) {
-		 productService.delete(id);
-	}
+
+//	@PostMapping
+//	public Product create(@RequestBody Product product) {
+//		return productService.create(product);
+//	}
+//
+//	@PutMapping("{id}")
+//	public Product update(@PathVariable("id") Integer id, @RequestBody Product product) {
+//		return productService.update(product);
+//	}
+//
+//	@DeleteMapping("{id}")
+//	public void delete(@PathVariable("id") Integer id) {
+//		productService.delete(id);
+//	}
 }

@@ -34,8 +34,8 @@ public class ProductController {
     }
 
     @RequestMapping("/product/detail/{productId}")
-    public String detail(Model model, @PathVariable("productId") Integer id) {
-        Product item = productService.findById(id);
+    public String detail(Model model, @PathVariable("productId") Long id) {
+        Product item = productService.findById(id).get();
         model.addAttribute("item", item);
         model.addAttribute("cates", dao.findAll());
         return "product/detail";

@@ -1,6 +1,7 @@
 package com.websiteshop;
 
 import java.util.NoSuchElementException;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,12 +40,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(username -> {
             try {
-                Account user = accountService.findById(username);
-                String password = pe.encode(user.getPassword());
-                String[] roles = user.getAuthorities().stream()
-                        .map(er -> er.getRole().getId())
-                        .collect(Collectors.toList()).toArray(new String[0]);
-                return User.withUsername(username).password(password).roles(roles).build();
+                Optional<Account> user = accountService.findById(username);
+                String password = pe.encode(user.get().getPassword());
+//                String[] roles = user.get().getAuthorities().stream()
+//                        .map(er -> er.getRole().getId())
+//                        .collect(Collectors.toList()).toArray(new String[0]);
+                return User.withUsername(username).password(password).build();
+                //return User.withUsername(username).password(password).roles(roles).build();
             } catch (NoSuchElementException e) {
                 throw new UsernameNotFoundException(username + "not Found");
             }

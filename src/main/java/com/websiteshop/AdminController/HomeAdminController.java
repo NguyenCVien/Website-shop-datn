@@ -11,16 +11,6 @@ public class HomeAdminController {
         return "/admin/dist/index";
     }
 
-    @RequestMapping("/admin/category/list")
-    public String cateList() {
-        return "/admin/category/list";
-    }
-
-    @RequestMapping("/admin/category/add")
-    public String cateAdd() {
-        return "/admin/category/AddOrEdit";
-    }
-
     @RequestMapping("/401")
     public String S401() {
         return "/admin/dist/401";
@@ -34,11 +24,6 @@ public class HomeAdminController {
     @RequestMapping("/500")
     public String S500() {
         return "/admin/dist/500";
-    }
-
-    @RequestMapping("/ccc")
-    public String ccc() {
-        return "/admin/dist/tables";
     }
 
 }
