@@ -1,6 +1,7 @@
 package com.websiteshop.entity;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -17,6 +18,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import groovyjarjarpicocli.CommandLine.Help.Ansi.Text;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,10 +27,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity 
+@Entity
 @Table(name = "products")
-public class Product  implements Serializable{
-	@Id	
+public class Product implements Serializable {
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long productId;
 	private String name;
@@ -40,12 +43,12 @@ public class Product  implements Serializable{
 	private String image4;
 	private String image5;
 	private String discription;
-	//@Temporal(TemporalType.DATE)
+	// @Temporal(TemporalType.DATE)
 	private String enteredDay;
 	@ManyToOne
 	@JoinColumn(name = "categoryId")
 	private Category category;
 	@JsonIgnore
 	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-	private List<OrderDetail> orderDetails;	
+	private List<OrderDetail> orderDetails;
 }

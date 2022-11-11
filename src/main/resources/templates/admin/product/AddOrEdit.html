@@ -19,7 +19,7 @@
 						<div class="col-sm-4 img">
 							<div class="row">
 								<img id="image1"
-									th:src="${product.image1 != null? '/admin/products/images/' + product.image1 : '/assets/images/noimage.jpg'}"
+									th:src="${product.image1 != null? '/admin/product/images/' + product.image1 : '/assets/images/noimage.jpg'}"
 									src="/assets/images/noimage.jpg" class="big-img" alt="">
 							</div>
 							<div class="row i">
@@ -84,7 +84,7 @@
 									<label for="categoryId">Category</label> 
 										<select	class="form-control" name="categoryId" id="categoryId"
 											th:field="*{categoryId}">
-											<option th:each="item : ${categoriess}"
+											<option th:each="item : ${categories}"
 											th:value="${item.categoryId}" th:text="${item.name}"
 											th:selected="${item.categoryId == product.categoryId}">CategoryName</option>
 										</select>

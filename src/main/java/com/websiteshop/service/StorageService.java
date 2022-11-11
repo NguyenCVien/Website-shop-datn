@@ -8,7 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface StorageService {
 
-	void init();
+	// void init();
 
 	void delete(String storedFilename) throws IOException;
 
@@ -19,6 +19,5 @@ public interface StorageService {
 	void store(MultipartFile file, String storedFilename);
 
 	String getStoredFilename(MultipartFile file, String id);
-
 
 }

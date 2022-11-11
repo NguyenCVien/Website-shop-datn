@@ -1,5 +1,6 @@
 const app = angular.module("shopping-cart-app", []);
 
+
 app.controller("shopping-cart-ctrl", function ($scope, $http) {
     //Quanligiohang
     $scope.cart = {
@@ -18,6 +19,7 @@ app.controller("shopping-cart-ctrl", function ($scope, $http) {
                 })
             }
         },
+
         //xoasanphamkhoigiohang
         remove(id) {
             var index = this.items.findIndex(item => item.productId == id);
@@ -43,6 +45,7 @@ app.controller("shopping-cart-ctrl", function ($scope, $http) {
                 .map(item => item.qty * (item.unitPrice - item.discount))
                 .reduce((total, qty) => total += qty, 0);
         },
+        
         //luu gio hang vao localstorage
         saveToLocalStorage() {
             var json = JSON.stringify(angular.copy(this.items));
@@ -56,35 +59,38 @@ app.controller("shopping-cart-ctrl", function ($scope, $http) {
     }
     $scope.cart.loadFromLocalStorage();
 
-    $scope.order = {
-        createDate: new Date(),
-        address: "",
-        telephone:"", 
-        account: { username: $("#username").text() },
-        get orderDetails() {
-            return $scope.cart.items.map(item => {
-                return {
-                    product: { id: item.id },
-                    price: item.price,
-                    quantity: item.qty
-                }
-            });
-        },
-        purchase() {
-            var order = angular.copy(this);
-            // Thực hiện đặt hàng
-            $http.post("/rest/orders", order).then(resp => {
-                alert("Đặt hàng thành công!");
-                $scope.cart.clear();
-                location.href = "/order/detail/" + resp.data.id;
+// order
+$scope.order = {
+    createDay: new Date(),
+    address: "",
+    telePhone:"",
+    account: { username: $("#username").text() },
+    get orderDetails() {
+        return $scope.cart.items.map(item => {
+            return {
+                product: { productId: item.productId },
+                price: item.unitPrice,
+                discount: item.discount,
+                status: item.discount,
+                quantity: item.qty
+            }
+        });
+    },
+    purchase() {
+        var order = angular.copy(this);
+        // Thực hiện đặt hàng
+        $http.post("/rest/orders", order).then(resp => {
+            alert("Đặt hàng thành công!");
+            $scope.cart.clear();
+            location.href = "/order/detail/" + resp.data.orderId;
+        })
+            .catch(error => {
+                alert("Đặt hàng lỗi!")
+                console.log(error)
             })
-                .catch(error => {
-                    alert("Đặt hàng thất bại!")
-                    console.log(error)
-                })
 
-        }
     }
+}
 
     //Phan trang
     $scope.pager = {

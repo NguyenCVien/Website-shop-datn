@@ -9,36 +9,30 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class SecurityController {
     @RequestMapping("/security/login/form")
     public String loginPage(Model model) {
-        model.addAttribute("message", "Vui long dang nhap!");
+        model.addAttribute("message", "Vui lòng đăng nhập!");
         return "security/login";
     }
-    // @RequestMapping(value = "/security/login/form", method = RequestMethod.GET)
-    // public String login(Model model) {
-    // model.addAttribute("message", "Vui long dang nhap!");
-    // return "security/login";
-    // }
 
     @RequestMapping("/security/login/success")
     public String loginSuccess(Model model) {
-        model.addAttribute("message", "Dang nhap thanh cong!");
+        model.addAttribute("message", "Đã đăng nhập!");
         return "security/login";
     }
 
     @RequestMapping("/security/login/error")
     public String loginError(Model model) {
-        model.addAttribute("message", "Sai thong tin dang nhap!");
+        model.addAttribute("message", "Tên đăng nhập hoặc mật khẩu không đúng!");
         return "security/login";
     }
 
     @RequestMapping("/security/unauthoried")
     public String unauthoried(Model model) {
-        model.addAttribute("message", "Khong co quyen truy xuat!");
+        model.addAttribute("message", "Tài khoản không có quyền truy xuất!");
         return "security/login";
     }
 
     @RequestMapping("/security/logoff/success")
     public String logoff(Model model) {
-        model.addAttribute("message", "Ban da dang xuat!");
         return "security/login";
     }
 

@@ -17,11 +17,11 @@ public class WebsiteShopApplication {
 		SpringApplication.run(WebsiteShopApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner init(StorageService storageService) {
-		return (args -> {
-			storageService.init();
-		});
-	}
+	// @Bean
+	// CommandLineRunner init(StorageService storageService) {
+	// return (args -> {
+	// // storageService.init();
+	// });
+	// }
 
 }

@@ -31,11 +31,11 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                                 <div>
                                     <h6 class="my-0"><i class="fa-solid fa-truck-arrow-right"></i> Chi phí vận chuyển:</h6>
                                 </div>
-                                <span class="text-muted">30.000đ</span>
+                                <span class="">30.000đ</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between">
-                                <span><i class="fa-solid fa-coins"></i> Tổng tiền:</span>
-                                <strong>530.000</strong>
+                                <span><i class="fa-solid fa-coins"></i> Tổng tiền thanh toán:</span>
+                                <div class="vnd">{{cart.amount - 30000 | number : 0 }} VND</div>
                             </li>
                         </ul>
                         
@@ -52,11 +52,11 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                             </div>
                             <div class="col-md-6">
                                 <label><i class="fa-solid fa-calendar-days"></i> Ngày đặt hàng:</label>
-                                <div class="form-control">{{order.createDate | date:'dd-MM-yyyy'}}</div>
+                                <div class="form-control">{{order.createDay | date:'dd-MM-yyyy'}}</div>
                             </div>
                             <div class="col-md-4">
                                 <label><i class="fa-solid fa-phone"></i> Số điện thoại:</label>
-                                <input ng-model="order.telephone" type="text" class="form-control">
+                                <input ng-model="order.telePhone" type="text" class="form-control">
                             </div>
                             <div class="col-md-12">
                                 <div><i class="fa-solid fa-location-dot"></i> Địa chỉ giao hàng:</div>
@@ -92,16 +92,11 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                                 </button>
                                 </td>
                             </tr>
-                            </tbody>
-                            <!-- <tfoot>  
-                                <tr> 
-                                <a th:href="@{/product/list}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiáº¿p tá»¥c mua hÃ ng</a>
-                                <button ng-click="cart.clear()" class="btn btn-danger ml-2">
-                                    <i class="fa-regular fa-calendar-xmark"></i> Clear
-                                </button>
-                                </tr> 
-                            </tfoot>  -->             
+                            </tbody>         
                         </table> 
+                        <div class="total">
+                            Tổng tiền: <span class="badge badge-danger">{{cart.amount | number : 0}} VND</span>
+                        </div>
                     </div> 
             </form>
 

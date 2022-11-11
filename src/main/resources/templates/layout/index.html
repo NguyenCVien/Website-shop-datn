@@ -44,41 +44,44 @@
 			<a th:href="@{/cart/view}"><li> 
 				<i class="fas fa-shopping-cart cart"></i> Giỏ hàng({{cart.count}} Sản phẩm)	
 			</li></a>
-			<li><a href="">Lịch sử <br> đơn hàng</a></li>
-			<li><a href="">Hỏi đáp</a></li>
-			<li><a href="">Đăng kí</a></li>
+			<th:block th:if="${#request.remoteUser}">
+                <a th:href="@{/order/list}">Lịch sử <br> đơn hàng</a>
+            </th:block>
 			
+			<li><a href="">Hỏi đáp</a></li>
 			<li class="nav-item dropdown navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
 				<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ngôn ngữ</a>
 				<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 					<li><a class="dropdown-item" href="#!">English</a></li>
-					<li><a class="dropdown-item" href="#!">Japan</a></li>
-					<li><a class="dropdown-item" href="#!">Koria</a></li>				
-					<li><a class="dropdown-item" href="#!">China</a></li>
-					<li><hr class="dropdown-divider" /></li>  
 					<li><a class="dropdown-item" href="#!">Việt Nam</a></li>
 				</ul>
 			</li>
+			<li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
+				<a th:href="@{/admin}">Admin Home</a>
+			</li>
 			<th:block th:unless="${#request.remoteUser}">
-                <li class="nav-item mr-3">
+                <li class="nav-item">
+                    <a class="nav-link item" th:href="@{/security/register}">
+						<i class="fa-solid fa-earth-americas"></i> Đăng kí</a>
+                </li>
+            </th:block>
+			<th:block th:unless="${#request.remoteUser}">
+                <li class="nav-item">
                     <a class="nav-link item" th:href="@{/security/login/form}">
 						<i class="fa-solid fa-earth-americas"></i> Đăng nhập</a>
                 </li>
             </th:block>
 			<th:block th:if="${#request.remoteUser}">
-				<li class="nav-item item" >
-                    <a class="nav-link " th:href="@{/security/logoff}">Đăng xuất</a>
-                </li>
-			</th:block>
-			<th:block th:if="${#request.remoteUser}">
 				<li class="nav-item dropdown navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-					<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+					<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+						data-bs-toggle="dropdown" aria-expanded="false">
+						<i class="fas fa-user fa-fw"></i> [[${#request.remoteUser}]]</a>
 					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 						<li><a class="dropdown-item" href="#!">Cài đặt</a></li>
-						<li><a class="dropdown-item" href="#!">Thông tin cá nhân</a></li>
+						<li><a class="dropdown-item" th:href="@{/security/change}">Thông tin cá nhân</a></li>
 						<li><a class="dropdown-item" th:href="@{/security/forgotPassword}">Quên mật khẩu</a></li>
 						<li><hr class="dropdown-divider" /></li>  
-						<li><a class="dropdown-item" href="#!">Đăng xuất</a></li>
+						<li><a class="dropdown-item" th:href="@{/security/logoff}">Đăng xuất</a></li>
 					</ul>
 				</li>
 			</th:block>
@@ -88,14 +91,13 @@
 		<div class="container">
 			<div class="menu-bar-content">
 				<ul>
-					<li><a href="/product/list?cid=1"><i class="fa-solid fa-mobile-screen-button"></i> Iphone</a></li>
 					<li><a href="/product/list?cid=2"><i class="fa-solid fa-mobile-screen-button"></i> Điện thoại</a></li>
 					<li><a href="/product/list?cid=3"><i class="fa-solid fa-laptop"></i> Laptop</a></li>
 					<li><a href="/product/list?cid=4"><i class="fa-solid fa-tablet-screen-button"></i> Ipad</a></li>
-					<li><a href="/product/list?cid=5"><i class="fa-solid fa-clock"></i> Đồng hồ</a></li>
-					<li><a href="/product/list?cid=6"><i class="fa-solid fa-bowl-rice"></i> Nồi cơm điện</a></li>
-					<li><a href="/product/list?cid=7"><i class="fa-solid fa-tv"></i> Tivi</a></li>
-					<li><a href="/product/list?cid=8"><i class="fa-solid fa-headphones"></i> Phụ kiện <i class="fas fa-sort-down"></i></a></li>
+					<li><a href="/product/list?cid=5"><i class="fa-regular fa-keyboard"></i> Bàn phím</a></li>
+					<li><a href="/product/list?cid=6"><i class="fa-solid fa-computer-mouse"></i> Chuột máy tính</a></li>
+					<li><a href="/product/list?cid=7"><i class="fa-solid fa-tv"></i> Màn hình</a></li>
+					<li><a href="/product/list?cid=8"><i class="fa-solid fa-headphones"></i> Tai nghe <i class="fas fa-sort-down"></i></a></li>
 				</ul>
 			</div>
 		</div>
@@ -106,24 +108,24 @@
 				<img src="/assets/images/bannerSale.png" alt="" class="n">
 			</div>
 			<div class="col-sm-4">
-				<div class="m mb-2">
-					<img src="/assets/images/banner3.png" alt="" width="100%">
-				</div>
-				<div class="m">
-					<img src="/assets/images/bannerSale22.png" alt="" width="100%">
-				</div>
+					<img src="/assets/images/banner3.png" alt="" class="m mb-3" >
+					<img src="/assets/images/bannerSale22.png" alt="" class="m" >	
 			</div>
 		</div>
 		<div class="row">
-			<div class="col imgSale">
+			<div class="col-sm-4">
 				<img class="imgSale" src="/assets/images/bannerSale1.png" alt="">
+			</div>
+			<div class="col-sm-4">
 				<img class="imgSale" src="/assets/images/bannerSale2.png" alt="" >
+			</div>
+			<div class="col-sm-4">
 				<img class="imgSale" src="/assets/images/bannerSale3.png" alt="" >
 			</div>			
 		</div>
 		<div class="row">
 			<div class="col ml-5 mt-5">
-				<img class="hotsale" src="/assets/images/hotsale.png" alt="">
+				<img class="hotsale" src="/assets/images/hot-icon.gif" alt="">
 				<p class="km">khuyến mãi hot!</p>
 			</div>		
 		</div>

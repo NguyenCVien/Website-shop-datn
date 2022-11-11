@@ -1,6 +1,7 @@
 package com.websiteshop.entity;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -15,17 +16,16 @@ import org.hibernate.validator.constraints.Length;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import groovyjarjarpicocli.CommandLine.Help.Ansi.Text;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @SuppressWarnings("serial")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity 
-@Table(name = "accounts")
-public class Account implements Serializable{
+@Entity
+@Table(name = "Accounts")
+public class Account implements Serializable {
     @Id
     private String username;
     private String password;
@@ -34,11 +34,11 @@ public class Account implements Serializable{
     private String image;
     private String address;
     private int telePhone;
-//  @JsonIgnore
-//  @OneToMany(mappedBy = "account")
-//  List<Order> orders;
-//  
-//  @JsonIgnore
-//  @OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
-//  List<Authority> authorities;
+    @JsonIgnore
+    @OneToMany(mappedBy = "account")
+    List<Order> orders;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
+    List<Authority> authorities;
 }

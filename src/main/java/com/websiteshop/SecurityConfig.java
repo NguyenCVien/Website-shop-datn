@@ -42,11 +42,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             try {
                 Optional<Account> user = accountService.findById(username);
                 String password = pe.encode(user.get().getPassword());
-//                String[] roles = user.get().getAuthorities().stream()
-//                        .map(er -> er.getRole().getId())
-//                        .collect(Collectors.toList()).toArray(new String[0]);
-                return User.withUsername(username).password(password).build();
-                //return User.withUsername(username).password(password).roles(roles).build();
+                String[] roles = user.get().getAuthorities().stream()
+                        .map(er -> er.getRole().getRoleId())
+                        .collect(Collectors.toList()).toArray(new String[0]);
+                return User.withUsername(username).password(password).roles(roles).build();
             } catch (NoSuchElementException e) {
                 throw new UsernameNotFoundException(username + "not Found");
             }
@@ -61,8 +60,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/assets/**").permitAll()
                 .antMatchers("/admin/dist/**").permitAll()
-                .antMatchers("//order/**").authenticated()
-                .antMatchers("//admin/**").hasAnyRole("STAF", "DIRE")
+                .antMatchers("/order/**").authenticated()
+                .antMatchers("/admin/**").hasAnyRole("STAF", "DIRE")
                 .antMatchers("/rest/authorities").hasRole("DIRE")
                 .anyRequest().permitAll();
 

@@ -24,17 +24,17 @@ public class FileSystemStorageServiceImpl implements StorageService {
 	private final Path rootLocation;
 
 	@Override
-	public String getStoredFilename(MultipartFile file, String id) {//tao file luu tru
-		String ext = FilenameUtils.getExtension(file.getOriginalFilename());
-		return "p" + id + "." + ext;
+	public String getStoredFilename(MultipartFile file, String id) {// tao file luu tru
+		String ext = file.getOriginalFilename();
+		return ext;
 	}
 
-	public FileSystemStorageServiceImpl(StorageProperties properties) {//truyen thong tin cau hinh luu tru
+	public FileSystemStorageServiceImpl(StorageProperties properties) {// truyen thong tin cau hinh luu tru
 		this.rootLocation = Paths.get(properties.getLocation());
 	}
 
 	@Override
-	public void store(MultipartFile file, String storedFilename) {//luu noi dung file
+	public void store(MultipartFile file, String storedFilename) {// luu noi dung file
 		try {
 			if (file.isEmpty()) {
 				throw new StorageException("Failed to store empty file");
@@ -53,7 +53,7 @@ public class FileSystemStorageServiceImpl implements StorageService {
 	}
 
 	@Override
-	public Resource loadAsResource(String filename) {//nap noi dung file
+	public Resource loadAsResource(String filename) {// nap noi dung file
 		try {
 			Path file = load(filename);
 			Resource resource = new UrlResource(file.toUri());
@@ -78,13 +78,13 @@ public class FileSystemStorageServiceImpl implements StorageService {
 		Files.delete(destinationFile);
 	}
 
-	@Override
-	public void init() {//khoi tao thu muc
-		try {
-			Files.createDirectories(rootLocation);
-			System.out.println(rootLocation.toString());
-		} catch (Exception e) {
-			throw new StorageFileNotFoundException("Could not initialize storage: " + e);
-		}
-	}
+	// @Override
+	// public void init() {//khoi tao thu muc
+	// try {
+	// Files.createDirectories(rootLocation);
+	// System.out.println(rootLocation.toString());
+	// } catch (Exception e) {
+	// throw new StorageFileNotFoundException("Could not initialize storage: " + e);
+	// }
+	// }
 }

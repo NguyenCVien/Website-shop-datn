@@ -34,6 +34,7 @@ public class Order implements Serializable {
     @Temporal(TemporalType.DATE)
     @Column(name = "CreateDay")
     Date createDay = new Date();
+    String telePhone;
     String address;
     @JsonIgnore
     @OneToMany(mappedBy = "order")

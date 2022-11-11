@@ -122,11 +122,12 @@ public class ProductAdminController {
         entity.setCategory(category);
 
         if (!dto.getImage1File().isEmpty()) {
-            UUID uuid = UUID.randomUUID();
-            String uuString = uuid.toString();
+            // UUID uuid = UUID.randomUUID();
+            // String uuString = uuid.toString();
             entity.setImage1(storageService.getStoredFilename(dto.getImage1File(),
-                    uuString));
+                    dto.getImage1File().getOriginalFilename()));
             storageService.store(dto.getImage1File(), entity.getImage1());
+
         }
         productService.save(entity);
         model.addAttribute("message", "Product is saved!");
