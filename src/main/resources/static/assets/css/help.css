@@ -1,0 +1,74 @@
+
+
+.title{
+    background-color: rgb(0, 217, 255);
+    height: auto;
+    width: 100%;
+    /* color: orangered; */
+}
+.title p{
+    color: orangered;
+    
+
+}
+.container{
+    width: 100%;
+    background-color: rgb(0, 217, 255);
+}
+.container .search{
+    height: 80px;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-control-underlined {
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-radius: 0;
+  padding-left: 0;
+}
+
+
+
+.form-control::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+}
+.content{
+    margin-left: 115px;
+}
+hr{
+    margin-left: 115px;
+    width: 1138px;
+   
+}
+.btn-link{
+    margin-left: 115px;
+    color: #aaa;
+    margin-top: -10px;
+    
+}
+.btn-link:focus {
+  box-shadow: none;
+}
+.in4{
+    background-color: rgb(235, 230, 230);
+    height: 130px;
+}
+/* .phone{
+    background-color: red;
+    width: 150px;
+    height: 50px;
+    
+}
+.bi-telephone-fill{
+    margin-top: 100px;
+}
+.email{
+     background-color: red;
+    width: 150px;
+    height: 50px;
+   
+} */
