@@ -10,6 +10,8 @@ import com.websiteshop.entity.Product;
 
 @Service
 public interface ProductDAO extends JpaRepository<Product, Long> {
-      @Query("SELECT p FROM Product p WHERE p.category.categoryId=?1")
-      List<Product> findByCategoryId(String cid);
+	@Query("SELECT p FROM Product p WHERE p.category.categoryId=?1")
+	List<Product> findByCategoryId(Long cid);
+
+	List<Product> findByNameContaining(String name);
 }

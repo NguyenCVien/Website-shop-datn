@@ -4,11 +4,10 @@
 
 <body>
 	<main>
-		<div class="container-fluid px-4">
         <div class="card mb-4">
-			<div class="card-header">
-				<i class="fas fa-table me-1"></i>
-				Account List
+			 <div class="card-header card bg-secondary text-white"
+				style="text-align: center">
+				<h3>Danh sách tài khoản</h3>
 			</div>
         <div class="card-body">
             <div th:if="${message != null}" class="alert alert-primary"
@@ -18,14 +17,14 @@
             <table id="datatablesSimple">
 					<thead class="bg-light ">
 						<tr>
-							<th>Username</th>
-							<th>Password</th>
-							<th>Full name</th>
+							<th>Tên tài khoản</th>
+							<th>Mật khẩu</th>
+							<th>Họ và tên</th>
 							<th>Email</th>
-							<th>TelePhone</th>
-							<th>Image</th>
-							<th>Address</th>
-							<th>Edit</th>
+							<th>Số điện thoại</th>
+							<th>Hình ảnh</th>
+							<th>Địa chỉ</th>
+							<th></th>
 							
 
 						</tr>
@@ -40,8 +39,8 @@
 							<td th:utext="${item.image}"></td>
 							<td th:utext="${item.address}"></td>					
 							<td>
-								<div class="btn-group btn-group-xs">
-									<a class="btn btn-warning mr-2"
+								<div class="">
+									<a class="btn btn-warning"
 										th:href="@{'/admin/accounts/edit/' + ${item.username}}">
 										<i class="fa-regular fa-pen-to-square"></i>
 									</a> <a class="btn btn-danger" th:data-id="${item.username}"
@@ -58,6 +57,7 @@
 							$('#username').text(name);
 							$('#yesOption').attr('href',
 									'/admin/accounts/delete/' + id);
+							$('#noOption').attr('href', '/admin/accounts');
 							$('#confirmationId').modal('show');
 						}
 					</script>
@@ -66,19 +66,19 @@
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title">Confirmation</h5>
+									<h5 class="modal-title">Xác nhận</h5>
 									<button type="button" class="close" data-dismiss="modal"
 										aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
 								<div class="modal-body">
-									Do you want to delete "<span id="username"></span>"?
+									Bạn có muốn xóa tài khoản "<span id="username"></span>"?
 								</div>
 								<div class="modal-footer">
-									<a id="yesOption" type="button" class="btn btn-danger">Yes</a>
-									<button type="button" class="btn btn-secondary"
-										data-dismiss="modal">No</button>
+									<a id="yesOption" type="button" class="btn btn-danger">Đồng ý</a>
+									<a id="noOption" type="button" class="btn btn-secondary"
+										data-dismiss="modal">Hủy</a>
 								</div>
 							</div>
 						</div>
@@ -87,21 +87,6 @@
 			</div>
 		</div>
 	</main>
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="/static/assets/js/all.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
 </body>
 </html>

@@ -66,6 +66,8 @@ public interface ProductService {
 
     <S extends Product> S save(S entity);
 
-    List<Product> findByCategoryId(String cid);
+    List<Product> findByCategoryId(Long cid);
+
+	List<Product> findByNameContaining(String name);
   
 }

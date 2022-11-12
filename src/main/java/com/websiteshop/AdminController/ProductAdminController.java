@@ -67,7 +67,7 @@ public class ProductAdminController {
     }
 
     @RequestMapping("")
-    public String list_2(ModelMap model, @RequestParam("cid") Optional<String> cid) {
+    public String list_2(ModelMap model, @RequestParam("cid") Optional<Long> cid) {
         if (cid.isPresent()) {
             List<Product> list = productService.findByCategoryId(cid.get());
             model.addAttribute("products", list);
@@ -84,7 +84,7 @@ public class ProductAdminController {
         ProductDto dto = new ProductDto();
         dto.setIsEdit(false);
         model.addAttribute("product", dto);
-        return "admin/product/AddOrEdit";
+        return "admin/product/addOrEdit";
     }
 
     @GetMapping("edit/{productId}")
@@ -98,7 +98,7 @@ public class ProductAdminController {
             dto.setIsEdit(true);
             dto.setCategoryId(entity.getCategory().getCategoryId());
             model.addAttribute("product", dto);
-            return new ModelAndView("admin/product/AddOrEdit", model);
+            return new ModelAndView("admin/product/addOrEdit", model);
         } else if (!opt.isPresent()) {
             return new ModelAndView("/admin/dist/404", model);
         }

@@ -99,9 +99,7 @@ public class AccountAdminController {
 		BeanUtils.copyProperties(dto, entity);
 
 		if (!dto.getImageFile().isEmpty()) {
-			UUID uuid = UUID.randomUUID();
-			String uuString = uuid.toString();
-			entity.setImage(storageService.getStoredFilename(dto.getImageFile(), uuString));
+			entity.setImage(storageService.getStoredFilename(dto.getImageFile(), null));
 			storageService.store(dto.getImageFile(), entity.getImage());
 		}
 
@@ -148,43 +146,5 @@ public class AccountAdminController {
 		model.addAttribute("accounts", list);
 		return "admin/accounts/list";
 	}
-
-	// @GetMapping("search/paginated")
-	// public String search(ModelMap model,
-	// @RequestParam(name = "name", required = false) String name,
-	// @RequestParam("page") Optional<Integer> page,
-	// @RequestParam("size") Optional<Integer> size) {
-	//
-	// int currentPage = page.orElse(1);
-	// int pageSize = size.orElse(5);
-	//
-	// Pageable pageable = PageRequest.of(currentPage-1, pageSize, Sort.by("name"));
-	// Page<Account> resultPage = null;
-	//
-	// if(StringUtils.hasText(name)) {
-	// resultPage = accountService.findByNameContaining(name, pageable);
-	// model.addAttribute("name", name);
-	// }else {
-	// resultPage = accountService.findAll(pageable);
-	// }
-	//
-	// int totalPages = resultPage.getTotalPages();
-	// if(totalPages > 0) {
-	// int start = Math.max(1, currentPage-2);
-	// int end = Math.min(currentPage+2, totalPages);
-	//
-	// if(totalPages > 5) {
-	// if(end == totalPages) start = end - 5;
-	// else if (start == 1) end = start +5;
-	// }
-	// List<Integer> pageNumbers = IntStream.rangeClosed(start, end)
-	// .boxed()
-	// .collect(Collectors.toList());
-	// model.addAttribute("pageNumbers", pageNumbers);
-	// }
-	//
-	// model.addAttribute("AccountPage", resultPage);
-	// return "admin/accounts/searchpaginated";
-	// }
 
 }
