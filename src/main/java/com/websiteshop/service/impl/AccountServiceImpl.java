@@ -22,16 +22,10 @@ public class AccountServiceImpl implements AccountService {
     @Autowired
     AccountDAO adao;
 
-//    @Override
-//    public Account findById(String username) {
-//        return adao.findById(username).get();
-//    }
-    
     @Override
     public Optional<Account> findById(String id) {
         return adao.findById(id);
     }
-    
 
     @Override
     public <S extends Account> S save(S entity) {
@@ -87,8 +81,6 @@ public class AccountServiceImpl implements AccountService {
     public <S extends Account> Page<S> findAll(Example<S> example, Pageable pageable) {
         return adao.findAll(example, pageable);
     }
-
-   
 
     @Override
     public void deleteInBatch(Iterable<Account> entities) {
@@ -195,6 +187,11 @@ public class AccountServiceImpl implements AccountService {
     public Page<Account> findByUsernameContaining(String username, Pageable pageable) {
         // TODO Auto-generated method stub
         return null;
+    }
+
+    @Override
+    public List<Account> getAdministrators() {
+        return adao.getAdministratiors();
     }
 
 }

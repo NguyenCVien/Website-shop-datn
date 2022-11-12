@@ -11,12 +11,12 @@ import com.websiteshop.service.RoleService;
 
 @Service
 public class RoleServiceImpl implements RoleService {
-	// @Autowired
-	// RoleDAO rdao;
+	@Autowired
+	RoleDAO rdao;
 
-	// @Override
-	// public List<Role> findAll() {
-	// return rdao.findAll();
-	// }
+	@Override
+	public List<Role> findAll() {
+		return rdao.findAll();
+	}
 
 }

@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderDto implements Serializable {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
     private Long orderId;
     private String username;
     private String createDay;
-    private int telePhone;	
+    private int telePhone;
     private String address;
     private Boolean isEdit;
 }

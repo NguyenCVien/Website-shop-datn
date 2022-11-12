@@ -12,7 +12,6 @@ import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuer
 
 import com.websiteshop.entity.Account;
 
-
 public interface AccountService {
 
 	<S extends Account> List<S> findAll(Example<S> example, Sort sort);
@@ -81,7 +80,6 @@ public interface AccountService {
 
 	Page<Account> findByUsernameContaining(String username, Pageable pageable);
 
-    //List<Account> getAdministrators();
-	
-	
+	List<Account> getAdministrators();
+
 }

@@ -85,7 +85,7 @@ $scope.order = {
             location.href = "/order/detail/" + resp.data.orderId;
         })
             .catch(error => {
-                alert("Đặt hàng lỗi!")
+                alert("Đặt hàng thất bại!")
                 console.log(error)
             })
 
