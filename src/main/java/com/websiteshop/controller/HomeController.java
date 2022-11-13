@@ -32,5 +32,10 @@ public class HomeController {
         return "product/list";
 
     }
+    
+    @RequestMapping("/help")
+    public String help(Model model) {
+    	return "help/help";
+    }
 
 }

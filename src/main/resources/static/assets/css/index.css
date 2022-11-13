@@ -89,7 +89,7 @@
     margin-right: 6px;
   }
 .cart{
-  font-size: 70px;
+  font-size: 35px;
   margin-left: 70px;
   color: red;
 }
@@ -307,7 +307,7 @@
 }
 .name-product{
   font-weight: bolder;
-  font-family: monospace;
+  font-family: serif;
 }
 .price{
   font-family: 'Times New Roman', Times, serif;
