@@ -21,9 +21,14 @@ public class ProductServiceImpl implements ProductService {
 
     @Autowired
     ProductDAO pdao;
+    
+    @Override
+	public List<Product> findByNameContaining(String name) {
+		return pdao.findByNameContaining(name);
+	}
 
     @Override
-    public List<Product> findByCategoryId(String cid) {
+    public List<Product> findByCategoryId(Long cid) {
         return pdao.findByCategoryId(cid);
     }
 

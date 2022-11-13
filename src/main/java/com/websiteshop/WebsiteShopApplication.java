@@ -13,8 +13,15 @@ import com.websiteshop.service.StorageService;
 @EnableConfigurationProperties(StorageProperties.class)
 public class WebsiteShopApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(WebsiteShopApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(WebsiteShopApplication.class, args);
+    }
+
+    // @Bean
+    // CommandLineRunner init(StorageService storageService) {
+    // return (args -> {
+    // // storageService.init();
+    // });
+    // }
 
 }

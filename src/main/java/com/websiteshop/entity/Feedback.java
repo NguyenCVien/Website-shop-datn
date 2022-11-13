@@ -5,24 +5,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
 
 @SuppressWarnings("serial")
 @Data
-@Entity @Table(name = "FeedBacks")
-public class FeedBacks  implements Serializable{
+@Entity
+@Table(name = "FeedBacks")
+public class Feedback  implements Serializable{
 	@Id	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer FeedBackId;
-	@ManyToOne
-    @JoinColumn(name = "Username")
-    Account account;
-	@ManyToOne
-    @JoinColumn(name = "ProductId")
-    Product product;
-	String discription;
+	private Long feedbackId;
+	private String username;
+	private Long productId;
+	private String discription;
 }

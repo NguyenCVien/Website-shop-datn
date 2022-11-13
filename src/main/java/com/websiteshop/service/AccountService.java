@@ -80,6 +80,6 @@ public interface AccountService {
 
 	Page<Account> findByUsernameContaining(String username, Pageable pageable);
 
-	List<Account> getAdministrators();
+	public List<Account> getAdministrators();
 
 }

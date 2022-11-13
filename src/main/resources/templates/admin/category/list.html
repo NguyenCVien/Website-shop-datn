@@ -6,10 +6,10 @@ th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
     <main>
       <div class="container-fluid px-4">
         <div class="card mb-4">
-          <div class="card-header">
-            <i class="fas fa-table me-1"></i>
-            Category List
-        </div>
+          <div class="card-header card bg-secondary text-white"
+				style="text-align: center">
+				<h3>Danh sách loại hàng</h3>
+			</div>
         <div class="card-body">
             <div th:if="${message != null}" class="alert alert-primary"
                   role="alert"> 
@@ -18,26 +18,24 @@ th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
             <table id="datatablesSimple">
               <thead class="bg-light ">
                 <tr>
-                  	<th>Category ID</th>
-					<th>Name</th>
+                  	<th>Mã loại hàng</th>
+					<th>Tên loại hàng</th>
                 </tr>
             </thead>
             <tbody>
               <tr th:each="category, isStat : ${category}">
                 <td scope="row">[[${category.categoryId}]]</td>
                 <td th:text="${category.name}"></td>
-                <td><a href="" class="btn btn-outline-info">
-                		<i class="fas fa-info"></i>
-                    </a> 
+                <td>
                     <a href=""
-                  		class="btn btn-outline-warning"
+                  		class="btn btn-warning"
                   		th:href="@{'/admin/categories/edit/' + ${category.categoryId}}"><i
                     	class="fas fa-edit"></i>
                     </a> 
                     <a th:data-id="${category.categoryId}"
                   		th:data-name="${category.name}"
                   		onclick="showConfirmModalDialog(this.getAttribute('data-id'), this.getAttribute('data-name'))"
-                  		class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i>
+                  		class="btn btn-danger"><i class="fas fa-trash-alt"></i>
                   	</a>
                 </td>
               </tr>
@@ -47,6 +45,7 @@ th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
                 $('#productName').text(name);
                 $('#yesOption').attr('href',
                     '/admin/categories/delete/' + id);
+                $('#noOption').attr('href', '/admin/categories');
                 $('#confirmationId').modal('show');
               }
             </script>
@@ -55,19 +54,19 @@ th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title">Confirmation</h5>
+                    <h5 class="modal-title">Xác nhận</h5>
                     <button type="button" class="close" data-dismiss="modal"
                       aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                    Do you want to delete "<span id="productName"></span>"?
+                    Bạn có muốn xóa loại hàng "<span id="productName"></span>"?
                   </div>
                   <div class="modal-footer">
-                    <a id="yesOption" type="button" class="btn btn-danger">Yes</a>
-                    <button type="button" class="btn btn-secondary"
-                      data-dismiss="modal">No</button>
+                    <a id="yesOption" type="button" class="btn btn-danger">Đồng ý</a>
+                    <a id="noOption" type="button" class="btn btn-secondary"
+                      data-dismiss="modal">Hủy</a>
                   </div>
                 </div>
               </div>

@@ -6,10 +6,10 @@
     <main>
       <div class="container-fluid px-4">
         <div class="card mb-4">
-          <div class="card-header">
-            <i class="fas fa-table me-1"></i>
-            Product List
-        </div>
+           <div class="card-header card bg-secondary text-white"
+				style="text-align: center">
+				<h3>Danh sách sản phẩm</h3>
+			</div>
         <div class="card-body">
             <div th:if="${message != null}" class="alert alert-primary"
                   role="alert"> 
@@ -18,15 +18,15 @@
             <table id="datatablesSimple">
               <thead class="bg-light ">
                 <tr>
-                  <th>ld</th>
-                  <th>Name</th>
-                  <th>Quantity</th>
-                  <th>Unit Price</th>
-                  <th>Discount</th>
-                  <th>EnteredDate</th>
-                  <th>Image</th>
-                  <th>Category</th>
-                  <th>Edit</th>
+                  <th>Mã sản phẩm</th>
+                  <th>Tên sản phẩm</th>
+                  <th>Số lượng</th>
+                  <th>Giá</th>
+                  <th>Giảm giá</th>
+                  <th>Ngày nhập</th>
+                  <th>Hình ảnh</th>
+                  <th>Tên loại</th>
+                  <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -59,6 +59,7 @@
 							$('#productName').text(name);
 							$('#yesOption').attr('href',
 									'/admin/product/delete/' + id);
+							$('#noOption').attr('href', '/admin/product');
 							$('#confirmationId').modal('show');
 						}
 					</script>
@@ -67,22 +68,22 @@
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title">Confirmation</h5>
+									<h5 class="modal-title">Xác nhận</h5>
 									<button type="button" class="close" data-dismiss="modal"
 										aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
 								<div class="modal-body">
-									Do you want to delete "<span id="productName"></span>"?
+									Bạn có muốn xóa "<span id="productName"></span>"?
 								</div>
 								<div class="modal-footer">
 									<a id="yesOption" type="button" 
-										class="btn btn-danger">Yes
+										class="btn btn-danger">Đồng ý
 									</a>
-									<button type="button" class="btn btn-success"
-										data-dismiss="modal">No
-									</button>
+									<a id="noOption" type="button" class="btn btn-success"
+										data-dismiss="modal">Hủy
+									</a>
 								</div>
 							</div>
 						</div>

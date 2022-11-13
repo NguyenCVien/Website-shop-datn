@@ -11,28 +11,26 @@ th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
 					<div class="card">
 						<div class="card-header">
 							<h2
-								th:text="${category.isEdit ? 'Edit Category' : 'Add New Category'}">Add
-								New Category</h2>
+								th:text="${category.isEdit ? 'Chỉnh sửa loại hàng' : 'Thêm mới loại hàng'}">Thêm mới loại hàng</h2>
 						</div>
 						<div class="card-body">
 							<div class="form-group">
-								<label for="categoryId">Category ID:</label> <input type="text"
+								<label for="categoryId">Mã loại hàng:</label> <input type="text"
 									class="form-control" aria-describedby="categoryIdHid"
 									th:field="*{categoryId}" placeholder="Category ID" readonly>
 							</div>
 							<div class="form-group">
-								<label for="name">Name:</label> <input type="text"
+								<label for="name">Tên:</label> <input type="text"
 									class="form-control" id="name" aria-describedby="nameHid"
 									th:field="*{name}" name="name" placeholder="Category Name">
 							</div>
 						</div>
 						<div class="card-footer text-muted">
-							<button type="reset" class="btn btn-secondary">Reset</button>
-							<a th:href="@{/admin/categories}" class="btn btn-success">List
-								Categories</a>
+							<a th:href="@{/admin/categories/add}" type="reset" class="btn btn-secondary">Làm mới</a>
+							<a th:href="@{/admin/categories}" class="btn btn-success">Danh sách loại hàng</a>
 							<button class="btn btn-primary">
-								<i class="fas fa-save"></i> <span th:if="${category.isEdit}">Update</span>
-								<span th:unless="${category.isEdit}">Save</span>
+								<i class="fas fa-save"></i> <span th:if="${category.isEdit}">Cập nhật</span>
+								<span th:unless="${category.isEdit}">Lưu</span>
 							</button>
 						</div>
 					</div>

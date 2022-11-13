@@ -40,6 +40,9 @@
 					<li><a class="dropdown-item" href="#!">Việt Nam</a></li>
 				</ul>
 			</li>
+			<li th:if="${#request.isUserInRole('DIRE')}">
+				<a th:href="@{/admin/authority}">Administration</a>
+			</li>
 			<li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
 				<a th:href="@{/admin}">Admin Home</a>
 			</li>
@@ -100,27 +103,6 @@
 				<hr><hr>					
 	<footer>
 		<div>
-			<h2>Shopnow hãy mua ngay thôi</h2>
-			<p class="shopee-footer-section__content">
-				<span style="font-size: 12px"><span
-					style="font-family: Roboto, sans-serif"><span
-						style="color: #000000"><span
-							style="background-color: #ffffff">Shop now - ứng dụng
-								mua sắm trực tuyến thú vị, tin cậy, an toàn và miễn phí!
-								Shop now là nền tảng giao dịch trực tuyến hàng đầu ở Đông
-								Nam Á, có trụ sở chính ở Singapore, đã có mặt ở khắp các khu
-								vực&nbsp;</span></span></span><u><b><u>Singapore</u></b></u>,&nbsp;<u><b><u>Malaysia</u></b></u>,&nbsp;<u><b><u>Indonesia</u></b></u>,&nbsp;<u><b><u>Thái
-								Lan</u></b></u>,<b>&nbsp;</b><u><b><u>Philippines</u></b>,</u>&nbsp;<u><b><u>Đài
-								Loan</u></b></u>, <u><u><b><u>Brazil</u></b></u></u>,&nbsp;<b><u>México</u></b>,&nbsp;<b><u>Colombia</u></b>,&nbsp;<b><u>Chile</u></b>,&nbsp;<b><u>Poland</u></b>,&nbsp;<b><u>Spain</u></b>,&nbsp;<b><u>Argentina</u></b>.&nbsp;&nbsp;</span><span
-					style="font-size: 12px"><span
-					style="font-family: Roboto, sans-serif"><span
-						style="color: #000000"><span
-							style="background-color: #ffffff">Với sự đảm bảo của
-								Shop now, bạn sẽ mua hàng trực tuyến an tâm và nhanh chóng
-								hơn bao giờ hết!</span></span></span></span>
-			</p>
-
-			<br>
 			<h2 class="shopee-footer-section__heading">
 				<span style="font-size: 12px"><span
 					style="font-family: Roboto, sans-serif"><span
@@ -159,7 +141,7 @@
 			</p>
 			<div class="lzd-footer-width-25" data-spm="sns">
 				<div>
-					<h3 class="lzd-footer-title">Kết nối với chúng tôi</h3>
+					<h4 class="lzd-footer-title">Kết nối với chúng tôi</h4>
 					<i><img src="/assets/images/lhvct.jpg" alt=""></i>
 				</div>
 			</div>

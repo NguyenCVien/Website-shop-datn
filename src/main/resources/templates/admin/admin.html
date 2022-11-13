@@ -13,7 +13,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-
     <!-- Router -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 </head>
@@ -27,16 +26,14 @@
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
-                    <li><a href="#!product">Products</a></li>
+                    <li><a th:href="@{/authority}">Autho</a></li>
                     <li><a href="#!authorize">Authorizing</a></li>
                     <li><a href="/security/logoff">Sign Out</a></li>
                 </ul>
             </div>
         </nav>
     </div>
-   
         <p ng-view="" />
-       
     <footer>
         <div class="panel panel-default">
             <div class="panel-body text-center">
@@ -45,14 +42,12 @@
         </div>
     </footer>
     <!-- User DEFINDED Script -->
-    <script src="/assets/admin/admin-app.js"></script>
-    <script src="/assets/admin/product/product-ctrl.js"></script>
-    <script src="/assets/admin/authority/authority-ctrl.js"></script>
+    <script src="/admin/admin-app.js"></script>
+    <script src="/admin/product/product-ctrl.js"></script>
+    <script src="/admin/authority/authority-ctrl.js"></script>
 
 
-    <!-- <script src="/assets/js/shopping-cart-app.js">
-
-    </script> -->
+    <script src="/assets/js/shopping-cart-app.js"></script>
 </body>
 
 </html>

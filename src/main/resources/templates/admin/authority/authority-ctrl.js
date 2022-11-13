@@ -25,7 +25,7 @@ app.controller("authority-ctrl",function($scope,$http,$location){
 
     $scope.authority_of = function(acc,role){
         if($scope.authorities){
-            return $scope.authorities.find(ur => ur.account.username == acc.username && ur.role.id == role.id);
+            return $scope.authorities.find(ur => ur.account.username == acc.username && ur.role.roleId == role.id);
 
         }
     }

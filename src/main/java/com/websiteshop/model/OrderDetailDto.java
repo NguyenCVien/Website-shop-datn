@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderDetail implements Serializable {
+public class OrderDetailDto implements Serializable {
 	private static final long serialVersionUID = 1L;
-    private Integer orderDetailId;
+    private Long orderDetailId;
     private Double price;
     private Double discount;
     private String status;

@@ -2,8 +2,12 @@ package com.websiteshop.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.websiteshop.model.AccountDto;
 
 @Controller
 public class SecurityController {
@@ -14,9 +18,9 @@ public class SecurityController {
     }
 
     @RequestMapping("/security/login/success")
-    public String loginSuccess(Model model) {
+    public ModelAndView loginSuccess(ModelMap model) {
         model.addAttribute("message", "Đã đăng nhập!");
-        return "security/login";
+        return new ModelAndView("forward:/", model);
     }
 
     @RequestMapping("/security/login/error")
@@ -37,7 +41,10 @@ public class SecurityController {
     }
 
     @RequestMapping("/security/register")
-    public String register() {
+    public String register(Model model) {
+    	AccountDto dto = new AccountDto();
+		dto.setIsEdit(false);
+		model.addAttribute("account", dto);
         return "/admin/dist/register";
     }
 

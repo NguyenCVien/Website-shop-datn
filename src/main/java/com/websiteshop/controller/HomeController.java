@@ -21,7 +21,7 @@ public class HomeController {
     CategoryDAO dao;
 
     @RequestMapping("/")
-    public String home(Model model, @RequestParam("cid") Optional<String> cid) {
+    public String home(Model model, @RequestParam("cid") Optional<Long> cid) {
         if (cid.isPresent()) {
             List<Product> list = productService.findByCategoryId(cid.get());
             model.addAttribute("items", list);

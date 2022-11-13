@@ -12,10 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.websiteshop.entity.Role;
 import com.websiteshop.service.RoleService;
 
-@RestController
-
 @CrossOrigin("")
-
+@RestController
 @RequestMapping("/rest/roles")
 public class RoleRestController {
 
