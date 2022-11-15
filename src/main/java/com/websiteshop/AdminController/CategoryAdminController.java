@@ -76,7 +76,7 @@ public class CategoryAdminController {
 		BeanUtils.copyProperties(dto, entity);
 
 		categoryService.save(entity);
-		model.addAttribute("message", "Category is saved!");
+		model.addAttribute("message", "Loại hàng đã được lưu");
 		return new ModelAndView("forward:/admin/categories", model);
 	}
 
@@ -95,7 +95,7 @@ public class CategoryAdminController {
 			return new ModelAndView("admin/category/addOrEdit", model);
 		}
 
-		model.addAttribute("message", "Category is not existed");
+		model.addAttribute("message", "Loại hàng không tồn tại");
 
 		return new ModelAndView("forward:/admin/categories", model);
 	}
@@ -104,24 +104,8 @@ public class CategoryAdminController {
 	public ModelAndView delete(ModelMap model, @PathVariable("categoryId") Long categoryId) throws IOException {
 
 		categoryService.deleteById(categoryId);
-		model.addAttribute("message", "Category is deleted!");
+		model.addAttribute("message", "Loại hàng đã được xóa");
 
 		return new ModelAndView("forward:/admin/categories", model);
 	}
-
-	// @GetMapping("search")
-	// public String search(ModelMap model,
-	// @RequestParam(name = "name", required = false) String name) {
-	//
-	// List<Category> list = null;
-	// if(StringUtils.hasText(name)) {
-	// list = categoryService.findByNameContaining(name);
-	// }
-	// else {
-	// list = categoryService.findAll();
-	// }
-	//
-	// model.addAttribute("category", list);
-	// return "admin/category/list";
-	// }
 }

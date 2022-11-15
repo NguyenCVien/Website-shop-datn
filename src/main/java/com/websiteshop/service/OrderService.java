@@ -12,7 +12,6 @@ import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuer
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.websiteshop.entity.Order;
-import com.websiteshop.entity.OrderDetail;
 
 public interface OrderService {
 

@@ -74,7 +74,7 @@ public class AccountAdminController {
 			return new ModelAndView("admin/accounts/addOrEdit", model);
 		}
 
-		model.addAttribute("message", "Account is not existed");
+		model.addAttribute("message", "Tài khoản không tồn tại");
 
 		return new ModelAndView("forward:/admin/accounts", model);
 	}
@@ -104,7 +104,7 @@ public class AccountAdminController {
 		}
 
 		accountService.save(entity);
-		model.addAttribute("message", "Account is saved!");
+		model.addAttribute("message", "Tài khoản đã được lưu");
 		return new ModelAndView("forward:/admin/accounts", model);
 	}
 
@@ -125,26 +125,10 @@ public class AccountAdminController {
 				storageService.delete(opt.get().getImage());
 			}
 			accountService.delete(opt.get());
-			model.addAttribute("message", "Account is deleted!");
+			model.addAttribute("message", "Tài khoản đã được xóa!");
 		} else {
-			model.addAttribute("message", "Account is not Found!");
+			model.addAttribute("message", "Không tìm thấy tài khoản!");
 		}
 		return new ModelAndView("forward:/admin/accounts", model);
 	}
-
-	@GetMapping("search")
-	public String search(ModelMap model,
-			@RequestParam(name = "username", required = false) String username) {
-
-		List<Account> list = null;
-		if (StringUtils.hasText(username)) {
-			list = accountService.findByUsernameContaining(username);
-		} else {
-			list = accountService.findAll();
-		}
-
-		model.addAttribute("accounts", list);
-		return "admin/accounts/list";
-	}
-
 }
