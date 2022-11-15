@@ -11,10 +11,12 @@ import lombok.NoArgsConstructor;
 public class OrderDetailDto implements Serializable {
 	private static final long serialVersionUID = 1L;
     private Long orderDetailId;
+    private Long orderId;
+    private Long productId;
     private Double price;
     private Double discount;
     private String status;
     private Integer quantity;
     private String discription;
-
+    private Boolean isEdit;
 }

@@ -30,7 +30,7 @@ import com.websiteshop.service.ProductService;
 
 @Controller
 @RequestMapping("admin/feedbacks")
-public class FeedbackAdminController {
+public class CommentAdminController {
 	@Autowired
 	FeedbackService feedbackService;
 
@@ -39,6 +39,24 @@ public class FeedbackAdminController {
 
 	@Autowired
 	ProductService productService;
+
+	@ModelAttribute("accounts")
+	public List<AccountDto> getAccounts() {
+		return accountService.findAll().stream().map(item -> {
+			AccountDto dto = new AccountDto();
+			BeanUtils.copyProperties(item, dto);
+			return dto;
+		}).toList();
+	}
+
+	@ModelAttribute("products")
+	public List<ProductDto> getCategories() {
+		return productService.findAll().stream().map(item -> {
+			ProductDto dto = new ProductDto();
+			BeanUtils.copyProperties(item, dto);
+			return dto;
+		}).toList();
+	}
 
 	@RequestMapping("")
 	public String list(Model model) {

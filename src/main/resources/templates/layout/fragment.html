@@ -40,9 +40,6 @@
 					<li><a class="dropdown-item" href="#!">Việt Nam</a></li>
 				</ul>
 			</li>
-			<li th:if="${#request.isUserInRole('DIRE')}">
-				<a th:href="@{/admin/authority}">Administration</a>
-			</li>
 			<li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
 				<a th:href="@{/admin}">Admin Home</a>
 			</li>
@@ -78,13 +75,17 @@
 		<div class="container">
 			<div class="menu-bar-content">
 				<ul>
-					<li><a href="/product/list?cid=2"><i class="fa-solid fa-mobile-screen-button"></i> Điện thoại</a></li>
-					<li><a href="/product/list?cid=3"><i class="fa-solid fa-laptop"></i> Laptop</a></li>
-					<li><a href="/product/list?cid=4"><i class="fa-solid fa-tablet-screen-button"></i> Ipad</a></li>
-					<li><a href="/product/list?cid=5"><i class="fa-regular fa-keyboard"></i> Bàn phím</a></li>
-					<li><a href="/product/list?cid=6"><i class="fa-solid fa-computer-mouse"></i> Chuột máy tính</a></li>
-					<li><a href="/product/list?cid=7"><i class="fa-solid fa-tv"></i> Màn hình</a></li>
-					<li><a href="/product/list?cid=8"><i class="fa-solid fa-headphones"></i> Tai nghe <i class="fas fa-sort-down"></i></a></li>
+					<li><a href="/product/list?cid=2"><i
+							class="fa-solid fa-mobile-screen-button"></i> Điện thoại</a></li>
+					<li><a href="/product/list?cid=3"><i
+							class="fa-solid fa-laptop"></i> Laptop</a></li>
+					<li><a href="/product/list?cid=4"><i
+							class="fa-solid fa-tablet-screen-button"></i> Ipad</a></li>
+					<li><a href="/product/list?cid=5"><i
+							class="fa-regular fa-clock"></i> Đồng hồ</a></li>
+					<li><a href="/product/list?cid=2005"><i
+							class="fa-solid fa-tv"></i> Máy tính bàn</a></li>
+					<li><a href="/product/list?cid=8"> Phụ kiện</a></li>
 				</ul>
 			</div>
 		</div>

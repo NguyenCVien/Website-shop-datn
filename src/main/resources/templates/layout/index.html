@@ -53,9 +53,6 @@
 					<li><a class="dropdown-item" href="#!">Việt Nam</a></li>
 				</ul>
 			</li>
-			<li th:if="${#request.isUserInRole('DIRE')}">
-				<a th:href="@{/admin/authority}">Administration</a>
-			</li>
 			<li
 				th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
 				<a th:href="@{/admin}">Admin Home</a>

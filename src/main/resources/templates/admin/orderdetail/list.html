@@ -4,9 +4,9 @@
 <body>
 	<main>
 		<div class="card">
-			 <div class="card-header card bg-secondary text-white"
+			<div class="card-header card bg-secondary text-white"
 				style="text-align: center">
-				<h3>Danh sách bình luận</h3>
+				<h3>Danh sách đơn hàng chi tiết</h3>
 			</div>
 			<div class="card-body">
 				<div th:if="${message != null}" class="alert alert-primary"
@@ -16,25 +16,36 @@
 				<table id="datatablesSimple">
               <thead class="bg-light ">
 						<tr>
-							<th>Mã bình luận</th>
-							<th>Tài khoản</th>
+							<th>Mã đơn hàng chi tiết</th>
+							<th>Mã đơn hàng</th>
 							<th>Mã sản phẩm</th>
+							<th>Giá</th>
+							<th>Giảm giá</th> 
+							<th>Trạng thái</th>
+							<th>Số lượng</th>
 							<th>Mô tả</th>
+							<th></th>
+
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="item: ${feedbacks}">
-							<td th:utext="${item.feedbackId}"></td>
-							<td th:utext="${item.username}"></td>
+						<tr th:each="item: ${orderDetails}">
+							<td th:utext="${item.orderDetailId}"></td>
+							<td th:utext="${item.orderId}"></td>
 							<td th:utext="${item.productId}"></td>
+							<td th:utext="${item.price}"></td>
+							<td th:utext="${item.discount}"></td>
+							<td th:utext="${item.status}"></td>
+							<td th:utext="${item.quantity}"></td>
 							<td th:utext="${item.discription}"></td>
+							<td></td>
 							<td>
 								<div class="btn-group btn-group-xs">
 									<a class="btn btn-warning mr-2"
-										th:href="@{'/admin/feedbacks/edit/' + ${item.feedbackId}}">
+										th:href="@{'/admin/orderDetails/edit/' + ${item.orderDetailId}}">
 										<i class="fa-regular fa-pen-to-square"></i>
-									</a> <a class="btn btn-danger" th:data-id="${item.feedbackId}"
-										th:data-name="${item.feedbackId}"
+									</a> <a class="btn btn-danger" th:data-id="${item.orderDetailId}"
+										th:data-name="${item.orderDetailId}"
 										onclick="showConfirmModalDialog(this.getAttribute('data-id'), this.getAttribute('data-name'))">
 										<i class="fa-solid fa-trash-can"></i>
 									</a>
@@ -44,10 +55,10 @@
 					</tbody>
 					<script>
 						function showConfirmModalDialog(id, name) {
-							$('#feedbackId').text(name);
+							$('#orderId').text(name);
 							$('#yesOption').attr('href',
-									'/admin/feedbacks/delete/' + id);
-							$('#noOption').attr('href', '/admin/feedbacks');
+									'/admin/orderDetails/delete/' + id);
+							$('#noOption').attr('href', '/admin/orderDetails');
 							$('#confirmationId').modal('show');
 						}
 					</script>
@@ -63,7 +74,7 @@
 									</button>
 								</div>
 								<div class="modal-body">
-									Bạn có muốn xóa bình luận mã "<span id="feedbackId"></span>"?
+									Bạn có muốn xóa đơn hàng chi tiết mã "<span id="orderId"></span>"?
 								</div>
 								<div class="modal-footer">
 									<a id="yesOption" type="button" class="btn btn-danger">Đồng ý</a>
@@ -75,7 +86,6 @@
 					</div>
 				</table>
 			</div>
-			
 		</div>
 	</main>
 </body>
