@@ -43,7 +43,9 @@ public class RegisterController {
 		BeanUtils.copyProperties(dto, entity);
 
 		accountService.save(entity);
-		//model.addAttribute("message", "Account is saved!");
-		return new ModelAndView("forward:/security/login/success", model);
+		model.addAttribute("message", "Tạo tài khoản thành công!");
+		return new ModelAndView("forward:/security/register", model);
 	}
+	
+
 }

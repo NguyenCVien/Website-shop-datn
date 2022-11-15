@@ -39,16 +39,17 @@
 							<td th:utext="${item.image}"></td>
 							<td th:utext="${item.address}"></td>					
 							<td>
-								<div class="">
+								
 									<a class="btn btn-warning"
 										th:href="@{'/admin/accounts/edit/' + ${item.username}}">
 										<i class="fa-regular fa-pen-to-square"></i>
-									</a> <a class="btn btn-danger" th:data-id="${item.username}"
+									</a> 
+									<a class="btn btn-danger" th:data-id="${item.username}"
 										th:data-name="${item.username}"
 										onclick="showConfirmModalDialog(this.getAttribute('data-id'), this.getAttribute('data-name'))">
 										<i class="fa-solid fa-trash-can"></i>
 									</a>
-								</div>
+								
 							</td>
 						</tr>
 					</tbody>
@@ -73,7 +74,7 @@
 									</button>
 								</div>
 								<div class="modal-body">
-									Bạn có muốn xóa tài khoản "<span id="username"></span>"?
+									Bạn chắc chắn xóa tài khoản "<span id="username"></span>"?
 								</div>
 								<div class="modal-footer">
 									<a id="yesOption" type="button" class="btn btn-danger">Đồng ý</a>

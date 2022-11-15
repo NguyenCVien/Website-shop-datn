@@ -9,8 +9,7 @@
 			<div class="card">
 				<div class="card-header card bg-secondary text-white"
 					style="text-align: center">
-					<h2 th:text="${account.isEdit ? 'Chỉnh sửa tài khoản' : 'Thêm mới tài khoản'}">
-						Thêm mới tài khoản</h2>
+					<h2 th:text="${account.isEdit ? 'Chỉnh sửa tài khoản' : 'Thêm mới tài khoản'}"></h2>
 				</div>
 				<div class="card-body">
 					<div class="row">
@@ -48,19 +47,19 @@
 									<label for="productId">Tên tài khoản: </label> <input type="text"
 										class="form-control" name="username" id="productId"
 										th:field="*{username}" aria-describedby="productIdHid"
-										placeholder="Tên tài khoản">
+										placeholder="Tên tài khoản" > 
 								</div>
 								<div class="form-group col-sm-6">
-									<div>Họ và tên</div>
+									<div>Họ và tên:</div>
 									<input th:field="*{fullname}" type="text" name="fullname"
 										placeholder="Họ và tên" class="form-control">
 								</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-sm-6">
-									<div>Mật khẩu</div>
+									<div>Mật khẩu:</div>
 									<input th:field="*{password}" type="text" name="password" id="password" aria-describedby="passwordHid"
-										placeholder="Mật khẩu" class="form-control mt-2">
+										placeholder="mật khẩu" class="form-control mt-2">
 								</div>
 								<div class="form-group col-sm-6">
 									<div>Email</div>
@@ -70,14 +69,14 @@
 							</div>
 							<div class="row">
 								<div class="form-group col-sm-6 ">
-									<div>Số điện thoại</div>
+									<div>Số điện thoại:</div>
 									<input th:field="*{telePhone}" type="number" name="telePhone"
 										placeholder="Phone number" class="form-control mt-2">
 								</div>
 							</div>
 							<div class="row">
 								<div class="col">
-									<div>Địa chỉ</div>
+									<div>Địa chỉ:</div>
 									<textarea th:field="*{address}" placeholder="Địa chỉ"
 										style="height: 190px" class="mt-2 form-control description"></textarea>
 								</div>
@@ -88,7 +87,7 @@
 				<div class="card-footer text-center mt-5">
 					<button class="btn btn-primary mr-3"
 						th:text="${account.isEdit? 'Cập nhật':'Lưu'}">
-						Lưu <i class="fa-solid fa-plus"></i>
+						<i class="fa-solid fa-plus"></i>
 					</button>
 					<a th:href="@{/admin/accounts}" class="btn btn-success mr-2">Danh sách tài khoản
 						</a> <a class="btn btn-danger mr-2" th:if="${account.isEdit}"

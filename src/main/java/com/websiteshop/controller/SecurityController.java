@@ -22,7 +22,8 @@ public class SecurityController {
         model.addAttribute("message", "Đã đăng nhập!");
         return new ModelAndView("forward:/", model);
     }
-
+    
+   
     @RequestMapping("/security/login/error")
     public String loginError(Model model) {
         model.addAttribute("message", "Tên đăng nhập hoặc mật khẩu không đúng!");

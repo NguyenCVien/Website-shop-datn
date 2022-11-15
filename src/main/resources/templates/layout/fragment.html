@@ -7,6 +7,7 @@
 	<script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/79be7d9c55.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="/assets/css/index.css">
+	<link rel="stylesheet" href="/assets/css/detail.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!--  Angular -->
@@ -16,11 +17,6 @@
 
 <body class="container-fluid" ng-app="shopping-cart-app" 
 	ng-controller="shopping-cart-ctrl">
-	<div class="row">
-		<div class="col-sm-12">
-			<img  class="banner1" src="/assets/images/Ảnh chụp màn hình 2022-10-04 233842.jpg" alt="">
-		</div>
-	</div>
 	<nav class="col-sm-12">		
 		<ul>
 			<li><a th:href="@{/}"><img class="imgHome" src="/assets/images/logo2.jpg" alt=""></a></li>
@@ -39,9 +35,6 @@
 					<li><a class="dropdown-item" href="#!">English</a></li>
 					<li><a class="dropdown-item" href="#!">Việt Nam</a></li>
 				</ul>
-			</li>
-			<li th:if="${#request.isUserInRole('DIRE')}">
-				<a th:href="@{/admin/authority}">Administration</a>
 			</li>
 			<li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
 				<a th:href="@{/admin}">Admin Home</a>
@@ -78,13 +71,17 @@
 		<div class="container">
 			<div class="menu-bar-content">
 				<ul>
-					<li><a href="/product/list?cid=2"><i class="fa-solid fa-mobile-screen-button"></i> Điện thoại</a></li>
-					<li><a href="/product/list?cid=3"><i class="fa-solid fa-laptop"></i> Laptop</a></li>
-					<li><a href="/product/list?cid=4"><i class="fa-solid fa-tablet-screen-button"></i> Ipad</a></li>
-					<li><a href="/product/list?cid=5"><i class="fa-regular fa-keyboard"></i> Bàn phím</a></li>
-					<li><a href="/product/list?cid=6"><i class="fa-solid fa-computer-mouse"></i> Chuột máy tính</a></li>
-					<li><a href="/product/list?cid=7"><i class="fa-solid fa-tv"></i> Màn hình</a></li>
-					<li><a href="/product/list?cid=8"><i class="fa-solid fa-headphones"></i> Tai nghe <i class="fas fa-sort-down"></i></a></li>
+					<li><a href="/product/list?cid=2"><i
+							class="fa-solid fa-mobile-screen-button"></i> Điện thoại</a></li>
+					<li><a href="/product/list?cid=3"><i
+							class="fa-solid fa-laptop"></i> Laptop</a></li>
+					<li><a href="/product/list?cid=4"><i
+							class="fa-solid fa-tablet-screen-button"></i> Ipad</a></li>
+					<li><a href="/product/list?cid=5"><i
+							class="fa-regular fa-clock"></i> Đồng hồ</a></li>
+					<li><a href="/product/list?cid=2005"><i
+							class="fa-solid fa-tv"></i> Máy tính bàn</a></li>
+					<li><a href="/product/list?cid=8"> Phụ kiện</a></li>
 				</ul>
 			</div>
 		</div>

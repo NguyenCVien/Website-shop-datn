@@ -14,13 +14,6 @@
 
 <body class="container-fluid" ng-app="shopping-cart-app"
 	ng-controller="shopping-cart-ctrl">
-	<div class="row">
-		<div class="col-sm-12">
-			<img class="banner1"
-				src="/assets/images/Ảnh chụp màn hình 2022-10-04 233842.jpg"
-				alt="">
-		</div>
-	</div>
 	<nav class="col-sm-12">
 		<ul>
 			<li><a th:href="@{/}"><img class="imgHome"
@@ -52,9 +45,6 @@
 					<li><a class="dropdown-item" href="#!">English</a></li>
 					<li><a class="dropdown-item" href="#!">Việt Nam</a></li>
 				</ul>
-			</li>
-			<li th:if="${#request.isUserInRole('DIRE')}">
-				<a th:href="@{/admin/authority}">Administration</a>
 			</li>
 			<li
 				th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">

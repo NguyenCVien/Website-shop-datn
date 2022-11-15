@@ -23,7 +23,7 @@ public class Order implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long orderId;
-    private String username;
+    //private String username;
     private String createDay;
     private int telePhone;	
     private String address;

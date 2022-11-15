@@ -24,6 +24,10 @@
 									<h3 class="text-center font-weight-light my-4">Đăng ký tài
 										khoản</h3>
 								</div>
+								<div th:if="${message != null}" class="alert alert-primary"
+												role="alert">
+												<i>[[${message}]]</i>
+								</div>
 								<div class="card-body">
 									<form action="/register/save" method="post"
 										th:object="${account}">
@@ -59,10 +63,6 @@
 														for="inputPasswordConfirm">Xác nhận mật khẩu</label>
 												</div>
 											</div>
-											<div th:if="${message != null}" class="alert alert-primary"
-												role="alert">
-												<i>[[${message}]]</i>
-											</div>
 										</div>
 										<div class="mt-4 mb-0">
 											<div class="d-grid">
@@ -89,9 +89,9 @@
 				<div class="container-fluid px-4">
 					<div
 						class="d-flex align-items-center justify-content-between small">
-						<div class="text-muted">Copyright &copy; Your Website 2022</div>
+						<div class="text-muted">Copyright &copy; Shop-Now 2022</div>
 						<div>
-							<a href="#">Privacy Policy</a> &middot; <a href="#">Terms
+							<a href="/">Privacy Policy</a> &middot; <a href="#">Terms
 								&amp; Conditions</a>
 						</div>
 					</div>

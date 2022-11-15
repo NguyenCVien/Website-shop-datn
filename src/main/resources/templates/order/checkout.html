@@ -9,7 +9,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
             <form>
                 <div class="text-center">
                     <h2 class="alert alert-success">Thông tin khách hàng</h2>
-                    <p class="lead">Vui lòng kiểm tra đầy đủ thông tin trước khi đặt hàng!</p>
+                    <p class="lead">Vui lòng kiểm tra thông tin trước khi đặt hàng!</p>
                 </div>
                 <div class="row">
                     <div class="col-md-4 order-md-2 mb-4">
@@ -33,13 +33,13 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                                 </div>
                                 <span class="">30.000đ</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span><i class="fa-solid fa-coins"></i> Tổng tiền thanh toán:</span>
-                                <div class="vnd">{{cart.amount - 30000 | number : 0 }} VND</div>
-                            </li>
+                            <div class="am mt-4">
+								<span><i class="fa-solid fa-coins"></i> Tổng tiền thanh toán:</span>
+								<button class="vnd">{{cart.amount + 30000 | number : 0 }} VND</button>
+                            </div>
                         </ul>
                         
-                        <div class="cart_sub">
+                        <div class="cart_sub mt-4">
                             <button class="order" ng-click="order.purchase()">Hoàn tất đặt hàng</button>
                         </div>
                     </div>
@@ -47,7 +47,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                         <h4 class="mb-3"><i class="fa-solid fa-file-signature"></i> Thông tin khách hàng</h4>
                         <div class="row">
                             <div class="col-md-6">
-                                <label for="kh_ten"><i class="fa-solid fa-pen-nib"></i> Họ tên:</label>
+                                <label for="kh_ten"><i class="fa-solid fa-pen-nib"></i> Họ tên</label>
                                 <div class="form-control" id="username">[[${#request.remoteUser}]]</div>                       
                             </div>
                             <div class="col-md-6">

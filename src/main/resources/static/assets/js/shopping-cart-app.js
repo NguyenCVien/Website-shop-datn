@@ -11,6 +11,7 @@ app.controller("shopping-cart-ctrl", function ($scope, $http) {
             if (item) {
                 item.qty++;
                 this.saveToLocalStorage();
+                alert ("Đã thêm vào giỏ!");
             } else {
                 $http.get(`/rest/products/${id}`).then(resp => {
                     resp.data.qty = 1;
@@ -71,7 +72,6 @@ $scope.order = {
                 product: { productId: item.productId },
                 price: item.unitPrice,
                 discount: item.discount,
-                status: item.discount,
                 quantity: item.qty
             }
         });
