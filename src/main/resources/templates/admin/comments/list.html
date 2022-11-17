@@ -4,26 +4,37 @@
 <body>
 	<main>
 		<div class="card">
-			<div class="card-header card bg-secondary text-white"
+			 <div class="card-header card bg-secondary text-white"
 				style="text-align: center">
-				<h3>Danh sách phản hồi về hệ thống</h3>
+				<h3>Danh sách bình luận</h3>
 			</div>
 			<div class="card-body">
+				<div th:if="${message != null}" class="alert alert-primary"
+					role="alert">
+					<i>[[${message}]]</i>
+				</div>
 				<table id="datatablesSimple">
-					<thead class="bg-light ">
+              <thead class="bg-light ">
 						<tr>
-							<th>Mã</th>
+							<th>Mã bình luận</th>
+							<th>Tài khoản</th>
+							<th>Mã sản phẩm</th>
 							<th>Mô tả</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="item: ${feedbacks}">
-							<td th:utext="${item.feedbackId}"></td>
+						<tr th:each="item: ${comments}">
+							<td th:utext="${item.commentId}"></td>
+							<td th:utext="${item.username}"></td>
+							<td th:utext="${item.productId}"></td>
 							<td th:utext="${item.description}"></td>
 							<td>
 								<div class="btn-group btn-group-xs">
-									<a class="btn btn-danger" th:data-id="${item.feedbackId}"
-										th:data-name="${item.feedbackId}"
+									<a class="btn btn-warning mr-2"
+										th:href="@{'/admin/comments/edit/' + ${item.commentId}}">
+										<i class="fa-regular fa-pen-to-square"></i>
+									</a> <a class="btn btn-danger" th:data-id="${item.commentId}"
+										th:data-name="${item.commentId}"
 										onclick="showConfirmModalDialog(this.getAttribute('data-id'), this.getAttribute('data-name'))">
 										<i class="fa-solid fa-trash-can"></i>
 									</a>
@@ -33,10 +44,10 @@
 					</tbody>
 					<script>
 						function showConfirmModalDialog(id, name) {
-							$('#feedbackId').text(name);
+							$('#commentId').text(name);
 							$('#yesOption').attr('href',
-									'/admin/feedbacks/delete/' + id);
-							$('#noOption').attr('href', '/admin/feedbacks');
+									'/admin/comments/delete/' + id);
+							$('#noOption').attr('href', '/admin/comments');
 							$('#confirmationId').modal('show');
 						}
 					</script>
@@ -52,11 +63,11 @@
 									</button>
 								</div>
 								<div class="modal-body">
-									Bạn có muốn xóa phản hồi mã "<span id="feedbackId"></span>"?
+									Bạn có muốn xóa bình luận mã "<span id="commentId"></span>"?
 								</div>
 								<div class="modal-footer">
-									<a id="yesOption" type="button" class="btn btn-danger">Đồng
-										ý</a> <a id="noOption" type="button" class="btn btn-secondary"
+									<a id="yesOption" type="button" class="btn btn-danger">Đồng ý</a>
+									<a id="noOption" type="button" class="btn btn-secondary"
 										data-dismiss="modal">Hủy</a>
 								</div>
 							</div>
@@ -64,6 +75,7 @@
 					</div>
 				</table>
 			</div>
+			
 		</div>
 	</main>
 </body>
