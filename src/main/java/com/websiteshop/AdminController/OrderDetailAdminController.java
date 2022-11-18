@@ -118,13 +118,13 @@ public class OrderDetailAdminController {
 		Optional<OrderDetail> opt = orderDetailService.findById(orderDetailId);
 
 		if (opt.isPresent()) {
-			orderDetailService.delete(opt.get());
-			model.addAttribute("message", "Đơn hàng chi tiết đã được xóa!");
+			orderDetailService.deleteById(orderDetailId);
+			model.addAttribute("message", "Đơn hàng đã hủy!");
 		} else {
 			model.addAttribute("message", "Không tìm thấy đơn hàng chi tiết");
 		}
 
-		return new ModelAndView("forward:/admin/orderDetails", model);
+		return new ModelAndView("forward:/order/list", model);
 	}
 
 }

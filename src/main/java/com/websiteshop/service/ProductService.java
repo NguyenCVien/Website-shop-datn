@@ -2,16 +2,9 @@ package com.websiteshop.service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Function;
-
-import org.hibernate.criterion.Example;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
-
-import com.websiteshop.dao.ProductDAO;
 import com.websiteshop.entity.Product;
 
 public interface ProductService {
@@ -40,13 +33,12 @@ public interface ProductService {
 
     void deleteAllInBatch(Iterable<Product> entities);
 
-
     boolean existsById(Long id);
 
     void deleteInBatch(Iterable<Product> entities);
 
     Optional<Product> findById(Long id);
- 
+
     <S extends Product> List<S> saveAllAndFlush(Iterable<S> entities);
 
     <S extends Product> S saveAndFlush(S entity);
@@ -59,15 +51,15 @@ public interface ProductService {
 
     List<Product> findAll(Sort sort);
 
-    Page<Product> findAll(Pageable pageable);
-
     List<Product> findAll();
-
 
     <S extends Product> S save(S entity);
 
     List<Product> findByCategoryId(Long cid);
 
-	List<Product> findByNameContaining(String name);
-  
+    List<Product> findByNameContaining(String name);
+
+    Page<Product> findByNameContaining(String name, Pageable pageable);
+
+    Page<Product> findAll(Pageable pageable);
 }

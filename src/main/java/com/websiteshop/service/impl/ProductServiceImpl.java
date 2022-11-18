@@ -21,11 +21,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Autowired
     ProductDAO pdao;
-    
-    @Override
-	public List<Product> findByNameContaining(String name) {
-		return pdao.findByNameContaining(name);
-	}
 
     @Override
     public List<Product> findByCategoryId(Long cid) {
@@ -36,7 +31,6 @@ public class ProductServiceImpl implements ProductService {
     public <S extends Product> S save(S entity) {
         return pdao.save(entity);
     }
-
 
     @Override
     public List<Product> findAll() {
@@ -93,18 +87,15 @@ public class ProductServiceImpl implements ProductService {
         return pdao.existsById(id);
     }
 
-
     @Override
     public void deleteAllInBatch(Iterable<Product> entities) {
         pdao.deleteAllInBatch(entities);
     }
 
-
     @Override
     public void deleteAllByIdInBatch(Iterable<Long> ids) {
         pdao.deleteAllByIdInBatch(ids);
     }
-
 
     @Override
     public long count() {
@@ -154,6 +145,16 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void deleteAll() {
         pdao.deleteAll();
+    }
+
+    @Override
+    public List<Product> findByNameContaining(String name) {
+        return pdao.findByNameContaining(name);
+    }
+
+    @Override
+    public Page<Product> findByNameContaining(String name, Pageable pageable) {
+        return pdao.findByNameContaining(name, pageable);
     }
 
 }

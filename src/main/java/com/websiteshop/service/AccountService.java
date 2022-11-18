@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 
 import com.websiteshop.entity.Account;
 
@@ -81,5 +82,7 @@ public interface AccountService {
 	Page<Account> findByUsernameContaining(String username, Pageable pageable);
 
 	public List<Account> getAdministrators();
+
+	void loginFormOAuth2(OAuth2AuthenticationToken oauth2);
 
 }

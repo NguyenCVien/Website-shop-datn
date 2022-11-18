@@ -6,7 +6,7 @@
         <main th:object="${item}" class="container-fluid" >
             <div class="row"> 
                 <div class="col-sm-4"></div>		
-                Loại hàng: [(*{category.name})]. 	
+                <lable th:text="#{detail.name}"></lable>: [(*{category.name})]. 	
             </div>
             <div class="row" >
                 <article class="col-sm-9">
@@ -28,24 +28,24 @@
                         </div>
                         <div class="col-sm-7">
                             <fieldset style="line-height: 30px;">
-                                <legend>Tên sản phẩm: [(*{name})].</legend>
-                                <li class="price">[('Giá:' +' '+ *{unitPrice} )]đ</li>
-                                <li class="discount">[('Giảm:' +' '+  *{discount})]đ</li>
-                                <li>số lượng đã bán: [[*{quantity}]]</li>
-                                <li><span class="badge badge-danger">Mô tả: </li> 
+                                <legend><lable th:text="#{cart.name}"></lable>: [(*{name})].</legend>
+                                <li class="price"><lable th:text="#{cart.price}"></lable>: [(*{unitPrice} )]đ</li>
+                                <li class="discount"><lable th:text="#{cart.discount}"></lable>: [(*{discount})]đ</li>
+                                <li><lable th:text="#{detail.qty}"></lable>: [[*{quantity}]]</li>
+                                <li><span class="badge badge-danger"><lable th:text="#{detail.des}"></lable>: </li> 
                                     <div class="discription">
                                         [(*{discription})] 
                                     </div>                               		                                            
                                 <div class="form-group">
-                                    <li><label for="exampleFormControlTextarea1">Đánh giá:</label></li>
+                                    <li><label for="exampleFormControlTextarea1"><lable th:text="#{detail.feedb}"></lable>:</label></li>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                     <div class="bot mt-4">
                                         <a th:href="@{/product/list}" class="btn btn-warning mr-3">
-                                            <i class="fa fa-angle-left"></i> Tiếp tục mua hàng
+                                            <i class="fa fa-angle-left"></i> <lable th:text="#{product.btn.continute}"></lable>
                                         </a>
                                         <button th:attr="ng-click=@{|cart.add(${item.productId})|}"
                                             class="btn btn-success">
-                                            <i class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng
+                                            <i class="fas fa-shopping-cart"></i> <a th:text="#{product.btn.cart}"></a>
                                         </button>
                                     </div>
                                 </div>                        
@@ -56,7 +56,7 @@
                 <aside class="col-sm-3" >
                     <div class="card poly-cart " data-toggle="collapse" href="#chungloai">
                         <div class="card-header" style="cursor: pointer;">
-                            <span class="glyphicon glyphicon-th-list"></span>Mặt hàng cùng loại:
+                            <span class="glyphicon glyphicon-th-list" th:text="#{product.same_item}"></span>:
                         </div>                       
                             <ul class="list-group card-collapse" id="chungloai">
                                 <li class="list-group-item " th:each=" item:*{category.products}">

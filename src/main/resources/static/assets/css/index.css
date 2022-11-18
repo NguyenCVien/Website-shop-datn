@@ -17,7 +17,7 @@
 
   /*--------------------nav*/
   nav {
-    background-color: black;
+    background-color:black;
     height: 100%;
     padding: 20px;
     font-weight: bold;
@@ -63,7 +63,7 @@
   }
 
   nav ul li:nth-child(2) button:hover {
-    background-color: rgb(230, 18, 92);
+    background-color: yellow;
   }
 
   nav ul li:nth-child(3) button {
@@ -80,6 +80,7 @@
   nav ul li:nth-child(3) button i {
     margin-right: 6px;
   }
+
 .cart{
   font-size: 45px;
   margin-left: 70px;
@@ -89,17 +90,9 @@
   color: rgb(189, 239, 6);
 }
 
-  nav ul li:nth-child(3) button:hover {
-    background-color: rgb(99, 99, 101);
-  }
-
-  nav ul li:nth-child(4) {
-    text-align: center;
-  }
-
-  nav ul li:nth-child(4):hover a {
-    color: aqua;
-  }
+a :hover{
+  cursor: pointer;
+}
 
   @keyframes btnani {
     from {
@@ -133,7 +126,7 @@
     background-color: rgb(219, 231, 225);
     width: 100%;
     font-weight: bold;
-    
+
   }
 
   .menu-bar ul {
@@ -143,22 +136,22 @@
 
   .menu-bar ul li a {
     color: rgb(9, 9, 9);
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Times New Roman', Times, serif;
   }
 
   .menu-bar ul li a i {
     margin-right: 8px;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .menu-bar ul li {
-    padding: 12px 6px;
-    transition: all 0.3s ease;
+    padding: 12px 20px;
+    transition: all 0.5s ease;
   }
 
   .menu-bar ul li:hover {
-    background-color: white;
+    background-color: rgb(249, 3, 171);
   }
 
   /*-------------------footer----------*/
@@ -178,11 +171,18 @@
     flex-wrap: wrap;
     flex-direction: row;
   }
+/*       --            content           --            */
+.page{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 5px;
+}
 
 /*    card    */
   .card{
     --spacing:25px;
-    --columns:4;
+    --columns:6;
     display: flex;
     flex-wrap: wrap;
     margin-left: calc(-1 * var(--spacing));
@@ -199,12 +199,14 @@
 }
 .card-footer{
   font-size: 14px;
-  height: 148px;
+  height: 140px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
+  flex-shrink: 1;
 }
 .card-title{
+  text-align: center;
   font-weight: bolder;
   font-family: serif;
   display: -webkit-box;
@@ -213,9 +215,15 @@
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: normal;
+
+}
+.title{
+  background-image: 
+    linear-gradient(90deg, red, blue) ;
 }
 .card-bottom{
   margin-top: auto;
+  line-height: 12px;
 }
 .card-bot{
   display: flex;
@@ -249,22 +257,24 @@
 }
 .m{
   width: 100%;
-  height: 120px;
+  height: 70px;
 }
 .n{
   width: 100%;
-  height: 253px;
+  height: 159px;
 }
-
+.img-title{
+	width: 100%;
+}
 .imgHome{
   width: 130px;
   
 }
 
 .imgSale{
-  width: 100%;
-  height: 60px;
-  margin: 10px ;
+  display: flex;
+  justify-content: space-between;
+  height: 45px;
 }
 .imgindex{
   height: 150px;

@@ -115,6 +115,15 @@
 .btn-facebook {
   color: white;
   background-color: #3b5998;
+  border: none;
+}
+.a :hover {
+  color: #040003;
+}
+.a{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .message{
   text-align: center;

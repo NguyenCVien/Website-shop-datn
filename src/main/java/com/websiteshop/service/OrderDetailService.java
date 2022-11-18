@@ -28,11 +28,11 @@ public interface OrderDetailService {
 
 	OrderDetail getById(Long id);
 
-	void delete(OrderDetail entity);
+	void delete(OrderDetail id);
+	
+	void deleteById(Long id);
 
 	OrderDetail getOne(Long id);
-
-	void deleteById(Long id);
 
 	void deleteAllInBatch();
 
@@ -75,5 +75,5 @@ public interface OrderDetailService {
 	<S extends OrderDetail> Optional<S> findOne(Example<S> example);
 
 	<S extends OrderDetail> S save(S entity);
-	
+
 }

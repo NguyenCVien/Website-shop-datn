@@ -14,7 +14,8 @@ public class OrderDto implements Serializable {
     private Long orderId;
     private String username;
     private String createDay;
-    private int telePhone;
+    private String telePhone;
     private String address;
+    private String name;
     private Boolean isEdit;
 }

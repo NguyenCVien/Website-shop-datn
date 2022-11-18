@@ -65,6 +65,7 @@ $scope.order = {
     createDay: new Date(),
     address: "",
     telePhone:"",
+    name: "",
     account: { username: $("#username").text() },
     get orderDetails() {
         return $scope.cart.items.map(item => {

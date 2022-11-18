@@ -14,3 +14,9 @@
 .img-1{
     width: 300px;
 }
+.cancel{
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	
+}

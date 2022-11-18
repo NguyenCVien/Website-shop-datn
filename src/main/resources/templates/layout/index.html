@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+<html lang="vi" xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,17 +9,23 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!--  Angular -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-	<title>Shop-Now</title>
+	<title>Shop-Now</title>  
 </head>
 
 <body class="container-fluid" ng-app="shopping-cart-app"
 	ng-controller="shopping-cart-ctrl">
+	<div class="row">
+		<div class="col-sm-12">
+			<img class="img-title" src="/assets/images/banner-title.png" alt="">
+		</div>
+	</div>
 	<nav class="col-sm-12">
 		<ul>
 			<li><a th:href="@{/}"><img class="imgHome"
-					src="/assets/images/logo2.jpg" alt=""></a></li>
+					src="/assets/images/logo2.jpg" alt=""></a>
+			</li>
 			<li>
-				<form th:action="@{/product/search}">
+				<form th:action="@{/view/page}">
 					<input type="text" name="name" id="name" aria-describedby="helpId"
 						placeholder="Bạn tìm gì...">
 					<button>
@@ -27,58 +33,68 @@
 					</button>
 				</form>
 			</li>
-			<a th:href="@{/cart/view}"><li><i
-					class="fas fa-shopping-cart cart"></i> Giỏ hàng({{cart.count}} Sản
-					phẩm)</li></a>
+			<a th:href="@{/cart/view}"><li>
+					<i class="fas fa-shopping-cart cart"></i> 
+					<label th:text="#{nav.cart}"></label>({{cart.count}} 
+					<label th:text="#{nav.cart.product}"></label>)</li>
+			</a>
 			<th:block th:if="${#request.remoteUser}">
-				<a th:href="@{/order/list}">Lịch sử <br> đơn hàng
+				<a th:href="@{/order/list}">
+					<i class="fa-solid fa-clock-rotate-left"></i> 
+					<label th:text="#{nav.order_history}"></label>
 				</a>
 			</th:block>
-
-			<li><a th:href="@{/help}">Hỏi đáp</a></li>
+			<li><a th:href="@{/help}">
+				<i class="fa-regular fa-circle-question"></i> 
+				<label th:text="#{nav.answer}"></label></a>
+			</li>
 			<li class="nav-item dropdown navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
 				<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
-				role="button" data-bs-toggle="dropdown" aria-expanded="false">Ngôn
-					ngữ</a>
+					role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<i class="fa-solid fa-language"></i> <label th:text="#{nav.language}"></label>
+				</a>
 				<ul class="dropdown-menu dropdown-menu-end"
 					aria-labelledby="navbarDropdown">
-					<li><a class="dropdown-item" href="#!">English</a></li>
-					<li><a class="dropdown-item" href="#!">Việt Nam</a></li>
+					<li><a class="dropdown-item" href="?lang=en">English</a></li>
+					<li><a class="dropdown-item" href="?lang=vi">Việt Nam</a></li>
 				</ul>
 			</li>
-			<li
-				th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
-				<a th:href="@{/admin}">Admin Home</a>
+			<li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
+				<a th:href="@{/admin}">
+					<i class="fa-solid fa-lock-open"></i> 
+					<label th:text="#{nav.admin}"></label></a>
 			</li>
 			<th:block th:unless="${#request.remoteUser}">
 				<li class="nav-item"><a class="nav-link item"
-					th:href="@{/security/register}"> <i
-						class="fa-solid fa-earth-americas"></i> Đăng kí
-				</a></li>
+					th:href="@{/security/register}"> 
+					<i class="fa-solid fa-earth-americas"></i> 
+					<label th:text="#{nav.register}"></label></a>
+				</li>
 			</th:block>
 			<th:block th:unless="${#request.remoteUser}">
 				<li class="nav-item"><a class="nav-link item"
-					th:href="@{/security/login/form}"> <i
-						class="fa-solid fa-earth-americas"></i> Đăng nhập
-				</a></li>
+					th:href="@{/security/login/form}" > <i
+						class="fa-solid fa-earth-americas"></i> 
+						<label th:text="#{nav.sign}"></label></a>
+				</li>
 			</th:block>
 			<th:block th:if="${#request.remoteUser}">
-				<li
-					class="nav-item dropdown navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-					<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
-					role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						<i class="fas fa-user fa-fw"></i> [[${#request.remoteUser}]]
-				</a>
-					<ul class="dropdown-menu dropdown-menu-end"
-						aria-labelledby="navbarDropdown">
-						<li><a class="dropdown-item" href="#!">Cài đặt</a></li>
-						<li><a class="dropdown-item" th:href="@{/security/change}">Thông
-								tin cá nhân</a></li>
-						<li><a class="dropdown-item"
-							th:href="@{/security/forgotPassword}">Quên mật khẩu</a></li>
-						<li><hr class="dropdown-divider" /></li>
-						<li><a class="dropdown-item" th:href="@{/security/logoff}">Đăng
-								xuất</a></li>
+				<li class="nav-item dropdown navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+					<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+						data-bs-toggle="dropdown" aria-expanded="false">
+						<i class="fas fa-user fa-fw"></i> 
+						[[${#request.remoteUser}]]</a>
+					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+						<li><a class="dropdown-item" href="#!" 
+							th:text="#{nav.setting}"></a></li>
+						<li><a class="dropdown-item" th:href="@{/security/change}" 
+							th:text="#{nav.info}"></a></li>
+						<li><a class="dropdown-item" th:href="@{/security/forgotPassword}" 
+							th:text="#{nav.change_password}"></a></li>
+						<li><hr class="dropdown-divider" /></li>  
+						<li><a class="dropdown-item" th:href="@{/security/logoff}" 
+							th:text="#{nav.sign_out}"></a>
+						</li>
 					</ul>
 				</li>
 			</th:block>
@@ -88,51 +104,55 @@
 		<div class="container">
 			<div class="menu-bar-content">
 				<ul>
-					<li><a href="/product/list?cid=2"><i
-							class="fa-solid fa-mobile-screen-button"></i> Điện thoại</a></li>
+					<li class="hov"><a href="/product/list?cid=2"><i
+							class="fa-solid fa-mobile-screen-button"></i> <lable th:text="#{section.phone}"></lable></a></li>
 					<li><a href="/product/list?cid=3"><i
 							class="fa-solid fa-laptop"></i> Laptop</a></li>
 					<li><a href="/product/list?cid=4"><i
 							class="fa-solid fa-tablet-screen-button"></i> Ipad</a></li>
 					<li><a href="/product/list?cid=5"><i
-							class="fa-regular fa-clock"></i> Đồng hồ</a></li>
+							class="fa-regular fa-clock"></i> <lable th:text="#{section.watch}"></lable></a></li>
 					<li><a href="/product/list?cid=2005"><i
-							class="fa-solid fa-tv"></i> Máy tính bàn</a></li>
-					<li><a href="/product/list?cid=8"> Phụ kiện</a></li>
+							class="fa-solid fa-tv"></i> <lable th:text="#{section.computer}"></lable></a></li>
+					<li><a href="/product/list?cid=8"><i class="fa-solid fa-headphones"></i> <lable th:text="#{section.accessory}"></lable></a></li>
 				</ul>
 			</div>
 		</div>
 	</section>
-
+	<div class="imgSale mb-2">
+		<img src="/assets/images/img-sale4.png" alt="">
+		<img src="/assets/images/bannerSale1.png" alt="">
+		<img src="/assets/images/img-sale9.png" alt="">
+		<img src="/assets/images/bannerSale3.png" alt="">
+		<img src="/assets/images/img-sale6.png" alt="">
+	</div>
 	<div class="row">
 		<div class="col-sm-8">
 			<img src="/assets/images/bannerSale.png" alt="" class="n">
 		</div>
 		<div class="col-sm-4">
-			<img src="/assets/images/banner3.png" alt="" class="m mb-3"> <img
-				src="/assets/images/bannerSale22.png" alt="" class="m">
+			<img src="/assets/images/img-sale8png.png" alt="" class="m mb-2"> 
+			<img src="/assets/images/img-sale5.png" alt="" class="m">
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-sm-4">
-			<img class="imgSale" src="/assets/images/bannerSale1.png" alt="">
+	<div class="page">	
+		<div class="row">
+			<div class="col">
+				<img class="hotsale" src="/assets/images/hot-icon.gif" alt="">
+				<p class="km" th:text="#{main.PROMOTION}"></p>
+			</div>
 		</div>
-		<div class="col-sm-4">
-			<img class="imgSale" src="/assets/images/bannerSale2.png" alt="">
-		</div>
-		<div class="col-sm-4">
-			<img class="imgSale" src="/assets/images/bannerSale3.png" alt="">
-		</div>
-	</div>
-	<div class="row">
-		<div class="col ml-5 mt-5">
-			<img class="hotsale" src="/assets/images/hot-icon.gif" alt="">
-			<p class="km">khuyến mãi hot!</p>
-		</div>
+		<ul class="pagination">
+			<li class="page-item"><a class="page-link" href="/view/page?p=0">First</a></li>
+			<li class="page-item"><a class="page-link" href="/view/page?p=1">1</a></li>
+			<li class="page-item"><a class="page-link" href="/view/page?p=2">2</a></li>
+			<li class="page-item"><a class="page-link" href="/view/page?p=3">3</a></li>
+			<li class="page-item"><a class="page-link" href="/view/page?p=4">4</a></li>
+			<li class="page-item"><a class="page-link" href="/view/page?p=5">5</a></li>
+			<li class="page-item"><a class="page-link" href="/view/page?p=6">Last</a></li>
+		</ul>
 	</div>
 
-	<br>
-	<br>
 	<!--           main             -->
 	<div class="row">
 		<div class="col">

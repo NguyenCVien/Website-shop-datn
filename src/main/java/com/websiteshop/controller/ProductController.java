@@ -2,8 +2,14 @@ package com.websiteshop.controller;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -43,19 +49,74 @@ public class ProductController {
         model.addAttribute("cates", dao.findAll());
         return "product/detail";
     }
-    
+
     @GetMapping("/product/search")
-	public String search(ModelMap model, @RequestParam(name = "name", required = false) String name) {
-		List<Product> list = null;
+    public String search(ModelMap model, @RequestParam(name = "name", required = false) String name) {
+        List<Product> list = null;
 
-		if (StringUtils.hasText(name)) {
-			list = productService.findByNameContaining(name);
-		} else {
-			list = productService.findAll();
-		}
-		model.addAttribute("items", list);
-		return "product/list";
-	}
+        if (StringUtils.hasText(name)) {
+            list = productService.findByNameContaining(name);
+        } else {
+            list = productService.findAll();
+        }
+        model.addAttribute("items", list);
+        return "product/list";
+    }
 
+    @GetMapping("/view/page")
+    public String viewPage(Model model,
+            @RequestParam(name = "name", required = false) String name,
+            @RequestParam("p") Optional<Integer> p) {
+
+        Pageable pageable = PageRequest.of(p.orElse(0), 12, Sort.by("name"));
+        Page<Product> page = null;
+        if (StringUtils.hasText(name)) {
+            page = productService.findByNameContaining(name, pageable);
+        } else {
+            page = productService.findAll(pageable);
+        }
+        model.addAttribute("items", page);
+        return "product/list";
+    }
+
+    @GetMapping("/search/paginated")
+    public String searchPaginated(ModelMap model,
+            @RequestParam(name = "name", required = false) String name,
+            @RequestParam("page") Optional<Integer> page,
+            @RequestParam("size") Optional<Integer> size) {
+
+        int currentPage = page.orElse(1);
+        int pageSize = size.orElse(12);
+        Pageable pageable = PageRequest.of(currentPage, pageSize, Sort.by("name"));
+        Page<Product> resultPage = null;
+
+        if (StringUtils.hasText(name)) {
+            resultPage = productService.findByNameContaining(name, pageable);
+            model.addAttribute("name", name);
+        } else {
+            resultPage = productService.findAll(pageable);
+        }
+
+        int totalPages = resultPage.getTotalPages();
+        if (totalPages > 0) {
+            int start = Math.max(1, currentPage - 2);
+            int end = Math.min(currentPage + 2, totalPages);
+
+            if (totalPages > 12) {
+                if (end == totalPages)
+                    start = end - 12;
+                else if (start == 1)
+                    end = start + 12;
+            }
+            List<Integer> pageNumbers = IntStream.rangeClosed(start, end)
+                    .boxed()
+                    .collect(Collectors.toList());
+
+            model.addAttribute("pageNumbers", pageNumbers);
+        }
+        model.addAttribute("productPage", resultPage);
+
+        return "product/list";
+    }
 
 }

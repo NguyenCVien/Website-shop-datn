@@ -5,15 +5,16 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 <body>
     <main class="container">
         <div class="card card">
-            <div class="card-header">LỊCH SỬ ĐẶT HÀNG</div>
+            <div class="card-header" th:text="#{order.list}">Lịch sử đơn hàng</div>
             <table class="table">
                 <thead>
                     <tr>
                         <th>No.</th>
-                        <th>Mã đơn hàng</th>
-                        <th>Ngày đặt hàng</th>                       
-                        <th>Số điện thoại</th>
-                        <th>Địa chỉ nhận hàng</th>
+                        <th th:text="#{order.Code_orders}">Mã đơn hàng</th>
+                        <th th:text="#{order.name}">Tên người đặt</th>
+                        <th th:text="#{order.date}">Ngày đặt </th>                       
+                        <th th:text="#{order.phone}">Số điện thoại</th>
+                        <th th:text="#{order.address}">Địa chỉ nhận hàng</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -21,6 +22,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                     <tr th:each=" order,state: ${orders}">
                         <td>[[${state.index}]]</td>             
                         <th>[[${order.orderId}]]</th>
+                        <th>[[${order.name}]]</th>
                         <th>[[${order.createDay}]]</th>
                         <th>[[${order.telePhone}]]</th>
                         <th>[[${order.address}]]</th>

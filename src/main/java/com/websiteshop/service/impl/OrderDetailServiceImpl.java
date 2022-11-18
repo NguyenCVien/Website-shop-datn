@@ -18,8 +18,8 @@ import com.websiteshop.service.OrderDetailService;
 @Service
 public class OrderDetailServiceImpl implements OrderDetailService {
 
-    @Autowired
-    OrderDetailDAO ddao;
+	@Autowired
+	OrderDetailDAO ddao;
 
 	@Override
 	public <S extends OrderDetail> S save(S entity) {
@@ -127,33 +127,13 @@ public class OrderDetailServiceImpl implements OrderDetailService {
 	}
 
 	@Override
-	public void deleteById(Long id) {
-		ddao.deleteById(id);
-	}
-
-	@Override
 	public OrderDetail getOne(Long id) {
 		return ddao.getOne(id);
 	}
 
 	@Override
-	public void delete(OrderDetail entity) {
-		ddao.delete(entity);
-	}
-
-	@Override
 	public OrderDetail getById(Long id) {
 		return ddao.getById(id);
-	}
-
-	@Override
-	public void deleteAllById(Iterable<? extends Long> ids) {
-		ddao.deleteAllById(ids);
-	}
-
-	@Override
-	public void deleteAll(Iterable<? extends OrderDetail> entities) {
-		ddao.deleteAll(entities);
 	}
 
 	@Override
@@ -176,5 +156,27 @@ public class OrderDetailServiceImpl implements OrderDetailService {
 		return ddao.findAll(example, sort);
 	}
 
-    
+	@Override
+	public void deleteAll(Iterable<? extends OrderDetail> entities) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteAllById(Iterable<? extends Long> ids) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	 @Override
+	    public void deleteById(Long id) {
+	        ddao.deleteById(id);
+	    }
+
+	@Override
+	public void delete(OrderDetail id) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
