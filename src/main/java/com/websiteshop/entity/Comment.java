@@ -12,11 +12,12 @@ import lombok.Data;
 @SuppressWarnings("serial")
 @Data
 @Entity
-@Table(name = "FeedBacks")
-public class Feedback  implements Serializable{
+@Table(name = "Comments")
+public class Comment  implements Serializable{
 	@Id	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long feedbackId;
+	private Long commentId;
+	private String username;
+	private Long productId;
 	private String description;
-	private Account username;
 }

@@ -3,14 +3,12 @@
 	th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
 <body>
 	<main>
-		<form action="/admin/feedbacks/saveOrUpdate" method="post"
-			enctype="multipart/form-data" th:object="${feedback}">
+		<form action="/admin/comments/saveOrUpdate" method="post" th:object="${comment}">
 			<div class="card">
 				<div class="card-header card bg-secondary text-white"
 					style="text-align: center">
 					<h2
-						th:text="${feedback.isEdit ? 'Chỉnh sửa bình luận' : 'Thêm mới bình luận'}">
-						New Feedback</h2>
+						th:text="${comment.isEdit ? 'Chỉnh sửa bình luận' : 'Thêm mới bình luận'}"></h2>
 				</div>
 				<div class="card-body">
 					<div class="row">
@@ -20,7 +18,7 @@
 								<div class="form-group col-sm-6">
 									<label for="feedbackId">Mã bình luận: </label> <input
 										type="text" readonly class="form-control" name="feedbackId"
-										th:field="*{feedbackId}" placeholder="Mã bình luận">
+										th:field="*{commentId}" placeholder="Mã bình luận">
 								</div>
 								<div class="form-group col-sm-6">
 									<label for="username"> Tài khoản</label> <select
@@ -28,7 +26,7 @@
 										th:field="*{username}">
 										<option th:each="item : ${accounts}"
 											th:value="${item.username}" th:text="${item.username}"
-											th:selected="${item.username == feedback.username}">Account
+											th:selected="${item.username == comment.username}">Account
 											Name</option>
 									</select>
 								</div>
@@ -40,7 +38,7 @@
 										th:field="*{productId}">
 										<option th:each="item : ${products}"
 											th:value="${item.productId}" th:text="${item.productId}"
-											th:selected="${item.productId == feedback.productId}">Mã
+											th:selected="${item.productId == comment.productId}">Mã
 											sản phẩm</option>
 									</select>
 								</div>
@@ -48,7 +46,7 @@
 							<div class="row">
 								<div class="col">
 									<div>Mô tả</div>
-									<textarea th:field="*{discription}" placeholder="Mô tả"
+									<textarea th:field="*{description}" placeholder="Mô tả"
 										style="height: 190px" class="mt-2 form-control description"></textarea>
 								</div>
 							</div>
@@ -57,25 +55,25 @@
 				</div>
 				<div class="card-footer text-center mt-5">
 					<button class="btn btn-primary mr-3"
-						th:text="${feedback.isEdit? 'Cập nhật':'Lưu'}">
+						th:text="${comment.isEdit? 'Cập nhật':'Lưu'}">
 						Save <i class="fa-solid fa-plus"></i>
 					</button>
-					<a th:href="@{/admin/feedbacks}" class="btn btn-success mr-2">Danh
+					<a th:href="@{/admin/comments}" class="btn btn-success mr-2">Danh
 						sách bình luận</a> <a class="btn btn-danger mr-2"
-						th:if="${feedback.isEdit}" th:data-id="${feedback.feedbackId}"
-						th:data-name="${feedback.feedbackId}"
+						th:if="${comment.isEdit}" th:data-id="${comment.commentId}"
+						th:data-name="${comment.commentId}"
 						onclick="showConfirmModalDialog(this.getAttribute('data-id'), this.getAttribute('data-name'))">
 						Xóa <i class="fa-regular fa-trash-can"></i>
-					</a> <a th:href="@{/admin/feedbacks/add}" class="btn btn-info mr-3">
+					</a> <a th:href="@{/admin/comment/add}" class="btn btn-info mr-3">
 						Làm mới <i class="fa-regular fa-window-restore"></i>
 					</a>
 				</div>
 			</div>
 			<script>
 				function showConfirmModalDialog(id, name) {
-					$('#feedbackId').text(name);
-					$('#yesOption').attr('href', '/admin/orders/delete/' + id);
-					$('#noOption').attr('href', '/admin/orders/edit/' + id);
+					$('#commentId').text(name);
+					$('#yesOption').attr('href', '/admin/comments/delete/' + id);
+					$('#noOption').attr('href', '/admin/comments/edit/' + id);
 					$('#confirmationId').modal('show');
 				}
 			</script>
@@ -91,7 +89,7 @@
 							</button>
 						</div>
 						<div class="modal-body">
-							Bạn có muốn xóa bình luận mã "<span id="feedbackId"></span>"?
+							Bạn có muốn xóa bình luận mã "<span id="commentId"></span>"?
 						</div>
 						<div class="modal-footer">
 							<a id="yesOption" type="button" class="btn btn-danger">Đồng ý</a>

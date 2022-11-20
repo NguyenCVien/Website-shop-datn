@@ -203,12 +203,12 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void loginFormOAuth2(OAuth2AuthenticationToken oauth2) {
-        //String fullname = oauth2.getPrincipal().getAttribute("name");
-        String email = oauth2.getPrincipal().getAttribute("email");
+        String fullname = oauth2.getPrincipal().getAttribute("User");
+        // String email = oauth2.getPrincipal().getAttribute("email");
         String password = Long.toHexString(System.currentTimeMillis());
 
-        UserDetails user = User.withUsername("email")
-                .password(password).roles("STAF").build();
+        UserDetails user = User.withUsername("user")
+                .password(password).roles("CUST").build();
         Authentication auth = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
         SecurityContextHolder.getContext().setAuthentication(auth);
     }

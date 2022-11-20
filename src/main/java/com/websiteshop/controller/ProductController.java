@@ -66,16 +66,16 @@ public class ProductController {
     @GetMapping("/view/page")
     public String viewPage(Model model,
             @RequestParam(name = "name", required = false) String name,
-            @RequestParam("p") Optional<Integer> p) {
+            @RequestParam("page") Optional<Integer> page) {
 
-        Pageable pageable = PageRequest.of(p.orElse(0), 12, Sort.by("name"));
-        Page<Product> page = null;
+        Pageable pageable = PageRequest.of(page.orElse(0), 12, Sort.by("name"));
+        Page<Product> pageProduct = null;
         if (StringUtils.hasText(name)) {
-            page = productService.findByNameContaining(name, pageable);
+            pageProduct = productService.findByNameContaining(name, pageable);
         } else {
-            page = productService.findAll(pageable);
+            pageProduct = productService.findAll(pageable);
         }
-        model.addAttribute("items", page);
+        model.addAttribute("items", pageProduct);
         return "product/list";
     }
 

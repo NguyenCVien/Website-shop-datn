@@ -1,19 +1,7 @@
-body {
-    background: white
+
+h4{
+    text-align: center;
 }
-
-
-.form-control{
-    width: 493px;
-}
-
-
-.labels {
-    font-size: 11px
-    
-}
-
-
-.custom {
-    width: 236px!important;
+label{
+    margin-bottom: 3px;
 }
