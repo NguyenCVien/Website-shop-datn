@@ -29,43 +29,51 @@
     align-items: center;
   }
 
-  nav ul li,
-  a {
-    color: white;
-    font-size: 15px;
-  }
-
   nav ul li:nth-child(2) {
     position: relative;
   }
 
   nav ul li:nth-child(2) input {
     height: 35px;
-    width: 250px;
+    width: 100%px;
     border-radius: 5px;
     border: none;
-    padding-left: 6px;
-
   }
 
   nav ul li:nth-child(2) button {
     position: absolute;
     font-size: 20px;
-    color: aqua;
+    color: #0056b3;
     background-color: black;
     line-height: 30px;
     cursor: pointer;
-    right: -45px;
     top: -2px;
     border-radius: 5px;
-    border: 1px solid white;
     padding: 4px 8px;
+    position: relative;
+    margin-left: 2px;
   }
 
   nav ul li:nth-child(2) button:hover {
-    background-color: yellow;
+    background-color: rgb(129, 126, 126);
   }
-
+  .cart-i{
+    display: flex;
+    position: relative;
+  }
+  .num{
+    border-color:red;
+    border-radius:45%;
+    border-style:solid;
+    border-width:1.99479px;
+    color:yellow;
+    font-family:'Times New Roman', Times, serif;
+    font-size:15px;
+    text-align:center;
+    width: 28px;
+    height: 27px;
+    
+  }
   nav ul li:nth-child(3) button {
     height: 50px;
     padding: 0 12px;
@@ -146,11 +154,11 @@ a :hover{
 
   .menu-bar ul li {
     padding: 12px 20px;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
   }
 
   .menu-bar ul li:hover {
-    background-color: rgb(249, 3, 171);
+    background-color: rgb(112, 111, 111);
   }
 
   /*-------------------footer----------*/

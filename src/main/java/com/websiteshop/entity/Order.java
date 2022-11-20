@@ -20,18 +20,19 @@ import lombok.Data;
 @Entity
 @Table(name = "Orders")
 public class Order implements Serializable {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long orderId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long orderId;
     private String createDay;
-    private String telePhone;	
+    private String telePhone;
     private String address;
     private String name;
-    
+    private String email;
+
     @ManyToOne
-	@JoinColumn(name = "Username")
-	Account account;
-    
+    @JoinColumn(name = "Username")
+    Account account;
+
     @JsonIgnore
     @OneToMany(mappedBy = "order")
     List<OrderDetail> orderDetails;

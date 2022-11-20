@@ -28,19 +28,18 @@
 					src="/assets/images/logo2.jpg" alt=""></a>
 			</li>
 			<li>
-				<form th:action="@{/product/search}">
-					<input type="text" name="name" id="name" aria-describedby="helpId"
-						placeholder="Bạn tìm gì...">
-					<button>
-						<i class="fa fa-search"></i>
-					</button>
+				<form th:action="@{/view/page}">
+					<div class="row">
+						<input type="text" name="name" id="name" aria-describedby="helpId" placeholder=" Bạn tìm gì...">
+						<button><i class="fa fa-search"></i></button>
+					</div>				
 				</form>
 			</li>
-			<a th:href="@{/cart/view}"><li>
+			<li>
+				<a th:href="@{/cart/view}" class="cart-i">
 					<i class="fas fa-shopping-cart cart"></i> 
-					<label th:text="#{nav.cart}"></label>({{cart.count}} 
-					<label th:text="#{nav.cart.product}"></label>)</li>
-			</a>
+					<label class="num">{{cart.count}}</label></a>
+			</li>
 			<th:block th:if="${#request.remoteUser}">
 				<a th:href="@{/order/list}">
 					<i class="fa-solid fa-clock-rotate-left"></i> 
@@ -62,9 +61,10 @@
 					<li><a class="dropdown-item" href="?lang=vi">Việt Nam</a></li>
 				</ul>
 			</li>
-			<li
-				th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
-				<a th:href="@{/admin}"><i class="fa-solid fa-lock-open"></i> Admin Home</a>
+			<li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
+				<a th:href="@{/admin}">
+					<i class="fa-solid fa-lock-open"></i> 
+					<label th:text="#{nav.admin}"></label></a>
 			</li>
 			<th:block th:unless="${#request.remoteUser}">
 				<li class="nav-item"><a class="nav-link item"
@@ -89,12 +89,12 @@
 					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 						<li><a class="dropdown-item" href="#!" 
 							th:text="#{nav.setting}"></a></li>
-						<li><a class="dropdown-item" th:href="@{/security/change}" 
-							th:text="#{nav.info}"></a></li>
+						<li><a th:href="@{|/info/${#request.remoteUser}|}" class="dropdown-item">					   
+							[[#{nav.infoAcc}]]</a></li>
 						<li><a class="dropdown-item" th:href="@{/security/forgotPassword}" 
 							th:text="#{nav.change_password}"></a></li>
-							<li><a class="dropdown-item" th:href="@{/admin/SendMail}">
-								[[#{nav.SendMail}]]</a></li>
+						<li><a class="dropdown-item" th:href="@{/admin/SendMail}">
+							[[#{nav.SendMail}]]</a></li>
 						<li><hr class="dropdown-divider" /></li>  
 						<li><a class="dropdown-item" th:href="@{/security/logoff}" 
 							th:text="#{nav.sign_out}"></a>

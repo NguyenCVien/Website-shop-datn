@@ -30,7 +30,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                                 <div>
                                     <h6 class="my-0"><i class="fa-solid fa-truck-arrow-right"></i> <lable th:text="#{checkout.Transportation_costs}"></lable></h6>
                                 </div>
-                                <span class="">30.000đ</span>
+                                <span class="">30.000 <sup>đ</sup></span>
                             </li>
                             <div class="am mt-4">
 								<span><i class="fa-solid fa-coins"></i> <lable th:text="#{checkout.Total}"></lable></span>
@@ -45,7 +45,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                     
                     <div class="col-md-8 order-md-1">
                         <div class="row">
-                        <div class="col-md-6">
+                            <div class="col-md-6">
                                 <label><i class="fa-solid fa-pen-nib"></i> <lable th:text="#{checkout.name}"></lable></label>
                                 <input ng-model="order.name" type="text" class="form-control">
                             </div>
@@ -58,8 +58,8 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                                 <input ng-model="order.telePhone" type="text" class="form-control">
                             </div>
                             <div class="col-md-6 mt-3">
-                                <label for="kh_ten"><i class="fa-solid fa-user"></i> <lable th:text="#{checkout.acc}"></lable></label>
-                                <div class="form-control" id="username">[[${#request.remoteUser}]]</div>                       
+                                <label><i class="fa-solid fa-pen-nib"></i> Email:</label>
+                                <input ng-model="order.email" type="text" class="form-control">
                             </div>
                             <div class="col-md-12 mt-3">
                                 <div><i class="fa-solid fa-location-dot"></i> <lable th:text="#{order.address}"></lable>:</div>
@@ -85,10 +85,10 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                             <tr ng-repeat="item in cart.items" >
                                 <td>{{item.productId}}</a></td>
                                 <td>{{item.name}}</td>
-                                <td>{{item.unitPrice | number : 0}}đ</td>
-                                <td>{{item.discount | number : 0}}đ</td>
+                                <td>{{item.unitPrice | number : 0}} <sup>đ</sup></td>
+                                <td>{{item.discount | number : 0}} <sup>đ</sup></td>
                                 <td><input ng-change="cart.saveToLocalStorage()" ng-model="item.qty" type="number" min="1" style="width: 60px;"></td>
-                                <td>{{item.qty*(item.unitPrice-item.discount) | number : 0}}đ</td>
+                                <td>{{item.qty*(item.unitPrice-item.discount) | number : 0}} <sup>đ</sup></td>
                                 <td>
                                 <button ng-click="cart.remove(item.productId)" class="btn btn-sm btn-danger">
                                     <i class="fa-regular fa-trash-can"></i>

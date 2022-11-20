@@ -23,8 +23,8 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                         <input th:field="*{telePhone}" class="form-control" readonly>
                     </div>
                     <div class="col-md-6 mt-3">
-                        <label for="kh_ten"><i class="fa-solid fa-tag"></i> <lable th:text="#{detail.code}"></lable>:</label>
-                        <input class="form-control" th:field="*{orderId}" readonly></input>                       
+                        <label for="kh_ten"><i class="fa-solid fa-tag"></i> Email:</label>
+                        <input class="form-control" th:field="*{email}" readonly></input>                       
                     </div>
                     <div class="col-md-12 mt-3">
                         <div><i class="fa-solid fa-location-dot"></i> <lable th:text="#{order.address}"></lable>:</div>
@@ -38,7 +38,8 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
             <table class="table">
                 <thead>
                     <tr>
-                    	<th><lable th:text="#{code.detail}"></lable></th>
+                        <th><lable th:text="#{code.detail}"></lable></th>
+                        <th><lable th:text="#{order.Code_orders}"></lable></th>
                         <th><lable th:text="#{cart.code}"></lable></th>
                         <th><lable th:text="#{cart.name}"></lable></th>
                         <th><lable th:text="#{cart.price}"></lable></th>
@@ -49,7 +50,8 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                 </thead>
                 <tbody>
                     <tr th:each="detail: *{orderDetails}" th:object="${detail}">
-                     	<td>[[*{orderDetailId}]]</td>
+                        <td>[[*{orderDetailId}]]</td>
+                        <td>[[*{order.orderId}]]</td>
                         <td>[[*{product.productId}]]</td>
                         <td>[[*{product.name}]]</td>
                         <td>[[*{price}]]</td>

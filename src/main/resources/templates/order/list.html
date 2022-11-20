@@ -3,18 +3,19 @@
 th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 
 <body>
-    <main class="container">
-        <div class="card card">
-            <div class="card-header" th:text="#{order.list}">Lịch sử đơn hàng</div>
+    <main class="container-fluid ml-3">
+        <div class="card">
+            <div class="card-header">[[#{order.list}]]</div>
             <table class="table">
                 <thead>
                     <tr>
                         <th>No.</th>
-                        <th th:text="#{order.Code_orders}">Mã đơn hàng</th>
-                        <th th:text="#{order.name}">Tên người đặt</th>
-                        <th th:text="#{order.date}">Ngày đặt </th>                       
-                        <th th:text="#{order.phone}">Số điện thoại</th>
-                        <th th:text="#{order.address}">Địa chỉ nhận hàng</th>
+                        <th>[[#{order.Code_orders}]]</th>
+                        <th>[[#{order.name}]]</th>
+                        <th>[[#{order.date}]]</th>                       
+                        <th>[[#{order.phone}]]</th>
+                        <th>Email</th>
+                        <th>[[#{order.address}]]</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -25,6 +26,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                         <th>[[${order.name}]]</th>
                         <th>[[${order.createDay}]]</th>
                         <th>[[${order.telePhone}]]</th>
+                        <th>[[${order.email}]]</th>
                         <th>[[${order.address}]]</th>
                         
                         <th>

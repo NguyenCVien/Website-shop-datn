@@ -28,18 +28,17 @@
 			</li>
 			<li>
 				<form th:action="@{/view/page}">
-					<input type="text" name="name" id="name" aria-describedby="helpId"
-						placeholder="Bạn tìm gì...">
-					<button>
-						<i class="fa fa-search"></i>
-					</button>
+					<div class="row">
+						<input type="text" name="name" id="name" aria-describedby="helpId" placeholder=" Bạn tìm gì...">
+						<button><i class="fa fa-search"></i></button>
+					</div>				
 				</form>
 			</li>
-			<a th:href="@{/cart/view}"><li>
+			<li>
+				<a th:href="@{/cart/view}" class="cart-i">
 					<i class="fas fa-shopping-cart cart"></i> 
-					<label th:text="#{nav.cart}"></label>({{cart.count}} 
-					<label th:text="#{nav.cart.product}"></label>)</li>
-			</a>
+					<label class="num">{{cart.count}}</label></a>
+			</li>
 			<th:block th:if="${#request.remoteUser}">
 				<a th:href="@{/order/list}">
 					<i class="fa-solid fa-clock-rotate-left"></i> 
