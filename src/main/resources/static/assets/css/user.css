@@ -5,3 +5,23 @@ h4{
 label{
     margin-bottom: 3px;
 }
+.avatar{
+	width: 321px;
+	height: 321px;
+    margin-bottom: 5px;
+}
+.content{
+    display: flex;
+    
+    
+}
+.card-title{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+.btn-bottom{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3px;
+}

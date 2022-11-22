@@ -35,9 +35,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                             <div class="am mt-4">
 								<span><i class="fa-solid fa-coins"></i> <lable th:text="#{checkout.Total}"></lable></span>
 								<button class="vnd">{{cart.amount + 30000 | number : 0 }} VND</button>
-                            </div>
-                        </ul>
-                        
+                            </div> 
                         <div class="cart_sub mt-4">
                             <button class="order" ng-click="order.purchase()"><lable th:text="#{checkout.purchase}"></lable></button>
                         </div>
@@ -47,7 +45,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                         <div class="row">
                             <div class="col-md-6">
                                 <label><i class="fa-solid fa-pen-nib"></i> <lable th:text="#{checkout.name}"></lable></label>
-                                <input ng-model="order.name" type="text" class="form-control">
+                                <input ng-model="order.name" type="text" class="form-control" required>
                             </div>
                             <div class="col-md-6">
                                 <label><i class="fa-solid fa-calendar-days"></i> <lable th:text="#{order.date}"></lable>:</label>
@@ -55,15 +53,15 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label><i class="fa-solid fa-phone"></i> <lable th:text="#{order.phone}"></lable>:</label>
-                                <input ng-model="order.telePhone" type="text" class="form-control">
+                                <input ng-model="order.telePhone" type="text" class="form-control" required>
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label><i class="fa-solid fa-pen-nib"></i> Email:</label>
-                                <input ng-model="order.email" type="text" class="form-control">
+                                <input ng-model="order.email" type="text" class="form-control" required>
                             </div>
                             <div class="col-md-12 mt-3">
                                 <div><i class="fa-solid fa-location-dot"></i> <lable th:text="#{order.address}"></lable>:</div>
-                                <textarea ng-model="order.address" class="form-control mt-2" placeholder="Vd: 21 Phú Thạnh 1, Hòa Minh, Đà Nẵng."></textarea>
+                                <textarea ng-model="order.address" class="form-control mt-2" required placeholder="Vd: 21 Phú Thạnh 1, Hòa Minh, Đà Nẵng."></textarea>
                             </div>
                         </div>                       
                     </div>

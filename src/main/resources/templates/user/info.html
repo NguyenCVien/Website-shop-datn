@@ -16,11 +16,12 @@
     <div class="container rounded bg-white mt-5 mb-5 border-0 shadow rounded-3 overflow-hidden">
         <div class="row" th:each="acc: ${info}">
             <div class="col-md-4 mx-auto ">
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
-                        width="150px">
-                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                        class="avatar img-circle img-thumbnail rounded-circle" alt="avatar">
-                    <h6>Hình ảnh</h6>
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px">
+                    <div>	
+                        <img th:src="@{|/assets/images/${acc.image}|}"
+                            class="avatar img-circle img-thumbnail rounded-circle" alt="avatar"> 
+                        <h6>[[#{info.avata}]]</h6>
+                    </div>    
                 </div>
             </div>
             <div class="col-md-6  mx-auto ">
@@ -41,7 +42,7 @@
                             <div class="form-floating mb-3">
                                 <label>[[#{info.sdt}]]</label>:
                                 <div type="text" class="form-control" id="floatingInputPhonenumber"
-                                    placeholder="Phone number" required>[(${acc.telePhone})]  
+                                    placeholder="Phone number" required>0[(${acc.telePhone})]  
                                 </div>     
                             </div>
                         </div>
@@ -78,7 +79,7 @@
                         </div>
                         <div class="row mt-5">
                             <div class="col-sm-6">
-                                <a th:href="@{/info/edit}" class="btn btn-lg btn-warning custom btn-block btn-edit  fw-bold text-uppercase my-2">
+                                <a th:href="@{|/info/edit/${acc.username}|}" class="btn btn-lg btn-warning custom btn-block btn-edit  fw-bold text-uppercase my-2">
                                     <label>[[#{info.edit}]]</label>
                                 </a>
                             </div>

@@ -50,16 +50,18 @@
 				<i class="fa-regular fa-circle-question"></i> 
 				<label th:text="#{nav.answer}"></label></a>
 			</li>
-			<li class="nav-item dropdown navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-				<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
-					role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					<i class="fa-solid fa-language"></i> <label th:text="#{nav.language}"></label>
-				</a>
-				<ul class="dropdown-menu dropdown-menu-end"
-					aria-labelledby="navbarDropdown">
-					<li><a class="dropdown-item" href="?lang=en">English</a></li>
-					<li><a class="dropdown-item" href="?lang=vi">Việt Nam</a></li>
-				</ul>
+			<li>
+				<div class="dropdown">
+					<a  data-toggle="dropdown" href="#" aria-expanded="false">
+						<i class="fa-solid fa-language"></i> 
+						<label th:text="#{nav.language}"></label> 
+						<i class="fa-solid fa-sort-down"></i>
+					</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="?lang=en">English</a>
+						<a class="dropdown-item" href="?lang=vi">Việt Nam</a>
+					</div>
+				</div>
 			</li>
 			<li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
 				<a th:href="@{/admin}">
@@ -81,25 +83,20 @@
 				</li>
 			</th:block>
 			<th:block th:if="${#request.remoteUser}">
-				<li class="nav-item dropdown navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-					<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-						data-bs-toggle="dropdown" aria-expanded="false">
-						<i class="fas fa-user fa-fw"></i> 
-						[[${#request.remoteUser}]]</a>
-					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-						<li><a class="dropdown-item" href="#!" 
-							th:text="#{nav.setting}"></a></li>
-						<li><a th:href="@{|/info/${#request.remoteUser}|}" class="dropdown-item">					   
-							[[#{nav.infoAcc}]]</a></li>
-						<li><a class="dropdown-item" th:href="@{/security/forgotPassword}" 
-							th:text="#{nav.change_password}"></a></li>
-						<li><a class="dropdown-item" th:href="@{/admin/SendMail}">
-							[[#{nav.SendMail}]]</a></li>
-						<li><hr class="dropdown-divider" /></li>  
-						<li><a class="dropdown-item" th:href="@{/security/logoff}" 
-							th:text="#{nav.sign_out}"></a>
-						</li>
-					</ul>
+				<li>
+					<div class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="">
+							<i class="fas fa-user fa-fw"></i> 
+							[[${#request.remoteUser}]]</a>
+						</a>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="#!" th:text="#{nav.setting}"></a>
+							<a th:href="@{|/info/${#request.remoteUser}|}" class="dropdown-item">[[#{nav.infoAcc}]]</a>
+							<a class="dropdown-item" th:href="@{/security/forgotPassword}" th:text="#{nav.change_password}"></a>
+							<a class="dropdown-item" th:href="@{/admin/SendMail}"><hr class="dropdown-divider" /> 
+							<a class="dropdown-item" th:href="@{/security/logoff}" th:text="#{nav.sign_out}"></a>
+						</div>
+					</div>
 				</li>
 			</th:block>
 		</ul>
