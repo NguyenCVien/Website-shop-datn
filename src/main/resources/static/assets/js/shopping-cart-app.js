@@ -67,6 +67,7 @@ $scope.order = {
     telePhone:"",
     name: "",
     email: "",
+    account: { username: $("#username").text() },
     get orderDetails() {
         return $scope.cart.items.map(item => {
             return {

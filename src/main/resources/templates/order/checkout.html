@@ -63,6 +63,10 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                                 <div><i class="fa-solid fa-location-dot"></i> <lable th:text="#{order.address}"></lable>:</div>
                                 <textarea ng-model="order.address" class="form-control mt-2" required placeholder="Vd: 21 Phú Thạnh 1, Hòa Minh, Đà Nẵng."></textarea>
                             </div>
+                            <div class="form-group col-sm-3 mt-3">
+                                <label>[[#{checkout.acc}]]</label>
+                                <div class="form-control" id="username">[[${#request.remoteUser}]]</div>
+                            </div>
                         </div>                       
                     </div>
                 </div>                                                
