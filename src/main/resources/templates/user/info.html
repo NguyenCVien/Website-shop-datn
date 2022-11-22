@@ -1,32 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    <link rel="stylesheet" href="/assets/css/user.css" />
-</head>
-
+<html xmlns:th="http://www.thymeleaf.org" 
+th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 <body>
+	<main>
     <div class="container rounded bg-white mt-5 mb-5 border-0 shadow rounded-3 overflow-hidden">
         <div class="row" th:each="acc: ${info}">
             <div class="col-md-4 mx-auto ">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px">
                     <div>	
                         <img th:src="@{|/assets/images/${acc.image}|}"
+								src="/assets/images/noimage.jpg"
                             class="avatar img-circle img-thumbnail rounded-circle" alt="avatar"> 
                         <h6>[[#{info.avata}]]</h6>
                     </div>    
                 </div>
             </div>
-            <div class="col-md-6  mx-auto ">
+            <div class="col-sm-8" >
                 <div class="p-3 py-5">
-                    <div class="row mb-5">
+                    <div class="row mb-3">
                         <h4><label>[[#{info.title}]]</label></h4>
                     </div>
                     <div class="row">
@@ -57,12 +48,12 @@
                         <div class="col-sm-12">
                             <div class="">
                                 <label>[[#{info.address}]]</label>:
-                                <textarea class="form-control" readonly>
+                                <textarea class="form-control" readonly style="height: 120px">
                                     [(${acc.address})]
                                 </textarea>
                             </div>
                         </div>
-                        <div class="form-group mt-3">
+                        <div class="col-sm-12 mt-3">
                             <label for="gender">Giới tính</label>:
                             <div>
                                 <div class="form-check form-check-inline">
@@ -77,15 +68,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mt-5">
+                        <div class="col-sm-10 mt-2">
                             <div class="col-sm-6">
                                 <a th:href="@{|/info/edit/${acc.username}|}" class="btn btn-lg btn-warning custom btn-block btn-edit  fw-bold text-uppercase my-2">
                                     <label>[[#{info.edit}]]</label>
-                                </a>
-                            </div>
-                            <div class="col-sm-6">
-                                <a th:href="@{/order/list}" class="btn btn-lg btn-danger btn-save btn-block custom fw-bold text-uppercase my-2 ">
-                                    <label>[[#{order.list}]]</label>
                                 </a>
                             </div>
                         </div>
@@ -94,6 +80,6 @@
             </div>
         </div>
     </div>
+    </main>
 </body>
-
 </html>

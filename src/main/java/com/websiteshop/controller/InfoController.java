@@ -1,9 +1,7 @@
 package com.websiteshop.controller;
 
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoProperties.Storage;
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -16,12 +14,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpHeaders;
-
-import com.websiteshop.dao.AccountDAO;
 import com.websiteshop.entity.Account;
 import com.websiteshop.model.AccountDto;
 import com.websiteshop.service.AccountService;
@@ -60,16 +55,7 @@ public class InfoController {
         return new ModelAndView("forward:/info/{username}", model);
     }
 
-    @GetMapping("/info/reset")
-    public String reset(Model model) {
-        AccountDto p = new AccountDto();
-        model.addAttribute("account", p);
-
-        return "forward:/info/edit/{username}";
-
-    }
-
-    @PostMapping("/saveOrUpdate")
+    @PostMapping("/info/saveOrUpdate") 
     public ModelAndView saveOrUpdate(ModelMap model,
             @ModelAttribute("account") AccountDto dto, BindingResult result) {
 

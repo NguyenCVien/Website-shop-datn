@@ -1,114 +1,113 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile-Edit</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    <link rel="stylesheet" href="/assets/css/user.css" />
-</head>
-
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 <body>
-    <div class="container rounded bg-white mt-5 mb-5 border-0 shadow rounded-3 overflow-hidden">
-        <form action="/saveOrUpdate" enctype="multipart/form-data"
-            th:object="${account}" method="post" class="content">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
-                            width="150px">
-                            <img id="image" class="avatar img-circle img-thumbnail rounded-circle" alt="avatar"
-                    th:src="${account.image != null? '/info/images/' + account.image : '/assets/images/noimage.jpg'}"
-                    src="/assets/images/noimage.jpg">
-                        <h6>[[#{info.avata}]]</h6>
-                        <div class="">
-                            <script>
-                                function chooseFile(fileInput) {
-                                    if (fileInput.files
-                                            && fileInput.files[0]) {
-                                        var reader = new FileReader();
-                                        reader.onload = function(e) {
-                                            $('#image').attr('src',
-                                                    e.target.result);
-                                        }
-                                        reader
-                                                .readAsDataURL(fileInput.files[0]);
-                                    }
-                                }
-                            </script>
-                            <input type="file" name="imageFile" style="height: 45px"
-                                onchange="chooseFile(this)" placeholder="Product Image"
-                                aria-describedby="productImageHid"
-                                class="form-control mt-5 choose-img" id="productImage">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-8">
-                    <div class="card-title">
-                        <h4>[[#{info.tit}]]</h4>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 form-group">
-                            <div class="form-floating mb-3">
-                                <label>[[#{info.name}]]</label>:
-                                <input th:field="*{fullname}" type="text" name="fullname"
-										placeholder="Họ và tên" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-floating mb-3">
-                                <label>[[#{info.sdt}]]</label>:
-                                <input th:field="*{telePhone}" type="number" name="telePhone"
-										placeholder="Phone number" class="form-control mt-2">    
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="form-floating mb-3">
-                                <label>Email</label>:
-                                <input th:field="*{email}" type="email" name="email"
-										placeholder="Email" class="form-control mt-2">
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="">
-                                <label>[[#{info.address}]]</label>:
-                                <textarea th:field="*{address}" placeholder="Địa chỉ"
-										style="height: 190px" class="mt-2 form-control description">
+	<main>
+		<div
+			class="container rounded bg-white mt-5 mb-5 border-0 shadow rounded-3 overflow-hidden">
+			<form action="/info/saveOrUpdate" enctype="multipart/form-data"
+				th:object="${account}" method="post" class="content">
+				<div class="row">
+					<div class="col-sm-4">
+						<div
+							class="d-flex flex-column align-items-center text-center p-3 py-5">
+							<img class="rounded-circle mt-5" width="150px"> <img
+								id="image"
+								class="avatar img-circle img-thumbnail rounded-circle"
+								alt="avatar"
+								th:src="${account.image != null? '/info/images/' + account.image : '/assets/images/noimage.jpg'}"
+								src="/assets/images/noimage.jpg">
+							<h6>[[#{info.avata}]]</h6>
+							<div class="">
+								<script>
+									function chooseFile(fileInput) {
+										if (fileInput.files
+												&& fileInput.files[0]) {
+											var reader = new FileReader();
+											reader.onload = function(e) {
+												$('#image').attr('src',
+														e.target.result);
+											}
+											reader
+													.readAsDataURL(fileInput.files[0]);
+										}
+									}
+								</script>
+								<input type="file" name="imageFile" style="height: 45px"
+									onchange="chooseFile(this)" placeholder="Product Image"
+									aria-describedby="productImageHid"
+									class="form-control mt-5 choose-img" id="productImage">
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="row mb-5 mt-4">
+							<h4>[[#{info.tit}]]</h4>
+						</div>
+						<div class="row">
+							<div class="form-group col-sm-6" hidden="hidden">
+								<label for="productId">Tên tài khoản: </label> <input
+									type="text" class="form-control" name="username" id="productId"
+									th:field="*{username}" aria-describedby="productIdHid"
+									placeholder="Tên tài khoản">
+							</div>
+							<div class="form-group col-sm-6" hidden="hidden">
+									<div>Mật khẩu:</div>
+									<input th:field="*{password}" type="text" name="password" id="password" aria-describedby="passwordHid"
+										placeholder="mật khẩu" class="form-control mt-2">
+								</div>
+							<div class="col-sm-6 ">
+								<div class="form-floating mb-3">
+									<label>[[#{info.name}]]</label>: <input th:field="*{fullname}"
+										type="text" name="fullname" placeholder="Họ và tên"
+										class="form-control">
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-floating mb-3">
+									<label>[[#{info.sdt}]]</label>: <input th:field="*{telePhone}"
+										type="number" name="telePhone" placeholder="Phone number"
+										class="form-control">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-floating mb-3">
+									<label>Email</label>: <input th:field="*{email}" type="email"
+										name="email" placeholder="Email" class="form-control mt-2">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="">
+									<label>[[#{info.address}]]</label>:
+									<textarea th:field="*{address}" placeholder="Địa chỉ"
+										style="height: 120px" class="mt-2 form-control description">
                                 </textarea>
-                            </div>
-                        </div>
-                        <div class="form-group mt-3">
-                            <label for="gender">Giới tính</label>:
-                            <div>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" name="gender" id="male" value="male"
-                                        class="form-check-input" checked>
-                                    <label for="male" class="form-check-label">Nam</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" name="gender" id="female" value="female"
-                                        class="form-check-input">
-                                    <label for="female" class="form-check-label">Nữ</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="btn-bottom">
-                            <button class="btn btn-primary mr-5">
-                                [[#{info.save}]]
-                            </button>
-                            <a th:href="@{/info/reset}" class="btn btn-danger">
-                                Reset
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>                 
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+								</div>
+							</div>
+							<div class="col-sm-12 mt-3">
+								<label for="gender">Giới tính</label>:
+								<div>
+									<div class="form-check form-check-inline">
+										<input type="radio" name="gender" id="male" value="male"
+											class="form-check-input" checked> <label for="male"
+											class="form-check-label">Nam</label>
+									</div>
+									<div class="form-check form-check-inline">
+										<input type="radio" name="gender" id="female" value="female"
+											class="form-check-input"> <label for="female"
+											class="form-check-label">Nữ</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 mt-3 mb-4">
+								<button class="btn btn-danger" style="width: 80px">
+									[[#{info.save}]]</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</main>
 </body>
-
 </html>
