@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html xmlns:th="http://www.thymeleaf.org" 
-th:replace="~{/layout/fragment :: dynamic(~{::main})}">
+    th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
 <body>
 	<main>
     <div class="container rounded bg-white mt-5 mb-5 border-0 shadow rounded-3 overflow-hidden">
@@ -22,25 +22,25 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
+                            <label>[[#{info.name}]]</label>:
                             <div class="form-floating mb-3">
-                                <label>[[#{info.name}]]</label>:
-                                <div type="text" class="form-control" id="floatingInputUsername"
+                                <div class="form-control" id="floatingInputUsername"
                                     placeholder="Fullname" required autofocus>[(${acc.fullname})]
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="form-floating mb-3">
-                                <label>[[#{info.sdt}]]</label>:
+                            <label>[[#{info.sdt}]]</label>:
+                            <div class="form-floating mb-3">                            
                                 <div type="text" class="form-control" id="floatingInputPhonenumber"
                                     placeholder="Phone number" required>0[(${acc.telePhone})]  
                                 </div>     
                             </div>
                         </div>
                         <div class="col-sm-12">
+                            <label>Email</label>:
                             <div class="form-floating mb-3">
-                                <label>Email</label>:
-                                <div class="form-control" id="floatingInputEmail"
+                                <div class="form-control"
                                     placeholder="you@gmail.com" required>[(${acc.email})]
                                 </div>
                             </div>
@@ -53,24 +53,9 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                                 </textarea>
                             </div>
                         </div>
-                        <div class="col-sm-12 mt-3">
-                            <label for="gender">Giới tính</label>:
-                            <div>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" name="gender" id="male" value="male"
-                                        class="form-check-input" checked>
-                                    <label for="male" class="form-check-label">Nam</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" name="gender" id="female" value="female"
-                                        class="form-check-input">
-                                    <label for="female" class="form-check-label">Nữ</label>
-                                </div>
-                            </div>
-                        </div>
                         <div class="col-sm-10 mt-2">
                             <div class="col-sm-6">
-                                <a th:href="@{|/info/edit/${acc.username}|}" class="btn btn-lg btn-warning custom btn-block btn-edit  fw-bold text-uppercase my-2">
+                                <a th:href="@{|/admin/accounts/info/edit/${acc.username}|}" class="btn btn-lg btn-warning custom btn-block btn-edit  fw-bold text-uppercase my-2">
                                     <label>[[#{info.edit}]]</label>
                                 </a>
                             </div>

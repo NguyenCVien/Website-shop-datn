@@ -37,7 +37,7 @@ public class InfoController {
     }
 
     @RequestMapping("/info/edit/{username}")
-    public ModelAndView edit(ModelMap model, @PathVariable("username") String username) {
+    public String edit(ModelMap model, @PathVariable("username") String username) {
 
         Optional<Account> opt = accountService.findById(username);
         AccountDto dto = new AccountDto();
@@ -47,20 +47,20 @@ public class InfoController {
             BeanUtils.copyProperties(acc, dto);
 
             model.addAttribute("account", dto);
-            return new ModelAndView("user/edit", model);
+            return "user/edit";
         }
 
         model.addAttribute("message", "Lỗi thiết lập tài khoản!");
 
-        return new ModelAndView("forward:/info/{username}", model);
+        return "forward:/info/edit";
     }
 
-    @PostMapping("/info/saveOrUpdate") 
-    public ModelAndView saveOrUpdate(ModelMap model,
+    @PostMapping("/info/saveOrUpdate")
+    public String saveOrUpdate(ModelMap model,
             @ModelAttribute("account") AccountDto dto, BindingResult result) {
 
         if (result.hasErrors()) {
-            return new ModelAndView("/info/edit/{username}");
+            return "/user/edit";
         }
         Account acc = new Account();
         BeanUtils.copyProperties(dto, acc);
@@ -71,8 +71,8 @@ public class InfoController {
         }
 
         accountService.save(acc);
-        model.addAttribute("message", "Tài khoản đã được lưu");
-        return new ModelAndView("forward:/info/{username}", model);
+        model.addAttribute("message", "Lưu thành công!");
+        return "user/edit";
     }
 
     @GetMapping("/info/images/{filename:.+}")

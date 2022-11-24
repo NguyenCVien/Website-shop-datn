@@ -117,13 +117,19 @@
   background-color: #3b5998;
   border: none;
 }
-.a :hover {
+.card-bottom :hover {
   color: #040003;
 }
-.a{
+.card-bottom {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.card-bottom a{
+  text-decoration: none;
+}
+.btn-bottom a{
+  text-decoration: none;
 }
 .message{
   text-align: center;

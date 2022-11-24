@@ -8,7 +8,7 @@
 				<div class="card-header card bg-secondary text-white"
 					style="text-align: center">
 					<h2
-						th:text="${comment.isEdit ? 'Chỉnh sửa bình luận' : 'Thêm mới bình luận'}"></h2>
+						th:text="${comment.isEdit ? 'Danh sách bình luận' : 'Thêm mới bình luận'}"></h2>
 				</div>
 				<div class="card-body">
 					<div class="row">
@@ -16,38 +16,39 @@
 						<div class="col-sm-12 ses ">
 							<div class="row">
 								<div class="form-group col-sm-6">
-									<label for="feedbackId">Mã bình luận: </label> <input
-										type="text" readonly class="form-control" name="feedbackId"
+									<label for="feedbackId">Mã bình luận: </label> 
+									<input type="text" readonly class="form-control" name="feedbackId"
 										th:field="*{commentId}" placeholder="Mã bình luận">
 								</div>
 								<div class="form-group col-sm-6">
-									<label for="username"> Tài khoản</label> <select
-										class="form-control" name="username" id="username"
-										th:field="*{username}">
+									<label for="username"> Tài khoản:</label> 
+									<select class="form-control" name="username" id="username"
+											th:field="*{username}">
 										<option th:each="item : ${accounts}"
 											th:value="${item.username}" th:text="${item.username}"
-											th:selected="${item.username == comment.username}">Account
-											Name</option>
+											th:selected="${item.username == comment.username}">
+										</option>
 									</select>
 								</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-sm-6">
-									<label for="productId"> Mã sản phẩm</label> <select
-										class="form-control" name="productId" id="productId"
+									<label for="productId"> Mã sản phẩm</label> 
+									<select class="form-control" name="productId" id="productId"
 										th:field="*{productId}">
 										<option th:each="item : ${products}"
 											th:value="${item.productId}" th:text="${item.productId}"
-											th:selected="${item.productId == comment.productId}">Mã
-											sản phẩm</option>
+											th:selected="${item.productId == comment.productId}">
+										</option>
 									</select>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col">
 									<div>Mô tả</div>
-									<textarea th:field="*{description}" placeholder="Mô tả"
-										style="height: 190px" class="mt-2 form-control description"></textarea>
+									<textarea th:field="*{description}" placeholder="Ghi chú"
+										style="height: 160px" class="mt-2 form-control description">
+									</textarea>
 								</div>
 							</div>
 						</div>
@@ -58,13 +59,14 @@
 						th:text="${comment.isEdit? 'Cập nhật':'Lưu'}">
 						Save <i class="fa-solid fa-plus"></i>
 					</button>
-					<a th:href="@{/admin/comments}" class="btn btn-success mr-2">Danh
-						sách bình luận</a> <a class="btn btn-danger mr-2"
+					<a th:href="@{/admin/comments}" class="btn btn-success mr-2">
+						Danh sách bình luận</a> <a class="btn btn-danger mr-2"
 						th:if="${comment.isEdit}" th:data-id="${comment.commentId}"
 						th:data-name="${comment.commentId}"
 						onclick="showConfirmModalDialog(this.getAttribute('data-id'), this.getAttribute('data-name'))">
 						Xóa <i class="fa-regular fa-trash-can"></i>
-					</a> <a th:href="@{/admin/comment/add}" class="btn btn-info mr-3">
+					</a> 
+					<a th:href="@{/admin/comments/add}" class="btn btn-info mr-3">
 						Làm mới <i class="fa-regular fa-window-restore"></i>
 					</a>
 				</div>
@@ -82,19 +84,19 @@
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title">Xác nhận</h5>
+							<h5 class="modal-title">XÃ¡c nháº­n</h5>
 							<button type="button" class="close" data-dismiss="modal"
 								aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
 						<div class="modal-body">
-							Bạn có muốn xóa bình luận mã "<span id="commentId"></span>"?
+							Báº¡n cÃ³ muá»‘n xÃ³a bÃ¬nh luáº­n mÃ£ "<span id="commentId"></span>"?
 						</div>
 						<div class="modal-footer">
-							<a id="yesOption" type="button" class="btn btn-danger">Đồng ý</a>
+							<a id="yesOption" type="button" class="btn btn-danger">Ä�á»“ng Ã½</a>
 							<a id="noOption" type="button" class="btn btn-secondary"
-								data-dismiss="modal">Hủy</a>
+								data-dismiss="modal">Há»§y</a>
 						</div>
 					</div>
 				</div>

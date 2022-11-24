@@ -4,12 +4,9 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- slide banner -->
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="/assets/css/index.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<!--  Angular -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	<title>Shop-Now</title>  
 </head>
@@ -35,17 +32,17 @@
 				</form>
 			</li>
 			<li>
-				<a th:href="@{/cart/view}" class="cart-i">
+				<a style="text-decoration: none;" th:href="@{/cart/view}" class="cart-i">
 					<i class="fas fa-shopping-cart cart"></i> 
 					<label class="num">{{cart.count}}</label></a>
 			</li>
 			<th:block th:if="${#request.remoteUser}">
-				<a th:href="@{/order/list}">
+				<a style="text-decoration: none;" th:href="@{/order/list}">
 					<i class="fa-solid fa-clock-rotate-left"></i> 
 					<label th:text="#{nav.order_history}"></label>
 				</a>
 			</th:block>
-			<li><a th:href="@{/help}">
+			<li><a style="text-decoration: none;" th:href="@{/help}">
 				<i class="fa-regular fa-circle-question"></i> 
 				<label th:text="#{nav.answer}"></label></a>
 			</li>
@@ -61,7 +58,7 @@
 				</ul>
 			</li>
 			<li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
-				<a th:href="@{/admin}">
+				<a style="text-decoration: none;" th:href="@{/admin}">
 					<i class="fa-solid fa-lock-open"></i> 
 					<label th:text="#{nav.admin}"></label></a>
 			</li>

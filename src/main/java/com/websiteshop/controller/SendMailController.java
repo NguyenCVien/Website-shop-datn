@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -18,22 +19,18 @@ public class SendMailController {
     }
 
     @RequestMapping("/admin/send")
-    public String send(
+    public String send(Model model,
             @RequestParam("to") String to,
             @RequestParam("subject") String subject,
             @RequestParam("content") String content) {
-        try {
-            SimpleMailMessage msg = new SimpleMailMessage();
-            msg.setTo(to);
-            msg.setSubject(subject);
-            msg.setText(content);
 
-            javaMailSender.send(msg);
+        SimpleMailMessage msg = new SimpleMailMessage();
+        msg.setTo(to);
+        msg.setSubject(subject);
+        msg.setText(content);
 
-            return "/SendMail/result";
-        } catch (Exception e) {
-            return "/404";
-        }
-
+        javaMailSender.send(msg);
+        model.addAttribute("message", "Đã gửi email thành công!");
+        return "/SendMail/index";
     }
 }

@@ -3,19 +3,13 @@ package com.websiteshop.AdminController;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -43,6 +37,9 @@ public class AccountAdminController {
 
 	@Autowired
 	StorageService storageService;
+
+	@Autowired
+	JavaMailSender javaMailSender;
 
 	@RequestMapping("")
 	public String list(Model model) {
@@ -130,5 +127,82 @@ public class AccountAdminController {
 			model.addAttribute("message", "Không tìm thấy tài khoản!");
 		}
 		return new ModelAndView("forward:/admin/accounts", model);
+	}
+
+	@GetMapping("SendEmail")
+	public String index() {
+		return "/admin/accounts/SendMail";
+	}
+
+	@PostMapping("send-mail")
+	public String send(Model model,
+			@RequestParam("to") String to,
+			@RequestParam("subject") String subject,
+			@RequestParam("content") String content) {
+
+		SimpleMailMessage msg = new SimpleMailMessage();
+		msg.setTo(to);
+		msg.setSubject(subject);
+		msg.setText(content);
+
+		javaMailSender.send(msg);
+		model.addAttribute("message", "Đã gửi email thành công!");
+		return "/admin/accounts/SendMail";
+
+	}
+
+	@GetMapping("/info/{username}")
+	public String info(Model model, @PathVariable("username") String username) {
+		Account acc = accountService.findById(username).get();
+		model.addAttribute("info", acc);
+		return "admin/accounts/info";
+	}
+
+	@GetMapping("/info/edit/{username}")
+	public String editInfo(ModelMap model, @PathVariable("username") String username) {
+
+		Optional<Account> opt = accountService.findById(username);
+		AccountDto dto = new AccountDto();
+
+		if (opt.isPresent()) {
+			Account acc = opt.get();
+			BeanUtils.copyProperties(acc, dto);
+
+			model.addAttribute("account", dto);
+			return "admin/accounts/edit";
+		}
+
+		model.addAttribute("message", "Lỗi thiết lập tài khoản!");
+
+		return "admin/accounts/edit";
+	}
+
+	@PostMapping("/info/saveOrUpdate")
+	public String saveOrUpdateInfo(ModelMap model,
+			@ModelAttribute("account") AccountDto dto, BindingResult result) {
+
+		if (result.hasErrors()) {
+			return "admin/accounts/edit";
+		}
+		Account acc = new Account();
+		BeanUtils.copyProperties(dto, acc);
+
+		if (!dto.getImageFile().isEmpty()) {
+			acc.setImage(storageService.getStoredFilename(dto.getImageFile(), null));
+			storageService.store(dto.getImageFile(), acc.getImage());
+		}
+
+		accountService.save(acc);
+		model.addAttribute("message", "Lưu thành công!");
+		return "admin/accounts/edit";
+	}
+
+	@GetMapping("/info/images/{filename:.+}")
+	@ResponseBody
+	public ResponseEntity<Resource> saveFile(@PathVariable String filename) {
+		Resource file = storageService.loadAsResource(filename);
+		return ResponseEntity.ok()
+				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"")
+				.body(file);
 	}
 }

@@ -37,8 +37,8 @@
                                         [(*{discription})] 
                                     </div>                               		                                            
                                 <div class="form-group">
-                                    <li><label for="exampleFormControlTextarea1"><lable th:text="#{detail.feedb}"></lable>:</label></li>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <li><lable th:text="#{detail.feedb}">Đánh giá:</lable>:</li>
+                                    <div th:replace="product/__comment.html"></div>
                                     <div class="bot mt-4">
                                         <a th:href="@{/product/list}" class="btn btn-warning mr-3">
                                             <i class="fa fa-angle-left"></i> <lable th:text="#{product.btn.continute}"></lable>

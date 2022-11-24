@@ -14,7 +14,7 @@
 					<i>[[${message}]]</i>
 				</div>
 				<table id="datatablesSimple">
-              <thead class="bg-light ">
+				<thead class="bg-light ">
 						<tr>
 							<th>Mã đơn hàng</th>
 							<th>Tên tài khoản</th>
@@ -29,7 +29,7 @@
 					<tbody>
 						<tr th:each="item: ${orders}">
 							<td th:utext="${item.orderId}"></td>
-							<td th:utext="${item.username}"></td>
+							<td th:utext="${item.account.username}"></td>
 							<td th:utext="${item.createDay}"></td>
 							<td th:utext="${item.telePhone}"></td>
 							<td th:utext="${item.address}"></td>
