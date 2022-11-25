@@ -88,9 +88,9 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                                 <td>{{item.productId}}</a></td>
                                 <td>{{item.name}}</td>
                                 <td>{{item.unitPrice | number : 0}} <sup>đ</sup></td>
-                                <td>{{item.discount | number : 0}} <sup>đ</sup></td>
+                                <td>{{item.discount | number : 0}}%</td>
                                 <td><input ng-change="cart.saveToLocalStorage()" ng-model="item.qty" type="number" min="1" style="width: 60px;"></td>
-                                <td>{{item.qty*(item.unitPrice-item.discount) | number : 0}} <sup>đ</sup></td>
+                                <td>{{item.qty*(item.unitPrice-((item.unitPrice*item.discount)/100)) | number : 0}} <sup>đ</sup></td>
                                 <td>
                                 <button ng-click="cart.remove(item.productId)" class="btn btn-sm btn-danger">
                                     <i class="fa-regular fa-trash-can"></i>

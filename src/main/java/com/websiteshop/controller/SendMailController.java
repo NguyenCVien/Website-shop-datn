@@ -13,12 +13,12 @@ public class SendMailController {
     @Autowired
     JavaMailSender javaMailSender;
 
-    @RequestMapping("/admin/SendMail")
+    @RequestMapping("/user/SendMail")
     public String index() {
         return "/SendMail/index";
     }
 
-    @RequestMapping("/admin/send")
+    @RequestMapping("/user/send")
     public String send(Model model,
             @RequestParam("to") String to,
             @RequestParam("subject") String subject,

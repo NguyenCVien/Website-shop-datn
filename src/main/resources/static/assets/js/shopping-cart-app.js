@@ -43,7 +43,7 @@ app.controller("shopping-cart-ctrl", function ($scope, $http) {
         //tongthanhtien cac mat hang trong gio
         get amount() {
             return this.items
-                .map(item => item.qty * (item.unitPrice - item.discount))
+                .map(item => item.qty * (item.unitPrice - ((item.unitPrice * item.discount)/100)) )
                 .reduce((total, qty) => total += qty, 0);
         },
         

@@ -1,0 +1,29 @@
+.discription{
+	font-size: 11px;
+}
+.bot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.img-child{
+  
+    display: flex;
+    text-align: end;
+    justify-content: space-between;
+}
+.img-1{
+    width: 300px;
+}
+.cancel{
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	
+}
