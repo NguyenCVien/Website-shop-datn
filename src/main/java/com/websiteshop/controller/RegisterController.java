@@ -1,7 +1,5 @@
 package com.websiteshop.controller;
 
-import java.util.UUID;
-
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,7 +21,7 @@ public class RegisterController {
 	@Autowired
 	AccountService accountService;
 	
-	@RequestMapping("register")
+	@RequestMapping("/security/register")
 	public String add(Model model) {
 		AccountDto dto = new AccountDto();
 		dto.setIsEdit(false);
@@ -31,20 +29,26 @@ public class RegisterController {
 		return "security/register";
 	}
 	
-	@PostMapping("register/save")
+	@PostMapping("/register/save")
 	public ModelAndView saveOrUpdate(ModelMap model,
-			@ModelAttribute("register") AccountDto dto, BindingResult result) {
-
-		if (result.hasErrors()) {
-			model.addAttribute("message", "Tài khoản đã tồn tại!");
+			@ModelAttribute("account") AccountDto dto, BindingResult result) {
+		
+		if(!dto.getPassword().toString().equals(dto.getPasswordRe().toString())) {
+			model.addAttribute("message", "Mật khẩu không trùng khớp");
 			return new ModelAndView("security/register");
 		}
+		
 		Account entity = new Account();
 		BeanUtils.copyProperties(dto, entity);
 
+		if(!accountService.findById(entity.getUsername()).isEmpty()) {
+			model.addAttribute("message", "Tài khoản đã tồn tại");
+			return new ModelAndView("security/register");
+		}
+		
 		accountService.save(entity);
 		model.addAttribute("message", "Tạo tài khoản thành công!");
-		return new ModelAndView("forward:/security/register", model);
+		return new ModelAndView("forward:/security/login/success", model);
 	}
 	
 

@@ -15,6 +15,7 @@ public class AccountDto  implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private String username;
 	private String password;
+	private String passwordRe;
 	private String fullname;
 	private String email;
 	private String image;

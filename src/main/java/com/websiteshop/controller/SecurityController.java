@@ -53,14 +53,6 @@ public class SecurityController {
         return "security/login";
     }
 
-    @RequestMapping("/security/register")
-    public String register(Model model) {
-        AccountDto dto = new AccountDto();
-        dto.setIsEdit(false);
-        model.addAttribute("account", dto);
-        return "/admin/dist/register";
-    }
-
     @RequestMapping("/security/change")
     public String change() {
         return "/security/change";
