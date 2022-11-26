@@ -36,7 +36,7 @@
 							<td th:utext="${item.image}"></td>
 							<td th:utext="${item.address}"></td>					
 							<td class="btn-button">
-									<a class="btn btn-warning mr-2"
+									<a class="btn btn-warning"
 										th:href="@{'/admin/accounts/edit/' + ${item.username}}">
 										<i class="fa-regular fa-pen-to-square"></i>
 									</a> 
@@ -45,6 +45,7 @@
 										onclick="showConfirmModalDialog(this.getAttribute('data-id'), this.getAttribute('data-name'))">
 										<i class="fa-solid fa-trash-can"></i>
 									</a>
+								
 							</td>
 						</tr>
 					</tbody>

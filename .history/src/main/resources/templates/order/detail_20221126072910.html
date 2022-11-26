@@ -53,10 +53,11 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                             <td>[[*{order.orderId}]]</td>
                             <td>[[*{product.productId}]]</td>
                             <td>[[*{product.name}]]</td>
-                            <td>[[*{#numbers.formatInteger(price, 0, 'WHITESPACE')}]]<sup>đ</sup></td> 
+                            <td>[[*{price}]]<sup>đ</sup></td> 
                             <td>[[*{discount}]]%</td>
                             <td>[[*{quantity}]]</td>  
-                            <td>[[*{#numbers.formatInteger((price-(price*discount)/100) * quantity, 0, 'WHITESPACE')}]] VND</td>             
+                            <td>[[*{(price-(price*discount)/100) * quantity}]] VND</td>  
+                            <td>[[*{#numbers.formatInteger(price,8,'POINT')}]]</td>             
                         </tr>
                     </tbody>
                 </table>

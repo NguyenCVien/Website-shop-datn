@@ -56,7 +56,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                             <td>[[*{#numbers.formatInteger(price, 0, 'WHITESPACE')}]]<sup>đ</sup></td> 
                             <td>[[*{discount}]]%</td>
                             <td>[[*{quantity}]]</td>  
-                            <td>[[*{#numbers.formatInteger((price-(price*discount)/100) * quantity, 0, 'WHITESPACE')}]] VND</td>             
+                            <td>[[*{#numbers.formatInteger((price-(price*discount)/100) * quantity, 0, 'DEFAULT')}]] VND</td>             
                         </tr>
                     </tbody>
                 </table>

@@ -6,7 +6,7 @@
 		<div class="card">
 			<div class="card-header card bg-secondary text-white"
 				style="text-align: center">
-				<h3>Danh sách đơn hàng chi tiết</h3>
+				<h3>Danh sÃ¡ch Ä‘Æ¡n hÃ ng chi tiáº¿t</h3>
 			</div>
 			<div class="card-body">
 				<div th:if="${message != null}" class="alert alert-primary"
@@ -14,17 +14,18 @@
 					<i>[[${message}]]</i>
 				</div>
 				<table id="datatablesSimple">
-					<thead class="bg-light ">
+              <thead class="bg-light ">
 						<tr>
-							<th>Mã đơn chi tiết</th>
-							<th>Mã đơn hàng</th>
-							<th>Mã sản phẩm</th>
-							<th>Giá</th>
-							<th>Giảm</th> 
-							<th>Trạng thái</th>
-							<th>Số lượng</th>
-							<th>Mô tả</th>
+							<th>MÃ£ Ä‘Æ¡n hÃ ng chi tiáº¿t</th>
+							<th>MÃ£ Ä‘Æ¡n hÃ ng</th>
+							<th>MÃ£ sáº£n pháº©m</th>
+							<th>GiÃ¡</th>
+							<th>Giáº£m giÃ¡</th> 
+							<th>Tráº¡ng thÃ¡i</th>
+							<th>Sá»‘ lÆ°á»£ng</th>
+							<th>MÃ´ táº£</th>
 							<th></th>
+
 						</tr>
 					</thead>
 					<tbody>
@@ -66,19 +67,19 @@
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title">Xác nhận</h5>
+									<h5 class="modal-title">XÃ¡c nháº­n</h5>
 									<button type="button" class="close" data-dismiss="modal"
 										aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
 								<div class="modal-body">
-									Bạn thực sự muốn xóa đơn chi tiết với mã "<span id="orderId"></span>"?
+									Báº¡n cÃ³ muá»‘n xÃ³a Ä‘Æ¡n hÃ ng chi tiáº¿t mÃ£ "<span id="orderId"></span>"?
 								</div>
 								<div class="modal-footer">
-									<a id="yesOption" type="button" class="btn btn-danger">Đồng ý</a>
+									<a id="yesOption" type="button" class="btn btn-danger">Ä�á»“ng Ã½</a>
 									<a id="noOption" type="button" class="btn btn-secondary"
-										data-dismiss="modal">Hủy</a>
+										data-dismiss="modal">Há»§y</a>
 								</div>
 							</div>
 						</div>

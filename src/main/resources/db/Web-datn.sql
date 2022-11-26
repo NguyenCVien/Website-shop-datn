@@ -1,6 +1,6 @@
 USE [WebsiteShop]
 GO
-/****** Object:  Table [dbo].[Accounts]    Script Date: 11/22/2022 2:38:45 PM ******/
+/****** Object:  Table [dbo].[Accounts]    Script Date: 11/25/2022 8:55:16 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -19,7 +19,7 @@ CREATE TABLE [dbo].[Accounts](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Authorities]    Script Date: 11/22/2022 2:38:45 PM ******/
+/****** Object:  Table [dbo].[Authorities]    Script Date: 11/25/2022 8:55:16 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -34,7 +34,7 @@ CREATE TABLE [dbo].[Authorities](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Categories]    Script Date: 11/22/2022 2:38:45 PM ******/
+/****** Object:  Table [dbo].[Categories]    Script Date: 11/25/2022 8:55:16 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -48,7 +48,7 @@ CREATE TABLE [dbo].[Categories](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Comments]    Script Date: 11/22/2022 2:38:45 PM ******/
+/****** Object:  Table [dbo].[Comments]    Script Date: 11/25/2022 8:55:16 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -64,7 +64,7 @@ CREATE TABLE [dbo].[Comments](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[FeedBacks]    Script Date: 11/22/2022 2:38:45 PM ******/
+/****** Object:  Table [dbo].[FeedBacks]    Script Date: 11/25/2022 8:55:16 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -79,7 +79,7 @@ CREATE TABLE [dbo].[FeedBacks](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[OrderDetails]    Script Date: 11/22/2022 2:38:45 PM ******/
+/****** Object:  Table [dbo].[OrderDetails]    Script Date: 11/25/2022 8:55:16 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -99,7 +99,7 @@ CREATE TABLE [dbo].[OrderDetails](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Orders]    Script Date: 11/22/2022 2:38:45 PM ******/
+/****** Object:  Table [dbo].[Orders]    Script Date: 11/25/2022 8:55:16 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -118,7 +118,7 @@ CREATE TABLE [dbo].[Orders](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Products]    Script Date: 11/22/2022 2:38:45 PM ******/
+/****** Object:  Table [dbo].[Products]    Script Date: 11/25/2022 8:55:16 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -143,7 +143,7 @@ CREATE TABLE [dbo].[Products](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Roles]    Script Date: 11/22/2022 2:38:45 PM ******/
+/****** Object:  Table [dbo].[Roles]    Script Date: 11/25/2022 8:55:16 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -157,7 +157,7 @@ CREATE TABLE [dbo].[Roles](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Statitic]    Script Date: 11/22/2022 2:38:45 PM ******/
+/****** Object:  Table [dbo].[Statitic]    Script Date: 11/25/2022 8:55:16 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -167,7 +167,7 @@ CREATE TABLE [dbo].[Statitic](
 	[OrderDetailId] [int] NOT NULL
 ) ON [PRIMARY]
 GO
-INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'admin', N'123', N'admin', N'admin@gmail.com', NULL, N'50 Nguyễn Thị Thập, Hòa Minh, Liên Chiểu, Đà Nẵng.', 935561021)
+INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'admin', N'123', N'admin', N'admin@gmail.com', N'6a26e19d85b175ef2ca0.jpg', N'50 Nguyễn Thị Thập, Hòa Minh, Liên Chiểu, Đà Nẵng.', 93333333)
 GO
 INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'Ba', N'567890', N'Ong Chu Ba', N'tonthuhuyen581@hotmail.com', NULL, N'Xã Lãng Ngâm, Huyện Gia Bình, Bắc Ninh.', 814058921)
 GO
@@ -239,13 +239,13 @@ INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [
 GO
 INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'Rin', N'67890-', N'Rin Rin Kuout', N'xaquynhthanh140@facebook.com', NULL, N'Xã Độc Lập, Huyện Quảng Uyên, Cao Bằng', 857584139)
 GO
-INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'staff', N'123', N'Nguyen Thuc', N'thucfc2002@gmail.com', NULL, N'123 nguyen thi thap', 969794458)
+INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'staff', N'123', N'Nguyen Thuc', N'thucfc2002@gmail.com', N'f3.jpg', N'123 nguyen thi thap', 969794458)
 GO
 INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'Su', N'600000', N'Xã Ia Din Su', N'sonkieuminh11@facebook.com', NULL, N'Xã Ia Din, Huyện Đức Cơ, Gia Lai', 975398617)
 GO
-INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'T1', N'123', N'Nguyen Thuc', N'thucfc2002@gmail.com', N'f3.jpg', N'21 Phu Thanh 1, Hoa minh, Lien Chieu, Da Nang', 969794458)
+INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'T1', N'123', N'Nguyen Van Thuc', N'thucfc2002@gmail.com', N'f3.jpg', N'21 Phu Thanh 1, Hoa minh, Lien Chieu, Da Nang', 969794458)
 GO
-INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'T11', N'123', N'Nguyen Van Thuc', NULL, NULL, NULL, 0)
+INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'T11', N'123', N'Nguyen Thuc', N'thucfc2002@gmail.com', N'f3.jpg', N'123 nguyen thi thap', 969794458)
 GO
 INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'T111', N'123', N'Nguyen Van Thuc', NULL, NULL, NULL, 0)
 GO
@@ -261,7 +261,9 @@ INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [
 GO
 INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'Thinh', N'123', N'Lai Châu', N'vienthuyen819@icloud.com', NULL, N'Xã Nậm Khao, Huyện Mường Tè, Lai Châu', 334759023)
 GO
-INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'ThucSkin', N'123', N'Nguyen Van Thuc', NULL, NULL, NULL, 0)
+INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'Thuc', N'123', N'Nguyen Thuc', N'thucfc2002@gmail.com', N'f3.jpg', N'21 Phú Thanh1, Hòa Minh, Liên Chiểu, Đà Nẵng', 969794458)
+GO
+INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'ThucSkin', N'123', N'Nguyen Thuc', N'thucfc2002@gmail.com', N'c89e299133bdc3e39aac.jpg', N'123 nguyen thi thap', 969794458)
 GO
 INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'Ti', N'123', N'Nguyen Van Ti', N'chunginhnguyen452@microsoft.com', NULL, N'Xã Hưng Phú, Huyện Phước Long, Bạc Liêu', 382165480)
 GO
@@ -269,7 +271,7 @@ INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [
 GO
 INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'Tung', N'1342567687', N'Nghiem ThanhTTung', N'lothienngon447@yahoo.com', NULL, N'Xã Thanh Sơn, Huyện Kim Bảng, Hà Nam', 902814759)
 GO
-INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'user', N'123', N'Nguyen Van An', N'an@gmail.com', N'null', N'21 nv', 92758435)
+INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'user', N'123', N'Thuc Skin', N'thucfc2002@gmail.com', N'6a26e19d85b175ef2ca0.jpg', N'21 Phu Thanh Da nang', 969794458)
 GO
 INSERT [dbo].[Accounts] ([Username], [Password], [Fullname], [Email], [Image], [Address], [TelePhone]) VALUES (N'Uyen', N'123', N'Nguyen Hai Uyen', N'UyenNC@gmail.com', NULL, N'Lý Thường Kiệt, An Phú, Hòa Tân', 35213212)
 GO
@@ -485,111 +487,57 @@ INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [
 GO
 INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (50, 50, 2065, 1000000, 10, N'Đang chờ xác nhận', 2, N'Duyệt')
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (54, 74, 4, 3990000, 300000, N'300000', 1, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (125, 161, 8, 10790000, 880000, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (63, 83, 2020, 4990000, 0, NULL, 1, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (126, 161, 2116, 3100000, 399000, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (64, 83, 22, 15490000, 1250000, NULL, 1, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (127, 161, 2077, 970000, 2, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (65, 91, 14, 43590000, 2990000, NULL, 3, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (128, 161, 9, 36290000, 4300000, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (66, 102, 22, 15490000, 1250000, NULL, 2, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (129, 162, 10, 19990000, 4500000, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (67, 102, 10, 19990000, 4500000, NULL, 1, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (130, 162, 2061, 2220000, 10, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (68, 104, 2087, 19390000, 10, NULL, 1, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (131, 162, 2102, 299000, 39000, NULL, 3, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (69, 105, 2026, 33990000, 0, NULL, 1, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (132, 163, 4, 3990000, 300000, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (70, 105, 2028, 25990000, 5, NULL, 1, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (133, 163, 8, 10790000, 880000, NULL, 5, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (71, 106, 2016, 25990000, 10, NULL, 1, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (134, 164, 11, 16690000, 399000, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (72, 106, 22, 15490000, 1250000, NULL, 1, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (135, 164, 22, 15490000, 1250000, NULL, 2, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (74, 107, 22, 15490000, 1250000, NULL, 3, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (136, 165, 9, 36290000, 4300000, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (75, 108, 4, 3990000, 300000, NULL, 2, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (137, 166, 11, 16690000, 399000, NULL, 13, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (76, 108, 11, 16690000, 399000, NULL, 7, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (138, 167, 2028, 25990000, 5, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (77, 108, 10, 19990000, 4500000, NULL, 2, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (139, 167, 9, 36290000, 4300000, NULL, 9, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (78, 108, 22, 15490000, 1250000, NULL, 2, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (143, 170, 22, 15490000, 15, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (80, 109, 2051, 20990000, 10, NULL, 1, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (144, 170, 2120, 349000, 35, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (84, 114, 9, 36290000, 4300000, NULL, 1, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (145, 174, 8, 10790000, 15, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (85, 114, 4, 3990000, 300000, NULL, 2, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (146, 175, 8, 10790000, 15, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (86, 115, 10, 19990000, 4500000, NULL, 3, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (147, 176, 8, 10790000, 15, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (87, 115, 2061, 2220000, 10, NULL, 1, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (148, 176, 14, 43590000, 10, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (88, 117, 11, 16690000, 399000, NULL, 3, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (149, 176, 9, 36290000, 25, NULL, 1, NULL)
 GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (89, 117, 4, 3990000, 300000, NULL, 2, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (90, 118, 10, 19990000, 4500000, NULL, 2, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (91, 118, 2034, 14990000, 2, NULL, 2, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (92, 118, 19, 17490000, 3500000, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (93, 123, 9, 36290000, 4300000, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (94, 123, 22, 15490000, 1250000, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (95, 127, 10, 19990000, 4500000, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (96, 127, 4, 3990000, 300000, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (97, 128, 22, 15490000, 1250000, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (98, 129, 4, 3990000, 300000, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (99, 130, 9, 36290000, 4300000, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (100, 133, 4, 3990000, 300000, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (101, 134, 4, 3990000, 300000, NULL, 3, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (102, 134, 2034, 14990000, 2, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (103, 134, 2059, 2320000, 0, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (104, 134, 2102, 299000, 39000, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (105, 134, 2075, 420000, 0, NULL, 2, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (106, 135, 9, 36290000, 4300000, NULL, 2, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (107, 136, 2015, 6790000, 10, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (108, 137, 9, 36290000, 4300000, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (109, 138, 10, 19990000, 4500000, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (110, 140, 2067, 5111000, 0, NULL, 6, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (111, 140, 11, 16690000, 399000, NULL, 3, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (112, 143, 4, 3990000, 300000, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (113, 145, 4, 3990000, 300000, NULL, 1, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (114, 146, 14, 43590000, 2990000, NULL, 2, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (115, 149, 9, 36290000, 4300000, NULL, 2, NULL)
-GO
-INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (116, 149, 10, 19990000, 4500000, NULL, 1, NULL)
+INSERT [dbo].[OrderDetails] ([OrderDetailId], [OrderId], [ProductId], [Price], [Discount], [Status], [Quantity], [Discription]) VALUES (150, 177, 8, 10790000, 15, NULL, 999, NULL)
 GO
 SET IDENTITY_INSERT [dbo].[OrderDetails] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Orders] ON 
 GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (1, N'demo', CAST(N'2022-02-11' AS Date), N'387187069', N'Thôn Lâm Tây, Xã Đại Đồng, Huyện Đại Lộc, Tỉnh Quảng Nam', NULL, NULL)
+INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (1, NULL, CAST(N'2022-02-11' AS Date), N'387187069', N'Thôn Lâm Tây, Xã Đại Đồng, Huyện Đại Lộc, Tỉnh Quảng Nam.', NULL, NULL)
 GO
 INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (2, N'user', CAST(N'2022-02-10' AS Date), N'932263510', N'60 Ngô Thị Nhậm, Phường Hòa Minh, Liên Chiểu, TP Đà Nẵng', NULL, NULL)
 GO
@@ -689,138 +637,55 @@ INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address
 GO
 INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (50, N'Tan', CAST(N'2022-06-08' AS Date), N'330099510', N'31 Bà Triệu, Phường Bắc Sơn, Thành Phố Sầm Sơn, Thanh Hóa', NULL, NULL)
 GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (74, N'demo', CAST(N'2022-11-12' AS Date), N'923587625', N'9723', NULL, NULL)
+INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (161, N'T1', CAST(N'2022-11-22' AS Date), N'0969794458', N'123 Nguyễn Văn Thoại, Sơn Trà, Đà Nẵng', N'Thức Skin', N'thucfc2002@gmail.com')
 GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (82, N'T11', CAST(N'2022-11-15' AS Date), N'8019747', N'13kmbk', NULL, NULL)
+INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (162, N'ThucSkin', CAST(N'2022-11-22' AS Date), N'093464366', N'21 Phú Thanh1, Liên Chiểu, Đà Nẵng', N'Thức Skin', N'thucfc2002@gmail.com')
 GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (83, N'T11', CAST(N'2022-11-15' AS Date), N'0', N'', NULL, NULL)
+INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (163, N'ThucSkin', CAST(N'2022-11-22' AS Date), N'092345233', N'123 Nguyễn Thị Xương, Liên Chiểu, Đà Nẵng', N'Thức Skin', N'thucfc2002@gmail.com')
 GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (84, N'T11', CAST(N'2022-11-15' AS Date), N'0', N'', NULL, NULL)
+INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (164, N'Thuc', CAST(N'2022-11-23' AS Date), N'0943543545', N'123 Nguyễn Văn Linh, Thanh Khuê, Đà Nẵng', N'Thức Skin', N'')
 GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (85, N'T11', CAST(N'2022-11-15' AS Date), N'0', N'', NULL, NULL)
+INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (165, N'staff', CAST(N'2022-11-23' AS Date), N'0932094324', N'123 bingchiling', N'Staff', N'thucfc2002@gmail.com')
 GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (86, N'T11', CAST(N'2022-11-15' AS Date), N'1', N'1', N'1', NULL)
+INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (166, N'T1', CAST(N'2022-11-23' AS Date), N'09987687687', N'123 Phu thanh1 Da Nang', N'Thuc Skin', N'thucfc2002@gmail.com')
 GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (88, N'T11', CAST(N'2022-11-15' AS Date), N'928304', N'jt', N'thuc', NULL)
+INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (167, N'T11', CAST(N'2022-11-23' AS Date), N'094444444444', N'123 luong minh chau, Ha Noi', N'Thuc SKin', N'thucfc2002@gmail.com')
 GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (89, N'T11', CAST(N'2022-11-15' AS Date), N'95387534', N'21 phu thanh1', N'Thuc Skin', NULL)
+INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (170, N'T11', CAST(N'2022-11-24' AS Date), N'094444444444', N'21 phu thanh 1', N'Thuc Skin', N'thucdc2002@gmail.com')
 GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (90, N'T11', CAST(N'2022-11-15' AS Date), N'0', N'', N'', NULL)
+INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (174, N'T11', CAST(N'2022-11-24' AS Date), N'', N'', N'', N'')
 GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (91, N'T11', CAST(N'2022-11-15' AS Date), N'93284023', N'232', N'Thuc SKin', NULL)
+INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (175, N'T11', CAST(N'2022-11-24' AS Date), N'0933333333', N'21 phu thanh', N'Thuc Skin', N'thucfc2002@gmail.com')
 GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (92, N'T11', CAST(N'2022-11-15' AS Date), N'0', N'', N'', NULL)
+INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (176, N'user', CAST(N'2022-11-25' AS Date), N'093534545', N'21 phu thanh1 da nang', N'Thuc Skin', N'thucfc2002@gmail.com')
 GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (93, N'T11', CAST(N'2022-11-15' AS Date), N'902394', N'21', N'thuc', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (94, N'T11', CAST(N'2022-11-15' AS Date), N'923944', N'21', N'thuc', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (95, N'T11', CAST(N'2022-11-15' AS Date), N'0', N'', N'', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (96, N'T11', CAST(N'2022-11-15' AS Date), N'92394433', N'213', N'', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (97, N'T11', CAST(N'2022-11-15' AS Date), N'92394', N'08923948', N'00984', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (98, N'T11', CAST(N'2022-11-15' AS Date), N'0982384', N'0-92394', N'082309587', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (99, N'demo', CAST(N'2022-11-15' AS Date), N'', N'', N'', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (100, N'demo', CAST(N'2022-11-15' AS Date), N'0969794458', N'21 Phú Thạnh 1, Hòa Minh, Đà Nẵng.', N'Thuc Skin', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (101, N'T11', CAST(N'2022-11-15' AS Date), N'', N'', N'', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (102, N'T3', CAST(N'2022-11-15' AS Date), N'0969794458', N'', N'Thức Skin', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (103, N'T3', CAST(N'2022-11-15' AS Date), N'', N'', N'', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (104, N'T3', CAST(N'2022-11-15' AS Date), N'09329423', N'21', N'Thuc', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (105, N'T11', CAST(N'2022-11-15' AS Date), N'', N'', N'', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (106, N'ThucSkin', CAST(N'2022-11-15' AS Date), N'092348584', N'21 phu thanh', N'thuc skin', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (107, N'T11', CAST(N'2022-11-16' AS Date), N'', N'', N'', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (108, N'T11', CAST(N'2022-11-16' AS Date), N'0923084', N'0923', N'thuc', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (109, N'T11', CAST(N'2022-11-16' AS Date), N'09124124', N'', N'Thuc', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (114, N'T1', CAST(N'2022-11-16' AS Date), N'0969794458', N'21 Phu Thanh 1', N'Thuc Skin', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (115, N'T1', CAST(N'2022-11-16' AS Date), N'', N'', N'', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (116, N'T1', CAST(N'2022-11-16' AS Date), N'09254934', N'21 vn', N'Thuc', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (117, N'T1', CAST(N'2022-11-17' AS Date), N'0969794458', N'21 phu thanh 1', N'Thuc Skin', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (118, N'T1', CAST(N'2022-11-17' AS Date), N'09634664', N'21 phú thạnh 1', N'Thức Skin', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (123, N'T1', CAST(N'2022-11-17' AS Date), N'093823958', N'21 da nang', N'Thuc Skin', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (127, N'ThucSkin', CAST(N'2022-11-18' AS Date), N'0969794548', N'123 Nguyễn Văn Thoại, Thanh Khuê, Đà Nẵng', N'Thức Skin', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (128, NULL, CAST(N'2022-11-18' AS Date), N'', N'', N'', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (129, NULL, CAST(N'2022-11-18' AS Date), N'082305832', N'08234', N'Thuc Skin', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (130, NULL, CAST(N'2022-11-18' AS Date), N'', N'', N'', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (131, NULL, CAST(N'2022-11-18' AS Date), N'', N'', N'', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (133, N'ThucSkin', CAST(N'2022-11-18' AS Date), N'', N'', N'', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (134, N'T1', CAST(N'2022-11-18' AS Date), N'0953464', N'21 phu thanh1', N'Thuc Skin', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (135, N'user', CAST(N'2022-11-19' AS Date), N'094396344', N'12 Phu thanh 1 Da nang', N'Thuc Skin', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (136, N'demo', CAST(N'2022-11-19' AS Date), N'094836859', N'21', N'Thuc', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (137, N'demo', CAST(N'2022-11-19' AS Date), N'', N'', N'', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (138, N'demo', CAST(N'2022-11-20' AS Date), N'', N'', N'', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (139, N'user', CAST(N'2022-11-20' AS Date), N'', N'', N'', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (140, N'T1', CAST(N'2022-11-20' AS Date), N'565656565656', N'', N'DDinh', NULL)
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (142, N'ThucSkin', CAST(N'2022-11-20' AS Date), N'', N'', N'', N'')
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (143, N'ThucSkin', CAST(N'2022-11-20' AS Date), N'09365656', N'21 phu thanh', N'Thuc', N'thucfc2002@gmail.com')
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (144, N'Tung', CAST(N'2022-11-20' AS Date), N'656', N'2121', N'thuc', N'thucfc2002@gmail.com')
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (145, N'Tung', CAST(N'2022-11-20' AS Date), N'0923543', N'21 phu thanh', N'thuc skin', N'thucfc2002@gmail.com')
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (146, NULL, CAST(N'2022-11-20' AS Date), N'09555555', N'2121', N'thuc SKin', N'thucfc2002@gmail.com')
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (148, NULL, CAST(N'2022-11-20' AS Date), N'', N'', N'', N'')
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (149, NULL, CAST(N'2022-11-21' AS Date), N'', N'', N'', N'')
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (150, NULL, CAST(N'2022-11-21' AS Date), N'', N'', N'', N'')
-GO
-INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (151, NULL, CAST(N'2022-11-21' AS Date), N'', N'', N'', N'')
+INSERT [dbo].[Orders] ([OrderId], [Username], [CreateDay], [TelePhone], [Address], [Name], [Email]) VALUES (177, N'user', CAST(N'2022-11-25' AS Date), N'09444444444', N'99 Phu Thanh, Hoa Khanh Bac, Da Nang', N'Thuc Skin', N'thucfc2002@gmail.com')
 GO
 SET IDENTITY_INSERT [dbo].[Orders] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Products] ON 
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (4, N'Realme C35', 120, 3990000, 300000, N'realme-9-pro.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-10' AS Date), N'Iphone cui`', 2)
-GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (8, N'Iphone 11 64GB', 100, 10790000, 880000, N'ip11.png', NULL, NULL, NULL, NULL, CAST(N'2022-01-01' AS Date), N'Chip A13 Bionic, hệ điều hành IOS 13 kết hợp hoàn hảo - 
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (4, N'Realme C35', 120, 4990000, 20, N'realme-9-pro.jpg', N'realme1.png', N'realme-2.png', N'realme-3.png', NULL, CAST(N'2022-11-10' AS Date), N'Chip A13 Bionic, hệ điều hành IOS 13 kết hợp hoàn hảo - 
 RAM 4GB, bộ nhớ trong 64GB hoạt động mượt mà, đa nhiệm -
 Hệ thống camera kép mới 12 MP cho góc chụp siêu rộng -
 Camera selfie 12 MP chụp hình ở chế độ chuyển động chậm -
 Màn hình IPS LCD 6.1 inch Liquid Retina hiển thị sắc nét -
 Pin chuẩn Li-Ion, dung lượng pin tốt, thời gian lướt web lâu.', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (9, N'iPhone 13 Pro Max 256GB Vàng Đồng', 50, 36290000, 4300000, N'ip13MaVang.png', NULL, NULL, NULL, NULL, CAST(N'2022-01-01' AS Date), N'Chip Apple A15 Bionic xử lý tác vụ mạnh mẽ, trải nghiệm game mượt mà. -
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (8, N'Iphone 11 64GB', 100, 10790000, 15, N'ip11.png', N'ip11-1.png', N'ip11-2.png', N'ip11-3.png', NULL, CAST(N'2022-01-01' AS Date), N'Chip A13 Bionic, hệ điều hành IOS 13 kết hợp hoàn hảo - 
+RAM 4GB, bộ nhớ trong 64GB hoạt động mượt mà, đa nhiệm -
+Hệ thống camera kép mới 12 MP cho góc chụp siêu rộng -
+Camera selfie 12 MP chụp hình ở chế độ chuyển động chậm -
+Màn hình IPS LCD 6.1 inch Liquid Retina hiển thị sắc nét -
+Pin chuẩn Li-Ion, dung lượng pin tốt, thời gian lướt web lâu.', 2)
+GO
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (9, N'iPhone 13 Pro Max 256GB Vàng Đồng', 50, 36290000, 25, N'ip13MaVang.png', N'img-1.png', N'img-2.png', N'img-3.png', NULL, CAST(N'2022-01-01' AS Date), N'Chip Apple A15 Bionic xử lý tác vụ mạnh mẽ, trải nghiệm game mượt mà. -
 Màn hình OLED 6.7'''' Super Retina XDR hiển thị hình ảnh sắc nét, chân thực. -
 Tần số quét 120Hz cho thao tác chạm lướt mượt mà, xem video mãn nhãn. -
 Cụm 3 camera 12MP: camera tele, Wide, Ultra Wide chụp ảnh chuyên nghiệp. -
 iPhone 13 Pro Max kháng nước bụi chuẩn IP68 cho bạn yên tâm sử dụng.', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (10, N'iPhone 12 64GB Xanh lá', 100, 19990000, 4500000, N'ipXanhLa.png', NULL, NULL, NULL, NULL, CAST(N'2022-01-01' AS Date), N'Mặt lưng của điện thoại được làm bằng kính tạo nên sự thanh lịch và đẳng cấp. -
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (10, N'iPhone 12 64GB Xanh lá', 100, 19990000, 10, N'ipXanhLa.png', N'img-1.png', N'img-2.png', N'img-3.png', NULL, CAST(N'2022-01-01' AS Date), N'Mặt lưng của điện thoại được làm bằng kính tạo nên sự thanh lịch và đẳng cấp. -
 Màn hình 6.1 inch cho không gian trải nghiệm hoàn hảo. -
 Tấm nền Super Retina XDR mang đến hình ảnh sắc nét. -
 Cụm camera kép cho phép chụp ảnh góc rộng và siêu rộng. -
@@ -829,37 +694,37 @@ Khả năng chống nước đạt chuẩn IP68 đứng đầu thị trường. 
 Chất liệu kính Ceramic Shield giúp bền hơn gấp 4 lần. -
 Bộ nhớ trong 64GB đủ đáp ứng nhu cầu lưu trữ dữ liệu. ', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (11, N'Laptop HP 14-DV2051TU i3', 20, 16690000, 399000, N'Laptop HP 14-DV2051TU i3.png', NULL, NULL, NULL, NULL, CAST(N'2022-11-10' AS Date), N'Thiết kế sang trọng, tinh tế, hiện đại với trọng lượng nhẹ chỉ 1.41 kg. -
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (11, N'Laptop HP 14-DV2051TU i3', 20, 16690000, 15, N'Laptop HP 14-DV2051TU i3.png', NULL, NULL, NULL, NULL, CAST(N'2022-11-10' AS Date), N'Thiết kế sang trọng, tinh tế, hiện đại với trọng lượng nhẹ chỉ 1.41 kg. -
 Bộ vi xử lý Intel Core i3-1215U xử lý tốt các tác vụ học tập và văn phòng. -
 Ổ cứng SSD 256GB xử lý nhanh các tác vụ, cho không gian lưu trữ tốt. -
 Màn hình FHD 14 inch với góc nhìn 178° mang đến khung nhìn tuyệt vời.', 3)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (14, N'Iphone14', 450, 43590000, 2990000, N'ip14(1).jpg', NULL, NULL, NULL, NULL, CAST(N'2020-10-19' AS Date), N'RAM 4GB, bộ nhớ trong 64GB hoạt động mượt mà, đa nhiệm
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (14, N'Iphone14', 450, 43590000, 10, N'iphone-14-pro-max-bac-thumb-600x600.jpg', N'img-1.png', N'img-2.png', N'img-3.png', NULL, CAST(N'2020-10-19' AS Date), N'RAM 4GB, bộ nhớ trong 64GB hoạt động mượt mà, đa nhiệm
 Hệ thống camera kép mới 12 MP cho góc chụp siêu rộng
 Camera selfie 12 MP chụp hình ở chế độ chuyển động chậm
 Màn hình IPS LCD 6.1 inch Liquid Retina hiển thị sắc nét', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (17, N'Laptop Acer Aspire 3 A315-59-381E i3', 20, 13490000, 2900000, N'Laptop Acer Aspire 3.png', NULL, NULL, NULL, NULL, CAST(N'2022-10-19' AS Date), N'Sở hữu thiết kế nhỏ gọn, kiểu dáng thời thượng với màu bạc cuốn hút. -
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (17, N'Laptop Acer Aspire 3 A315-59-381E i3', 20, 13490000, 15, N'Laptop Acer Aspire 3.png', N'xiaomi-1.png', N'xiaomi-2.png', N'xiaomi-1.png', NULL, CAST(N'2022-10-19' AS Date), N'Sở hữu thiết kế nhỏ gọn, kiểu dáng thời thượng với màu bạc cuốn hút. -
 Bộ vi xử lý Intel Core i3-1215U với hiệu năng ổn định, xử lý tốt nhiều tác vụ. -
 Màn hình FHD 15.6inch đường viền hẹp hiển thị hình ảnh sắc nét, chân thật. -
 Trang bị công nghệ BlueLightShield bảo vệ mắt khỏi ánh sáng xanh có hại. -
 RAM 8GB kết hợp cùng ổ cứng 512GB cho không gian lưu trữ rộng lớn hơn. -
 Đa dạng các cổng kết nối thông dụng đáp ứng tốt nhu cầu làm việc và giải trí.', 3)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (18, N'NULMacbook Air M2 2022L', 50, 17800000, 3300000, N'Macbook Air M2 2022.png', NULL, NULL, NULL, NULL, CAST(N'2022-10-20' AS Date), N'
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (18, N'NULMacbook Air M2 2022L', 50, 17800000, 10, N'Macbook Air M2 2022.png', NULL, NULL, NULL, NULL, CAST(N'2022-10-20' AS Date), N'
 Macbook Air M2 2022 13.6 inch Apple M2 16GB 256GB', 3)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (19, N'Macbook Pro 16', 40, 17490000, 3500000, N'Macbook Pro 16.png', NULL, NULL, NULL, NULL, CAST(N'2022-10-20' AS Date), N'Macbook Pro 16 inch 2021 【Apple M1 Pro 10-core CPU, 16-core GPU】16GB 1TB', 3)
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (19, N'Macbook Pro 16', 40, 17490000, 10, N'Macbook Pro 16.png', NULL, NULL, NULL, NULL, CAST(N'2022-10-20' AS Date), N'Macbook Pro 16 inch 2021 【Apple M1 Pro 10-core CPU, 16-core GPU】16GB 1TB', 3)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (22, N'iPad Pro 11 2020', 150, 15490000, 1250000, N'iPad Pro 11 2020.png', NULL, NULL, NULL, NULL, CAST(N'2022-10-28' AS Date), N'Đánh giá iPad Pro 11 2020 Wifi – Tablet với hệ thống camera sau và con chip A12Z ấn tượng', 4)
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (22, N'iPad Pro 11 2020', 150, 15490000, 15, N'iPad Pro 11 2020.png', NULL, NULL, NULL, NULL, CAST(N'2022-10-28' AS Date), N'Đánh giá iPad Pro 11 2020 Wifi – Tablet với hệ thống camera sau và con chip A12Z ấn tượng', 4)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2015, N'Điện thoại Xiaomi Redmi Note 11 Pro', 10, 6790000, 1590000, N'Xiaomi-redmi-note-11-blue-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Xiaomi Redmi Note 11 Pro 4G mang trong mình khá nhiều những nâng cấp cực kì sáng giá. Là chiếc điện thoại có màn hình lớn, tần số quét 120 Hz, hiệu năng ổn định cùng một viên pin siêu trâu.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2015, N'Điện thoại Xiaomi Redmi Note 11 Pro', 10, 6790000, 20, N'Xiaomi-redmi-note-11-blue-600x600.jpg', N'xiaomi-1.png', N'xiaomi-2.png', N'xiaomi-3.png', NULL, CAST(N'2022-11-11' AS Date), N'Xiaomi Redmi Note 11 Pro 4G mang trong mình khá nhiều những nâng cấp cực kì sáng giá. Là chiếc điện thoại có màn hình lớn, tần số quét 120 Hz, hiệu năng ổn định cùng một viên pin siêu trâu.
 Thiết kế cứng cáp, cầm nắm rất đầm tay
 Điểm nổi bật ở phần thiết kế của Redmi Note 11 Pro chính là cụm camera khá lớn và lồi so với mặt lưng, mặt lưng có chất liệu bằng kính đã được làm phẳng đi. Khung viền bằng nhựa cũng được bo tròn và vát phẳng rất liền mạch, mức độ hoàn thiện tốt, không có hiện tượng ọp ẹp khi mình sử dụng chiếc máy này..
 Khung viền phẳng - Xiaomi Redmi Note 11 Pro 4G
 ', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2016, N'Điện thoại Xiaomi 12 Pro', 10, 25990000, 10, N'xiaomi-12-pro-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Xiaomi 12 Pro - chiếc điện thoại đến từ nhà Xiaomi sở hữu một thiết kế thanh lịch và vô cùng đẳng cấp, mang trong mình một hiệu năng "khủng long" cùng cụm 3 camera 50 MP mang lại khả năng chụp ảnh, quay phim chất lượng hàng đầu phân khúc.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2016, N'Điện thoại Xiaomi 12 Pro', 10, 25990000, 30, N'xiaomi-12-pro-1-600x600.jpg', N'xiaomi-1.png', N'xiaomi-3.png', N'xiaomi-2.png', NULL, CAST(N'2022-11-11' AS Date), N'Xiaomi 12 Pro - chiếc điện thoại đến từ nhà Xiaomi sở hữu một thiết kế thanh lịch và vô cùng đẳng cấp, mang trong mình một hiệu năng "khủng long" cùng cụm 3 camera 50 MP mang lại khả năng chụp ảnh, quay phim chất lượng hàng đầu phân khúc.
 Thiết kế tràn viền hiện đại
 Ấn tượng đầu tiên khi nhìn thấy Xiaomi 12 là vẻ ngoài máy không đi theo xu hướng thiết kế vuông vức hiện nay, được bo cong các viền cạnh ở cả phần mặt lưng và màn hình tạo cảm giác cầm nắm thoải mái, thao tác vuốt từ các cạnh vào rất trơn tru và không cấn tay.
 Cạnh viền bo cong - Xiaomi 12 Pro
@@ -906,7 +771,7 @@ Thời gian sạc - Xiaomi 12 Pro
 *Thời gian sử dụng/sạc có thể thay đổi tùy vào tác vụ hay nhiệt độ thiết bị.
 Với một bộ thông số cực kỳ ấn tượng và những trải nghiệm tuyệt vời qua những đánh giá bên trên, cho thấy Xiaomi 12 Pro rất xứng đáng với mức giá mà nó trang bị, rất phù hợp đối với những ai muốn chọn mua cho mình một thiết bị chơi game đồ họa cao, chụp ảnh, quay video chuyên nghiệp hay đơn giản chỉ muốn nâng cấp trải nghiệm của bản thân lên một tầm cao mới.', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2017, N'Điện thoại Xiaomi 12', 5, 16490000, 10, N'Xiaomi-12-xanh-duong-thumb-mau-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Điện thoại Xiaomi đang dần khẳng định chỗ đứng của mình trong phân khúc flagship bằng việc ra mắt Xiaomi 12 với bộ thông số ấn tượng, máy có một thiết kế gọn gàng, hiệu năng mạnh mẽ, màn hình hiển thị chi tiết cùng khả năng chụp ảnh sắc nét nhờ trang bị ống kính đến từ Sony.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2017, N'Điện thoại Xiaomi 12', 5, 16490000, 10, N'Xiaomi-12-xanh-duong-thumb-mau-600x600.jpg', N'xiaomi-1.png', N'xiaomi-3.png', N'xiaomi-2.png', NULL, CAST(N'2022-11-11' AS Date), N'Điện thoại Xiaomi đang dần khẳng định chỗ đứng của mình trong phân khúc flagship bằng việc ra mắt Xiaomi 12 với bộ thông số ấn tượng, máy có một thiết kế gọn gàng, hiệu năng mạnh mẽ, màn hình hiển thị chi tiết cùng khả năng chụp ảnh sắc nét nhờ trang bị ống kính đến từ Sony.
 Cầm nắm cực kỳ thoải mái
 Ấn tượng đầu tiên khi mình nhìn điện thoại Xiaomi 12 là nó quá đẹp, các chi tiết được hoàn thiện một cách tỉ mỉ, cạnh viền được bo cong mềm mại và không thấy xuất hiện chi tiết thừa.
 Vẻ ngoài sang trọng - Xiaomi 12
@@ -964,7 +829,7 @@ Hỗ trợ sạc pin nhanh - Xiaomi 12
 *Thời gian sử dụng/sạc có thể thay đổi tùy vào tác vụ và nhiệt độ của máy
 Qua những trải nghiệm bên trên, Xiaomi 12 hoàn toàn xứng đáng với mức giá trang bị bởi những trải nghiệm tuyệt vời mà nó mang lại, là một người dùng quen thuộc với hệ điều hành Android, đam mê chơi game hiệu năng cao và yêu thích một thiết bị có vẻ ngoài cao cấp thì đây là một lựa chọn không thể bỏ qua.', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2018, N'Điện thoại Xiaomi 11T 5G 256GB', 3, 10990000, 5, N'xiaomi-11t-256gb-thumb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Xiaomi 11T 5G sở hữu màn hình AMOLED, viên pin siêu khủng cùng camera độ phân giải 108 MP, điện thoại Xiaomi sẽ đáp ứng mọi nhu cầu sử dụng của bạn, từ giải trí đến làm việc đều vô cùng mượt mà. 
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2018, N'Điện thoại Xiaomi 11T 5G 256GB', 3, 10990000, 15, N'xiaomi-11t-256gb-thumb-600x600.jpg', N'xiaomi-1.png', N'xiaomi-3.png', N'xiaomi-2.png', NULL, CAST(N'2022-11-11' AS Date), N'Xiaomi 11T 5G sở hữu màn hình AMOLED, viên pin siêu khủng cùng camera độ phân giải 108 MP, điện thoại Xiaomi sẽ đáp ứng mọi nhu cầu sử dụng của bạn, từ giải trí đến làm việc đều vô cùng mượt mà. 
 Cho ra những tác phẩm đầy chân thật với camera 108 MP
 Xiaomi đã trang bị cho máy cụm 3 camera sau gồm camera chính 108 MP, camera góc rộng có độ phân giải 8 MP cùng camera telemacro 5 MP kết hợp cùng phần cứng bên trong cho khả năng lấy nét, thu sáng và zoom cực tốt để cho ra những bức ảnh chi tiết dù bạn chụp gần hay chụp xa. 
 Cụm camera sau chất lượng - Xiaomi 11T 5G 256GB
@@ -1010,7 +875,7 @@ Máy được trang bị tính năng bảo mật vân tay với cảm biến đ�
 Cảm biến vân tay cạnh viền - Xiaomi 11T 5G 256GB
 Có một mức giá chỉ thuộc dòng cận cao cấp, nhưng Xiaomi 11T lại cho bạn một hiệu năng đầy mạnh mẽ với chip Dimensity 1200 có kết nối 5G, một màn AMOLED sắc nét hay khả năng sạc nhanh 67 W vô cùng ấn tượng. Với Xiaomi 11T thiết bị sẵn sàng cùng bạn khám phá mọi thứ.', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2019, N'Điện thoại POCO C40', 10, 2990000, 3, N'xiaomi-poco-c40-thumb-vang-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Tháng 06/2022 điện thoại POCO C40 đã chính thức được cho ra mắt tại thị trường Việt Nam, sở hữu màn hình kích thước lớn, viên pin dung lượng khủng và một con chip JR510 mới lạ trên thị trường công nghệ hiện nay.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2019, N'Điện thoại POCO C40', 10, 2990000, 30, N'xiaomi-poco-c40-thumb-vang-600x600.jpg', NULL, NULL, N'xiaomi-2.png', NULL, CAST(N'2022-11-11' AS Date), N'Tháng 06/2022 điện thoại POCO C40 đã chính thức được cho ra mắt tại thị trường Việt Nam, sở hữu màn hình kích thước lớn, viên pin dung lượng khủng và một con chip JR510 mới lạ trên thị trường công nghệ hiện nay.
 Pin khỏe, vui lâu
 Cung cấp năng lượng cho C40 là viên pin khủng với dung lượng 6000 mAh. Mình khá bất ngờ với thời gian sử dụng liên tục của điện thoại khi đạt đến hơn 10 tiếng* cho các tác vụ cơ bản như chơi game, xem phim, mạng xã hội. Đây quả thật là một chiếc điện thoại pin khủng để cho bạn thời gian trải nghiệm gần như 1 ngày với mọi tác vụ.
 Thời lượng pin lâu - POCO C40
@@ -1056,7 +921,7 @@ Mặt lưng giả da - POCO C40
 Thiết kế giọt nước - POCO C40
 POCO C40 - một sản phẩm có thiết kế cũng như màu sắc bắt mắt, màn hình được đầu tư để mang lại trải nghiệm rộng rãi, hiệu năng có thể cùng bạn xử lý các tác vụ cơ bản cùng một thông số pin ấn tượng. POCO C40 hứa hẹn sẽ khuynh đảo phân khúc tầm điện thoại giá rẻ trong thời gian tới.', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2020, N'Điện thoại Xiaomi Redmi Note 11 (6GB/128GB)', 15, 4990000, 0, N'Xiaomi-redmi-note-11-blue-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Redmi Note 11 (6GB/128GB) vừa được Xiaomi cho ra mắt, được xem là chiếc smartphone có giá tầm trung ấn tượng, với 1 cấu hình mạnh, cụm camera xịn sò, pin khỏe, sạc nhanh mà giá lại rất phải chăng.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2020, N'Điện thoại Xiaomi Redmi Note 11 (6GB/128GB)', 15, 4990000, 15, N'Xiaomi-redmi-note-11-blue-600x600.jpg', N'xiaomi-1.png', N'xiaomi-2.png', N'xiaomi-3.png', NULL, CAST(N'2022-11-11' AS Date), N'Redmi Note 11 (6GB/128GB) vừa được Xiaomi cho ra mắt, được xem là chiếc smartphone có giá tầm trung ấn tượng, với 1 cấu hình mạnh, cụm camera xịn sò, pin khỏe, sạc nhanh mà giá lại rất phải chăng.
 Thiết kế bo cong đậm chất Xiaomi
 Xiaomi Redmi Note 11 xuất hiện với màu sắc trẻ trung, tất cả đều rất thời trang, sang trọng, đẹp mắt. Thiết kế cạnh bo cong mềm mại, hiện đại cho tổng thể điện thoại, nổi bật ở cụm camera sau được đặt trong mô-đun lớn.
 Màu sắc trẻ trung | Xiaomi Redmi Note 11
@@ -1086,7 +951,7 @@ Khi thiết bị cạn nguồn, công nghệ sạc pin nhanh 33 W sẽ nhanh ch�
 Sạc 33 W - Xiaomi Redmi Note 11
 Nếu so với mức giá mà Xiaomi chào bán thì Redmi Note 11 khá đáng lựa chọn trong phân khúc, đáng được xếp hạng cạnh tranh trong phân khúc điện thoại Android chất lượng tốt giá rẻ cho người dùng săn đón.', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2021, N'Điện thoại Xiaomi Redmi 10A', 13, 2490000, 2, N'xiaomi-redmi-10a-thumb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Xiaomi Redmi 10A ra mắt tại thị trường Việt Nam vào tháng 07/2022, với ưu điểm là sở hữu pin trâu cùng một màn hình kích thước lớn giúp máy trở thành một smartphone lý tưởng cho những bạn đang tìm mua một thiết bị phục vụ nghe gọi hay xem phim cả ngày. Cùng với đó là giá thành phải chăng để người dùng có thể dễ dàng tiếp cận và mua sắm.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2021, N'Điện thoại Xiaomi Redmi 10A', 13, 2490000, 10, N'xiaomi-redmi-10a-thumb-600x600.jpg', N'xiaomi-1.png', N'xiaomi-2.png', N'xiaomi-3.png', NULL, CAST(N'2022-11-11' AS Date), N'Xiaomi Redmi 10A ra mắt tại thị trường Việt Nam vào tháng 07/2022, với ưu điểm là sở hữu pin trâu cùng một màn hình kích thước lớn giúp máy trở thành một smartphone lý tưởng cho những bạn đang tìm mua một thiết bị phục vụ nghe gọi hay xem phim cả ngày. Cùng với đó là giá thành phải chăng để người dùng có thể dễ dàng tiếp cận và mua sắm.
 Kiểu dáng thiết kế trẻ trung
 Là một chiếc điện thoại giá rẻ nhưng dường như hãng điện thoại Xiaomi vẫn dành sự chăm chút rất nhiều trên sản phẩm của mình, điều này được minh chứng qua vẻ ngoài có độ hoàn thiện cực tốt trên chiếc Redmi 10A. 
 
@@ -1144,7 +1009,7 @@ Với viền màn hình tương đối mỏng nên khi nhìn thì máy cũng cho
 Viền màn hình mỏng - Xiaomi Redmi 10A
 Redmi 10A được xem là một trong những chiếc smartphone chính hãng có giá thành tốt nhất thị trường hiện nay, sở hữu trong máy là một viên pin có dung lượng 5000 mAh cùng kích thước màn hình lớn giúp bạn trải nghiệm tốt hơn trên các tác vụ xem phim hay chơi game lâu dài.', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2022, N'Điện thoại Xiaomi 12T 256GB', 15, 12490000, 2, N'xiaomi-12t-thumb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Xiaomi 12T 256GB là smartphone đầu tiên trên thế giới trang bị con chip Dimensity 8100 Ultra nên máy thu hút được khá nhiều sự chú ý vào thời điểm ra mắt, bộ vi xử lý này không chỉ có hiệu năng mạnh mẽ mà nó còn tối ưu được giá thành cho thiết bị, điều này giúp 12T trở thành chiếc điện thoại quốc dân cực kỳ đáng sắm.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2022, N'Điện thoại Xiaomi 12T 256GB', 15, 12490000, 20, N'xiaomi-12t-thumb-600x600.jpg', N'xiaomi-1.png', N'xiaomi-2.png', N'xiaomi-3.png', NULL, CAST(N'2022-11-11' AS Date), N'Xiaomi 12T 256GB là smartphone đầu tiên trên thế giới trang bị con chip Dimensity 8100 Ultra nên máy thu hút được khá nhiều sự chú ý vào thời điểm ra mắt, bộ vi xử lý này không chỉ có hiệu năng mạnh mẽ mà nó còn tối ưu được giá thành cho thiết bị, điều này giúp 12T trở thành chiếc điện thoại quốc dân cực kỳ đáng sắm.
 Vẻ đẹp đến từ sự hoàn thiện cao cấp
 Ấn tượng đầu tiên đối với mình khi lần đầu trên tay Xiaomi 12T là nằm ở phần thiết kế, máy tạo cho mình một cảm giác khá quen thuộc khi gợi nhớ đến chiếc flagship Xiaomi 12. Đây được xem là ngôn ngữ thiết kế mà mình cực kỳ ưng ý nhờ có hai cạnh bên bo cong mềm mại.
 Thiết kế đẹp mắt - Xiaomi 12T 256GB
@@ -1211,7 +1076,7 @@ Có thể dung lượng pin là điểm khá nổi bật dành cho Xiaomi 12T th
 Sạc pin nhanh chóng - Xiaomi 12T 256GB
 Với một bộ thông số nổi bật đi kèm với mức giá bán lý tưởng nên Xiaomi 12T chắc hẳn sẽ là cái tên mà khó có nhà sản xuất nào có thể vượt mặt ở thời điểm hiện tại, điều này giúp cho 12T dễ dàng được cộng đồng người dùng mệnh danh là chiếc điện thoại chơi game quốc dân mà hầu hết mọi game thủ đều ao ước có được.', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2023, N'Điện thoại Xiaomi Redmi Note 10S 6GB', 10, 5290000, 0, N'xiaomi-redmi-note-10s-6gb-thumb-600x600.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Xiaomi Redmi Note 10S 6GB được xem là điện thoại thuộc phân khúc smartphone giá tầm trung nhưng chinh phục người tiêu dùng với thiết kế sang đẹp, cấu hình ấn tượng và cụm camera cực chất, sẽ là thiết bị liên lạc, chiến game giải trí và làm việc ổn định,… cho các nhu cầu sử dụng của bạn.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2023, N'Điện thoại Xiaomi Redmi Note 10S 6GB', 10, 5290000, 10, N'xiaomi-redmi-note-10s-6gb-thumb-600x600.jpeg', N'xiaomi-1.png', N'xiaomi-2.png', N'xiaomi-3.png', NULL, CAST(N'2022-11-11' AS Date), N'Xiaomi Redmi Note 10S 6GB được xem là điện thoại thuộc phân khúc smartphone giá tầm trung nhưng chinh phục người tiêu dùng với thiết kế sang đẹp, cấu hình ấn tượng và cụm camera cực chất, sẽ là thiết bị liên lạc, chiến game giải trí và làm việc ổn định,… cho các nhu cầu sử dụng của bạn.
 Hiệu năng mạnh mẽ, đáp ứng mọi tác vụ
 Xiaomi Redmi Note 10S 6GB sở hữu chip xử lý MediaTek Helio G95 8 nhân được sản xuất trên tiến trình 12nm cho tốc độ lên đến 2.05 GHz, tích hợp chip đồ họa Mali-G76 MC4 xử lý đồ họa tốt cho phép người dùng chiến game ổn định, mượt mà ở những tựa game có mức cài đặt phù hợp.
 Xiaomi Redmi Note 10S 6GB - Xiaomi Redmi Note 10S 6GB
@@ -1245,7 +1110,7 @@ Sạc nhanh 33W - Xiaomi Redmi Note 10S 6GB
 Ngay cả khi cần nạp pin nhanh, chế độ sạc pin nhanh 33 W sẽ nhanh chóng làm đầy pin cho thiết bị để sẵn sàng phục vụ cho nhu cầu của bạn.
 Như vậy, với nhiều điểm mạnh trong cả thiết kế, cấu hình và chất lượng camera, pin sạc, chiếc smartphone tầm trung này của Xiaomi xứng đáng là điểm nhắm cho nhu cầu tiêu dùng của nhiều người, khi mong muốn sở hữu điện thoại có giá vừa túi tiền với chất lượng sử dụng thuyết phục.', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2024, N'Điện thoại iPhone 11 64GB', 10, 11990000, 0, N'iphone-xi-xanhla-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Apple đã chính thức trình làng bộ 3 siêu phẩm iPhone 11, trong đó phiên bản iPhone 11 64GB có mức giá rẻ nhất nhưng vẫn được nâng cấp mạnh mẽ như iPhone Xr ra mắt trước đó.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2024, N'Điện thoại iPhone 11 64GB', 10, 11990000, 15, N'iphone-xi-xanhla-600x600.jpg', N'null', NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Apple đã chính thức trình làng bộ 3 siêu phẩm iPhone 11, trong đó phiên bản iPhone 11 64GB có mức giá rẻ nhất nhưng vẫn được nâng cấp mạnh mẽ như iPhone Xr ra mắt trước đó.
 Nâng cấp mạnh mẽ về camera
 Nói về nâng cấp thì camera chính là điểm có nhiều cải tiến nhất trên thế hệ iPhone mới.
 Điện thoại iPhone 11 64GB | Thiết kế nhiều màu sắc
@@ -1308,7 +1173,7 @@ Tất nhiên máy cũng sẽ hỗ trợ công nghệ sạc nhanh nhưng bạn ph
 Điện thoại iPhone 11 64GB | Thời lượng sử dụng dài
 Với chừng đó tính năng, chừng đó cải tiến thì chiếc iPhone 11 này tự tin sẽ là một đối thủ đáng gờm với những chiếc flagship đến từ các hãng Android đang có mặt trên thị trường.', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2025, N'Điện thoại iPhone 13 Pro Max 128GB', 50, 0, 10, N'iphone-13-pro-max-xanh-la-thumb-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Điện thoại iPhone 13 Pro Max 128 GB - siêu phẩm được mong chờ nhất ở nửa cuối năm 2021 đến từ Apple. Máy có thiết kế không mấy đột phá khi so với người tiền nhiệm, bên trong đây vẫn là một sản phẩm có màn hình siêu đẹp, tần số quét được nâng cấp lên 120 Hz mượt mà, cảm biến camera có kích thước lớn hơn, cùng hiệu năng mạnh mẽ với sức mạnh đến từ Apple A15 Bionic, sẵn sàng cùng bạn chinh phục mọi thử thách.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2025, N'Điện thoại iPhone 13 Pro Max 128GB', 50, 25990000, 25, N'iphone-13-pro-max-xanh-la-thumb-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Điện thoại iPhone 13 Pro Max 128 GB - siêu phẩm được mong chờ nhất ở nửa cuối năm 2021 đến từ Apple. Máy có thiết kế không mấy đột phá khi so với người tiền nhiệm, bên trong đây vẫn là một sản phẩm có màn hình siêu đẹp, tần số quét được nâng cấp lên 120 Hz mượt mà, cảm biến camera có kích thước lớn hơn, cùng hiệu năng mạnh mẽ với sức mạnh đến từ Apple A15 Bionic, sẵn sàng cùng bạn chinh phục mọi thử thách.
 Thiết kế đẳng cấp hàng đầu
 iPhone mới kế thừa thiết kế đặc trưng từ iPhone 12 Pro Max khi sở hữu khung viền vuông vức, mặt lưng kính cùng màn hình tai thỏ tràn viền nằm ở phía trước.
 Thiết kế vuông vức đặc trưng - iPhone 13 Pro Max 128GB
@@ -1357,7 +1222,7 @@ Chip A15 giúp tối ưu hóa năng lượng - iPhone 13 Pro Max 128GB
 Sạc MagSafe - iPhone 13 Pro Max 128GB
 Apple đã không ngừng cải tiến đem đến cho người dùng sản phẩm tốt nhất, iPhone 13 Pro Max 128GB vẫn giữ được các điểm nổi bật của người tiền nhiệm, nổi bật với cải tiến về cấu hình, thời lượng pin cũng như camera và nhiều điều còn chờ bạn khám phá.', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2026, N'Điện thoại iPhone 14 Pro Max 128GB', 10, 33990000, 0, N'iphone-14-pro-max-bac-thumb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Cuối cùng thì chiếc iPhone 14 Pro Max cũng đã chính thức lộ diện tại sự kiện ra mắt thường niên vào ngày 08/09 đến từ nhà Apple, kết thúc bao lời đồn đoán bằng một bộ thông số cực kỳ ấn tượng cùng vẻ ngoài đẹp mắt sang trọng. Từ ngày 14/10/2022 người dùng đã có thể mua sắm các sản phẩm iPhone 14 series với đầy đủ phiên bản tại Thế Giới Di Động.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2026, N'Điện thoại iPhone 14 Pro Max 128GB', 10, 33990000, 10, N'iphone-14-pro-max-bac-thumb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Cuối cùng thì chiếc iPhone 14 Pro Max cũng đã chính thức lộ diện tại sự kiện ra mắt thường niên vào ngày 08/09 đến từ nhà Apple, kết thúc bao lời đồn đoán bằng một bộ thông số cực kỳ ấn tượng cùng vẻ ngoài đẹp mắt sang trọng. Từ ngày 14/10/2022 người dùng đã có thể mua sắm các sản phẩm iPhone 14 series với đầy đủ phiên bản tại Thế Giới Di Động.
 Thiết kế cao cấp và vẻ ngoài sành điệu
 Sản phẩm có trong mình một diện mạo bắt mắt nhờ lối tạo hình vuông vức bắt trend tương tự thế hệ iPhone 13 series, đây được xem là kiểu thiết kế rất thành công trên các thế hệ trước khi tạo nên cơn sốt toàn cầu về kiểu dáng thiết kế điện thoại cho đến nay. 
 Thiết kế vuông vức - iPhone 14 Pro Max 128GB
@@ -1425,7 +1290,7 @@ Cổng kết nối	Lightning	Lightning
 Đây chắc hẳn là một chiếc điện thoại rất phù hợp cho những bạn đang làm các công việc chuyên về sáng tạo nội dung chơi game hay nhiếp ảnh. Ngoài ra khi cầm trên tay chiếc iPhone 14 Pro Max thì người dùng cũng được toát lên một vẻ ngoài cực kỳ sang trọng và đẳng cấp khi sở hữu cho mình một sản phẩm mới nhất đến từ nhà Apple.
 Với một con chip có hiệu năng đỉnh cao được trang bị cùng khả năng quay phim chụp ảnh sắc nét trên iPhone 14 Pro Max, giúp cho đây hứa hẹn sẽ trở thành chiếc smartphone gây được sự chú ý và săn đón nhất thị trường di động trong năm 2022.', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2027, N'Điện thoại iPhone 14 Pro 128GB', 10, 29590000, 0, N'iphone-14-pro-bac-thumb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Tại sự kiện ra mắt sản phẩm thường niên diễn ra vào tháng 9/2022, Apple đã trình làng iPhone 14 Pro với những cải tiến về thiết kế màn hình, hiệu năng, sẵn sàng cùng bạn chinh phục mọi thử thách. Giờ đây người dùng đã có thể mua sắm những sản phẩm iPhone 14 từ ngày 14/10/2022 tại Thế Giới Di Động với đầy đủ các phiên bản.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2027, N'Điện thoại iPhone 14 Pro 128GB', 10, 29590000, 10, N'iphone-14-pro-bac-thumb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Tại sự kiện ra mắt sản phẩm thường niên diễn ra vào tháng 9/2022, Apple đã trình làng iPhone 14 Pro với những cải tiến về thiết kế màn hình, hiệu năng, sẵn sàng cùng bạn chinh phục mọi thử thách. Giờ đây người dùng đã có thể mua sắm những sản phẩm iPhone 14 từ ngày 14/10/2022 tại Thế Giới Di Động với đầy đủ các phiên bản.
 Thuộc tính	Thông số
 Màn hình	OLED, 6.1 inch, Super Retina XDR, 120 Hz
 Hệ điều hành	iOS 16
@@ -1471,7 +1336,7 @@ Cổng kết nối	Lightning	Lightning
 Nhiều phiên bản lựa chọn - iPhone 14 Pro 128GB
 Apple đã luôn cải tiến sản phẩm mới để mang đến cho người dùng những chiếc điện thoại hoàn hảo nhất qua từng năm, iPhone 14 Pro không chỉ có thiết kế hiện đại, đẹp mắt mà còn sở hữu hiệu năng vượt trội sẵn sàng theo bạn trong mọi chuyến đi.', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2028, N'Điện thoại iPhone 13 Pro 128GB', 10, 25990000, 5, N'iphone-13-pro-gold-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Mỗi lần ra mắt phiên bản mới là mỗi lần iPhone chiếm sóng trên khắp các mặt trận và lần này cái tên khiến vô số người "sục sôi" là iPhone 13 Pro, chiếc điện thoại thông minh vẫn giữ nguyên thiết kế cao cấp, cụm 3 camera được nâng cấp, cấu hình mạnh mẽ cùng thời lượng pin lớn ấn tượng. 
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2028, N'Điện thoại iPhone 13 Pro 128GB', 10, 25990000, 15, N'iphone-13-pro-gold-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Mỗi lần ra mắt phiên bản mới là mỗi lần iPhone chiếm sóng trên khắp các mặt trận và lần này cái tên khiến vô số người "sục sôi" là iPhone 13 Pro, chiếc điện thoại thông minh vẫn giữ nguyên thiết kế cao cấp, cụm 3 camera được nâng cấp, cấu hình mạnh mẽ cùng thời lượng pin lớn ấn tượng. 
 Thiết kế đặc trưng với màu sắc thời thượng
 iPhone 13 Pro không có nhiều sự thay đổi về thiết kế, khi máy vẫn sở hữu kiểu dáng tương tự như điện thoại iPhone 12 Pro với các cạnh viền vuông vắn và hai mặt kính cường lực cao cấp. Sở hữu 5 phiên bản màu gồm xanh dương, bạc, vàng đồng, xám và xanh lá cho bạn tùy chọn theo sở thích của mình. 
 Sở hữu 4 phiên bản màu sắc trẻ trung - iPhone 13 Pro 128GB
@@ -1524,7 +1389,7 @@ Sạc không dây với MagSafe - iPhone 13 Pro 128GB
 Dung lượng pin trên iPhone luôn thấp hơn khi so với các dòng máy Android nhưng việc trang bị chipset mới cùng sự tối ưu hoá của hệ điều hành sẽ đảm bảo thời lượng sử dụng không hề thua kém trên sản phẩm Android, thậm chí còn có thể vượt trội hơn. 
 iPhone 13 Pro 128GB với thiết kế cứng cáp, sang trọng cùng khả năng nhiếp ảnh ấn tượng, sẽ là một sản phẩm phục vụ tốt các nhu cầu của bạn cũng như là một món đồ thời trang hiện đại.', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2029, N'Điện thoại iPhone 12 64GB', 10, 16490000, 2, N'iphone-12-violet-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Trong những tháng cuối năm 2020, Apple đã chính thức giới thiệu đến người dùng cũng như iFan thế hệ iPhone 12 series mới với hàng loạt tính năng bứt phá, thiết kế được lột xác hoàn toàn, hiệu năng đầy mạnh mẽ và một trong số đó chính là iPhone 12 64GB.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2029, N'Điện thoại iPhone 12 64GB', 10, 16490000, 20, N'iphone-12-violet-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Trong những tháng cuối năm 2020, Apple đã chính thức giới thiệu đến người dùng cũng như iFan thế hệ iPhone 12 series mới với hàng loạt tính năng bứt phá, thiết kế được lột xác hoàn toàn, hiệu năng đầy mạnh mẽ và một trong số đó chính là iPhone 12 64GB.
 Hiệu năng vượt xa mọi giới hạn
 Apple đã trang bị con chip mới nhất của hãng (tính đến 11/2020) cho iPhone 12 đó là A14 Bionic, được sản xuất trên tiến trình 5 nm với hiệu suất ổn định hơn so với chip A13 được trang bị trên phiên bản tiền nhiệm iPhone 11.
 Chip A14 Bionic mạnh mẽ | iPhone 12
@@ -1566,14 +1431,14 @@ Lưu ý: Củ sạc không kèm theo máy mà phải mua riêng.
 Sạc nhanh và sạc không dây tiện lợi hữu ích | iPhone 12
 Sự lột xác đầy mạnh mẽ lần này của Apple không chỉ gây bất ngờ đến người dùng mà còn đánh dấu một kỷ nguyên mới trong nền phát triển smartphone Apple. Và đây cũng được xem là một trong những bộ series iPhone mà Apple đặt nhiều tâm huyết, mục đích và đầy tính năng mạnh mẽ chưa từng thấy.', 2)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2031, N'Laptop Asus TUF Gaming FX506LHB i5', 10, 19990000, 2, N'asus-tuf-gaming-fx506lhb-i5-hn188w-600x600.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Nếu bạn đang tìm kiếm một chiếc laptop gaming nhưng vẫn sở hữu một mức giá phải chăng thì laptop Asus TUF Gaming FX506LHB i5 (HN188W) sẽ là sự lựa chọn đáng cân nhắc với card đồ họa rời NVIDIA GeForce GTX mạnh mẽ cùng phong cách thiết kế cứng cáp, độc đáo. 
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2031, N'Laptop Asus TUF Gaming FX506LHB i5', 10, 19990000, 25, N'asus-tuf-gaming-fx506lhb-i5-hn188w-600x600.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Nếu bạn đang tìm kiếm một chiếc laptop gaming nhưng vẫn sở hữu một mức giá phải chăng thì laptop Asus TUF Gaming FX506LHB i5 (HN188W) sẽ là sự lựa chọn đáng cân nhắc với card đồ họa rời NVIDIA GeForce GTX mạnh mẽ cùng phong cách thiết kế cứng cáp, độc đáo. 
 • Chạy mượt mà các ứng dụng văn phòng trên Word, Excel, PowerPoint,... đến chiến những con game đình đám nhờ bộ vi xử lý Intel Core i5 10300H kết hợp với card đồ họa rời NVIDIA GeForce GTX 1650 4 GB mạnh mẽ. 
 • Laptop Asus đa nhiệm mượt mà trên nhiều cửa sổ Chrome cùng lúc nhờ bộ nhớ RAM 8 GB, bên cạnh đó còn mang đến tốc độ khởi động máy và ứng dụng nhanh chóng với ổ cứng SSD 512 GB.   
 • Laptop có kích thước màn hình 15.6 inch cùng tần số quét 144 Hz mang đến những trải nghiệm chiến game cực đỉnh, không bị giật lag hay xé hình khi chơi những tựa game có tốc độ cao.
 • Laptop Asus TUF Gaming được bao bọc bởi lớp vỏ nhựa màu đen huyền bí, khối lượng 2.3 kg cho phép bạn chiến game ở mọi không gian.
 • Máy được trang bị đèn bàn phím chuyển màu RGB độc đáo, tăng độ hăng hái cho game thủ mỗi khi chiến game.', 3)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2034, N'Laptop Acer Aspire 7 Gaming A715 42G', 10, 14990000, 2, N'acer-aspire-7-gaming-a715.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Laptop Aspire 7 Gaming A715 42G R4XX R5 (NH.QAYSV.008) sở hữu hiệu năng khoẻ cùng thiết kế mạnh mẽ, là bạn đồng hành lý tưởng trong mọi cuộc hành trình.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2034, N'Laptop Acer Aspire 7 Gaming A715 42G', 10, 14990000, 20, N'acer-aspire-7-gaming-a715.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Laptop Aspire 7 Gaming A715 42G R4XX R5 (NH.QAYSV.008) sở hữu hiệu năng khoẻ cùng thiết kế mạnh mẽ, là bạn đồng hành lý tưởng trong mọi cuộc hành trình.
 • Laptop AMD Ryzen 5 5500U cùng card rời NVIDIA GeForce GTX 1650 4 GB, mang đến khả năng thiết kế 2D, render video ngắn,... ổn định trên các phần mềm Adobe hay giải trí với các tựa game kịch tính trên thị trường hiện nay một cách mượt mà.
 • Chiếc laptop Acer Aspire còn sở hữu RAM 8 GB và SSD 256 GB đáp ứng tốt nhu cầu đa nhiệm, hỗ trợ bạn thao tác mọi việc nhanh chóng và hiệu quả hơn.
 • Phiên bản laptop này với khối lượng 2.1 kg và dày 22.9 mm, được chế tác từ chất liệu nhựa bền bỉ, dễ dàng để bạn mang đi khắp mọi nơi.
@@ -1582,7 +1447,7 @@ INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount
 • Công nghệ Acer ComfyView, chống chói Anti Glare và tấm nền IPS được trang bị trên màn hình 15.6 inch, mang đến những trải nghiệm rõ nét, góc nhìn mở rộng, hạn chế hiện tượng chói loá, bóng gương, bảo vệ thị giác của bạn.
 • Chiếc laptop gaming này cho bạn cảm nhận chân thật âm nhạc sống động, ít bị biến dạng nhờ công nghệ âm thanh Acer TrueHarmony.', 3)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2035, N'Laptop Lenovo Legion 5 15IAH7 i5 12500H/8GB', 10, 31690000, 2, N'lenovo-legion-5-15iah7-i5-82rc003wvn-2.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Laptop Lenovo Legion 5 15IAH7 i5 12500H (82RC003WVN) gây ấn tượng bởi lối thiết kế đậm chất thể thao, mạnh mẽ với khả năng vận hành mượt mà mọi tựa game từ nhẹ đến nặng, giúp các cao thủ chiến game đầy tự tin và tận hưởng những giây phút đỉnh cao trong chiến trường ảo.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2035, N'Laptop Lenovo Legion 5 15IAH7 i5 12500H/8GB', 10, 31690000, 20, N'lenovo-legion-5-15iah7-i5-82rc003wvn-2.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Laptop Lenovo Legion 5 15IAH7 i5 12500H (82RC003WVN) gây ấn tượng bởi lối thiết kế đậm chất thể thao, mạnh mẽ với khả năng vận hành mượt mà mọi tựa game từ nhẹ đến nặng, giúp các cao thủ chiến game đầy tự tin và tận hưởng những giây phút đỉnh cao trong chiến trường ảo.
 • Bên trong chiếc laptop gaming này ẩn chứa một con quái vật đến từ bộ vi xử lý Intel Core i5 12500H, tăng hiệu suất lên đến 40% so với thế hệ trước. Card rời NVIDIA GeForce RTX 3050Ti 4 GB hỗ trợ bạn chiến mượt mà các tựa game như LOL, PUBG, CS:GO,... cũng như có thể xử lý hoàn hảo các tác vụ đồ họa về hình ảnh và video.
 • Laptop RAM 8 GB cho phép bạn chuyển đổi qua lại nhiều ứng dụng cùng lúc, vừa nghe nhạc Remix vừa chiến game mà không xảy ra hiện tượng giật lag, nâng cao hiệu suất làm việc với tốc độ Bus RAM 4800 MHz và hỗ trợ nâng cấp RAM tối đa lên đến 16 GB.
 • Không gian ổ cứng SSD 512 GB chuẩn NVMe PCIe với khả năng có thể tháo ra, lắp thanh khác tối đa 1 TB, đồng thời mang đến tốc độ truy xuất dữ liệu nhanh, mở máy hay ứng dụng đều chưa đến 10 giây.
@@ -1594,7 +1459,7 @@ INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount
 • Hàng loạt các cổng kết nối như: Thunderbolt 4, Jack tai nghe 3.5 mm, USB 3.2, USB-C, HDMI, LAN (RJ45),... đáp ứng đa nhu cầu sử dụng với các thiết bị ngoại vi.
 • Chất lượng hình ảnh trực tuyến khi giải trí và học tập được nâng cao nhờ Full HD Webcam, bạn hoàn toàn có thể vừa chiến game vừa livestream cho bạn bè cùng xem với những hình ảnh sắc nét nhất.', 3)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2036, N'Laptop HP VICTUS 16 d0292TX i5 11400H/8GB/512GB', 10, 26590000, 2, N'hp-victus-16-d0292tx-i5-5z9r3pa-thumb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Laptop HP VICTUS 16 d0292TX i5 (5Z9R3PA) sẽ là một người bạn đồng hành đắc lực trên mọi chiến trường ảo của game thủ nhờ ngoại hình sang trọng, hiện đại cùng những thông số kỹ thuật mạnh mẽ. 
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2036, N'Laptop HP VICTUS 16 d0292TX i5 11400H/8GB/512GB', 10, 26590000, 25, N'hp-victus-16-d0292tx-i5-5z9r3pa-thumb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Laptop HP VICTUS 16 d0292TX i5 (5Z9R3PA) sẽ là một người bạn đồng hành đắc lực trên mọi chiến trường ảo của game thủ nhờ ngoại hình sang trọng, hiện đại cùng những thông số kỹ thuật mạnh mẽ. 
 • Trang bị chip Intel Core i5 11400H cùng card rời NVIDIA GeForce RTX3050Ti 4 GB, laptop HP Victus sẵn sàng cùng bạn chiến mọi tựa game đình đám như LOL, PUBG, CS:GO,... hay thỏa mãn đam mê sáng tạo với các ứng dụng đồ họa của nhà Adobe. 
 • Vừa chiến game vừa nghe nhạc giải trí vẫn rất mượt mà, không giật lag nhờ bộ nhớ RAM 8 GB, ổ cứng 512 GB SSD (có thể tháo và lắp thanh khác tối đa 1 TB) mang đến không gian lưu trữ ổn định cùng tốc độ mở máy nhanh chóng hơn.  
 • Quan sát di chuyển của đối thủ ở mọi góc cạnh nhờ kích thước màn hình 16.1 inch cùng tấm nền IPS tạo góc nhìn rộng rãi, độ phân giải Full HD cùng công nghệ Wled-backlit mang đến những khung ảnh chất lượng, sắc nét hơn. 
@@ -1604,7 +1469,7 @@ INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount
 • Laptop có bàn phím số giúp các thao tác nhập liệu chữ số được tiện lợi hơn rất nhiều, ngoài ra còn có thêm đèn nền phím giúp bạn thoải mái làm việc ở những nơi thiếu sáng.
 • Laptop HP được trang bị các cổng kết nối bao gồm USB 3.1, Jack tai nghe 3.5 mm, HDMI, LAN (RJ45) và USB Type-C giúp kết nối với các thiết bị ngoại vi khác nhanh chóng hơn.', 3)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2038, N'Laptop Acer Nitro 5 Gaming AN515 45 R6EV R5 5600H', 10, 19490000, 0, N'Laptop Acer Aspire 3.png', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Phá cách với diện mạo mạnh mẽ đến từ laptop Acer Nitro 5 Gaming AN515 45 R6EV R5 5600H (NH.QBMSV.006) mang đến cho người dùng hiệu năng ổn định, hỗ trợ bạn trong mọi tác vụ hằng ngày hay chiến những trận game cực căng một cách mượt mà.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2038, N'Laptop Acer Nitro 5 Gaming AN515 45 R6EV R5 5600H', 10, 19490000, 30, N'Laptop Acer Aspire 3.png', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Phá cách với diện mạo mạnh mẽ đến từ laptop Acer Nitro 5 Gaming AN515 45 R6EV R5 5600H (NH.QBMSV.006) mang đến cho người dùng hiệu năng ổn định, hỗ trợ bạn trong mọi tác vụ hằng ngày hay chiến những trận game cực căng một cách mượt mà.
 Kiểu dáng nổi bật, thu hút mọi ánh nhìn
 Laptop Acer Nitro với tính bền bỉ vượt bậc khi được trang bị lớp vỏ nhựa chắc chắn cùng khối lượng không quá nặng cho một chiếc laptop gaming 2.2 kg và dày 23.9 mm, sẵn sàng cùng bạn đi đến bất kỳ đâu, phục vụ tốt cho cả nhu cầu công việc hay giải trí, cho phép bạn chiến game ở khắp mọi nơi trong cuộc hành trình.
 Acer Nitro 5 Gaming AN515 45 R6EV R5 5600H (NH.QBMSV.006) - Thiết kế
@@ -1634,7 +1499,7 @@ Sự kết hợp hoàn mỹ của hai công nghệ âm thanh hiện đại Acer 
 Acer Nitro 5 Gaming AN515 45 R6EV R5 5600H (NH.QBMSV.006) - Âm  thanh
 Acer Nitro 5 Gaming AN515 45 R6EV R5 5600H (NH.QBMSV.006) là phiên bản laptop gaming đáng được chọn mua khi sở hữu thiết kế độc đáo cùng hiệu năng mạnh mẽ, sẵn sàng cùng bạn chinh chiến mọi trận đấu gây cấn, giành chiến thắng cuối cùng.', 3)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2040, N'Laptop MSI Gaming GF65 Thin 10UE i5 10500H/16GB', 10, 24290000, 1, N'msi-gamin-gf65-thin-10ue-i5.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Tối ưu hóa cho mọi hoạt động từ đồ họa đến chiến game, laptop MSI GF65 Thin 10UE i5 (286VN) sẽ là người cộng sự đắc lực với thiết kế độc đáo và cấu hình mạnh mẽ, cùng bạn xông pha trên mọi chiến trường ảo.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2040, N'Laptop MSI Gaming GF65 Thin 10UE i5 10500H/16GB', 10, 24290000, 10, N'msi-gamin-gf65-thin-10ue-i5.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Tối ưu hóa cho mọi hoạt động từ đồ họa đến chiến game, laptop MSI GF65 Thin 10UE i5 (286VN) sẽ là người cộng sự đắc lực với thiết kế độc đáo và cấu hình mạnh mẽ, cùng bạn xông pha trên mọi chiến trường ảo.
 Tự tin cùng bạn chinh chiến game với sức mạnh hiệu năng vượt trội
 Xử lý mọi tác vụ văn phòng một cách ấn lượng hay thỏa mãn bạn với mọi tựa game kịch tính nhất hiện nay như Cyberpunk 2077, CS:GO, LOL, FIFA, PUBG: Battlegrounds,... nhờ hiệu năng vượt bật của bộ CPU Intel Core i5 10500H sở hữu cấu trúc 6 nhân 12 luồng, mang đến tốc độ xung nhịp cơ bản 2.50 GHz và đạt tối đa lên đến 4.5 GHz Turbo Boost.
 Phiên bản laptop này mang đến cho người dùng trải nghiệm ấn tượng hơn nhờ khả năng đa nhiệm cực tốt đến từ bộ nhớ RAM 16 GB chuẩn DDR4 2 khe (1 khe 8 GB + 1 khe 8 GB) với tốc độ bus RAM 3200 MHz, cho phép bạn mở và vận hành cùng lúc nhiều ứng dụng. Thêm vào đó, MSI còn hỗ trợ nâng cấp RAM tối đa lên đến 64 GB, tối ưu nhu cầu sử dụng.
@@ -1671,7 +1536,7 @@ INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount
 • Đạt chuẩn Hi-Res Audio cùng công nghệ âm vòm Dolby Atmos cung cấp âm thanh sống động từ mọi hướng, lấp đầy không gian với độ rõ, chi tiết và chiều sâu đáng kinh ngạc.
 • Truyền tải dữ liệu, kết nối nhanh với các thiết bị ngoại vi nhờ các cổng giao tiếp: USB 3.2 Gen 2 Type-C, 2 x USB 3.2, HDMI, LAN (RJ45), Thunderbolt 4.', 3)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2042, N'Laptop Lenovo Ideapad Gaming 3 15IAH7 i5', 10, 24190000, 0, N'lenovo-ideapad-gaming-3-15iah7-i5-82s9007tvn.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Laptop Lenovo Ideapad Gaming 3 15IAH7 i5 (82S9007TVN) thuộc dòng laptop gaming mang vẻ đẹp ấn tượng, cuốn hút nhưng không kém phần mạnh mẽ nhờ vào CPU Intel Gen 12, sẵn sàng đồng hành cùng bạn trên mọi đấu trường game hiện nay.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2042, N'Laptop Lenovo Ideapad Gaming 3 15IAH7 i5', 10, 24190000, 10, N'lenovo-ideapad-gaming-3-15iah7-i5-82s9007tvn.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Laptop Lenovo Ideapad Gaming 3 15IAH7 i5 (82S9007TVN) thuộc dòng laptop gaming mang vẻ đẹp ấn tượng, cuốn hút nhưng không kém phần mạnh mẽ nhờ vào CPU Intel Gen 12, sẵn sàng đồng hành cùng bạn trên mọi đấu trường game hiện nay.
 Thiết kế hầm hố, cá tính với gam màu trắng cuốn hút
 Lenovo IdeaPad Gaming 3 sở hữu một thiết kế góc cạnh cùng gam màu trắng pha lẫn các chi tiết xanh tạo nên một tổng thể vô cùng mạnh mẽ, hầm hố nhưng không kém phần sang trọng. Tuy có lớp vỏ từ nhựa nhưng cảm giác cầm nắm, xách lên di chuyển rất chắc chắn và không ọp ẹp.
 Lenovo Ideapad Gaming 3 15IAH7 i5 (82S9007TVN) - thiết kế
@@ -1702,7 +1567,7 @@ Lenovo Ideapad Gaming 3 15IAH7 i5 (82S9007TVN) - màn hình
 Thuộc dòng laptop gaming có viên pin dung lượng 60 Wh, tuy nhiên khi sử dụng máy chỉ có thể trụ được khoảng 2 tiếng khi mình làm việc trên Excel và xem YouTube. Nếu bạn trải nghiệm game hoặc các tác vụ nặng, hãy cắm sạc để máy đạt được hiệu năng tốt nhất nhé.
 Tổng kết lại, mang cho mình thiết kế “phi thuyền” đầy cá tính và mạnh mẽ. Bạn còn chần chờ gì nữa mà chưa sở hữu cho mình laptop Lenovo Ideapad Gaming 3 15IAH7 i5 (82S9007TVN) để có thể chiến game hoặc khoe với bạn bè vì thiết kế nổi bật cùng hiệu năng ấn tượng của nó.', 3)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2043, N'Laptop Dell Gaming G15 5515 R5 5600H/16GB', 30, 23490000, 0, N'dell-gaming-g15-5515-r5-p105f004dgr.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Bộ hiệu năng gây ấn tượng đến từ con chip AMD mạnh mẽ cùng thiết kế cá tính, nổi bật, laptop Dell Gaming G15 5515 R5 (P105F004DGR) sẽ đáp ứng tối ưu mọi nhu cầu từ các tác vụ văn phòng cơ bản đến những ứng dụng đồ họa, chơi game giải trí chuyên nghiệp.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2043, N'Laptop Dell Gaming G15 5515 R5 5600H/16GB', 30, 23490000, 20, N'dell-gaming-g15-5515-r5-p105f004dgr.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Bộ hiệu năng gây ấn tượng đến từ con chip AMD mạnh mẽ cùng thiết kế cá tính, nổi bật, laptop Dell Gaming G15 5515 R5 (P105F004DGR) sẽ đáp ứng tối ưu mọi nhu cầu từ các tác vụ văn phòng cơ bản đến những ứng dụng đồ họa, chơi game giải trí chuyên nghiệp.
 Thiết kế đậm chất riêng, đầy ấn tượng
 Laptop Dell Gaming hoàn thiện từ chất liệu nhựa cao cấp, bền bỉ, phủ gam màu xám thời thượng, thu hút bạn từ cái nhìn đầu tiên, thích hợp với đa dạng đối tượng người dùng bởi phong cách gaming hiện đại, không quá hầm hố.
 Khối lượng 2.8 kg và độ dày 26.9 mm tạo cảm giác cứng cáp hơn cho máy, nhưng vẫn vừa vặn nằm gọn trong balo, tiện lợi cùng bạn di chuyển mọi lúc mọi nơi để học tập, làm việc cũng như chơi game giải trí hoàn hảo.
@@ -1787,7 +1652,7 @@ Lenovo Tab M8 được trang bị bộ đôi camera trước và sau với độ
 Máy tính bảng Lenovo Tab A22 | Camera sau của máy
 Với cấu hình và các tính năng kể trên Lenovo Tab M8 là chiếc máy hoàn toàn phù hợp với với những gia đình có các con em nhỏ, đang cần một chiếc máy tính bảng đáp ứng tốt nhu cầu học tập, giải trí, xem video hằng ngày.', 4)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2048, N'Máy tính bảng Nokia Tab T20 4G', 10, 4990000, 2, N'nokia-t20-2-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Máy tính bảng Nokia đánh dấu sự trở lại của hãng trên thị trường tablet sau nhiều năm vắng bóng bằng việc ra mắt Nokia Tab T20 máy có thiết kế kim loại sang trọng, hiệu năng ổn định cùng màn hình hiển thị sắc nét, mang đến một lựa chọn không thể bỏ qua trong phân khúc.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2048, N'Máy tính bảng Nokia Tab T20 4G', 10, 4990000, 20, N'nokia-t20-2-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Máy tính bảng Nokia đánh dấu sự trở lại của hãng trên thị trường tablet sau nhiều năm vắng bóng bằng việc ra mắt Nokia Tab T20 máy có thiết kế kim loại sang trọng, hiệu năng ổn định cùng màn hình hiển thị sắc nét, mang đến một lựa chọn không thể bỏ qua trong phân khúc.
 Thiết kế bền bỉ
 Máy có thiết kế cứng cáp với mặt lưng được hoàn thiện từ kim loại mang đến cái nhìn sang trọng và đẳng cấp hơn trên một chiếc tablet, mặt lưng cũng được gia công hoàn thiện mờ giúp hạn chế bám dấu vân tay trong quá trình sử dụng hàng ngày.
 Máy có thiết kế vuông vắn - Nokia Tab T20
@@ -1923,7 +1788,7 @@ Ngoài việc được trang bị một con chip khủng, màn hình có tần s
 Bạn có thể yên tâm sử dụng Tab S8 cho các nhu cầu học hành, làm việc, giải trí suốt cả một ngày dài và sạc đầy pin một cách nhanh chóng với công nghệ sạc nhanh. 
 Nếu bạn đang cần một chiếc tablet có một thiết kế tinh tế, nhỏ gọn, thường xuyên di chuyển và mang máy tính bảng bên mình để học tập và làm việc thì chắc chắn Galaxy Tab S8 sẽ là một lựa chọn phù hợp.', 4)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2052, N'Máy tính bảng Samsung Galaxy Tab A7 Lite', 5, 3990000, 2, N'samsung-galaxy-tab-a7-lite-gray-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Máy tính bảng Samsung Galaxy Tab A7 Lite là phiên bản rút gọn của dòng tablet "ăn khách" Galaxy Tab A7 thuộc thương hiệu Samsung, đáp ứng nhu cầu giải trí của khách hàng thuộc phân khúc bình dân với màn hình lớn nhưng vẫn gọn nhẹ hợp túi tiền.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2052, N'Máy tính bảng Samsung Galaxy Tab A7 Lite', 5, 3990000, 20, N'samsung-galaxy-tab-a7-lite-gray-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Máy tính bảng Samsung Galaxy Tab A7 Lite là phiên bản rút gọn của dòng tablet "ăn khách" Galaxy Tab A7 thuộc thương hiệu Samsung, đáp ứng nhu cầu giải trí của khách hàng thuộc phân khúc bình dân với màn hình lớn nhưng vẫn gọn nhẹ hợp túi tiền.
 Thiết kế siêu mỏng nhẹ
 Galaxy Tab A7 Lite sở hữu kiểu thiết kế đặc trưng của dòng Galaxy Tab A7. Thiết bị sử dụng chất liệu nhôm với thiết kế nguyên khối giúp cho máy trở nên cao cấp hơn dù chỉ thuộc phân khúc tầm trung giá rẻ.
 Galaxy Tab A7 Lite | Thiết kế mặt lưng
@@ -1953,7 +1818,7 @@ OneUI 3.1 thông minh, mượt mà dễ sử dụng
 Galaxy Tab A7 Lite sử dụng giao diện OneUI 3.1 hoàn toàn mới được tối ưu, với các thao tác sử dụng vô cùng thân thiện đơn giản và không chứa ứng dụng rác gây nặng máy, đảm bảo cho bạn có một trải nghiệm tốt nhất.
 Với mức giá phải chăng, cấu hình ổn, màn hình lớn nhưng vẫn nhỏ gọn, Galaxy Tab A7 Lite sẽ là một trong những sản phẩm phù hợp với mọi người đáp ứng tốt nhu cầu học tập cũng như cho nhu cầu giải trí hằng ngày.', 4)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2054, N'Máy tính bảng iPad Pro M1 11 inch', 10, 41990000, 0, N'pad-pro-m1-11-inch-wifi-cellular.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Trải nghiệm khung hình sống động cùng cảm giác chạm vuốt cực mượt
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2054, N'Máy tính bảng iPad Pro M1 11 inch', 10, 41990000, 40, N'pad-pro-m1-11-inch-wifi-cellular.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Trải nghiệm khung hình sống động cùng cảm giác chạm vuốt cực mượt
 Máy tính bảng iPad Pro M1 11 inch WiFi Cellular 1TB (2021) thiết kế hình hộp vát cạnh vuông vức, hiện đại với thân máy bằng kim loại chắc chắn, hoàn thiện tỉ mỉ và sang trọng, trọng lượng nhẹ, kích cỡ hợp lý thuận tiện sử dụng và mang theo.
 Màn hình 11 inch sử dụng tấm nền Liquid Retina cho khung hình iPad hiển thị rực rỡ, sống động, chân thực, độ phân giải đạt 1668 x 2388 Pixels hiển thị chi tiết sắc nét, kết hợp cạnh viền mỏng cho không gian trải nghiệm màn hình thật đã mắt.
 Màn hình cao cấp - iPad Pro M1 11 inch WiFi Cellular 1TB (2021)
@@ -1969,7 +1834,7 @@ Camera xịn sò - iPad Pro M1 11 inch WiFi Cellular 1TB (2021)
 Ngoài ra, Apple hỗ trợ tính năng mở khóa bằng khuôn mặt Face ID cũng gia tăng tiện ích và khả năng bảo mật cho iPad của bạn.
 Với nhu cầu dùng máy tính bảng ở tần suất cao, bạn sẽ khá yên tâm nhờ dung lượng pin của phiên bản iPad này đạt 28.65 Wh tương đương khoảng 7538 mAh, được sự tối ưu của chip M1 mang đến 10 giờ sử dụng liên tục cho nhu cầu lướt web hoặc xem video. Công nghệ sạc pin nhanh 20 W sẽ nhanh chóng phục hồi năng lượng pin cho thiết bị trong tình huống cạn nguồn.', 4)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2055, N'Máy tính bảng iPad Pro M2 12.9 inch', 10, 35990000, 10, N'ipad-pro-m2-129-wifi-cellular-128gb-231022.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Apple đang ngày càng bỏ xa nhiều đối thủ về mặt hiệu năng trên các dòng tablet, điều này được minh chứng cụ thể bằng sự xuất hiện của con chip Apple M2 siêu mạnh mẽ trên iPad Pro M2 12.9 inch WiFi Cellular 128GB. Bên cạnh đó thì máy còn có những nâng cấp như hệ điều hành iPadOS 16, viên pin 40.88 Wh.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2055, N'Máy tính bảng iPad Pro M2 12.9 inch', 10, 35990000, 30, N'ipad-pro-m2-129-wifi-cellular-128gb-231022.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Apple đang ngày càng bỏ xa nhiều đối thủ về mặt hiệu năng trên các dòng tablet, điều này được minh chứng cụ thể bằng sự xuất hiện của con chip Apple M2 siêu mạnh mẽ trên iPad Pro M2 12.9 inch WiFi Cellular 128GB. Bên cạnh đó thì máy còn có những nâng cấp như hệ điều hành iPadOS 16, viên pin 40.88 Wh.
 Tinh tế trên từng đường nét thiết kế
 Về ngoại hình của iPad Pro M2 sẽ có nét tương đồng với thế hệ trước khi thừa hưởng gần như toàn bộ vẻ đẹp vốn đã rất tốt và không cần phải nâng cấp gì thêm cả, vẫn là mặt lưng phẳng và các cạnh được vát phẳng tinh tế cùng 4 góc máy bo cong. Đi kèm với đó là bộ khung và cả phần mặt sau đều được làm từ kim loại bền bỉ.
 Thiết kế sang trọng - iPad Pro M2 12.9 inch WiFi Cellular 128GB
@@ -2002,7 +1867,7 @@ iPad Pro M2 được tích hợp viên pin lớn có dung lượng 40.88 Wh (x�
 Sử dụng dài lâu - iPad Pro M2 12.9 inch WiFi Cellular 128GB
 Có thể thấy iPad Pro M2 đã phá vỡ được giới hạn của một chiếc tablet thông thường khi sở hữu cấu hình cực kỳ mạnh mẽ và màn hình kích thước lớn, vì vậy người dùng hoàn toàn có thể biến máy tính bảng hoạt động với chức năng gần như tương đồng với laptop thông qua Magic Keyboard để bạn có thể xử lý công việc một cách tối ưu hơn.', 4)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2056, N'Máy tính bảng iPad Pro M1 12.9 inch', 5, 29290000, 0, N'ipad-pro-2021-129-inch-gray-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Bạn có đang mong chờ những sản phẩm chất lượng đến từ Apple? Sau hàng loạt các sản phẩm đình đám như iPhone 12 series thì hãng đã tung ra chiếc iPad Pro M1 12.9 inch Wifi Cellular 128GB (2021) trang bị những tính năng ngày càng vượt trội và thời thượng.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2056, N'Máy tính bảng iPad Pro M1 12.9 inch', 5, 29290000, 40, N'ipad-pro-2021-129-inch-gray-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Bạn có đang mong chờ những sản phẩm chất lượng đến từ Apple? Sau hàng loạt các sản phẩm đình đám như iPhone 12 series thì hãng đã tung ra chiếc iPad Pro M1 12.9 inch Wifi Cellular 128GB (2021) trang bị những tính năng ngày càng vượt trội và thời thượng.
 Màn hình Liquid Retina XDR 12.9 inch rực rỡ
 iPad Pro M1 12.9 inch 2021 sở hữu màn hình Liquid Retina XDR mini-LED LCD, áp dụng công nghệ mini-LED với 10.000 bóng được tuỳ chỉnh nhỏ hơn 120 lần so với thế hệ trước nên độ sáng có thể lên đến 1600 nits ngay cả ngoài trời vẫn có thể sử dụng tốt.
 iPad Pro M1 12.9 inch WiFi Cellular 128GB (2021) | Sở hữu màn hình Liquid Retina XDR, áp dụng công nghệ mini-LED
@@ -2067,7 +1932,7 @@ Nắm bắt ngày trong tháng dễ dàng hơn khi chiếc đồng hồ Mathey T
 Đồng hồ nữ Mathey Tissot D450ABU có lịch ngày hữu dụng
 Dây đeo của đồng hồ bền bỉ, chịu được mọi thời tiết, cho cảm giác mát tay khi đeo, ôm tay tốt hơn nhờ có nhiều mắt xích nhỏ', 5)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2059, N'Đồng hồ ADRIATICA 36 mm Nữ A3812.1183QZ', 5, 2320000, 0, N'adriatica-a38121183qz-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Thiết kế chiếc đồng hồ kim sang trọng với các chữ số La Mã cổ điển, thích hợp với các cô nàng quý phái, thời thượng
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2059, N'Đồng hồ ADRIATICA 36 mm Nữ A3812.1183QZ', 5, 2320000, 15, N'adriatica-a38121183qz-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Thiết kế chiếc đồng hồ kim sang trọng với các chữ số La Mã cổ điển, thích hợp với các cô nàng quý phái, thời thượng
 Đồng hồ nữ Adriatica A3812.1183QZ mang thương hiệu Adriatica của Thụy Sĩ, sẽ khiến bạn hài lòng về chất lượng mà mẫu đồng hồ quartz này đem lại.
 Đồng hồ nữ Adriatica A3812.1183QZ với thiết kế nữ tính và tinh tế
 Kết cấu của chiếc đồng hồ nữ chắc chắn và bền bỉ
@@ -2080,7 +1945,7 @@ Xác định được nhiều thông tin thời gian hơn với ô lịch ngày 
 Đồng hồ nữ Adriatica A3812.1183QZ được trang bị lịch ngày tiện lợi
 Dây đeo của mẫu đồng hồ Adriatica bền bỉ, không bị gỉ sét, dễ lau chùi khi bám bụi, cho bạn cảm giác mát tay khi đeo', 5)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2060, N'Đồng hồ MATHEY TISSOT 30 mm Nữ D450BI', 3, 1698000, 0, N'mathey-tissot-d450bi-nu-1-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Sang trọng và thanh lịch với sự phối màu hài hòa, thích hợp cho các quý cô nữ tính và quý phái
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2060, N'Đồng hồ MATHEY TISSOT 30 mm Nữ D450BI', 3, 1698000, 35, N'mathey-tissot-d450bi-nu-1-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Sang trọng và thanh lịch với sự phối màu hài hòa, thích hợp cho các quý cô nữ tính và quý phái
 Đồng hồ nữ Mathey Tissot D450BI là một sản phẩm của hãng đồng hồ Mathey Tissot của Thụy Sĩ, nổi tiếng với nhiều chiếc đồng hồ sang trọng.
 Đồng hồ nữ Mathey Tissot D450BI có thiết kế trẻ trung
 Hạn chế hư hỏng khi va chạm
@@ -2106,7 +1971,7 @@ Chiếc đồng hồ Adriatica nữ này được tích hợp lịch ngày giúp
 Đồng hồ nữ Adriatica A3812.5183Q có mặt lịch ngày tiện lợi
 Dây của đồng hồ nữ này chống oxi hóa, chịu được mọi thời tiết khắc nghiệt, cho cảm giác mát tay khi đeo', 5)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2062, N'Đồng hồ Q&Q 28.5 mm Nữ S393J212Y', 5, 293000, 0, N'q-q-s393j212y-nu-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Là mẫu đồng hồ kim có kiểu dáng hiện đại, tinh tế, dành riêng cho các cô nàng thanh lịch, nữ tính
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2062, N'Đồng hồ Q&Q 28.5 mm Nữ S393J212Y', 5, 293000, 20, N'q-q-s393j212y-nu-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Là mẫu đồng hồ kim có kiểu dáng hiện đại, tinh tế, dành riêng cho các cô nàng thanh lịch, nữ tính
 Đồng hồ nữ Q&Q S393J212Y đến từ thương hiệu đồng hồ Q&Q uy tín và chất lượng của Nhật Bản.
 Đồng hồ nữ Q&Q S393J212Y có kiểu dáng sang trọng
 Bộ khung bền chắc, chịu va đập hiệu quả
@@ -2124,31 +1989,31 @@ INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount
 - Đồng hồ sở hữu các tiện ích: Lịch thứ, ngày, báo thức và bấm giờ thể thao
 - Trang bị đèn nền giúp bạn xem giờ trong bóng tối', 5)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2064, N'Đồng hồ Casio 34 mm Nữ LTP-VT01L-5BUDF', 10, 855000, 0, N'casio-ltp-vt01l-5budf-nu-thumbb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'• Đây là món phụ kiện thời trang lý tưởng đến từ hãng đồng hồ Casio nổi tiếng của Nhật Bản. Nổi bật với thiết kế đơn giản và tinh tế phù hợp với mọi cô nàng.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2064, N'Đồng hồ Casio 34 mm Nữ LTP-VT01L-5BUDF', 10, 855000, 10, N'casio-ltp-vt01l-5budf-nu-thumbb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'• Đây là món phụ kiện thời trang lý tưởng đến từ hãng đồng hồ Casio nổi tiếng của Nhật Bản. Nổi bật với thiết kế đơn giản và tinh tế phù hợp với mọi cô nàng.
 • Đồng hồ Casio 34 mm nữ LTP-VT01L-5BUDF sở hữu đường kính mặt 34 mm.
 • Khung viền được làm từ thép không gỉ bền bỉ với thời gian, chống oxi hoá, chống chịu mọi thời tiết. Dây đeo đồng hồ được làm từ da tổng hợp, tạo cảm giác thoải mái khi đeo, ôm sát cổ tay.
 • Thoải mái khi rửa tay mà không lo hư hỏng vì đồng hồ nữ này có hệ số kháng nước là 1 ATM. Không nên đeo khi đi tắm, đi bơi, lặn.', 5)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2065, N'Đồng hồ G-SHOCK 45.4 mm Nam GM-2100-1ADR', 10, 5440000, 0, N'g-shock-gm-2100-1adr-nam-1-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'• Vừa bóng bẩy, sắc nét lại vừa táo bạo với chiếc đồng hồ G-Shock tiêu chuẩn, của thương hiệu Casio nổi tiếng và uy tín Nhật Bản. Chiếc đồng hồ này thực sự được xem như là một món thời trang thực thụ vì vẻ ngoài được thiết kế cực kì và ấn tượng.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2065, N'Đồng hồ G-SHOCK 45.4 mm Nam GM-2100-1ADR', 10, 5440000, 15, N'g-shock-gm-2100-1adr-nam-1-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'• Vừa bóng bẩy, sắc nét lại vừa táo bạo với chiếc đồng hồ G-Shock tiêu chuẩn, của thương hiệu Casio nổi tiếng và uy tín Nhật Bản. Chiếc đồng hồ này thực sự được xem như là một món thời trang thực thụ vì vẻ ngoài được thiết kế cực kì và ấn tượng.
 • Mẫu đồng hồ G-SHOCK 45.4 mm Nam GM-2100-1ADR có đường kính mặt 45.4 mm, độ rộng dây là 25.7 mm. Gây chú ý vì thiết kế mặt hình bát giác với chất liệu mặt kính khoáng toát lên vẻ cứng cáp, chống va đập cực tốt.
 • 20 ATM là hệ số chống nước của mẫu đồng hồ này, với thông số này, đồng hồ thường được thiết kế núm xoáy vít vặn, mang tới khả năng chống nước cực tốt. Người dùng có thể tự tin đeo đồng hồ khi bơi lặn hay những hoạt động thể thao khám phá dưới biển. Lưu ý: không bấm các nút điều khiển khi bơi, lặn.
 • Casio đã tỉ mỉ và chi tiết trong khâu lựa chọn vật liệu với khung viền làm từ thép không gỉ mạ Ion sáng bóng, bền bỉ với thời gian. Dây đeo được làm từ nhựa, bền bỉ, chống nước tốt. Những vật liệu này giúp người dùng khi đeo cảm thấy thoải mái, êm ái.
 • Người dùng không cần đem điện thoại vì đã có thể xem lịch ngày, lịch tháng trên mặt đồng hồ một cách nhanh chóng. Đồng hồ còn hỗ trợ âm bấm phím, đèn led, kim dạ quang xem giờ trong bóng tối cực dễ dàng.
 • Đồng hồ nam này cũng sở hữu nhiều tiện ích như những chiếc đồng hồ G-Shock khác như: báo thức, bấm giờ thể thao, bấm giờ đếm ngược, giờ thế giới, đồng hồ 24 giờ, sẽ giúp bạn xem giờ tiện lợi hơn.', 5)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2066, N'Đồng hồ Casio 36.3 mm Unisex A168WER-2ADF', 10, 1224000, 0, N'casio-a168wer-2adf-unisex-thumbb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'• Đồng hồ Casio 36.3 mm Unisex A168WER-2ADF là món phụ kiện thời trang lý tưởng đến từ hãng đồng hồ Casio nổi tiếng của Nhật Bản. 
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2066, N'Đồng hồ Casio 36.3 mm Unisex A168WER-2ADF', 10, 1224000, 20, N'casio-a168wer-2adf-unisex-thumbb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'• Đồng hồ Casio 36.3 mm Unisex A168WER-2ADF là món phụ kiện thời trang lý tưởng đến từ hãng đồng hồ Casio nổi tiếng của Nhật Bản. 
 • Đồng hồ có đường kính mặt 38.6 x 36.3 mm.
 • Chất liệu của khung viền được làm từ nhựa resin và dây đeo của đồng hồ được làm từ thép không gỉ cứng cáp, bền bỉ với thời gian.
 • Đồng hồ unisex sở hữu độ chống nước 1 ATM: An toàn khi rửa tay. Không nên sử dụng khi đi mưa, đi tắm hay bơi, lặn.
 • Báo thức, bấm giờ thể thao, lịch ngày, lịch thứ, đèn nền và đồng hồ 24 giờ là những tiện ích của đồng hồ, giúp người dùng chủ động hơn trong cuộc sống.', 5)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2067, N'Đồng hồ G-SHOCK 40.4 mm Nữ GM-S2100-3ADR', 5, 5111000, 0, N'g-shock-gm-s2100-3adr-nu-thumbb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'• Mẫu đồng hồ này phù hợp cho những bạn nữ ưa chuộng sự cá tính và năng động với kiểu dáng thiết kế thể thao, màu sắc trẻ trung. Đồng hồ G-SHOCK 40.4 mm Nữ GM-S2100-3ADR thuộc dòng G-Shock đến từ thương hiệu Casio - Nhật Bản, nổi tiếng với những chiếc đồng hồ chống sốc bền bỉ.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2067, N'Đồng hồ G-SHOCK 40.4 mm Nữ GM-S2100-3ADR', 5, 5111000, 30, N'g-shock-gm-s2100-3adr-nu-thumbb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'• Mẫu đồng hồ này phù hợp cho những bạn nữ ưa chuộng sự cá tính và năng động với kiểu dáng thiết kế thể thao, màu sắc trẻ trung. Đồng hồ G-SHOCK 40.4 mm Nữ GM-S2100-3ADR thuộc dòng G-Shock đến từ thương hiệu Casio - Nhật Bản, nổi tiếng với những chiếc đồng hồ chống sốc bền bỉ.
 • Bộ khung viền gia công chắc chắn từ chất liệu thép không gỉ giúp hạn chế hư hỏng khi xảy ra va đập mạnh, kết hợp dây đeo bằng nhựa nhẹ nhàng, khó đứt, bền bỉ mang lại cho bạn sự thoải mái.
 • Đồng hồ sỡ hữu đường kính mặt 40.4 mm cùng chất liệu là kính khoáng trên mặt kính cho độ trong suốt, độ cứng cao, dễ dàng đánh bóng lại như mới sau khi đeo một thời gian.
 • Chịu được áp lực nước ở độ sâu 200 m tương đương với hệ số chống nước 20 ATM giúp bạn an tâm đeo đồng hồ khi đi tắm, bơi lội hay đi lặn cũng như tham gia các hoạt động thể thao dưới nước. Lưu ý: Không bấm nút điều khiển khi đang bơi hoặc lặn dưới nước.
 • Chiếc đồng hồ G-Shock này được tích hợp nhiều tính năng hỗ trợ bạn trong cuộc sống hàng ngày như: Đèn nền, xem giờ thế giới, báo thức, bấm giờ đếm ngược, bấm giờ thể thao, lịch ngày - thứ - tháng, đồng hồ 24 giờ thuận tiện hơn khi theo dõi thời gian mọi lúc. ', 5)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2069, N'Pin sạc dự phòng Polymer 10.000 mAh Type C', 5, 455000, 0, N'sac-du-phong-10000mah-type.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Pin sạc dự phòng Polymer 10.000mAh Type C Xmobile PJ JP190ST xanh có kích thước gọn gàng cùng màu sắc đẹp mắt, dễ dàng mang theo đến nhiều nơi và sử dụng khi cần.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2069, N'Pin sạc dự phòng Polymer 10.000 mAh Type C', 5, 455000, 20, N'sac-du-phong-10000mah-type.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Pin sạc dự phòng Polymer 10.000mAh Type C Xmobile PJ JP190ST xanh có kích thước gọn gàng cùng màu sắc đẹp mắt, dễ dàng mang theo đến nhiều nơi và sử dụng khi cần.
 Có màu sắc tươi tắn - Pin sạc dự phòng Polymer 10.000mAh Type C Xmobile PJ JP190ST Xanh
 Sạc dự phòng có dung lượng pin 10.000 mAh, có thể sạc được nhiều lần cho các thiết bị di động phổ biến trên thị trường hiện nay.
 Dung lượng 10.000 mAh - Pin sạc dự phòng Polymer 10.000mAh Type C Xmobile PJ JP190ST Xanh
@@ -2162,7 +2027,7 @@ Trạng bị đèn LED tiện lợi, người dùng nắm bắt tình trạng pi
 Có đèn LED tiện lợi - Pin sạc dự phòng Polymer 10.000mAh Type C Xmobile PJ JP190ST Xanh
 Nhìn chung, với thiết kế trang nhã và sang trọng, vừa tay người dùng dung lượng pin lớn, phù hợp với các chuyến đi xa, pin sạc dự phòng Polymer 10.000mAh Type C Xmobile PJ JP190ST xanh sẽ là một phụ kiện thích hợp dành cho bạn.', 8)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2070, N'Pin sạc dự phòng Polymer 10.000 mAh QC3', 10, 360000, 0, N'sac-du-phong-polymer-10000mah.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Pin sạc dự phòng eValu PA F1 Air có vỏ được gia công bằng nhôm rất chắc chắn, không bám vân tay
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2070, N'Pin sạc dự phòng Polymer 10.000 mAh QC3', 10, 360000, 25, N'sac-du-phong-polymer-10000mah.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Pin sạc dự phòng eValu PA F1 Air có vỏ được gia công bằng nhôm rất chắc chắn, không bám vân tay
 Kích thước pin nhỏ hơn chiếc iPhone X, các cạnh được bo cong nhằm giúp cầm thoải mái hơn, không bị cấn tay.
 Pin sạc dự phòng Polymer 10.000 mAh QC 3.0 eValu PA F1 Air Nhôm Bạc
 Kích thước pin của sạc dự phòng không quá to cũng giúp cho vô túi xách hay ví cầm tay cũng rất dễ dàng.
@@ -2185,7 +2050,7 @@ Sạc đầy được cho điện thoại và máy tính bảng có dung lượn
 Lưu ý: Trong quá trình sạc pin sẽ bị hao hụt khoảng 35% dung lượng.
 Dùng để sạc cho phụ kiện như quạt USB, loa, tai nghe Bluetooth...', 8)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2071, N'Pin sạc dự phòng Polymer 20.000 mAh', 5, 1190000, 0, N'polymer-20000mah-type-c-25w-samsung.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Kiểu dáng đơn giản, nhỏ gọn, màu đen thời trang
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2071, N'Pin sạc dự phòng Polymer 20.000 mAh', 5, 1190000, 20, N'polymer-20000mah-type-c-25w-samsung.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Kiểu dáng đơn giản, nhỏ gọn, màu đen thời trang
 Lớp vỏ nhựa cao cấp kháng vỡ, giúp giảm trọng lượng sạc dự phòng, cầm nắm hơi đầm tay nhưng không nặng với 392 gram.
 Pin sạc dự phòng Polymer 20.000mAh Type C PD 25W Samsung EB-P5300 Đen - Kiểu dáng đơn giản, nhỏ gọn, màu đen thời trang
 Bắt kịp nhịp sống nhanh của bạn với công nghệ sạc nhanh Super Fast Charging, Power Delivery, Quick Charge 2.0
@@ -2208,7 +2073,7 @@ Nhiều tính năng an toàn của sạc dự phòng Samsung bảo vệ pin thi�
 Pin sạc dự phòng Polymer 20.000mAh Type C PD 25W Samsung EB-P5300 Đen - Đảm bảo an toàn 
 Quá nhiều điểm tuyệt vời để thuyết phục bạn chọn ngay sạc dự phòng Samsung EB-P5300 cho mình, đó là thiết kế sang trọng, sạc nhanh, an toàn, chất lượng tốt và giá bán hấp dẫn', 8)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2072, N'Pin sạc dự phòng Polymer 10000mAh AVA', 5, 250000, 10, N'pin-polymer-10000mah-ava.jpeg', NULL, NULL, NULL, NULL, CAST(N'1900-01-01' AS Date), N'Kích thước nhỏ gọn, màu sắc tinh tế, dễ dùng cho mọi người
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2072, N'Pin sạc dự phòng Polymer 10000mAh AVA', 5, 250000, 20, N'pin-polymer-10000mah-ava.jpeg', NULL, NULL, NULL, NULL, CAST(N'1900-01-01' AS Date), N'Kích thước nhỏ gọn, màu sắc tinh tế, dễ dùng cho mọi người
 Pin sạc dự phòng Polymer 10000mAh AVA+ DS006 có 2 màu xanh rêu hoặc xanh navy để lựa chọn theo đối tượng, sở thích người dùng, kích thước nhỏ nhắn, trọng lượng nhẹ chỉ 225 g rất thuận tiện mang theo sử dụng mọi lúc, mọi nơi.
 Nhỏ gọn - Pin sạc dự phòng Polymer 10000mAh AVA+ DS006
 Chia sẻ nguồn năng lượng từ sạc dự phòng AVA+ cho 2 thiết bị cùng lúc
@@ -2225,7 +2090,7 @@ Bạn dễ dàng theo dõi dung lượng pin còn lại trên sạc dự phòng 
 An toàn, bền bỉ - Pin sạc dự phòng Polymer 10000mAh AVA+ DS006
 Trang bị pin sạc dự phòng Polymer 10000mAh AVA+ DS006 cho hành trang của mình để an tâm sử dụng các thiết bị di động theo nhu cầu mà không lo chúng cạn năng lượng bất chợt, xử lý công việc hiệu quả hơn, giải trí thoải mái hơn.', 8)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2074, N'Pin sạc dự phòng Polymer 10.000 mAh W37Y5', 10, 420000, 0, N'sac-du-phong-polymer-10000mah.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Pin sạc dự phòng Polymer 10.000mAh Type C Xmobile PW37Y5B trắng có kích thước nhỏ gọn và trọng lượng nhẹ, thuận tiện mang theo khi di chuyển.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2074, N'Pin sạc dự phòng Polymer 10.000 mAh W37Y5', 10, 420000, 10, N'sac-du-phong-polymer-10000mah.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Pin sạc dự phòng Polymer 10.000mAh Type C Xmobile PW37Y5B trắng có kích thước nhỏ gọn và trọng lượng nhẹ, thuận tiện mang theo khi di chuyển.
 Thiết kế đẹp mắt - Pin sạc dự phòng Polymer 10000mAh Type C Xmobile PW37Y5B Trắng
 Pin dự phòng PW37Y5B có cổng USB Type-C hiện đại, và có thể truyền tải điện năng công suất cao, sạc thiết bị của bạn nhanh hơn, cùng 2 cổng sạc USB thông dụng, dễ dàng sạc pin. Dễ nhận biết phần trăm pin còn lại nhờ có đèn LED hiển thị.
 Có 3 cổng sạc - Pin sạc dự phòng Polymer 10000mAh Type C Xmobile PW37Y5B Trắng
@@ -2237,7 +2102,7 @@ Sạc lại nhanh chóng thông qua cổng sạc USB Type-C, giúp đảm bảo 
 Với thời gian sạc đầy nhanh chóng - Pin sạc dự phòng Polymer 10000mAh Type C Xmobile PW37Y5B Trắng
 Có thể thấy, pin sạc dự phòng Polymer 10000mAh Type C Xmobile PW37Y5B trắng có thiết kế trang nhã và sang trọng, vừa tay người dùng dung lượng pin lớn, phù hợp với các chuyến đi xa.', 8)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2075, N'Chuột Có dây Gaming MSI Clutch GM08 Đen', 10, 420000, 0, N'chuot-co-day-gaming-msi.jpeg', NULL, NULL, NULL, NULL, CAST(N'1900-01-01' AS Date), N'Chuột có dây Gaming MSI Clutch GM08 Đen được thiết kế đối xứng khiến cho chuột thân thiện với cả người dùng thuận tay trái.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2075, N'Chuột Có dây Gaming MSI Clutch GM08 Đen', 10, 420000, 25, N'chuot-co-day-gaming-msi.jpeg', NULL, NULL, NULL, NULL, CAST(N'1900-01-01' AS Date), N'Chuột có dây Gaming MSI Clutch GM08 Đen được thiết kế đối xứng khiến cho chuột thân thiện với cả người dùng thuận tay trái.
 • Chuột MSI này được chế tạo tỉ mỉ với lớp vảy rồng độc quyền đem đến độ cầm chắc tay khi sử dụng chuột. Thiết kế đa dác đặc biệt trên các nút cho phép bạn bấm nhanh và dễ dàng.
 • Chuột có mức thiết lập mặc định DPI của phần cứng từ 200 - 3200, thông số tối đa tốc độ DPI lên đến 4200 điều chỉnh bằng phần mềm.
 • Ngay lập tức chuyển đổi giữa 5 mức thiết lập tốc độ DPI để điều chỉnh độ chính xác cho mọi tình huống.
@@ -2245,21 +2110,21 @@ INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount
 • Tận hưởng khả năng chơi game trong nhiều năm với công tắc có độ bền lên đến 10 triệu lần nhấn và cổng USB mạ vàng.
 • Chuột có dây kết nối với các thiết bị PC, laptop qua cổng USB thông dụng.', 8)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2076, N'Chuột Có dây Gaming MSI Clutch GM11 Đen', 5, 590000, 0, N'chuot-co-day-gaming-msi-clutch.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Chuột có dây Gaming MSI Clutch GM11 Đen được gia công tỉ mỉ với độ bền cao, màu đen nhám làm nổi bật vẻ sang trọng đường nét bên ngoài của GM11.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2076, N'Chuột Có dây Gaming MSI Clutch GM11 Đen', 5, 590000, 20, N'chuot-co-day-gaming-msi-clutch.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Chuột có dây Gaming MSI Clutch GM11 Đen được gia công tỉ mỉ với độ bền cao, màu đen nhám làm nổi bật vẻ sang trọng đường nét bên ngoài của GM11.
 • Chuột MSI này sở hữu thiết kế đối xứng, phù hợp với cả người dùng thuận tay phải và thuận tay trái.
 • Chuột gaming này kết hợp công tắc từ OMRON đạt độ bền hơn 10 triệu cú nhấn chuột cùng mắt đọc quang học của Pixart với tốc độ lên đến 5000 DPI.
 • Nút cuộn của chuột được khắc tuyến tính và gờ bám ở cạnh bên giúp bạn nắm chuột chắc chắn hơn khi chơi game.
 • Tất cả các thiết lập chi tiết như điều khiển ánh sáng, gán chức năng cho nút, thiết lập mức tốc độ DPI và lưu trữ tổ hợp macro có thể được tiến hành nhờ vào phần mềm Dragon Center.
 • Bên cạnh đó, bạn không cần thông qua ứng dụng mà có thể tùy chỉnh DPI, màu sắc đèn LED, độ sáng trực tiếp qua các nút bấm trên chuột có dây.', 8)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2077, N'Bàn phím Có dây Gaming MSI Vigor GK30 US Đen', 10, 970000, 2, N'co-day-gaming-msi-vigor-gk30.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Bàn phím Có dây Gaming MSI Vigor GK30 US Đen với chân đế gaming vững vàng ngay bên dưới phím Space Bar đem đến sự vững vàng, chống trượt khi chơi game.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2077, N'Bàn phím Có dây Gaming MSI Vigor GK30 US Đen', 10, 970000, 20, N'co-day-gaming-msi-vigor-gk30.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Bàn phím Có dây Gaming MSI Vigor GK30 US Đen với chân đế gaming vững vàng ngay bên dưới phím Space Bar đem đến sự vững vàng, chống trượt khi chơi game.
 • Thiết kế phím nổi chống nước không chỉ giúp bàn phím đẹp hơn, mà còn giúp cho bạn dễ dàng lau chùi bàn phím hơn khi dính bẩn.
 • Bàn phím MSI được trang bị các switch tịnh tiến tương tự switch cơ học với ba bộ phận đem đến trải nghiệm gõ phím chắc chắn với độ bền hơn 12 triệu lần nhấn.
 • Thông qua phần mềm MSI Center bạn có thể tuỳ biến bàn phím gaming với hàng triệu màu sắc và đến 7 hiệu ứng đèn trên 6 khu vực.
 • Ngoài ra, với các phím tắt tiện lợi bạn dễ dàng thay đổi nhanh tốc độ, hướng hay chế độ đèn mà không cần cài đặt phần mềm. Phía trên của bàn phím là dãy phím tắt điều chỉnh âm lượng.
 • Bàn phím có dây kết nối nhanh chóng với PC, Laptop qua cổng USB với đầu nối mạ vàng, dây dài 1.85 m.', 8)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2078, N'Bàn phím Có dây Gaming MSI Vigor GK20 US Đen', 10, 700000, 2, N'co-day-gaming-msi-vigor.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Là một sản phẩm mới của nhà MSI trong năm 2022, bàn phím Có dây Gaming MSI Vigor GK20 US Đen sở hữu thiết kế gaming đẹp mắt, trang bị đèn LED RGB nổi bật và nhiều tính năng thú vị khác hứa hẹn sẽ đem đến cho bạn một trải nghiệm tuyệt vời.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2078, N'Bàn phím Có dây Gaming MSI Vigor GK20 US Đen', 10, 700000, 20, N'co-day-gaming-msi-vigor.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Là một sản phẩm mới của nhà MSI trong năm 2022, bàn phím Có dây Gaming MSI Vigor GK20 US Đen sở hữu thiết kế gaming đẹp mắt, trang bị đèn LED RGB nổi bật và nhiều tính năng thú vị khác hứa hẹn sẽ đem đến cho bạn một trải nghiệm tuyệt vời.
 Thiết kế bề ngoài của bàn phím đẹp mắt, đậm chất gaming
 Đầu tiên mình cảm thấy đây là một chiếc bàn phím có dây được thiết kế khá đẹp mắt với logo MSI nổi bật xuất hiện ngay chỗ tựa tay và sắc đen sang trọng bao bọc toàn bộ bàn phím. Nhờ được trang bị hệ thống đèn LED RGB nên bạn có thể dùng để trang trí góc phòng làm việc thêm xịn sò. Bạn chỉ cần kết nối bàn phím thì đèn LED sẽ tự động sáng đèn.
 Bàn phím Có dây Gaming MSI Vigor GK20 US Đen - Thiết kế đẹp mắt
@@ -2284,7 +2149,7 @@ Khi đặt bàn phím lên mặt bàn sẽ đảm bảo được độ bám dín
 Jack cắm thông dụng phù hợp để kết nối với nhiều loại máy tính
 Chiếc bàn phím MSI này được trang bị Jack cắm USB thông dụng trên hầu hết các loại máy tính. Bạn chỉ cần cắm vào cổng USB trên máy tính là ngay lập tức có thể kết nối và thao tác trên bàn phím với khả năng kết nối và độ nhạy cực cao.', 8)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2079, N'Chuột Có dây Gaming Asus Keris', 10, 1060000, 0, N'chuot-co-day-gaming-asus-keris-thumb.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Chuột có dây Gaming Asus Keris có kiểu dáng gọn nhẹ, thiết kế mạnh mẽ, vừa lòng bàn tay khi cầm nắm, tạo cảm giác thoải mái khi chơi game.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2079, N'Chuột Có dây Gaming Asus Keris', 10, 1060000, 10, N'chuot-co-day-gaming-asus-keris-thumb.jpeg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Chuột có dây Gaming Asus Keris có kiểu dáng gọn nhẹ, thiết kế mạnh mẽ, vừa lòng bàn tay khi cầm nắm, tạo cảm giác thoải mái khi chơi game.
 • Chuột có thiết kế dạng tổ ong bên trong cung cấp độ cứng cho cấu trúc và giúp giảm trọng lượng tổng thể xuống chỉ 62 gram.
 • Các nút PBT trái và phải có bề mặt trượt bền, chống mài mòn, sáng bóng, đảm bảo cảm giác sử dụng luôn đồng nhất.
 • Chuột Asus có cảm biến quang học với độ nhạy lên đến 16000 DPI được tối ưu hóa cho các trò chơi FPS, thiết kế công thái học được nghiên cứu từ các chuyên gia thể thao điện tử.
@@ -2292,7 +2157,7 @@ INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount
 • Hệ thống chiếu sáng RGB tích hợp trong logo và bánh xe cuộn có thể được tùy chỉnh với dải màu gần như vô tận và một loạt các hiệu ứng động.
 • Thêm vào đó, thông qua phần mềm Armory Crate cho phép người dùng dễ dàng tùy chỉnh cài đặt hiệu suất và hiệu chỉnh các nút nhấn, tùy chỉnh hiệu ứng ánh sáng,...', 8)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2080, N'HP AIO ProOne 240 G9 i5 1235U/8GB/512GB', 10, 19190000, 0, N'hp-aio-proone-240-g9-i7.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Máy tính để bàn HP AIO ProOne 240 G9 i5 (6M3V2PA) chinh phục người dùng là dân văn phòng hay thiết kế khi sở hữu một ngoại hình sang trọng, bắt mắt cùng cấu hình mạnh mẽ đến từ bộ vi xử lý Intel Gen 12, đảm bảo không làm bạn thất vọng. 
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2080, N'HP AIO ProOne 240 G9 i5 1235U/8GB/512GB', 10, 19190000, 10, N'hp-aio-proone-240-g9-i7.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Máy tính để bàn HP AIO ProOne 240 G9 i5 (6M3V2PA) chinh phục người dùng là dân văn phòng hay thiết kế khi sở hữu một ngoại hình sang trọng, bắt mắt cùng cấu hình mạnh mẽ đến từ bộ vi xử lý Intel Gen 12, đảm bảo không làm bạn thất vọng. 
 • Bộ vi xử lý Intel Core i5 1235U kết hợp cùng card đồ họa Intel UHD Graphics giúp xử lý mượt mà các tác vụ văn phòng trên Office, Google,... hay chỉnh sửa ảnh, thiết kế video cơ bản bằng Photoshop, Figma, Canva,... Bạn vẫn có thể nâng cấp lên card Iris Xe để xử lý công việc nhiều hơn bằng cách lắp thanh RAM khác và kích hoạt Dual-Channel.
 • Khả năng đa nhiệm mượt mà nhờ bộ nhớ RAM 8 GB cho phép bạn vừa xử lý file Excel nặng vừa nghe nhạc thư giãn trên Spotify mà vẫn không xảy ra tình trạng giật lag. Không gian lưu trữ ổn định nhờ ổ cứng SSD 512 GB giúp tải các tệp tài liệu học tập mà không lo tốn quá nhiều dung lượng. 
 • Kích thước màn hình 23.8 inch kết hợp tấm nền IPS mang đến cho chiếc máy tính để bàn này một góc nhìn rộng rãi, cho phép bạn nhìn trực diện hay nhìn nghiêng lên đến 178 độ mà vẫn giữ nguyên chất lượng ảnh, hạn chế tối đa hiện tượng mờ hình. Độ phân giải Full HD (1920 x 1080) hiển thị hình ảnh sắc ảnh hơn trên từng chi tiết.
@@ -2301,7 +2166,7 @@ INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount
 • Chiếc máy tính để bàn HP có lớp vỏ màu đen sang trọng với cân nặng 5.37 kg giúp bạn dễ dàng lắp đặt ở nhiều vị trí khác nhau từ văn phòng, bàn tiếp tân,... mà vẫn toát lên vẻ đẹp sang trọng, thu hút mọi ánh nhìn. Máy đi kèm chuột và bàn phím hỗ trợ người dùng làm việc tốt hơn.
 • Chiếc máy tính để bàn đồ họa này được trang bị nhiều cổng kết nối phổ biến như USB 2.0, Jack 3.5 mm, LAN (RJ45), HDMI và USB 3.2 hỗ trợ tối đa cho quá trình kết xuất và truyền tải dữ liệu đến các thiết bị ngoại vi của người dùng.', 2005)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2081, N'Asus ExpertCenter AIO E5402WHAT i5 11500B', 10, 21490000, 2, N'asus-expertcenter-aio-e5402what-i5.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Đến với Asus ExpertCenter AIO E5402WHAT (BA017W), bạn sẽ sở hữu chiếc máy tính nguyên bộ cùng hiệu năng đáp ứng mọi nhu cầu học tập, văn phòng và thiết kế nhỏ gọn tiết kiệm diện tích sử dụng.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2081, N'Asus ExpertCenter AIO E5402WHAT i5 11500B', 10, 21490000, 20, N'asus-expertcenter-aio-e5402what-i5.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Đến với Asus ExpertCenter AIO E5402WHAT (BA017W), bạn sẽ sở hữu chiếc máy tính nguyên bộ cùng hiệu năng đáp ứng mọi nhu cầu học tập, văn phòng và thiết kế nhỏ gọn tiết kiệm diện tích sử dụng.
 • Máy tính AIO được trang bị CPU Intel Core i5 11500B mạnh mẽ tích hợp card Intel UHD Graphics mang lại trải nghiệm làm việc trên các phần mềm Office hay chỉnh sửa ảnh cơ bản diễn ra trơn tru.
 • Máy tính để bàn Intel core i5 có RAM 8 GB cho khả năng đa nhiệm mượt mà, SSD 512 GB tăng tốc độ truy xuất dữ liệu, thời gian phản hồi trên máy tính nhanh chóng.
 • Màn hình cảm ứng 23.8 inch trang bị 100% sRGB cung cấp màu sắc sống động, có độ chuẩn xác cao, tấm nền Wide View mang lại góc nhìn rộng.
@@ -2309,7 +2174,7 @@ INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount
 • Đa dạng cổng giao tiếp trên máy tính bàn Asus AIO USB 3.2 Gen 2 Type-C, HDMI, Thunderbolt 4, LAN,...
 • Micro array tích hợp giúp khả năng thu âm tốt hơn cho mọi buổi họp hay học trực tuyến.', 2005)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2084, N'HP AIO ProOne 240 G9 i7 1255U/8GB/512GB', 10, 22590000, 2, N'hp-aio-proone-240-g9-i7.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Máy tính để bàn HP AIO ProOne 240 G9 i7 (6M3V4PA) gây ấn tượng bởi sự tinh tế đến từ lối thiết kế thanh lịch cùng hiệu năng vượt trội nhờ bộ vi xử lý Intel Core i7 Gen 12 mạnh mẽ, đáp ứng hoàn hảo mọi nhu cầu của người dùng từ các tác vụ văn phòng cho đến đồ họa - kỹ thuật.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2084, N'HP AIO ProOne 240 G9 i7 1255U/8GB/512GB', 10, 22590000, 20, N'hp-aio-proone-240-g9-i7.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Máy tính để bàn HP AIO ProOne 240 G9 i7 (6M3V4PA) gây ấn tượng bởi sự tinh tế đến từ lối thiết kế thanh lịch cùng hiệu năng vượt trội nhờ bộ vi xử lý Intel Core i7 Gen 12 mạnh mẽ, đáp ứng hoàn hảo mọi nhu cầu của người dùng từ các tác vụ văn phòng cho đến đồ họa - kỹ thuật.
 • Bộ vi xử lý Intel Core i7 1255U và card đồ họa tích hợp Intel UHD hỗ trợ vận hành mượt mà công việc văn phòng trên các ứng dụng như Word, Excel, PowerPoint,... cũng như thực hiện các thao tác chỉnh sửa hình ảnh đơn giản trên Photoshop, Canva, Lightroom,... Bạn có thể nâng cấp lên card Iris Xe để nâng cao hiệu quả công việc bằng cách lắp thêm một thanh RAM khác và kích hoạt Dual Channel.
 • Máy tính để bàn RAM 8 GB hỗ trợ đa nhiệm trơn tru kể cả với những tác vụ nặng, hỗ trợ nâng cấp lên tối đa 16 GB nhờ 1 khe trống để bạn có thể xử lý nhiều khối lượng công việc hơn. Kết hợp cùng ổ cứng SSD 512 GB giúp truy xuất dữ liệu cực nhanh, không gian lưu trữ thoải mái. 
 • Màn hình rộng với kích thước 23.8 inch cùng góc nhìn lên đến 178 độ nhờ tấm nền IPS giúp bạn có thể xem được ở mọi góc độ khác nhau. Độ phân giải Full HD (1920 x 1080) cùng công nghệ chống chói Anti Glare đảm bảo nội dung hiển thị luôn có độ sắc nét cao, màu sắc chân thực và không bị hắt sáng gây khó chịu khi bạn làm việc ở văn phòng có cường độ ánh đèn điện cao. 
@@ -2319,7 +2184,7 @@ INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount
 • Chiếc máy tính để bàn đồ hoạ - kỹ thuật này được cài sẵn hệ điều hành Windows 11 Home SL mang đến sự tiện lợi cho quá trình sử dụng, hỗ trợ bạn hoàn thành công việc tốt hơn trong thời gian ngắn hơn.
 • Hàng loạt cổng kết nối thông dụng đáp ứng đa nhu cầu sử dụng với thiết bị ngoại vi như: USB 2.0, Jack 3.5 mm, LAN (RJ45), HDMI và USB 3.2.', 2005)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2085, N'Lenovo IdeaCentre AIO 3 24ITL6 i3 1115G4/4GB', 10, 15990000, 2, N'lenovo-ideacentre-aio-3-24itl6-i3-f0g000xc.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Lenovo IdeaCentre AIO 3 24ITL6 i3 (F0G000XCVN) là phiên bản máy tính để bàn All in One tiện lợi khi tích hợp CPU, loa, ổ cứng vào chung một màn hình, đi kèm thêm chuột và bàn phím phù hợp cho người dùng là dân văn phòng. 
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2085, N'Lenovo IdeaCentre AIO 3 24ITL6 i3 1115G4/4GB', 10, 15990000, 20, N'lenovo-ideacentre-aio-3-24itl6-i3-f0g000xc.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Lenovo IdeaCentre AIO 3 24ITL6 i3 (F0G000XCVN) là phiên bản máy tính để bàn All in One tiện lợi khi tích hợp CPU, loa, ổ cứng vào chung một màn hình, đi kèm thêm chuột và bàn phím phù hợp cho người dùng là dân văn phòng. 
 • Máy tính để bàn 23.8 inch cùng tấm nền IPS cho không gian làm việc rộng rãi, giúp bạn quan sát đầy đủ mọi nội dung hiển thị trên màn hình. 
 • Độ phân giải Full HD (1920 x 1080) cùng độ sáng 250 nits cho màu sắc hiển thị rõ nét, tươi tắn hơn, đắm chìm người dùng vào không gian giải trí chân thực.
 • Máy tính để bàn Intel core i3 trang bị bộ vi xử lý Intel Core i3 Tiger Lake cùng card Intel UHD Graphics vận hành tốt mọi ứng dụng học tập và làm việc cơ bản trên Word, Excel, PowerPoint,... 
@@ -2328,7 +2193,7 @@ INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount
 • Máy tính để bàn học tập - văn phòng này đi kèm thêm chuột và bàn phím cho các thao tác học tập, làm việc hay giải trí được tiện lợn hơn.
 • Đa dạng cổng kết nối được trang bị trên máy tính để bàn như USB 2.0, LAN (RJ45), HDMI và USB 3.2 giúp bạn truyền tải tốt hơn với các thiết bị ngoại vi khác. ', 2005)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2086, N'HP AIO 22 dd2002d i5 1235U/8GB/512GB', 10, 20590000, 2, N'hp-aio-22-dd2002d-i5-6k7g1pa-thumb-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Nếu bạn đang cần một trợ thủ đắc lực sở hữu đầy đủ mọi ưu điểm từ cấu hình mạnh mẽ đến màn hình lớn, ngoại hình đẹp mắt, máy tính để bàn HP AIO 22 dd2002d i5 (6K7G1PA) sẽ là sản phẩm All-in-one mà bạn không nên bỏ lỡ, cực kỳ phù hợp cho mọi đối tượng là sinh viên, dân văn phòng hay thậm chí là người dùng sáng tạo.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2086, N'HP AIO 22 dd2002d i5 1235U/8GB/512GB', 10, 20590000, 20, N'hp-aio-22-dd2002d-i5-6k7g1pa-thumb-1-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Nếu bạn đang cần một trợ thủ đắc lực sở hữu đầy đủ mọi ưu điểm từ cấu hình mạnh mẽ đến màn hình lớn, ngoại hình đẹp mắt, máy tính để bàn HP AIO 22 dd2002d i5 (6K7G1PA) sẽ là sản phẩm All-in-one mà bạn không nên bỏ lỡ, cực kỳ phù hợp cho mọi đối tượng là sinh viên, dân văn phòng hay thậm chí là người dùng sáng tạo.
 • Mang trên mình bộ vi xử lý Intel Core i5 1235U mạnh mẽ kết hợp với card Intel UHD Graphics giúp bạn vận hành tốt mọi tác vụ học tập - văn phòng từ cơ bản đến nâng cao hay chỉnh sửa hình ảnh, giải trí với các tựa game nhẹ nhàng. Nếu muốn xử lý khối lượng công việc nhiều hơn, bạn hoàn toàn có thể lắp thêm thanh RAM khác và kích hoạt Dual-Channel để nâng cấp lên card Iris Xe.
 • Bộ nhớ RAM 8 GB cho phép người dùng xử lý công việc trên nhiều cửa sổ ứng dụng cùng lúc nhưng vẫn đảm bảo trơn tru, hạn chế tình trạng giật lag. Ổ cứng 512 GB SSD mang đến không gian lưu trữ ổn định khi tải các tệp tài liệu, học tập cần thiết đồng thời gia tăng tốc độ khởi động máy chỉ trong vài giây. 
 • Làm việc tốt hơn trên kích thước màn hình 21.5 inch cho phép bạn quan sát bao quát nội dung được hiển thị trên máy, độ sáng 250 nits cùng độ phân giải Full HD (1920 x 1080) cung cấp chất lượng khung ảnh sắc nét ở nhiều điều kiện ánh sáng khác nhau với gam màu sắc chuẩn xác trên từng chi tiết. Thời gian làm việc trên máy lâu dài nhưng vẫn bảo vệ tốt cho thị lực của người dùng nhờ màn hình Anti Glare, giảm thiểu độ chói sáng ở những nơi ánh sáng cao.
@@ -2345,7 +2210,7 @@ INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount
 • Phong cách thiết kế đơn giản nhưng không kém phần hiện đại, chiếc máy tính để bàn này phù hợp cho không gian văn phòng làm việc hay các quầy lễ tân phục vụ. 
 • Máy tính để bàn học tập - văn phòng được trang bị các cổng kết nối như USB 2.0, LAN (RJ45), HDMI và USB 3.2 giúp kết nối với các thiết bị ngoại vi khác dễ dàng hơn.', 2005)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2088, N'Mac Mini 2020 M1 8-core/8GB/256GB', 10, 19990000, 0, N'mac-mini-m1-mgnr3saa-thumb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Mac mini 2020 M1 (MGNR3SA/A) là dòng Mac nhỏ gọn, linh hoạt và đa năng khi có thể đáp ứng cả các nhu cầu giải trí và làm đồ họa mạnh mẽ với hiệu năng đột phá từ chip M1.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2088, N'Mac Mini 2020 M1 8-core/8GB/256GB', 10, 19990000, 10, N'mac-mini-m1-mgnr3saa-thumb-600x600.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'Mac mini 2020 M1 (MGNR3SA/A) là dòng Mac nhỏ gọn, linh hoạt và đa năng khi có thể đáp ứng cả các nhu cầu giải trí và làm đồ họa mạnh mẽ với hiệu năng đột phá từ chip M1.
 Bộ vi xử lý M1 mạnh mẽ vượt trội
 Apple Mac mini M1 sở hữu chip M1 được chính Apple thiết kế, mang đến hiệu năng vượt trội với 8 nhân CPU mang đến tốc độ xử lý gấp 3 lần và 8 nhân GPU cho khả năng thiết kế đồ họa mạnh mẽ, phục vụ tốt cho việc chỉnh sửa ảnh, làm video trên các phần mềm như Photoshop, AI, Pr,... 
 Apple M1 còn mang đến 16 nhân Neural Engine và đầy đủ các công nghệ máy học tiên tiến cho khả năng xử lý các tác vụ về tính toán, phân tích video, nhận dạng giọng nói và nhiều hơn nữa.
@@ -2366,7 +2231,7 @@ Mac Mini M1 8GB/256GB/Silver (MGNR3SA/A) - Cổng kết nối
 Mac mini sử dụng giao tiếp mạng chuẩn Bluetooth 5.0 và Wi-Fi 6 AX201 cho băng thông lên đến 10.000 Mbps giúp đường truyền mạng luôn ổn định, hạn chế giật lag, tốc độ lưu tải dữ liệu lên đến 1.2 GB/s.
 Mac mini M1 (MGNR3SA/A) là chiếc máy tính để bàn nhỏ gọn, có cấu hình mạnh mẽ và bảo mật tốt, phù hợp với dân thiết kế đồ họa chuyên nghiệp.', 2005)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2089, N'PC Gaming Asus ROG Strix G15CF-71270F110W', 10, 42990000, 0, N'asus-rog-strix-g15cf-71270f110w.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'PC Gaming Asus ROG Strix G15CF-71270F110W i7 sinh ra để dành cho các game thủ chuyên nghiệp với cấu hình bùng nổ từ con chip Intel Gen 12 kết hợp cùng card đồ họa NVIDIA GeForce RTX 3070 8 GB và phong thái thiết kế hầm hố, mạnh mẽ chuẩn gaming.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2089, N'PC Gaming Asus ROG Strix G15CF-71270F110W', 10, 42990000, 15, N'asus-rog-strix-g15cf-71270f110w.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'PC Gaming Asus ROG Strix G15CF-71270F110W i7 sinh ra để dành cho các game thủ chuyên nghiệp với cấu hình bùng nổ từ con chip Intel Gen 12 kết hợp cùng card đồ họa NVIDIA GeForce RTX 3070 8 GB và phong thái thiết kế hầm hố, mạnh mẽ chuẩn gaming.
 • Với thiết kế dựa trên kiến trúc Turing hàng đầu của nhà NVIDIA, card đồ họa NVIDIA GeForce RTX 3070 8 GB chinh phục mọi game thủ với hiệu ứng hình ảnh thể hiện cực sắc nét, độ sâu của màu sắc được tái tạo cực tốt cho mọi tựa game, kết hợp với CPU Intel Core i7 12700F cân hoàn hảo các tác vụ sáng tạo như thiết kế, chỉnh ảnh,...
 • Máy tính để bàn Intel core i7 nâng tầm đa nhiệm vượt trội với bộ nhớ RAM 16 GB (nâng cấp tối đa 64 GB) cho phép người dùng vừa phát sóng chơi game trực tiếp vừa sử dụng các nền tảng xã hội như FaceBook, Twitter, Instagram,... một cách mượt mà. 
 • Máy tính để bàn đồ hoạ - kỹ thuật sở hữu ổ cứng SSD 512 GB với 2 khe cắm hỗ trợ PCIe x16 và 4 khe cắm hỗ trợ HDD SATA cung cấp không gian lưu trữ rộng rãi cho bạn chiến được nhiều tựa game đình đám cũng như gia tăng tốc độ khởi động máy, truy cập game,... một cách toàn diện.
@@ -2375,7 +2240,7 @@ INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount
 • Trọn vẹn những trải nghiệm chiến game chân thực và sống động nhất với khả năng tùy ý tinh chỉnh cài đặt âm thanh để phù hợp với các chế độ chơi game, chất âm cũng được trong trẻo và to rõ hơn nhờ công nghệ âm thanh High Definition 7.1 Channel Audio được trang bị trên chiếc máy tính để bàn này.
 • Đảm bảo cho các thiết bị của bạn luôn trong quá trình kết nối tối đa, PC Gaming Asus ROG Strix trang bị hàng loạt các cổng kết nối như Display port, LAN (RJ45), HDMI, USB Type-C, USB 3.2, USB 2.0, Audio jacks, Headphone, Mic in,... với tốc độ truyền tải và kết xuất nhanh chóng.', 2005)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2091, N'PC Gaming MSI MAG Infinite S3 12TC i5', 10, 32990000, 0, N'msi-mag-infinite-s3-12tc-i5.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'PC MSI MAG Infinite S3 12TC i5 12400F (251MYS) được thiết kế để mang lại trải nghiệm chiến game tốt nhất cho người dùng, là sản phẩm hoàn hảo dành cho các game thủ chuyên nghiệp cần hiệu năng mạnh mẽ và một thiết kế hầm hố đậm chất gaming.
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2091, N'PC Gaming MSI MAG Infinite S3 12TC i5', 10, 32990000, 25, N'msi-mag-infinite-s3-12tc-i5.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-11' AS Date), N'PC MSI MAG Infinite S3 12TC i5 12400F (251MYS) được thiết kế để mang lại trải nghiệm chiến game tốt nhất cho người dùng, là sản phẩm hoàn hảo dành cho các game thủ chuyên nghiệp cần hiệu năng mạnh mẽ và một thiết kế hầm hố đậm chất gaming.
 • Tăng cường trải nghiệm chơi game với bộ vi xử lý Intel Core i5 12400F thế hệ thứ 12 tiên tiến, sở hữu cấu trúc lai để nâng cao sức mạnh tính toán cũng như tối ưu mức độ tiêu thụ điện năng. 
 • Máy tính để bàn Intel core i5 được trang bị card đồ họa rời GeForce RTX 3060 Ventus 2X 12 GB với kiến trúc NVIDIA Ampere tích hợp các nhân RT, Tensor và các bộ đa xử lý, đem đến cho game thủ cũng như các nhà sáng tạo nội dung khả năng xử lý đồ họa chuyên nghiệp.
 • Máy tính để bàn RAM 16 GB hỗ trợ người dùng xử lý đa tác vụ một cách mượt mà, dễ dàng nâng cấp lên đến tối đa 64 GB để nâng cao trải nghiệm sáng tạo, chơi game.
@@ -2385,11 +2250,13 @@ INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount
 • Chuẩn Wi-Fi 6E mới nhất trên máy tính để bàn cho tốc độ truyền tải cao trong khi vẫn đảm bảo kết nối mượt mà, ổn định ngay cả khi có nhiều người cùng sử dụng. 
 • Đa dạng cổng kết nối như Display port, LAN (RJ45), HDMI, USB 3.2, USB Type-C 3.2 hai chiều để bạn liên kết với mọi thiết bị ngoại vi cùng lúc.', 2005)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2102, N'Tai nghe chụp tai bluetooth P17', 30, 299000, 39000, N'Tai-nghe-chup-tai.png', NULL, NULL, NULL, NULL, CAST(N'2022-11-18' AS Date), N'Tai nghe chụp tai bluetooth P17 Chống Ồn, Micro Gắn Trong, Cổng Jack 3,5mm, Đệm Tai Êm Ái Không Gây Đau Tai. Hàng Chính Hãng.', 8)
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2102, N'Tai nghe chụp tai bluetooth P17', 30, 299000, 20, N'Tai-nghe-chup-tai.png', NULL, NULL, NULL, NULL, CAST(N'2022-11-18' AS Date), N'Tai nghe chụp tai bluetooth P17 Chống Ồn, Micro Gắn Trong, Cổng Jack 3,5mm, Đệm Tai Êm Ái Không Gây Đau Tai. Hàng Chính Hãng.', 8)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2116, N'Tai Nghe ATM-40', 35, 3100000, 399000, N'Tai-nghe-ATM-40.png', NULL, NULL, NULL, NULL, CAST(N'2022-11-18' AS Date), N'Với hơn 50 năm phát triển, Audio-Technica đã trở thành thương hiệu tai nghe số 1 Nhật Bản và là 1 trong những thương hiệu uy tín nhất trên thế giới về chất lượng tuyệt vời và thiết kế thời thượng, sắc sảo', 8)
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2116, N'Tai Nghe ATM-40', 35, 3100000, 10, N'Tai-nghe-ATM-40.png', NULL, NULL, NULL, NULL, CAST(N'2022-11-18' AS Date), N'Với hơn 50 năm phát triển, Audio-Technica đã trở thành thương hiệu tai nghe số 1 Nhật Bản và là 1 trong những thương hiệu uy tín nhất trên thế giới về chất lượng tuyệt vời và thiết kế thời thượng, sắc sảo', 8)
 GO
-INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2118, N'IphoneX 64GB', 34, 11399000, 1290000, N'ipX.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-18' AS Date), N'Màn hình: OLED5.8"Super Retina, Hệ điều hành: iOS 12, Camera sau: 2 camera 12 MP, Camera trước: 7 MP, Chip: Apple A11 Bionic, RAM: 3 GB, Dung lượng lưu trữ: 64 GB, SIM: 1 Nano SIM, Pin Sạc: 2716 mAh.', 2)
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2118, N'IphoneX 64GB', 34, 11399000, 15, N'ipX.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-18' AS Date), N'Màn hình: OLED5.8"Super Retina, Hệ điều hành: iOS 12, Camera sau: 2 camera 12 MP, Camera trước: 7 MP, Chip: Apple A11 Bionic, RAM: 3 GB, Dung lượng lưu trữ: 64 GB, SIM: 1 Nano SIM, Pin Sạc: 2716 mAh.', 2)
+GO
+INSERT [dbo].[Products] ([ProductId], [Name], [Quantity], [UnitPrice], [Discount], [Image1], [Image2], [Image3], [Image4], [Image5], [EnteredDay], [Discription], [CategoryId]) VALUES (2120, N'Tai nghe blacky - Logitech', 59, 349000, 35, N'headphone.jpg', NULL, NULL, NULL, NULL, CAST(N'2022-11-22' AS Date), N'Tai nghe thiết kế mang tính chất trẻ trung, sang trọng và chất lượng âm thanh siêu mượt. Giúp người dùng trải nghiệm mượt mà nhất.', 8)
 GO
 SET IDENTITY_INSERT [dbo].[Products] OFF
 GO
@@ -2401,7 +2268,7 @@ INSERT [dbo].[Roles] ([RoleId], [Name]) VALUES (N'STAF', N'Staffs')
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UK23fux5pe6yss1vck8iv9juegn]    Script Date: 11/22/2022 2:38:45 PM ******/
+/****** Object:  Index [UK23fux5pe6yss1vck8iv9juegn]    Script Date: 11/25/2022 8:55:16 PM ******/
 ALTER TABLE [dbo].[Authorities] ADD  CONSTRAINT [UK23fux5pe6yss1vck8iv9juegn] UNIQUE NONCLUSTERED 
 (
 	[Username] ASC,
@@ -2410,7 +2277,7 @@ ALTER TABLE [dbo].[Authorities] ADD  CONSTRAINT [UK23fux5pe6yss1vck8iv9juegn] UN
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UKef7fbpy09qu6267gf071q71we]    Script Date: 11/22/2022 2:38:45 PM ******/
+/****** Object:  Index [UKef7fbpy09qu6267gf071q71we]    Script Date: 11/25/2022 8:55:16 PM ******/
 ALTER TABLE [dbo].[Authorities] ADD  CONSTRAINT [UKef7fbpy09qu6267gf071q71we] UNIQUE NONCLUSTERED 
 (
 	[Username] ASC,
