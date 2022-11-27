@@ -93,7 +93,7 @@
 								class="dropdown-item">[[#{nav.infoAcc}]]</a> <a
 								class="dropdown-item" th:href="@{/security/forgotPassword}">[[#{nav.change_password}]]</a>
 							<a class="dropdown-item" th:href="@{/user/SendMail}">[[#{nav.SendMail}]]</a>
-							<a class="dropdown-item" th:href="@{/user/feedback}">
+							<a class="dropdown-item" th:href="@{|/user/feedback/${#request.remoteUser}|}">
 							[[#{nav.Feedback}]]</a>
 							<hr class="dropdown-divider" />
 							<a class="dropdown-item" th:href="@{/security/logoff}">[[#{nav.sign_out}]]</a>
