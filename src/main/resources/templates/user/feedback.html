@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/fragment :: dynamic(~{::main})}">
+<body>
+	<main>
+		<div class="container">
+			<div class="title ">
+				<p class="fs-2  text-center text-justify ">Phản hồi về hệ thống</p>
+			</div>
+			<form action="/user/feedback/save" method="post" th:object="${feedback}">
+				<div class="input-group">
+					<textarea name="description" class="form-control"
+						style="height: 160px">
+                                </textarea>
+				</div>
+				
+				<div class="form-group col-sm-6" hidden="hidden">
+					<label name="username">[[${#request.remoteUser}]]</label>
+				</div>
+				<div th:if="${message != null}" role="alert">
+					<i>[[${message}]]</i>
+				</div>
+				<div class="col mt-3 mb-4">
+					<button class="btn btn-danger" style="width: 80px">Gửi</button>
+				</div>
+			</form>
+		</div>
+	</main>
+</body>
+</html>
