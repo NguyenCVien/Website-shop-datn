@@ -15,5 +15,5 @@ public class FeedbackDto  implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private Long feedbackId;
 	private String description;
-	private Account username;
+	private String username;
 }
