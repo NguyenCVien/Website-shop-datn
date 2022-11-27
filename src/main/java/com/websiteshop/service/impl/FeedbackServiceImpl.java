@@ -2,22 +2,11 @@ package com.websiteshop.service.impl;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Function;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 import org.springframework.stereotype.Service;
-
 import com.websiteshop.dao.FeedbackDAO;
-import com.websiteshop.dao.OrderDAO;
 import com.websiteshop.entity.Feedback;
-import com.websiteshop.entity.Order;
 import com.websiteshop.service.FeedbackService;
-import com.websiteshop.service.OrderService;
 
 @Service
 public class FeedbackServiceImpl implements FeedbackService {
@@ -38,4 +27,10 @@ public class FeedbackServiceImpl implements FeedbackService {
 	public void delete(Feedback entity) {
 		fdao.delete(entity);
 	}
+
+	@Override
+	public <S extends Feedback> S save(S entity) {
+		return fdao.save(entity);
+	}
+	
 }

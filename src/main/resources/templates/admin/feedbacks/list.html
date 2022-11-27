@@ -13,12 +13,14 @@
 					<thead class="bg-light ">
 						<tr>
 							<th>Mã</th>
+							<th>Tên tài khoản</th>
 							<th>Mô tả</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr th:each="item: ${feedbacks}">
 							<td th:utext="${item.feedbackId}"></td>
+							<td th:utext="${item.username}"></td>
 							<td th:utext="${item.description}"></td>
 							<td>
 								<div class="btn-group btn-group-xs">

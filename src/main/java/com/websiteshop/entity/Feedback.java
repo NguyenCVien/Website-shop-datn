@@ -18,5 +18,5 @@ public class Feedback  implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long feedbackId;
 	private String description;
-	private Account username;
+	private String username;
 }

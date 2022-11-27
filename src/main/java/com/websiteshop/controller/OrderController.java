@@ -34,11 +34,4 @@ public class OrderController {
         model.addAttribute("order", orderService.findById(orderId));
         return "order/detail";
     }
-
-    // @RequestMapping("/order/delete/{orderId}")
-    // public String del(@PathVariable("orderId") Long orderId, Model model) {
-    // model.addAttribute("order", orderService.deleteById(orderId));
-    // return "order/detail";
-    // }
-
 }
