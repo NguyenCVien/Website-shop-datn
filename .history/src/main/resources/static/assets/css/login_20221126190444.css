@@ -1,0 +1,38 @@
+
+.btn-google {
+  color: white;
+  background-color: #ea4335;
+}
+
+.btn-facebook {
+  color: white;
+  background-color: #3b5998;
+  border: none;
+}
+.card-body{
+  
+}
+.forgot-pass{
+  position: absolute;
+  text-align: center;
+}
+.card-bottom :hover {
+  color: #040003;
+}
+.card-bottom {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.card-bottom a{
+  text-decoration: none;
+}
+.btn-bottom a{
+  text-decoration: none;
+}
+.message{
+  text-align: center;
+  color: red;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
