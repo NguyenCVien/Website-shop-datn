@@ -88,7 +88,7 @@
 							[[#{nav.change_password}]]</a></li>
 						<li><a class="dropdown-item" th:href="@{/user/SendMail}">
 							[[#{nav.SendMail}]]</a></li>
-						<li><a class="dropdown-item" th:href="@{/user/feedback}">
+						<li><a class="dropdown-item" th:href="@{|/user/feedback/${#request.remoteUser}|}">
 							[[#{nav.Feedback}]]</a></li>
 						<li><hr class="dropdown-divider" /></li>  
 						<li><a class="dropdown-item" th:href="@{/security/logoff}">
