@@ -42,10 +42,10 @@ public class AuthorityRestController {
         return authorityService.create(auth);
     }
 
-    @DeleteMapping("{id}")
-    public void delete(@PathVariable("id") Integer id) {
-        authorityService.delete(id);
-
-    }
+//    @DeleteMapping("{id}")
+//    public void delete(@PathVariable("id") Integer id) {
+//        authorityService.delete(id);
+//
+//    }
 
 }

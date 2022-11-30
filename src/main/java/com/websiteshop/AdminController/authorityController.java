@@ -89,8 +89,8 @@ public class authorityController {
 
         authorityService.save(au);
         model.addAttribute("message", "Tài khoản đã được cấp quyền");
-        // return new ModelAndView("forward:/authority", model);
-        return new ModelAndView("forward:/admin", model);
+        return new ModelAndView("forward:/admin/authority", model);
+        //return new ModelAndView("forward:/admin", model);
     }
 
     @GetMapping("delete/{id}")
