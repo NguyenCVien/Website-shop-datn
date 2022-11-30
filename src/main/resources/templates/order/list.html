@@ -6,8 +6,8 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
     <main class="container-fluid ml-3">
         <div class="card">
             <div class="card-header">[[#{order.list}]]</div>
-            <table class="table">
-                <thead>
+            <table id="datatablesSimple">
+				<thead class="bg-light ">
                     <tr>
                         <th>No.</th>
                         <th>[[#{order.Code_orders}]]</th>
