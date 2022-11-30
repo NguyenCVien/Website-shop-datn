@@ -30,7 +30,7 @@ th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
 									<option th:each="item : ${accounts}"
 										th:value="${item.username}" th:text="${item.username}"
 										th:selected="${item.username == authority.account.username}">
-										<label for="" th:text="${item.username}"></label>
+										<label for="" th:text="${authority.account.username}"></label>
 									</option>
 								</select>
 							</div>

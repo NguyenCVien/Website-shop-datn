@@ -96,15 +96,15 @@ public class authorityController {
         return new ModelAndView("forward:/authority", model);
     }
 
-    // @GetMapping("/authority/list")
-    // public String findAll(@RequestParam("admin") Optional<Boolean> admin,
-    // Model model) {
-    // if (admin.orElse(false)) {
-    // List<Authority> list = authorityService.findAuthoritiesOfAdministrators();
-    // }
-    // List<Authority> list = authorityService.findAll();
-    // model.addAttribute("author", list);
-    // return "/admin/authority/list";
-    // }
+    @RequestMapping("/authority/list")
+    public String findAll(@RequestParam("admin") Optional<Boolean> admin,
+            Model model) {
+        if (admin.orElse(false)) {
+            List<Authority> list = authorityService.findAuthoritiesOfAdministrators();
+        }
+        List<Authority> list = authorityService.findAll();
+        model.addAttribute("author", list);
+        return "/admin/authority/list";
+    }
 
 }

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.websiteshop.entity.Account;
@@ -77,8 +76,8 @@ public class authorityController {
 
         authorityService.save(au);
         model.addAttribute("message", "Tài khoản đã được cấp quyền");
-        // return new ModelAndView("forward:/authority", model);
-        return new ModelAndView("forward:/admin", model);
+        return new ModelAndView("forward:/authority", model);
+        // return new ModelAndView("forward:/admin", model);
     }
 
     @GetMapping("delete/{id}")
@@ -96,7 +95,19 @@ public class authorityController {
         return new ModelAndView("forward:/authority", model);
     }
 
-    // @GetMapping("/authority/list")
+    // @RequestMapping("/admin/authority")
+    // public String index() {
+    // return "/admin/admin";
+    // }
+
+    // @RequestMapping("/authority/delete/{id}")
+    // public String delete(Model model,
+    // @PathVariable("id") Integer id) {
+    // Authority au = authorityService.delete(id);
+    // return "/admin/authority/index";
+    // }
+    //
+    // @RequestMapping("/authority/list")
     // public String findAll(@RequestParam("admin") Optional<Boolean> admin,
     // Model model) {
     // if (admin.orElse(false)) {
@@ -104,7 +115,12 @@ public class authorityController {
     // }
     // List<Authority> list = authorityService.findAll();
     // model.addAttribute("author", list);
-    // return "/admin/authority/list";
+    // return "/admin/authority/index";
+    // }
+    //
+    // @RequestMapping("/admin/authority/unauthorized")
+    // public String unauthorized() {
+    // return "/admin/authority/unauthorized";
     // }
 
 }
