@@ -1,0 +1,7 @@
+<form action="/comments/saveOrUpdate" method="post" th:object="${comment}"
+        enctype="multipart/form-data"> 
+    <textarea type="text" class="form-control"  placeholder="Ghi chú" rows="3"></textarea>
+    <button class="btn btn-primary mr-3 mt-1 float-right">
+        Save <i class="fa-solid fa-plus"></i>
+    </button>
+</form>

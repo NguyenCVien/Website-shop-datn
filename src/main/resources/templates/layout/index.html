@@ -44,55 +44,57 @@
 					</button>
 				</form>
 			</li>
-			<li><a style="text-decoration: none;" th:href="@{/cart/view}"
-				class="cart-i"> <i class="fas fa-shopping-cart cart"></i> <label
-					class="num">{{cart.count}}</label></a></li>
-			<th:block th:if="${#request.remoteUser}">
-				<a style="text-decoration: none;" th:href="@{/order/list}"> <i
-					class="fa-solid fa-clock-rotate-left"></i> <label
-					th:text="#{nav.order_history}"></label>
+			<li>
+				<a style="text-decoration: none;" th:href="@{/cart/view}" class="cart-i">
+					<i class="fas fa-shopping-cart cart"></i> 
+					<label class="num">{{cart.count}}</label></a>
+			</li>
+			<li th:block th:if="${#request.remoteUser}">
+				<a style="text-decoration: none;" th:href="@{/order/list}">
+					<i class="fa-solid fa-clock-rotate-left icon"></i> 
+					<label th:text="#{nav.order_history}"></label>
 				</a>
-			</th:block>
-			<li><a style="text-decoration: none;" th:href="@{/help}"> <i
-					class="fa-regular fa-circle-question"></i> <label
-					th:text="#{nav.answer}"></label></a></li>
+			</li>
+			<li><a style="text-decoration: none;" th:href="@{/help}">
+				<i class="fa-regular fa-circle-question icon"></i> 
+				<label th:text="#{nav.answer}"></label></a>
+			</li>
 			<li class="nav-item dropdown navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
 				<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
-				role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i
-					class="fa-solid fa-language"></i> <label th:text="#{nav.language}"></label>
-			</a>
-				<ul class="dropdown-menu dropdown-menu-end"
-					aria-labelledby="navbarDropdown">
+					role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<i class="fa-solid fa-language icon"></i> <label th:text="#{nav.language}"></label>
+				</a>
+				<ul class="dropdown-menu dropdown-menu-end">
 					<li><a class="dropdown-item" href="?lang=en">English</a></li>
 					<li><a class="dropdown-item" href="?lang=vi">Việt Nam</a></li>
 				</ul>
 			</li>
-			<li
-				th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
-				<a style="text-decoration: none;" th:href="@{/admin}"> <i
-					class="fa-solid fa-lock-open"></i> <label th:text="#{nav.admin}"></label></a>
+			<li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
+				<a style="text-decoration: none;" th:href="@{/admin}">
+					<i class="fa-solid fa-lock-open icon"></i> 
+					<label th:text="#{nav.admin}"></label></a>
 			</li>
 			<th:block th:unless="${#request.remoteUser}">
 				<li class="nav-item"><a class="nav-link item"
-					th:href="@{/security/register}"> <i
-						class="fa-solid fa-earth-americas"></i> <label
-						th:text="#{nav.register}"></label></a></li>
+					th:href="@{/security/register}"> 
+					<i class="fa-solid fa-earth-americas icon"></i> 
+					<label th:text="#{nav.register}"></label></a>
+				</li>
 			</th:block>
 			<th:block th:unless="${#request.remoteUser}">
 				<li class="nav-item"><a class="nav-link item"
-					th:href="@{/security/login/form}"> <i
-						class="fa-solid fa-earth-americas"></i> <label
-						th:text="#{nav.sign}"></label></a></li>
+					th:href="@{/security/login/form}" > 
+					<i class="fa-solid fa-earth-americas icon"></i> 
+					<label th:text="#{nav.sign}"></label></a>
+				</li>
 			</th:block>
 			<th:block th:if="${#request.remoteUser}">
-				<li
-					class="nav-item dropdown navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-					<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
-					role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						<i class="fas fa-user fa-fw"></i> [[${#request.remoteUser}]]
-				</a>
-					<ul class="dropdown-menu dropdown-menu-end"
-						aria-labelledby="navbarDropdown">
+				<li class="nav-item dropdown navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+					<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+						data-bs-toggle="dropdown" aria-expanded="false">
+						<i class="fas fa-user fa-fw icon"></i> 
+						<label>[[${#request.remoteUser}]]</label></a>
+					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 						<li><a class="dropdown-item" href="#!">
 								[[#{nav.setting}]]</a></li>
 						<li><a th:href="@{|/info/${#request.remoteUser}|}"
@@ -262,19 +264,7 @@
 	<!-- Icon  -->
 	<script src="/assets/js/all.min.js"></script>
 	<script src="/assets/js/shopping-cart-app.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
-		crossorigin="anonymous"></script>
-	<script src="/assets/js/demo/chart-area-demo.js"></script>
-	<script src="/assets/js/demo/chart-bar-demo.js"></script>
-	<script src="/assets/js/demo/chart-pie-demo.js"></script>
-	<script src="/assets/js/demo/datatables-demo.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
-		crossorigin="anonymous"></script>
-	<script src="/assets/js/datatables-simple-demo.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 	<!-- slide-banner -->
 	<script src="/assets/js/slide-banner.js"></script>
 	
