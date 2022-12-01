@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.websiteshop.entity.Account;
 import com.websiteshop.entity.Authority;
+import com.websiteshop.model.AccountDto;
 import com.websiteshop.model.AuthorityDto;
 import com.websiteshop.service.AccountService;
 import com.websiteshop.service.AuthorityService;
@@ -28,6 +29,18 @@ import java.util.Optional;
 public class authorityController {
     @Autowired
     AuthorityService authorityService;
+
+    @Autowired
+    AccountService accountService;
+
+    @ModelAttribute("accounts")
+    public List<AccountDto> getAccounts() {
+        return accountService.findAll().stream().map(item -> {
+            AccountDto dto = new AccountDto();
+            BeanUtils.copyProperties(item, dto);
+            return dto;
+        }).toList();
+    }
 
     @GetMapping("")
     public String list(Model model) {
@@ -77,7 +90,7 @@ public class authorityController {
 
         authorityService.save(au);
         model.addAttribute("message", "Tài khoản đã được cấp quyền");
-        // return new ModelAndView("forward:/authority", model);
+        //return new ModelAndView("forward:/admin/authority", model);
         return new ModelAndView("forward:/admin", model);
     }
 
