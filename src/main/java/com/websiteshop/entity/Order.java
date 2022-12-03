@@ -28,7 +28,7 @@ public class Order implements Serializable {
     private String address;
     private String name;
     private String email;
-
+    
     @ManyToOne
     @JoinColumn(name = "Username")
     Account account;
@@ -36,4 +36,5 @@ public class Order implements Serializable {
     @JsonIgnore
     @OneToMany(mappedBy = "order")
     List<OrderDetail> orderDetails;
+   
 }

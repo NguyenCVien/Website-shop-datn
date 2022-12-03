@@ -20,6 +20,11 @@ public class OrderDetailServiceImpl implements OrderDetailService {
 
 	@Autowired
 	OrderDetailDAO ddao;
+	
+	@Override
+	public List<OrderDetail> findByStatus(String status) {
+		return ddao.findByStatus(status);
+	}
 
 	@Override
 	public <S extends OrderDetail> S save(S entity) {

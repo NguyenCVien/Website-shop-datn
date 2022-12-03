@@ -19,7 +19,7 @@ public interface OrderService {
 
     Order findById(Long orderId);
 
-    List<Order> findByUsername(String username);
+    Page<Order> findByUsername(String username, Pageable pageable);
 
 	<S extends Order> List<S> findAll(Example<S> example, Sort sort);
 
@@ -83,5 +83,7 @@ public interface OrderService {
 
 	<S extends Order> S save(S entity);
 
-	
+	Page<Order> findByNameContaining(String name, Pageable pageable);
+
+	List<Order> findByNameContaining(String name);
 }
