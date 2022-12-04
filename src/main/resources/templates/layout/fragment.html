@@ -41,7 +41,7 @@
 				class="cart-i"> <i class="fas fa-shopping-cart cart"></i> <label
 					class="num">{{cart.count}}</label></a></li>
 			<li th:block th:if="${#request.remoteUser}">
-				<a style="text-decoration: none;" th:href="@{/order/list}"> 
+				<a style="text-decoration: none;" th:href="@{/orderHistory/list}"> 
 					<i class="fa-solid fa-clock-rotate-left icon"></i> 
 					<label th:text="#{nav.order_history}"></label>
 				</a>

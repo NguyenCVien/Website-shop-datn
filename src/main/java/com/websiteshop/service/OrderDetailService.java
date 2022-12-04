@@ -76,4 +76,6 @@ public interface OrderDetailService {
 
 	<S extends OrderDetail> S save(S entity);
 
+	List<OrderDetail> findByStatus(String status);
+
 }

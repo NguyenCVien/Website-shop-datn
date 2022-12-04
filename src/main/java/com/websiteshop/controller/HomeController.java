@@ -1,11 +1,15 @@
 package com.websiteshop.controller;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -21,14 +25,16 @@ public class HomeController {
     CategoryDAO dao;
 
     @RequestMapping("/")
-    public String home(Model model, @RequestParam("cid") Optional<Long> cid) {
-        if (cid.isPresent()) {
-            List<Product> list = productService.findByCategoryId(cid.get());
-            model.addAttribute("items", list);
+    public String home(Model model, @RequestParam("cid") Optional<Long> cid, @RequestParam(name = "name", required = false) String name,
+            @RequestParam("page") Optional<Integer> page) {
+    	Page<Product> pageProduct = null;
+    	Pageable pageable = PageRequest.of(page.orElse(0), 30, Sort.by("name"));
+    	if (StringUtils.hasText(name)) {
+            pageProduct = productService.findByNameContaining(name, pageable);
         } else {
-            List<Product> list = productService.findAll();
-            model.addAttribute("items", list);
+            pageProduct = productService.findAll(pageable);
         }
+    	model.addAttribute("items", pageProduct);
         return "product/list";
 
     }

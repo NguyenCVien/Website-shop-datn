@@ -31,14 +31,23 @@ public class ProductController {
     CategoryDAO dao;
 
     @RequestMapping("/product/list")
-    public String list(Model model, @RequestParam("cid") Optional<Long> cid) {
-        if (cid.isPresent()) {
+    public String list(Model model, @RequestParam("cid") Optional<Long> cid , @RequestParam(name = "name", required = false) String name,
+            @RequestParam("page") Optional<Integer> page) {
+    	
+    	if (cid.isPresent()) {
             List<Product> list = productService.findByCategoryId(cid.get());
             model.addAttribute("items", list);
-        } else {
-            List<Product> list = productService.findAll();
-            model.addAttribute("items", list);
+            return "product/list";
         }
+    	
+    	Page<Product> pageProduct = null;
+    	Pageable pageable = PageRequest.of(page.orElse(0), 30, Sort.by("name"));
+    	if (StringUtils.hasText(name)) {
+            pageProduct = productService.findByNameContaining(name, pageable);
+        } else {
+            pageProduct = productService.findAll(pageable);
+        }
+    	model.addAttribute("items", pageProduct);
         return "product/list";
     }
 
@@ -68,7 +77,7 @@ public class ProductController {
             @RequestParam(name = "name", required = false) String name,
             @RequestParam("page") Optional<Integer> page) {
 
-        Pageable pageable = PageRequest.of(page.orElse(0), 12, Sort.by("name"));
+        Pageable pageable = PageRequest.of(page.orElse(0), 30, Sort.by("name"));
         Page<Product> pageProduct = null;
         if (StringUtils.hasText(name)) {
             pageProduct = productService.findByNameContaining(name, pageable);

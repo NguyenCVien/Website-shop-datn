@@ -26,37 +26,47 @@ import com.websiteshop.service.OrderService;
 @Service
 public class OrderServiceImpl implements OrderService {
 
-    @Autowired
-    OrderDAO odao;
+	@Autowired
+	OrderDAO odao;
 
-    @Autowired
-    OrderDetailDAO ddao;
+	@Autowired
+	OrderDetailDAO ddao;
 
-    @Override
-    public Order create(JsonNode orderData) {
-        ObjectMapper mapper = new ObjectMapper();
+	@Override
+	public Order create(JsonNode orderData) {
+		ObjectMapper mapper = new ObjectMapper();
 
-        Order order = mapper.convertValue(orderData, Order.class);
-        odao.save(order);
+		Order order = mapper.convertValue(orderData, Order.class);
+		odao.save(order);
 
-        TypeReference<List<OrderDetail>> type = new TypeReference<List<OrderDetail>>() {
-        };
-        List<OrderDetail> details = mapper.convertValue(orderData.get("orderDetails"), type)
-                .stream().peek(d -> d.setOrder(order)).collect(Collectors.toList());
-        ddao.saveAll(details);
+		TypeReference<List<OrderDetail>> type = new TypeReference<List<OrderDetail>>() {
+		};
+		List<OrderDetail> details = mapper.convertValue(orderData.get("orderDetails"), type).stream()
+				.peek(d -> d.setOrder(order)).collect(Collectors.toList());
+		ddao.saveAll(details);
 
-        return order;
-    }
+		return order;
+	}
 
-    @Override
-    public Order findById(Long id) {
-        return odao.findById(id).get();
-    }
+	@Override
+	public List<Order> findByNameContaining(String name) {
+		return odao.findByNameContaining(name);
+	}
 
-    @Override
-    public List<Order> findByUsername(String username) {
-        return odao.findByUsername(username);
-    }
+	@Override
+	public Page<Order> findByNameContaining(String name, Pageable pageable) {
+		return odao.findByNameContaining(name, pageable);
+	}
+
+	@Override
+	public Order findById(Long id) {
+		return odao.findById(id).get();
+	}
+
+	@Override
+	public Page<Order> findByUsername(String username, Pageable pageable) {
+		return odao.findByUsername(username, pageable);
+	}
 
 	@Override
 	public <S extends Order> S save(S entity) {
@@ -212,9 +222,5 @@ public class OrderServiceImpl implements OrderService {
 	public <S extends Order> List<S> findAll(Example<S> example, Sort sort) {
 		return odao.findAll(example, sort);
 	}
-
-    
-
-	
 
 }
