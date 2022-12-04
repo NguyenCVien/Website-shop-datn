@@ -3,11 +3,11 @@
 	th:replace="~{/layout/index :: dynamic(~{::main})}">
 
 <body>
-    <main class="container-fluid" >
-        <div class="row">
+    <main class="container-fluid list-item" >
+        <div class="row ">
             <div th:each="item: ${items}" class="col-sm-2">
                 <div class="card" >
-                    <div class="card-body list-item" >  
+                    <div class="card-body" >  
                         <div class="gif">
                             <img alt="" src="/assets/images/hot-icon.gif">
                         </div>

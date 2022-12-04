@@ -1,14 +1,16 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
-
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
 <body>
 	<main>
 		<div class="card">
-			<div class="card-header card bg-secondary text-white" style="text-align: center">
+			<div class="card-header card bg-secondary text-white"
+				style="text-align: center">
 				<h3>Danh sách đơn hàng chi tiết</h3>
 			</div>
 			<div class="card-body">
-				<div th:if="${message != null}" class="alert alert-primary" role="alert">
+				<div th:if="${message != null}" class="alert alert-primary"
+					role="alert">
 					<i>[[${message}]]</i>
 				</div>
 				<table id="datatablesSimple">
@@ -30,10 +32,9 @@
 							<td th:utext="${item.price}"></td>
 							<td th:utext="${item.status}"></td>
 							<td th:utext="${item.discription}"></td>
-							<td>
+							<td class="btn-bottom">
 								<div class="btn-group btn-group-xs">
-									<a th:href="@{|/admin/orders/detail/${item.order.orderId}|}"
-										class="btn btn-default">
+									<a th:href="@{|/admin/orders/detail/${item.order.orderId}|}" class="btn btn-default">
 										<i class="fa-solid fa-magnifying-glass-plus"></i>
 									</a>
 									<a class="btn btn-warning mr-2"
@@ -52,18 +53,19 @@
 						function showConfirmModalDialog(id, name) {
 							$('#orderId').text(name);
 							$('#yesOption').attr('href',
-								'/admin/orderDetails/delete/' + id);
+									'/admin/orderDetails/delete/' + id);
 							$('#noOption').attr('href', '/admin/orderDetails');
 							$('#confirmationId').modal('show');
 						}
 					</script>
-					<div class="modal fade" id="confirmationId" tabindex="-1" role="dialog"
-						aria-labelledby="modelTitleId" aria-hidden="true">
+					<div class="modal fade" id="confirmationId" tabindex="-1"
+						role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
 									<h5 class="modal-title">Xác nhận</h5>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<button type="button" class="close" data-dismiss="modal"
+										aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
@@ -83,5 +85,4 @@
 		</div>
 	</main>
 </body>
-
 </html>
