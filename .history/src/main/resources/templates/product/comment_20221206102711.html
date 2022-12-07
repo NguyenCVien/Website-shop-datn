@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{/layout/fragment :: dynamic(~{::main})}">
+
+<body>
+    <main>
+        <form action="/comments/saveOrUpdate" method="post" th:object="${comment}"
+        enctype="multipart/form-data"> 
+        <div class="col-sm-5 mx-auto">
+            <div class="row card-header">
+					<div class="form-group col-sm-5">
+						<label>[[#{info.name}]]:</label>
+						<input name="username" required>
+					</div>
+                    <div class="form-group col-sm-5">
+						<label>Tên sản phẩm:</label>
+						<input name="productId" required>
+					</div>
+                    <div class="input-group">
+                        <textarea name="description" class="form-control" rows="3" required placeholder="Description"></textarea>
+                    </div>
+                    <button class="btn btn-primary mt-3">
+                        Save <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="message" th:if="${message != null}" role="alert">
+                        <i>[[${message}]]</i>
+                    </div>
+            </div>
+        </div>
+    </form>
+    </main>
+  </body>
+</html>
