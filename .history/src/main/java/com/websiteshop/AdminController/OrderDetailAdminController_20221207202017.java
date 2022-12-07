@@ -133,7 +133,7 @@ public class OrderDetailAdminController {
 	@GetMapping("/confirmation")
 	public String listConfirmation(Model model) {
 		String status = "Đang chờ xác nhận";
-		model.addAttribute("orders", orderDetailService.findByStatus(status));
+		model.addAttribute("orders", orderDetailService.findByStatus(status, username));
 		return "admin/orderdetail/listConfirmation";
 	}
 

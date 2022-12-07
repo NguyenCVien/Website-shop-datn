@@ -80,6 +80,4 @@ public interface OrderDetailService {
 
 	List<OrderDetail> findByStatus(String status, String username);
 
-	List<OrderDetail> findByStatus(String status);
-
 }

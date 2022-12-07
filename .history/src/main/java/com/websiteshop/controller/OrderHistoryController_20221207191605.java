@@ -71,9 +71,9 @@ public class OrderHistoryController {
         return "orderHistory/listConfirmation";
     }
 
-    @GetMapping("/delivered")
+    @GetMapping("/evaluate")
     public String listEvaluate(Model model, HttpServletRequest request) {
-        String status = "Đã giao hàng";
+        String status = "Đang chờ đánh giá";
         String username = request.getRemoteUser();
 
         model.addAttribute("orders", orderDetailService.findByStatus(status, username));

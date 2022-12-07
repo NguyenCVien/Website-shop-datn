@@ -42,9 +42,13 @@ public class OrderHistoryController {
     public String listConfirmation(Model model, HttpServletRequest request,
             @RequestParam("page") Optional<Integer> page) {
         String status = "Đang chờ xác nhận";
+        Pageable pageable = PageRequest.of(page.orElse(0), 10);
+        Page<Order> pageProduct = null;
         String username = request.getRemoteUser();
 
-        model.addAttribute("orders", orderDetailService.findByStatus(status, username));
+        pageProduct = orderService.findByUsername(username, pageable);
+
+        model.addAttribute("orders", orderDetailService.findByStatus(status));
         return "orderHistory/listConfirmation";
     }
 
@@ -63,6 +67,13 @@ public class OrderHistoryController {
         return "orderHistory/listConfirmation";
     }
 
+    // @GetMapping("/transported")
+    // public String listTransported(Model model) {
+    // String status = "Đang vận chuyển";
+    // model.addAttribute("orders", orderDetailService.findByStatus(status));
+    // return "orderHistory/listConfirmation";
+    // }
+
     @GetMapping("/delivery")
     public String listDelivery(Model model, HttpServletRequest request) {
         String status = "Đang giao hàng";
@@ -71,12 +82,10 @@ public class OrderHistoryController {
         return "orderHistory/listConfirmation";
     }
 
-    @GetMapping("/delivered")
-    public String listEvaluate(Model model, HttpServletRequest request) {
-        String status = "Đã giao hàng";
-        String username = request.getRemoteUser();
-
-        model.addAttribute("orders", orderDetailService.findByStatus(status, username));
+    @GetMapping("/evaluate")
+    public String listEvaluate(Model model) {
+        String status = "Đang chờ đánh giá";
+        model.addAttribute("orders", orderDetailService.findByStatus(status));
         return "orderHistory/listConfirmation";
     }
 

@@ -28,11 +28,6 @@ public class OrderDetailServiceImpl implements OrderDetailService {
 	}
 
 	@Override
-	public List<OrderDetail> findByStatus(String status) {
-		return ddao.findByStatus(status);
-	}
-
-	@Override
 	public <S extends OrderDetail> S save(S entity) {
 		return ddao.save(entity);
 	}
