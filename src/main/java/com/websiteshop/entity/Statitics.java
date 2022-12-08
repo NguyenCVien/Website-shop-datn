@@ -19,10 +19,10 @@ public class Statitics implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "OrderId")
-	Order order;
+	private Order order;
 
 	@ManyToOne
 	@JoinColumn(name = "OrderDetailId")
-	OrderDetail OrderDetail;
+	private OrderDetail OrderDetail;
 
 }

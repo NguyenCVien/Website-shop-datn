@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+th:replace="~{/layout/fragment :: dynamic(~{::main})}">
+<body>
+    <main class="container-fluid ml-3">
+        <div class="card">
+            <b class="mt-2 mb-2 card-header text-center" style="font-size: 20px">[[#{order.list}]]</b>
+            <div class="order-status">
+                <a th:href=@{/orderHistory/confirmation}><label>[[#{order.waiting}]]</label></a>
+                <a th:href=@{/orderHistory/transported}><label>[[#{order.Being_transported}]]</label></a>
+                <a th:href=@{/orderHistory/delivery}><label>[[#{order.Delivery_in_progress}]]</label></a>
+                <a th:href=@{/orderHistory/list}><label>[[#{order.Delivered}]]</label></a>
+            </div>
+            <table class="table table-hover" id="datatablesSimple">
+				<thead class="bg-light ">
+                    <tr>
+                        <th>No.</th>
+                        <th>[[#{order.Code_orders}]]</th>
+                        <th>[[#{order.name}]]</th>
+                        <th>[[#{order.date}]]</th>                       
+                        <th>[[#{order.phone}]]</th>
+                        <th>Email</th>
+                        <th>[[#{order.address}]]</th>
+                        <!-- <th>[[#{cart.status}]]</th> -->
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each=" order,state: ${orders}">
+                        <td>[[${state.index}]]</td>
+                        
+                        <!-- <td>[[${order.status}]]</td> -->
+                        <th>
+                            <a th:href="@{|/orderHistory/detail/${order.order.orderId}|}" class="btn btn-default">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            </a>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+
+</html>
