@@ -1,0 +1,23 @@
+package com.websiteshop.controller;
+
+import org.springframework.http.HttpRequest;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/forgotPassword")
+public class ForgotPasswordController {
+    @GetMapping("")
+    public String index(Model model) {
+        return "/user/forgotPassword";
+    }
+
+    @PostMapping("/forgot_password")
+    public String processForgotPasswordForm(HttpRequest request) {
+
+        return "/user/forgotPassword";
+    }
+}
