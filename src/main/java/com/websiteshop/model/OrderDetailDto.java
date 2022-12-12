@@ -18,8 +18,8 @@ public class OrderDetailDto implements Serializable {
     private Long orderDetailId;
     private Order order;
     private Product product;
-    private Double price;
-    private Double discount;
+    private Integer price;
+    private Integer discount;
     private String status;
     private Integer quantity;
     private String discription;

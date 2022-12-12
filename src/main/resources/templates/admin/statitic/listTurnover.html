@@ -1,0 +1,56 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
+<body>
+	<main>
+		<div class="card">
+			<div class="card-header card bg-secondary text-white"
+				style="text-align: center">
+				<h3>Thống kê doanh thu</h3>
+			</div>
+			<select name="" id="">Tháng
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			</select>
+			<select name="" id="">Năm
+			<option value="1">2022</option>
+			<option value="2">2023</option>
+			<option value="3">2024</option>
+			<option value="4">2025</option>
+			</select>
+			<div class="card-body">
+				<table class="table table-hover">
+				<thead>
+						<tr>
+							<th>Số lượng đơn hàng</th>
+							<th>Doanh thu</th>
+							<th>Khách hàng đặt nhiều nhất</th>
+							<th>Sản phẩm bán chạy nhất</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="item: ${statitics}">
+						<td>[[*{slOrder}]]</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
