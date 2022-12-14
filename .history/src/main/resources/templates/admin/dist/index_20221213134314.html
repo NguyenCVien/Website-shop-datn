@@ -1,31 +1,30 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	<meta name="description" content="" />
-	<meta name="author" content="" />
-	<title>Trang chủ - Admin</title>
-    <!-- Router -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-	<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="/assets/css/styles.css" />
-	<link rel="stylesheet" href="/assets/css/Admin.css">
-	<link rel="stylesheet" href="/assets/css/user.css">
-	<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-	<!--  Angular -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>Trang chủ - Admin</title>
+<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/Admin.css">
+<link rel="stylesheet" href="/assets/css/user.css">
+<!--  Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<!-- Router -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="sb-nav-fixed">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<!-- Navbar Brand-->
-		<a class="navbar-brand ps-3" th:href="@{/admin}"><i class="fa-solid fa-house"></i> Trang chủ - Admin</a>
+		<a th:href="@{/admin}"><img class="img_logoAdmin navbar-brand ps-3"
+			src="/assets/images/img_logoHomeAdmin.png" alt=""></a>
 		<!-- Sidebar Toggle-->
-		<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
-			id="sidebarToggle" href="#!">
+		<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
 			<i class="fas fa-bars"></i>
 		</button>
 		<!-- Navbar Search-->
@@ -41,18 +40,18 @@
 		</form>
 		<!-- Navbar-->
 		<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
-				role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
-					class="fas fa-user fa-fw"></i> [[${#request.remoteUser}]]</a>
-					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-						<li><a class="dropdown-item" th:href="@{|/admin/accounts/info/${#request.remoteUser}|}">Thông tin cá nhân</a></li>
-						<li><a class="dropdown-item" th:href="@{/forgot_password}">Đổi mật khẩu</a></li>
-						<li><a class="dropdown-item" th:href="@{/admin/accounts/SendEmail}">Gửi mail</a></li>
-						<li><a class="dropdown-item" th:href="@{#}">Cài đặt</a></li>
-						<li><hr class="dropdown-divider"></li>
-						<li><a class="dropdown-item" th:href="@{/security/logoff}">Đăng xuất</a></li>
-					</ul>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
+					role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<i class="fas fa-user fa-fw"></i> [[${#request.remoteUser}]]</a>
+				<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+					<li><a class="dropdown-item" th:href="@{|/admin/accounts/info/${#request.remoteUser}|}">Thông tin cá nhân</a></li>
+					<li><a class="dropdown-item" th:href="@{/forgot_password}">Đổi mật khẩu</a></li>
+					<li><a class="dropdown-item" th:href="@{/admin/accounts/SendEmail}">Gửi mail</a></li>
+					<li><a class="dropdown-item" th:href="@{#}">Cài đặt</a></li>
+					<li><hr class="dropdown-divider"></li>
+					<li><a class="dropdown-item" th:href="@{/security/logoff}">Đăng xuất</a></li>
+				</ul>
 			</li>
 		</ul>
 	</nav>
@@ -151,7 +150,7 @@
 						<div class="collapse" id="collapseFm" aria-labelledby="headingOne"
 							data-bs-parent="#sidenavAccordion">
 							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" th:href="@{/admin/comments}">Danh sách bình luận</a> 
+								<a class="nav-link" th:href="@{/admin/comments}">Danh sách bình luận</a>
 								<a class="nav-link" th:href="@{/admin/comments/add}">Thêm bình luận</a>
 							</nav>
 						</div>
@@ -233,13 +232,37 @@
 			</nav>
 		</div>
 		<div id="layoutSidenav_content">
-			<!--           main             -->
-			<div class="row">
-				<div class="col">
-					<div th:replace="${main}"></div>
+			<main>
+				<div class="container-fluid px-4">
+					<h1 class="mt-4">Admin</h1>
+					<ol class="breadcrumb mb-4">
+						<li class="breadcrumb-item active">Manager</li>
+					</ol>
+					<div class="row">
+						<div class="col-xl-6">
+							<div class="card mb-4">
+								<div class="card-header">
+									<i class="fas fa-chart-area me-1"></i> Biểu đồ vùng
+								</div>
+								<div class="card-body">
+									<canvas id="myAreaChart" width="100%" height="40"></canvas>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-6">
+							<div class="card mb-4">
+								<div class="card-header">
+									<i class="fas fa-chart-bar me-1"></i> Biểu đồ cột
+								</div>
+								<div class="card-body">
+									<canvas id="myBarChart" width="100%" height="40"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+					
 				</div>
-			</div>
-
+			</main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid px-4">
 					<div
@@ -264,8 +287,5 @@
 	<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
 	<script src="/assets/js/datatables-simple-demo.js"></script>
 	<script src="/assets/js/all.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

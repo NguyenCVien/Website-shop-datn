@@ -45,7 +45,7 @@
 					<i class="fas fa-user fa-fw"></i> [[${#request.remoteUser}]]</a>
 				<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 					<li><a class="dropdown-item" th:href="@{|/admin/accounts/info/${#request.remoteUser}|}">Thông tin cá nhân</a></li>
-					<li><a class="dropdown-item" th:href="@{/security/forgotPassword}">Quên mật khẩu</a></li>
+					<li><a class="dropdown-item" th:href="@{/forgot_password}">Đổi mật khẩu</a></li>
 					<li><a class="dropdown-item" th:href="@{/admin/accounts/SendEmail}">Gửi mail</a></li>
 					<li><a class="dropdown-item" th:href="@{#}">Cài đặt</a></li>
 					<li><hr class="dropdown-divider"></li>

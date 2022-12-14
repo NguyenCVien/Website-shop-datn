@@ -20,7 +20,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 						</div>
 						<div class="col-sm-6 form-group">
 							<label for="email">Email:</label> 
-							<input type="email" th:field="*{email}" name="email" id="email" class="form-control" required>
+							<input type="text" th:field="*{email}" name="email" id="email" class="form-control" required>
 						</div>
 						<div class="col-sm-6 form-group">
 							<label for="telePhone">Số điện thoại:</label> 
@@ -32,8 +32,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 						</div>
 						<div class="col-sm-6 form-group">
 							<label for="passwordRe">[[#{regist.confirmPass}]]:</label> 
-							<input type="password" name="passwordRe" id="passwordRe"
-								oninput="checkPasswordMatch(this);" class="form-control" required>
+							<input type="password" name="passwordRe" id="passwordRe" class="form-control" required>
 						</div>
 					</div>
 					<div th:if="${message != null}" class="alert alert-primary"
@@ -44,15 +43,6 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 					<div class="small text-center"><a th:href="@{/security/login/form}">[[#{login.login}]]</a></div>
 				</form>
 			</div>
-			<script>
-				function checkPasswordMatch(fieldConfirmPassword) {
-					if (fieldConfirmPassword.value != $("#password").val()) {
-						fieldConfirmPassword.setCustomValidity("Mật khẩu không trùng khớp!");
-					} else {
-						fieldConfirmPassword.setCustomValidity("");
-					}
-				}
-			</script>
 		</div>
 	</div>
 	</main>

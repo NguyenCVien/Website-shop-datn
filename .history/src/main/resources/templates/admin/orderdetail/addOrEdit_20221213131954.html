@@ -31,21 +31,23 @@
 								<div class="form-group col-sm-1">
 									<img th:src="@{|/assets/images/*{product.image1}|}" class="img--item">
 								</div>
-								<div class="form-group col-sm-4">
-									<label for="productId">Tên sản phẩm: </label> 
-									<input type="text"  class="form-control"  readonly
-										th:field="*{product.name}" aria-describedby="productIdHid">
-								</div>
 								<div class="form-group col-sm-3">
 									<label for="productId">Mã sản phẩm:</label> 
 									<input class="form-control" name="product" readonly 
 										th:field="*{product.productId}" >
+								</div>
+								
+								<div class="form-group col-sm-4">
+									<label for="productId">Tên sản phẩm: </label> 
+									<input type="text"  class="form-control"  readonly
+										th:field="*{product.name}" aria-describedby="productIdHid">
 								</div>
 								<div class="form-group col-sm-4">
 									<label for="productId">Ngày đặt hàng: </label> 
 									<input type="text"  class="form-control"  readonly
 										th:field="*{order.createDay}" aria-describedby="productIdHid">
 								</div>
+								
 								<div class="form-group col-sm-6">
 									<label for="price">Giá</label> 
 									<input class="form-control" name="price" type="number"
@@ -59,7 +61,7 @@
 								<div class="form-group col-sm-6">
 									<label for="quantity">Số lượng</label> 
 									<input class="form-control" name="quantity" type="number"
-										th:field="*{quantity} ">
+										th:field="*{quantity} + '%'">
 								</div>
 								<div class="form-group col-sm-6">
 									<label>Trạng thái:</label>
