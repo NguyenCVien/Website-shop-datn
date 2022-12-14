@@ -22,7 +22,7 @@ public class Account implements Serializable {
     private String email;
     private String image;
     private String address;
-    private int telePhone;
+    private String telePhone;
     private String reset_password;
 
     @JsonIgnore

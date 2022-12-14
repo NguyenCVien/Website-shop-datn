@@ -73,11 +73,11 @@ public class OrderHistoryController {
 
     @GetMapping("/delivered")
     public String listEvaluate(Model model, HttpServletRequest request) {
-        String status = "Đã giao hàng";
         String username = request.getRemoteUser();
 
-        model.addAttribute("orders", orderDetailService.findByStatus(status, username));
-        return "orderHistory/listConfirmation";
+        Pageable pageable = null;
+        model.addAttribute("orders", orderService.findByUsername(username, pageable));
+        return "orderHistory/list";
     }
 
     @GetMapping("/view/page")
@@ -88,11 +88,8 @@ public class OrderHistoryController {
         Pageable pageable = PageRequest.of(page.orElse(0), 10, Sort.by("name"));
         Page<Order> pageProduct = null;
         String username = request.getRemoteUser();
-        if (StringUtils.hasText(name)) {
+
             pageProduct = orderService.findByUsername(username, pageable);
-        } else {
-            pageProduct = orderService.findByUsername(username, pageable);
-        }
         model.addAttribute("orders", pageProduct);
         return "orderHistory/list";
     }

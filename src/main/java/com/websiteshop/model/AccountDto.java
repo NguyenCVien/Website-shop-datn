@@ -22,6 +22,6 @@ public class AccountDto implements Serializable {
 	private String image;
 	private MultipartFile imageFile;
 	private String address;
-	private int telePhone;
+	private String telePhone;
 	private Boolean isEdit;
 }

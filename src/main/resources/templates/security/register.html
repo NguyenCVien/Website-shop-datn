@@ -6,7 +6,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 	<div id="wrapper">
 		<div class="container">
 			<div class="row justify-content-around">
-				<form action="/register/save" class="col-md-5 bg-light p-3 my-3" 
+				<form action="/register/save" class="col-md-7 bg-light p-3 my-3" 
 					method="post" th:object="${account}">
 					<div class="card-title mb-5 text-uppercase">[[#{regist.title}]]</div>
 					<div class="row">
@@ -24,7 +24,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 						</div>
 						<div class="col-sm-6 form-group">
 							<label for="telePhone">Số điện thoại:</label> 
-							<input type="text" th:field="*{telePhone}" name="telePhone" id="telePhone" class="form-control" required>
+							<input type="number" th:field="*{telePhone}" name="telePhone" id="telePhone" class="form-control" required>
 						</div>
 						<div class="col-sm-6 form-group">
 							<label for="password">[[#{regist.password}]]:</label> 
@@ -36,10 +36,11 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 								oninput="checkPasswordMatch(this);" class="form-control" required>
 						</div>
 					</div>
-					<div th:if="${message != null}" class="alert alert-primary"
+					<div th:if="${message != null}" class="message"
 						role="alert">
 						<i>[[${message}]]</i>
 					</div>
+					<hr />
 					<button class="btn-primary btn btn-block mb-3">[[#{regist.regist}]]</button>
 					<div class="small text-center"><a th:href="@{/security/login/form}">[[#{login.login}]]</a></div>
 				</form>

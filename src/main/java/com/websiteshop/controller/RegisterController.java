@@ -40,9 +40,14 @@ public class RegisterController {
 
 		Account entity = new Account();
 		BeanUtils.copyProperties(dto, entity);
-
+		
 		if (!accountService.findById(entity.getUsername()).isEmpty()) {
 			model.addAttribute("message", "Tài khoản đã tồn tại");
+			return new ModelAndView("security/register");
+		}
+		
+		if(entity.getTelePhone().length() != 10) {
+			model.addAttribute("message", "Số điện thoại phải đủ 10 số!");
 			return new ModelAndView("security/register");
 		}
 

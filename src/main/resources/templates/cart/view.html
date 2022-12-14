@@ -6,8 +6,8 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 <body> 
     <main th:fragment="shopping_cart">
         <div class="text-center container">
-            <h2 class="alert alert-success mb-5"><i class="fas fa-shopping-cart"></i> 
-            <lable th:text="#{cart.title}"></lable></h2>
+            <h3 class="mt-3 mb-5"><i class="fas fa-shopping-cart"></i> 
+            <lable th:text="#{cart.title}"></lable></h3>
         </div>
         <div class="container"> 
             <a th:href="@{/product/list}" class="btn btn-warning mb-1"><i class="fa fa-angle-left"></i> <lable th:text="#{product.btn.continute}"></lable></a>
