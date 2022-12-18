@@ -21,8 +21,10 @@
                             <div class="price">[[#{cart.price}]]: [[${#numbers.formatInteger(item.unitPrice, 0, 'POINT')}]] <sup>đ</sup></div>
                             <div class="discount">[[#{cart.discount}]]: [[${item.discount}]]%</div>
                             <div class="card-bot">
-                                <div><img src="/assets/images/5sao.png"> </div> 		  
-                                <div><a href="#"><i style="width: 35px; height:20px ;" class="fa-regular fa-thumbs-up" ></i></a> 
+                                <div><img src="/assets/images/5sao.png"> </div> 
+                   
+                                <div><a th:attr="ng-click=@{|cart.add(${item.productId})|}" href="#"><i style="width: 35px; height:20px ;" class="fa-solid fa-cart-shopping"></i></a> 
+                                <a href="#"><i style="width: 35px; height:20px ;" class="fa-regular fa-thumbs-up" ></i></a>
                             </div>
                         </div>                      
                     </div>             

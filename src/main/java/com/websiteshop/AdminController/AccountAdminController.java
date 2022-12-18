@@ -27,6 +27,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.websiteshop.entity.Account;
 import com.websiteshop.model.AccountDto;
 import com.websiteshop.service.AccountService;
+import com.websiteshop.service.OrderDetailService;
+import com.websiteshop.service.OrderService;
 import com.websiteshop.service.StorageService;
 
 @Controller
@@ -34,6 +36,12 @@ import com.websiteshop.service.StorageService;
 public class AccountAdminController {
 	@Autowired
 	AccountService accountService;
+	
+	@Autowired
+	OrderService orderService;
+	
+	@Autowired
+	OrderDetailService orderDetailService;
 
 	@Autowired
 	StorageService storageService;
@@ -68,7 +76,7 @@ public class AccountAdminController {
 			dto.setIsEdit(true);
 
 			model.addAttribute("account", dto);
-			return new ModelAndView("admin/accounts/addOrEdit", model);
+			return new ModelAndView("admin/accounts/editAccount", model);
 		}
 
 		model.addAttribute("message", "Tài khoản không tồn tại");
@@ -89,20 +97,25 @@ public class AccountAdminController {
 	public ModelAndView saveOrUpdate(ModelMap model,
 			@ModelAttribute("account") AccountDto dto, BindingResult result) {
 
-		if (result.hasErrors()) {
-			return new ModelAndView("admin/accounts/addOrEdit");
-		}
-		Account entity = new Account();
-		BeanUtils.copyProperties(dto, entity);
+		try {
+			if (result.hasErrors()) {
+				return new ModelAndView("admin/accounts/addOrEdit");
+			}
+			Account entity = new Account();
+			BeanUtils.copyProperties(dto, entity);
 
-		if (!dto.getImageFile().isEmpty()) {
-			entity.setImage(storageService.getStoredFilename(dto.getImageFile(), null));
-			storageService.store(dto.getImageFile(), entity.getImage());
-		}
+			if (!dto.getImageFile().isEmpty()) {
+				entity.setImage(storageService.getStoredFilename(dto.getImageFile(), null));
+				storageService.store(dto.getImageFile(), entity.getImage());
+			}
 
-		accountService.save(entity);
-		model.addAttribute("message", "Tài khoản đã được lưu");
-		return new ModelAndView("forward:/admin/accounts", model);
+			accountService.save(entity);
+			model.addAttribute("message", "Tài khoản đã được lưu");
+			return new ModelAndView("forward:/admin/accounts", model);
+		} catch (Exception e) {
+			model.addAttribute("message", "Kiểm tra lại các trường dữ liệu");
+			return new ModelAndView("admin/accounts/addOrEdit", model);
+		}
 	}
 
 	@GetMapping("/images/{filename:.+}")
@@ -121,6 +134,7 @@ public class AccountAdminController {
 			if (!StringUtils.isEmpty(opt.get().getImage())) {
 				storageService.delete(opt.get().getImage());
 			}
+			//orderService.deleteOrderByUsername(username);
 			accountService.delete(opt.get());
 			model.addAttribute("message", "Tài khoản đã được xóa!");
 		} else {

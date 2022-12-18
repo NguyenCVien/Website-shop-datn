@@ -86,4 +86,6 @@ public interface OrderService {
 	Page<Order> findByNameContaining(String name, Pageable pageable);
 
 	List<Order> findByNameContaining(String name);
+
+	void deleteOrderByUsername(String username);
 }

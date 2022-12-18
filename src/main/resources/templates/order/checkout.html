@@ -53,15 +53,15 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label><i class="fa-solid fa-phone"></i> <lable th:text="#{order.phone}"></lable>:</label>
-                                <input ng-model="order.telePhone" type="text" class="form-control" required>
+                                <input ng-model="order.telePhone" type="number" min="10" class="form-control" required>
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label><i class="fa-solid fa-pen-nib"></i> Email:</label>
-                                <input ng-model="order.email" type="text" class="form-control" required>
+                                <input ng-model="order.email" type="email" class="form-control" required>
                             </div>
                             <div class="col-md-12 mt-3">
                                 <div><i class="fa-solid fa-location-dot"></i> <lable th:text="#{order.address}"></lable>:</div>
-                                <textarea ng-model="order.address" class="form-control mt-2" required placeholder="Vd: 21 Phú Thạnh 1, Hòa Minh, Đà Nẵng."></textarea>
+                                <textarea style="height: 80px" ng-model="order.address" class="form-control mt-2" required placeholder="VD: 21 Phú Thạnh 1, Hòa Minh, Đà Nẵng."></textarea>
                             </div>
                             <div class="form-group col-sm-3 mt-3" hidden>
                                 <label>[[#{checkout.acc}]]</label>

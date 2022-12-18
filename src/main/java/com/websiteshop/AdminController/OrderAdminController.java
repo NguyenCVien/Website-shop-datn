@@ -31,9 +31,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.websiteshop.entity.Order;
+import com.websiteshop.entity.OrderDetail;
 import com.websiteshop.model.AccountDto;
 import com.websiteshop.model.OrderDto;
 import com.websiteshop.service.AccountService;
+import com.websiteshop.service.OrderDetailService;
 import com.websiteshop.service.OrderService;
 
 @Controller
@@ -44,6 +46,9 @@ public class OrderAdminController {
 
 	@Autowired
 	AccountService accountService;
+	
+	@Autowired
+	OrderDetailService orderDetailService;
 
 	@ModelAttribute("accounts")
 	public List<AccountDto> getAccounts() {
@@ -125,6 +130,7 @@ public class OrderAdminController {
 		Optional<Order> opt = orderService.findByIdd(orderId);
 
 		if (opt.isPresent()) {
+			//orderDetailService.deleteOrderDetailsByOrderId(orderId);
 			orderService.delete(opt.get());
 			model.addAttribute("message", "Đơn hàng đã bị xóa!");
 		} else {

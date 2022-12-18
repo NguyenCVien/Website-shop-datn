@@ -12,7 +12,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 import org.springframework.stereotype.Service;
 import com.websiteshop.dao.OrderDetailDAO;
-import com.websiteshop.entity.Account;
+import com.websiteshop.entity.Order;
 import com.websiteshop.entity.OrderDetail;
 import com.websiteshop.service.OrderDetailService;
 
@@ -21,6 +21,11 @@ public class OrderDetailServiceImpl implements OrderDetailService {
 
 	@Autowired
 	OrderDetailDAO ddao;
+
+	@Override
+	public void deleteOrderDetailsByOrderId(Long orderId) {
+		 ddao.deleteOrderDetailsByOrderId(orderId);
+	}
 
 	@Override
 	public List<OrderDetail> findByStatus(String status, String username) {

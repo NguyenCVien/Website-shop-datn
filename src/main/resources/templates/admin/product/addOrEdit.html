@@ -24,17 +24,20 @@
 							<div class="row i">
 								<div class="col-sm-4 mt-2">
 									<label for="image"> 
-										<img th:src="@{|/assets/images/${product.image2}|}" class="small-img">
+										<img th:src="${product.image2 != null? '/admin/product/images/' + product.image2 : '/assets/images/noimage.jpg'}"
+										class="small-img">
 									</label>
 								</div>
 								<div class="col-sm-4 mt-2">
 									<label for="image"> 
-										<img th:src="@{|/assets/images/${product.image3}|}" class="small-img">
+										<img th:src="${product.image3 != null? '/admin/product/images/' + product.image3 : '/assets/images/noimage.jpg'}"
+										class="small-img">
 									</label>
 								</div>
 								<div class="col-sm-4 mt-2">
 									<label for="image">
-										<img th:src="@{|/assets/images/${product.image4}|}" class="small-img">
+										<img th:src="${product.image4 != null? '/admin/product/images/' + product.image4 : '/assets/images/noimage.jpg'}"
+										class="small-img">
 									</label>
 								</div>
 							</div>
@@ -63,20 +66,20 @@
 							<div class="row">
 								<div class="form-group col-sm-6">
 									<label for="productId">Mã sản phẩm: </label> <input type="text"
-										readonly="readonly" class="form-control" name="productId"
+										readonly="readonly" class="form-control" name="productId" 
 										id="productId" th:field="*{productId}"
 										aria-describedby="productIdHid" placeholder="Product ID">
 								</div>
 								<div class="form-group col-sm-6">
 									<div>Giá</div>
-									<input th:field="*{unitPrice}" type="number" name="price" min="0"
+									<input th:field="*{unitPrice}" type="number" name="price" min="0" required
 										placeholder="Unit Price" class="form-control mt-2">
 								</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-sm-6">
 									<div>Tên sản phẩm</div>
-									<input th:field="*{name}" type="text" name="name"
+									<input th:field="*{name}" type="text" name="name" required
 										placeholder="Name" class="form-control mt-2">
 								</div>
 								<div class="form-group col-sm-6">
@@ -92,17 +95,17 @@
 							<div class="row">
 								<div class="form-group col-sm-6 ">
 									<div>Ngày tạo</div>
-									<input th:field="*{enteredDay}" type="date" name="enteredDay"
+									<input th:field="*{enteredDay}" type="date" name="enteredDay" required
 										class="form-control mt-2">
 								</div>
 								<div class="form-group col-sm-3">
 									<div>Số lượng</div>
-									<input th:field="*{quantity}" type="number" min="1"
+									<input th:field="*{quantity}" type="number" min="1" required
 										style="width: 100%;" placeholder="0" class="form-control mt-2"></input>
 								</div>
 								<div class="form-group col-sm-3">
 									<div>Giảm giá</div>
-									<input th:field="*{discount}" type="number" min="0"
+									<input th:field="*{discount}" type="number" min="0" required
 										placeholder="Discount" style="width: 100%;"
 										class="form-control mt-2">
 								</div>
@@ -110,7 +113,7 @@
 							<div class="row">
 								<div class="col">
 									<div>Mô tả</div>
-									<textarea th:field="*{discription}" placeholder="Description"
+									<textarea th:field="*{discription}" placeholder="Description" required
 										style="height: 190px" class="mt-2 form-control description"></textarea>
 								</div>
 							</div>
