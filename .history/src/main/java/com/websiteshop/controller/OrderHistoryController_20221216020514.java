@@ -75,19 +75,10 @@ public class OrderHistoryController {
     public String listEvaluate(Model model, HttpServletRequest request) {
         String status = "Đã giao hàng";
         String username = request.getRemoteUser();
-        model.addAttribute("orders", orderDetailService.findByStatus(status, username));
-        return "orderHistory/listConfirmation";
+        Pageable pageable = null;
+        model.addAttribute("orders", orderService.findByUsername(username, pageable));
+        return "orderHistory/list";
     }
-
-    // @GetMapping("/delivered")
-    // public String listEvaluate(Model model, HttpServletRequest request) {
-    // String username = request.getRemoteUser();
-
-    // Pageable pageable = null;
-    // model.addAttribute("orders", orderService.findByUsername(username,
-    // pageable));
-    // return "orderHistory/list";
-    // }
 
     @GetMapping("/view/page")
     public String viewPage(Model model, HttpServletRequest request,

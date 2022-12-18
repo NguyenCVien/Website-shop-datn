@@ -54,10 +54,10 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 					}
 				}
 				function checkPhone(cp){
-					if (cp.value < 10) {
-						cp.setCustomValidity("Số điện thoại không hợp lệ!");
-					} else {
+					if (cp.value >= ($("telePhone").value = 10) ) {
 						cp.setCustomValidity("");
+					} else {
+						cp.setCustomValidity("SDT k hop le!");
 					}
 				}
 			</script>

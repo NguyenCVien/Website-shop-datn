@@ -54,8 +54,8 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 					}
 				}
 				function checkPhone(cp){
-					if (cp.value < 10) {
-						cp.setCustomValidity("Số điện thoại không hợp lệ!");
+					if (cp.value < 2) {
+						cp.setCustomValidity("SDT k hop le!");
 					} else {
 						cp.setCustomValidity("");
 					}

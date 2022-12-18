@@ -76,7 +76,7 @@ public class OrderHistoryController {
         String status = "Đã giao hàng";
         String username = request.getRemoteUser();
         model.addAttribute("orders", orderDetailService.findByStatus(status, username));
-        return "orderHistory/listConfirmation";
+        return "orderHistory/list";
     }
 
     // @GetMapping("/delivered")

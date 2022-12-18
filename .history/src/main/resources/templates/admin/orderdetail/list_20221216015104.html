@@ -39,7 +39,7 @@
 							<td>
 								<img th:src="@{|/assets/images/${item.product.image1}|}" class="img--stt">
 							</td>
-							<td>[[${#numbers.formatInteger(item.Quantity*(item.price-(item.price*item.discount)/100), 0 , 'DEFAULT')}]] <sup>đ</sup></td>
+							<td>[[${#numbers.formatInteger(item.Quantity*(item.price-(item.price*item.discount)/100), 0 , 'WHITESPACE')}]] <sup>đ</sup></td>
 							<td th:utext="${item.status}"></td>
 							<!-- <td th:utext="${item.discription}"></td> -->
 							<td>

@@ -54,12 +54,18 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 					}
 				}
 				function checkPhone(cp){
-					if (cp.value < 10) {
-						cp.setCustomValidity("Số điện thoại không hợp lệ!");
-					} else {
-						cp.setCustomValidity("");
-					}
+					
+						{
+							  var phoneno = /^\d{10}$/;
+						  if(cp.value.match(telePhone))
+						  {
+							      return true;
+						  }
+						  else
+						  {
+							     alert("Not a valid Phone Number"						
 				}
+			}
 			</script>
 		</div>
 	</div>
