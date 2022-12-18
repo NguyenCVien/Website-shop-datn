@@ -18,6 +18,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.websiteshop.dao.OrderDAO;
 import com.websiteshop.dao.OrderDetailDAO;
+import com.websiteshop.entity.Account;
 import com.websiteshop.entity.Order;
 import com.websiteshop.entity.OrderDetail;
 import com.websiteshop.model.OrderDto;
@@ -46,6 +47,11 @@ public class OrderServiceImpl implements OrderService {
 		ddao.saveAll(details);
 
 		return order;
+	}
+
+	@Override
+	public void deleteOrderByUsername(String username) {
+		odao.deleteOrderByUsername(username);
 	}
 
 	@Override

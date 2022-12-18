@@ -16,6 +16,9 @@ public interface OrderDAO extends JpaRepository<Order, Long> {
 	@Query("SELECT o FROM Order o WHERE o.account.username=?1")
 	Page<Order> findByUsername(String username, Pageable pageable);
 	
+	@Query(value = "DELETE FROM Orders WHERE username=?1", nativeQuery = true)
+	Order deleteOrderByUsername(String username);
+	
 	List<Order> findByNameContaining(String name);
 
 	Page<Order> findByNameContaining(String name, Pageable pageable);

@@ -34,7 +34,7 @@
 										}
 									}
 								</script>
-								<input type="file" name="imageFile" style="height: 45px"
+								<input th:field="*{imageFile}" type="file" name="imageFile" style="height: 45px"
 									onchange="chooseFile(this)" placeholder="Product Image"
 									aria-describedby="productImageHid"
 									class="form-control mt-5 choose-img" id="productImage">
@@ -44,40 +44,40 @@
 						<div class="col-sm-8 ses ">
 							<div class="row">
 								<div class="form-group col-sm-6">
-									<label for="productId">Tên tài khoản: </label> <input type="text" required 
-										class="form-control" name="username" id="productId"
+									<label for="productId">Tên tài khoản: </label> <input type="text"
+										class="form-control" name="username" id="productId" readonly="readonly"
 										th:field="*{username}" aria-describedby="productIdHid"
 										placeholder="Tên tài khoản" > 
 								</div>
 								<div class="form-group col-sm-6">
 									<div>Họ và tên:</div>
-									<input min="6" th:field="*{fullname}" type="text" name="fullname" required
+									<input th:field="*{fullname}" type="text" name="fullname"
 										placeholder="Họ và tên" class="form-control">
 								</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-sm-6">
 									<div>Mật khẩu:</div>
-									<input th:field="*{password}" type="text" name="password" id="password" aria-describedby="passwordHid" required
-										placeholder="Mật khẩu" class="form-control mt-2">
+									<input th:field="*{password}" type="text" name="password" id="password" aria-describedby="passwordHid"
+										placeholder="mật khẩu" class="form-control mt-2">
 								</div>
 								<div class="form-group col-sm-6">
 									<div>Email</div>
-									<input th:field="*{email}" type="email" name="email" required
+									<input th:field="*{email}" type="email" name="email"
 										placeholder="Email" class="form-control mt-2">
 								</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-sm-6 ">
 									<div>Số điện thoại:</div>
-									<input th:field="*{telePhone}" type="number" name="telePhone" required
+									<input th:field="*{telePhone}" type="number" name="telePhone"
 										placeholder="Phone number" class="form-control mt-2">
 								</div>
 							</div>
 							<div class="row">
 								<div class="col">
 									<div>Địa chỉ:</div>
-									<textarea th:field="*{address}" placeholder="Địa chỉ" required
+									<textarea th:field="*{address}" placeholder="Địa chỉ"
 										style="height: 190px" class="mt-2 form-control description"></textarea>
 								</div>
 							</div>

@@ -82,4 +82,6 @@ public interface OrderDetailService {
 
 	List<OrderDetail> findByStatus(String status);
 
+	void deleteOrderDetailsByOrderId(Long orderId);
+
 }
