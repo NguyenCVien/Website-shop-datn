@@ -43,7 +43,6 @@ public class Product implements Serializable {
 	private String image4;
 	private String image5;
 	private String discription;
-	// @Temporal(TemporalType.DATE)
 	private String enteredDay;
 	@ManyToOne
 	@JoinColumn(name = "categoryId")
