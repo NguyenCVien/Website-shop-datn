@@ -23,7 +23,7 @@
                             <div class="card-bot">
                                 <div><img src="/assets/images/5sao.png"> </div> 
                                 <div><a th:attr="ng-click=@{|cart.add(${item.productId})|}" href="#"><i style="width: 35px; height:20px ;" class="fa-solid fa-cart-shopping"></i></a> 
-                                <a href="#"><i style="width: 35px; height:20px ;" class="fa-regular fa-thumbs-up" ></i></a>
+                                <a th:href="@{|/favorite/save/${item.productId}|}"><i style="width: 35px; height:20px ;" class="fa-regular fa-thumbs-up" ></i></a>
                             </div>
                         </div>                      
                     </div>             
