@@ -13,7 +13,7 @@ public class CommentDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Long commentId;
 	private String username;
-	private String productId;
+	private Long productId;
 	private String description;
 	private Boolean isEdit;
 }

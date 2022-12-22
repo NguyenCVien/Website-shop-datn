@@ -18,6 +18,6 @@ public class Comment implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long commentId;
 	private String username;
-	private String productId;
+	private Long productId;
 	private String description;
 }
