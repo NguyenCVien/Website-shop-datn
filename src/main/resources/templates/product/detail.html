@@ -21,7 +21,9 @@
                         </div>
                         <div class="col-sm-7">
                             <fieldset style="line-height: 30px;">
+                            
                                 <li>[[#{cart.name}]]: <label class="category-name">[(*{name})].</label></li>
+                                <li>[[#{cart.name}]]: <label class="category-name">[[${productId}]]</label></li>
                                 <li class="price"><lable th:text="#{cart.price}"></lable>: [[*{#numbers.formatInteger(unitPrice, 0, 'DEFAULT')}]] <sup>đ</sup></li>
                                 <li class="discount"><lable th:text="#{cart.discount}"></lable>: [(*{discount})]%</li>
                                 <li><lable th:text="#{detail.qty}"></lable>: [[*{quantity}]]</li>
@@ -30,7 +32,7 @@
                                         [(*{discription})] 
                                     </div>                               		                                            
                                 <div class="form-group">
-                                    <li><a th:href="@{/comments/add}"><lable th:text="#{detail.feedb}"></a></lable>:</li>
+                                    <li><a th:href="@{|/comments/add/${productId}|}"><lable th:text="#{detail.feedb}"></a></lable>:</li>
                                     <div class="bot mt-4">
                                         <a th:href="@{/product/list}" class="btn btn-warning mr-3">
                                             <i class="fa fa-angle-left"></i> <lable th:text="#{product.btn.continute}"></lable>
