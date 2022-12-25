@@ -143,7 +143,7 @@ public class AccountAdminController {
 				model.addAttribute("message", "Không tìm thấy tài khoản!");
 			}
 		} catch (Exception e) {
-			model.addAttribute("message", "Không thể xóa tài khoản đang đặt hàng!");
+			model.addAttribute("message", "Không thể xóa tài khoản khi đã mua hàng!");
 		}
 
 		return new ModelAndView("forward:/admin/accounts", model);

@@ -29,8 +29,8 @@
 							<td th:utext="${item.productId}"></td>
 							<td th:utext="${item.description}"></td>
 							<td>
-								<div class="btn-group btn-group-xs" >
-									<a class="btn btn-warning mr-2" hidden
+								<div class="btn-group btn-group-xs">
+									<a class="btn btn-warning mr-2"
 										th:href="@{'/admin/comments/edit/' + ${item.commentId}}">
 										<i class="fa-regular fa-pen-to-square"></i>
 									</a> <a class="btn btn-danger" th:data-id="${item.commentId}"

@@ -8,9 +8,9 @@
             <div th:each="item: ${items}" class="col-sm-2">
                 <div class="card" >
                     <div class="card-body list-item" >  
-                        <!-- <div class="gif">
+                        <div class="gif">
                             <img alt="" src="/assets/images/hot-icon.gif">
-                        </div> -->
+                        </div>
                         <a th:href="@{|/product/detail/${item.productId}|}">					   
                             <img class="imgindex" th:src="@{|/assets/images/${item.image1}|}"> 
                         </a>           

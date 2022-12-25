@@ -12,7 +12,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 					<div class="row">
 						<div class="col-sm-6 form-group">
 							<label for="floatingInputUsername">[[#{regist.name}]]:</label> 
-							<input type="text" th:field="*{username}" name="username" id="username" class="form-control" minlength="4" required>
+							<input type="text" th:field="*{username}" name="username" id="username" class="form-control" required>
 						</div>
 						<div class="col-sm-6 form-group">
 							<label for="fullname">[[#{info.name}]]:</label> 
@@ -53,7 +53,13 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 						fieldConfirmPassword.setCustomValidity("");
 					}
 				}
-				
+				function checkPhone(cp){
+					if (cp.val length == 10) {
+						cp.setCustomValidity("Số điện thoại không hợp lệ!");
+					} else {
+						cp.setCustomValidity("");
+					}
+				}
 			</script>
 		</div>
 	</div>

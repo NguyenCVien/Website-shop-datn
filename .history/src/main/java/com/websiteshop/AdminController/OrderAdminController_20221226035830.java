@@ -131,14 +131,13 @@ public class OrderAdminController {
 
 		try {
 			if (opt.isPresent()) {
-				// orderDetailService.deleteOrderDetailsByOrderId(orderId);
-				orderService.delete(opt.get());
-				model.addAttribute("message", "Đơn hàng đã bị xóa!");
-			} else {
-				model.addAttribute("message", "Order is not Found!");
-			}
+			//orderDetailService.deleteOrderDetailsByOrderId(orderId);
+			orderService.delete(opt.get());
+			model.addAttribute("message", "Đơn hàng đã bị xóa!");
 		} catch (Exception e) {
-			model.addAttribute("message", "Vui lòng xóa đơn chi tiết trước khi xóa đơn hàng!");
+			model.addAttribute("message", "Order is not Found!");
+		}
+		
 		}
 
 		return new ModelAndView("forward:/admin/orders", model);

@@ -37,8 +37,8 @@
 							<td th:utext="${item.email}"></td>
 							<td>0[[${item.telePhone}]]</td> 
 							<td th:utext="${item.address}"></td>					
-							<td class="btn-button">
-									<a class="btn btn-warning mr-2" hidden
+							<td class="btn-button" hidden>
+									<a class="btn btn-warning mr-2"
 										th:href="@{'/admin/accounts/edit/' + ${item.username}}">
 										<i class="fa-regular fa-pen-to-square"></i>
 									</a> 

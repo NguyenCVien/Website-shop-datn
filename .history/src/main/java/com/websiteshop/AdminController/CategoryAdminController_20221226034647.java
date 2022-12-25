@@ -109,7 +109,7 @@ public class CategoryAdminController {
 			categoryService.deleteById(categoryId);
 			model.addAttribute("message", "Loại hàng đã được xóa");
 		} catch (Exception e) {
-			model.addAttribute("message", "Không thể xóa khi sản phẩm có trong loại hàng!");
+			model.addAttribute("message", "Vui lòng xóa hết sản phẩm trước khi xóa loại hàng!");
 		}
 
 		return new ModelAndView("forward:/admin/categories", model);

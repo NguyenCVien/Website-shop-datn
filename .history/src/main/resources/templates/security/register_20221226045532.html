@@ -53,7 +53,13 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 						fieldConfirmPassword.setCustomValidity("");
 					}
 				}
-				
+				function checkPhone(cp){
+					if (length < 10 && length > 10) {
+						cp.setCustomValidity("Số điện thoại không hợp lệ!");
+					} else {
+						cp.setCustomValidity("");
+					}
+				}
 			</script>
 		</div>
 	</div>

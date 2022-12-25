@@ -24,7 +24,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 						</div>
 						<div class="col-sm-6 form-group">
 							<label for="telePhone">Số điện thoại:</label> 
-							<input type="number" th:field="*{telePhone}" name="telePhone" id="telePhone" class="form-control" required oninput="checkPhone(this);">
+							<input type="number" th:field="*{telePhone}" minlength="10"  name="telePhone" id="telePhone" class="form-control" required oninput="checkPhone(this);">
 						</div>
 						<div class="col-sm-6 form-group">
 							<label for="password">[[#{regist.password}]]:</label> 

@@ -111,6 +111,9 @@ public class ProductAdminController {
             @ModelAttribute("product") ProductDto dto,
             BindingResult result) {
 
+        if (result.hasErrors()) {
+            return new ModelAndView("/admin/dist/404");
+        }
         Product entity = new Product();
         BeanUtils.copyProperties(dto, entity);
 
@@ -118,21 +121,16 @@ public class ProductAdminController {
         category.setCategoryId(dto.getCategoryId());
         entity.setCategory(category);
 
-        try {
-            if (!dto.getImage1File().isEmpty()) {
-                // UUID uuid = UUID.randomUUID();
-                // String uuString = uuid.toString();
-                entity.setImage1(storageService.getStoredFilename(dto.getImage1File(),
-                        dto.getImage1File().getOriginalFilename()));
-                storageService.store(dto.getImage1File(), entity.getImage1());
+        if (!dto.getImage1File().isEmpty()) {
+            // UUID uuid = UUID.randomUUID();
+            // String uuString = uuid.toString();
+            entity.setImage1(storageService.getStoredFilename(dto.getImage1File(),
+                    dto.getImage1File().getOriginalFilename()));
+            storageService.store(dto.getImage1File(), entity.getImage1());
 
-            }
-            productService.save(entity);
-            model.addAttribute("message", "Thêm sản phẩm mới thành công!");
-        } catch (Exception e) {
-            model.addAttribute("message", "Vui lòng thêm hình ảnh cho sản phẩm!");
         }
-
+        productService.save(entity);
+        model.addAttribute("message", "Product is saved!");
         return new ModelAndView("forward:/admin/product", model);
     }
 

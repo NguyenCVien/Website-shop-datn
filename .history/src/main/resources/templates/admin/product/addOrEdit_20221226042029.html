@@ -11,6 +11,10 @@
 					<h2
 						th:text="${product.isEdit ? 'Cập nhật sản phẩm' : 'Thêm mới sản phẩm'}">
 						Thêm mới sản phẩm</h2>
+						<div th:if="${message != null}" class="alert alert-primary"
+                    role="alert"> 
+                  <i>[[${message}]]</i>
+              </div>
 				</div>
 				<div class="card-body">
 					<div class="row">
@@ -104,7 +108,7 @@
 										style="width: 100%;" placeholder="0" class="form-control mt-2"></input>
 								</div>
 								<div class="form-group col-sm-3">
-									<div>Giảm giá(%)</div>
+									<div>Giảm giá</div>
 									<input th:field="*{discount}" type="number" min="0" required
 										placeholder="Discount" style="width: 100%;"
 										class="form-control mt-2">
@@ -113,7 +117,7 @@
 							<div class="row">
 								<div class="col">
 									<div>Mô tả</div>
-									<textarea th:field="*{discription}" placeholder="Description"
+									<textarea th:field="*{discription}" placeholder="Description" required
 										style="height: 190px" class="mt-2 form-control description"></textarea>
 								</div>
 							</div>

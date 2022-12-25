@@ -69,16 +69,14 @@ public class CategoryAdminController {
 	public ModelAndView saveOrUpdate(ModelMap model, @ModelAttribute("category") CategoryDto dto,
 			BindingResult result) {
 
+		if (result.hasErrors()) {
+			return new ModelAndView("admin/category/addOrEdit");
+		}
 		Category entity = new Category();
 		BeanUtils.copyProperties(dto, entity);
 
-		try {
-			categoryService.save(entity);
-			model.addAttribute("message", "Loại hàng đã được lưu");
-		} catch (Exception e) {
-			model.addAttribute("message", "Invalid category");
-		}
-
+		categoryService.save(entity);
+		model.addAttribute("message", "Loại hàng đã được lưu");
 		return new ModelAndView("forward:/admin/categories", model);
 	}
 
@@ -105,12 +103,8 @@ public class CategoryAdminController {
 	@GetMapping("delete/{categoryId}")
 	public ModelAndView delete(ModelMap model, @PathVariable("categoryId") Long categoryId) throws IOException {
 
-		try {
-			categoryService.deleteById(categoryId);
-			model.addAttribute("message", "Loại hàng đã được xóa");
-		} catch (Exception e) {
-			model.addAttribute("message", "Không thể xóa khi sản phẩm có trong loại hàng!");
-		}
+		categoryService.deleteById(categoryId);
+		model.addAttribute("message", "Loại hàng đã được xóa");
 
 		return new ModelAndView("forward:/admin/categories", model);
 	}
