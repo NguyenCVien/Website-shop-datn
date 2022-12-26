@@ -45,7 +45,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                         <div class="row">
                             <div class="col-md-6">
                                 <label><i class="fa-solid fa-pen-nib"></i> <lable th:text="#{checkout.name}"></lable></label>
-                                <input ng-model="order.name" type="text" class="form-control" required>
+                                <input ng-model="order.name" type="text" class="form-control" required autofocus>
                             </div>
                             <div class="col-md-6">
                                 <label><i class="fa-solid fa-calendar-days"></i> <lable th:text="#{order.date}"></lable>:</label>
