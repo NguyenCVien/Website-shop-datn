@@ -11,10 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.websiteshop.entity.Account;
 import com.websiteshop.entity.Authority;
 import com.websiteshop.model.AccountDto;
 import com.websiteshop.model.AuthorityDto;
@@ -81,17 +78,21 @@ public class authorityController {
     public ModelAndView saveOrUpdate(ModelMap model,
             @ModelAttribute("authority") AuthorityDto dto, BindingResult result) {
 
-        if (result.hasErrors()) {
-            model.addAttribute("message", "Không tìm thấy tài khoản!");
-            return new ModelAndView("admin/authority/addOrEdit", model);
-        }
-        Authority au = new Authority();
-        BeanUtils.copyProperties(dto, au);
+        try {
+        	if (result.hasErrors()) {
+                model.addAttribute("message", "Không tìm thấy tài khoản!");
+                return new ModelAndView("admin/authority/addOrEdit", model);
+            }
+            Authority au = new Authority();
+            BeanUtils.copyProperties(dto, au);
 
-        authorityService.save(au);
-        model.addAttribute("message", "Tài khoản đã được cấp quyền");
-        //return new ModelAndView("forward:/admin/authority", model);
-        return new ModelAndView("forward:/admin", model);
+            authorityService.save(au);
+            model.addAttribute("message", "Tài khoản đã được cấp quyền");
+            return new ModelAndView("admin/authority/addOrEdit", model);
+		} catch (Exception e) {
+			model.addAttribute("message", "Tài khoản này đã được cấp quyền rồi!");
+            return new ModelAndView("admin/authority/addOrEdit", model);
+		}
     }
 
     @GetMapping("delete/{id}")
@@ -99,25 +100,20 @@ public class authorityController {
             @PathVariable("id") Integer id) {
         Optional<Authority> opt = authorityService.findById(id);
 
-        if (opt.isPresent()) {
-            authorityService.delete(opt.get());
-            model.addAttribute("message", "Tài khoản đã bị tướt quyền!");
-        } else {
-            model.addAttribute("message", "Không tìm thấy tài khoản!");
-        }
+        try {
+        	if (opt.isPresent()) {
+                authorityService.delete(opt.get());
+                model.addAttribute("message", "Tài khoản đã bị tướt quyền!");
+            } else {
+            	model.addAttribute("message", "Không tìm thấy tài khoản!");
+            	return new ModelAndView("forward:/authority", model);    
+            }
+		} catch (Exception e) {
+			model.addAttribute("message", "Không tìm thấy tài khoản!");
+			return new ModelAndView("forward:/authority", model);   
+		}
 
         return new ModelAndView("forward:/authority", model);
     }
-
-    // @GetMapping("/authority/list")
-    // public String findAll(@RequestParam("admin") Optional<Boolean> admin,
-    // Model model) {
-    // if (admin.orElse(false)) {
-    // List<Authority> list = authorityService.findAuthoritiesOfAdministrators();
-    // }
-    // List<Authority> list = authorityService.findAll();
-    // model.addAttribute("author", list);
-    // return "/admin/authority/list";
-    // }
 
 }

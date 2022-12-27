@@ -18,7 +18,7 @@
 								<input type="text" class="form-control"
 									readonly name="id" th:field="*{id}">
 							</div>
-							<div class="form-group col-sm-6">
+							<div class="form-group col-sm-12">
 								<label for="username"> Tên tài khoản</label> 
 								<select class="form-control" name="account"
 									th:field="${authority.account.username}">
@@ -33,50 +33,23 @@
 								<label for="name">Vai trò:</label>
 								<div class="row mt-3">
 									<div class="col-sm-4">
-										<input type="checkbox" name="role" id="check" value="DIRE"
+										<input type="radio" name="role" id="check" value="DIRE"
 											th:field="*{role.roleId}"> <label class="ml-2">Giám đốc</label><br>
 									</div>
 									<div class="col-sm-4">
-										<input type="checkbox"  name="role" id="check" value="STAF"
+										<input type="radio"  name="role" id="check" value="STAF"
 											th:field="*{role.roleId}"> <label class="ml-2"> Quản trị</label><br>
 									</div>
 									<div class="col-sm-4">
-										<input type="checkbox" name="role" id="check" value="CUST"
+										<input type="radio" name="role" id="check" value="CUST"
 											th:field="*{role.roleId}"> <label class="ml-2"> Khách hàng</label><br>
 									</div>
 								</div>
 							</div>
-							<script>
-								$(function() {
-									$("input:checkbox")
-											.on(
-													'click',
-													function() {
-														// in the handler, 'this' refers to the box clicked on
-														var $box = $(this);
-														if ($box.is(":checked")) {
-															// the name of the box is retrieved using the .attr() method
-															// as it is assumed and expected to be immutable
-															var group = "input:checkbox[name='"
-																	+ $box
-																			.attr("name")
-																	+ "']";
-															// the checked state of the group/box on the other hand will change
-															// and the current value is retrieved using .prop() method
-															$(group).prop(
-																	"checked",
-																	false);
-															$box.prop(
-																	"checked",
-																	true);
-														} else {
-															$box.prop(
-																	"checked",
-																	false);
-														}
-													});
-								});
-							</script>
+							 <div th:if="${message != null}" class="alert-danger message"
+                        role="alert"> 
+                        <i>[[${message}]]</i>
+                    </div> 
 						</div>
 						<div class="card-footer text-muted card-bottom">
 							<a th:href="@{/authority/add}" type="reset"
