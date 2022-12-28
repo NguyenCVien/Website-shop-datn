@@ -12,16 +12,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 import org.springframework.stereotype.Service;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.websiteshop.dao.OrderDAO;
 import com.websiteshop.dao.OrderDetailDAO;
-import com.websiteshop.entity.Account;
 import com.websiteshop.entity.Order;
 import com.websiteshop.entity.OrderDetail;
-import com.websiteshop.model.OrderDto;
 import com.websiteshop.service.OrderService;
 
 @Service

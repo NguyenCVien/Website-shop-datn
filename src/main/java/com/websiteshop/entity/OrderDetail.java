@@ -27,7 +27,6 @@ public class OrderDetail implements Serializable {
     private Product product;
     private Integer price;
     private Integer discount;
-    private String status;
     private Integer quantity;
     private String discription;
 

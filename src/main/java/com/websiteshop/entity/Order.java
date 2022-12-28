@@ -28,6 +28,8 @@ public class Order implements Serializable {
     private String address;
     private String name;
     private String email;
+    private float total;
+    private String status;
 
     @ManyToOne
     @JoinColumn(name = "Username")
