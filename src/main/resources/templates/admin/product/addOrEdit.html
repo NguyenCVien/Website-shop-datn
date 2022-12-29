@@ -6,7 +6,7 @@
 		<form action="/admin/product/saveOrUpdate" method="post"
 			enctype="multipart/form-data" th:object="${product}">
 			<div class="card">
-				<div class="card-header card bg-secondary text-white"
+				<div class="card-header card bg-primary text-white"
 					style="text-align: center">
 					<h2
 						th:text="${product.isEdit ? 'Cập nhật sản phẩm' : 'Thêm mới sản phẩm'}">
@@ -17,31 +17,11 @@
 					<input type="hidden" th:field="*{isEdit}">
 						<div class="col-sm-4 img">
 							<div class="row">
-								<img id="image1"
-									th:src="${product.image1 != null? '/admin/product/images/' + product.image1 : '/assets/images/noimage.jpg'}"
+								<img  id="image1"
+									th:src="${product.image1 != null? '/admin/product/images/' + product.image1 : '/assets/images/no-image-product.jpg'}"
 									src="/assets/images/noimage.jpg" class="big-img" alt="">
 							</div>
-							<div class="row i">
-								<div class="col-sm-4 mt-2">
-									<label for="image"> 
-										<img th:src="${product.image2 != null? '/admin/product/images/' + product.image2 : '/assets/images/noimage.jpg'}"
-										class="small-img">
-									</label>
-								</div>
-								<div class="col-sm-4 mt-2">
-									<label for="image"> 
-										<img th:src="${product.image3 != null? '/admin/product/images/' + product.image3 : '/assets/images/noimage.jpg'}"
-										class="small-img">
-									</label>
-								</div>
-								<div class="col-sm-4 mt-2">
-									<label for="image">
-										<img th:src="${product.image4 != null? '/admin/product/images/' + product.image4 : '/assets/images/noimage.jpg'}"
-										class="small-img">
-									</label>
-								</div>
-							</div>
-							<div class="col-sm-10">
+							<div style="margin-top: 130px" class="col-sm-10">
 								<script>
 									function chooseFile(fileInput) {
 										if (fileInput.files
@@ -104,7 +84,7 @@
 										style="width: 100%;" placeholder="0" class="form-control mt-2"></input>
 								</div>
 								<div class="form-group col-sm-3">
-									<div>Giảm giá(%)</div>
+									<div>Giảm giá (%)</div>
 									<input th:field="*{discount}" type="number" min="0" required
 										placeholder="Discount" style="width: 100%;"
 										class="form-control mt-2">

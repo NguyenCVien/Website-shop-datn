@@ -69,24 +69,9 @@
 							</div> Shop Home
 						</a>
 						<div class="sb-sidenav-menu-heading">Giao diện</div>
-						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-							data-bs-target="#collapseAcc" aria-expanded="false"
-							aria-controls="collapseProduct">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-columns"></i>
-							</div> Quản lý tài khoản
-							<div class="sb-sidenav-collapse-arrow">
-								<i class="fas fa-angle-down"></i>
-							</div>
-						</a>
-						<div class="collapse" id="collapseAcc"
-							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" th:href="@{/admin/accounts}">Danh sách tài khoản</a> 
-								<!-- <a class="nav-link" th:href="@{/admin/accounts/add}">Thêm mới tài khoản</a> -->
-								<a class="nav-link" th:href="@{/admin/accounts/SendEmail}">Gửi mail cho khách hàng</a>
+							<nav>
+								<a class="nav-link" th:href="@{/admin/accounts}"><i class="fas fa-columns"></i>&ensp;Danh sách tài khoản</a> 
 							</nav>
-						</div>
 						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
 							data-bs-target="#collapseCategory" aria-expanded="false"
 							aria-controls="collapseCC">
@@ -121,56 +106,15 @@
 								<a class="nav-link" th:href="@{/admin/product/add}">Thêm sản phẩm</a>
 							</nav>
 						</div>
-						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-							data-bs-target="#collapseF" aria-expanded="false"
-							aria-controls="collapseProduct">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-columns"></i>
-							</div> Quản lý đơn hàng
-							<div class="sb-sidenav-collapse-arrow">
-								<i class="fas fa-angle-down"></i>
+						<div>
+								<a class="nav-link" th:href="@{/admin/orders}"><i class="fas fa-columns"></i>&ensp;Quản lý đơn hàng</a> 
 							</div>
-						</a>
-						<div class="collapse" id="collapseF" aria-labelledby="headingOne"
-							data-bs-parent="#sidenavAccordion">
-							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" th:href="@{/admin/orders}">Danh sách đơn hàng</a> 
-								<a class="nav-link" th:href="@{/admin/orderDetails}">Danh sách đơn hàng chi tiết</a> 
+							<nav>
+								<a class="nav-link" th:href="@{/admin/comments}"><i class="fas fa-columns"></i>&ensp;Danh sách bình luận</a> 
 							</nav>
-						</div>
-						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-							data-bs-target="#collapseFm" aria-expanded="false"
-							aria-controls="collapseProduct">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-columns"></i>
-							</div> Quản lý bình luận
-							<div class="sb-sidenav-collapse-arrow">
-								<i class="fas fa-angle-down"></i>
-							</div>
-						</a>
-						<div class="collapse" id="collapseFm" aria-labelledby="headingOne"
-							data-bs-parent="#sidenavAccordion">
-							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" th:href="@{/admin/comments}">Danh sách bình luận</a> 
-								<a class="nav-link" th:href="@{/admin/comments/add}">Thêm bình luận</a>
-							</nav>
-						</div>
-						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-							data-bs-target="#collapseFmm" aria-expanded="false"
-							aria-controls="collapseProduct">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-columns"></i>
-							</div> Quản lý phản hồi
-							<div class="sb-sidenav-collapse-arrow">
-								<i class="fas fa-angle-down"></i>
-							</div>
-						</a>
-						<div class="collapse" id="collapseFmm" aria-labelledby="headingOne"
-							data-bs-parent="#sidenavAccordion">
-							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" th:href="@{/admin/feedbacks}">Danh sách phản hồi</a>
-							</nav>
-						</div>					
+							<nav>
+								<a class="nav-link" th:href="@{/admin/feedbacks}"><i class="fas fa-columns"></i>&ensp;Danh sách phản hồi</a>
+							</nav>				
 						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
 							data-bs-target="#collapsePages" aria-expanded="false"
 							aria-controls="collapsePages">
@@ -198,6 +142,26 @@
 						<div>						
 								<a class="nav-link" th:href="@{/statistical}"><i class="fa-solid fa-chart-simple"></i>&ensp;Thống kê</a>
 							</div>
+						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+							data-bs-target="#collapsePages5" aria-expanded="false"
+							aria-controls="collapsePages">
+							<div class="sb-nav-link-icon">
+								<i class="fa-solid fa-plus"></i>
+							</div> Thêm
+							<div class="sb-sidenav-collapse-arrow">
+								<i class="fas fa-angle-down"></i>
+							</div>
+						</a>
+						<div class="collapse" id="collapsePages5"
+							aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+							<nav class="sb-sidenav-menu-nested nav accordion"
+								id="sidenavAccordionPages">
+								<label th:if="${#request.isUserInRole('DIRE')}">
+									<a class="nav-link" th:href="@{/admin/accounts/SendEmail}">Gửi mail đến khách hàng</a>
+								</label>
+							</nav>
+						</div>
+							
 					</div>
 				</div>
 				<div class="sb-sidenav-footer">

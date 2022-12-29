@@ -64,44 +64,8 @@
 						Lưu <i class="fa-solid fa-plus"></i>
 					</button>
 					<a th:href="@{/admin/orders}" class="btn btn-success mr-2">Danh
-						sách đơn hàng</a> <a class="btn btn-danger mr-2"
-						th:if="${order.isEdit}" th:data-id="${order.orderId}"
-						th:data-name="${order.orderId}"
-						onclick="showConfirmModalDialog(this.getAttribute('data-id'), this.getAttribute('data-name'))">
-						Xóa <i class="fa-regular fa-trash-can"></i>
-					</a> <a th:href="@{/admin/orders/add}" class="btn btn-info mr-3">
-						Làm mới <i class="fa-regular fa-window-restore"></i>
+						sách đơn hàng</a>
 					</a>
-				</div>
-			</div>
-			<script>
-				function showConfirmModalDialog(id, name) {
-					$('#orderId').text(name);
-					$('#yesOption').attr('href', '/admin/orders/delete/' + id);
-					$('#noOption').attr('href', '/admin/orders/edit/' + id);
-					$('#confirmationId').modal('show');
-				}
-			</script>
-			<div class="modal fade" id="confirmationId" tabindex="-1"
-				role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title">Xác nhận</h5>
-							<button type="button" class="close" data-dismiss="modal"
-								aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-							Bạn có muốn xóa loại hàng mã "<span id="orderId"></span>"?
-						</div>
-						<div class="modal-footer">
-							<a id="yesOption" type="button" class="btn btn-danger">Đồng ý</a>
-							<a id="noOption" type="button" class="btn btn-secondary"
-								data-dismiss="modal">Hủy</a>
-						</div>
-					</div>
 				</div>
 			</div>
 		</form>

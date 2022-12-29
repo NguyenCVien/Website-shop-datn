@@ -8,12 +8,6 @@
 				style="text-align: center">
 				<h3>Danh sách đơn hàng</h3>
 			</div>
-			<div class="order-status mt-3">
-                <a th:href=@{/admin/orderDetails/confirmation}><label>[[#{order.waiting}]]</label></a>
-                <a th:href=@{/admin/orderDetails/transported}><label>[[#{order.Being_transported}]]</label></a>
-                <a th:href=@{/admin/orderDetails/delivery}><label>[[#{order.Delivery_in_progress}]]</label></a>
-                <a th:href=@{/admin/orderDetails/delivered}><label><label>[[#{order.Delivered}]]</label></a>
-            </div>
 			<div class="card-body">
 				<div th:if="${message != null}" class="alert alert-primary"
 					role="alert">
@@ -48,46 +42,11 @@
 									<a class="btn btn-warning mr-2"
 										th:href="@{'/admin/orders/edit/' + ${item.orderId}}">
 										<i class="fa-regular fa-pen-to-square"></i>
-									</a> <a class="btn btn-danger" th:data-id="${item.orderId}"
-										th:data-name="${item.orderId}"
-										onclick="showConfirmModalDialog(this.getAttribute('data-id'), this.getAttribute('data-name'))">
-										<i class="fa-solid fa-trash-can"></i>
 									</a>
 								</div>
 							</td>
 						</tr>
 					</tbody>
-					<script>
-						function showConfirmModalDialog(id, name) {
-							$('#orderId').text(name);
-							$('#yesOption').attr('href',
-									'/admin/orders/delete/' + id);
-							$('#noOption').attr('href', '/admin/orders');
-							$('#confirmationId').modal('show');
-						}
-					</script>
-					<div class="modal fade" id="confirmationId" tabindex="-1"
-						role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title">Xác nhận</h5>
-									<button type="button" class="close" data-dismiss="modal"
-										aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
-								<div class="modal-body">
-									Bạn có muốn xóa đơn hàng mã "<span id="orderId"></span>"?
-								</div>
-								<div class="modal-footer">
-									<a id="yesOption" type="button" class="btn btn-danger">Đồng ý</a>
-									<a id="noOption" type="button" class="btn btn-secondary"
-										data-dismiss="modal">Hủy</a>
-								</div>
-							</div>
-						</div>
-					</div>
 				</table>
 			</div>
 		</div>
