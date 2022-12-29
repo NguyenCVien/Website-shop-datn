@@ -50,7 +50,9 @@ public class RegisterController {
 			model.addAttribute("message", "Số điện thoại phải đủ 10 số!");
 			return new ModelAndView("security/register");
 		}
-
+		
+		entity.setImage("noimage.jpg");
+		
 		accountService.save(entity);
 		model.addAttribute("message", "Tạo tài khoản thành công!");
 		return new ModelAndView("forward:/security/register", model);

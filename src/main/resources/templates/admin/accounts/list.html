@@ -17,13 +17,10 @@
 					<thead class="bg-light ">
 						<tr>
 							<th>Hình ảnh</th>
-							<th>Tên tài khoản</th>
-							<th>Mật khẩu</th>
 							<th>Họ và tên</th>
 							<th>Email</th>
 							<th>Số điện thoại</th>
 							<th>Địa chỉ</th>
-							<th></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -31,56 +28,12 @@
 							<td>
 								<img th:src="@{|/assets/images/${item.image}|}" class="img--item">
 							</td>
-							<td th:utext="${item.username}"></td>
-							<td th:password="${item.password}">***********</td>
 							<td th:utext="${item.fullname}"></td>
 							<td th:utext="${item.email}"></td>
 							<td>0[[${item.telePhone}]]</td> 
 							<td th:utext="${item.address}"></td>					
-							<td class="btn-button">
-									<a class="btn btn-warning mr-2" hidden
-										th:href="@{'/admin/accounts/edit/' + ${item.username}}">
-										<i class="fa-regular fa-pen-to-square"></i>
-									</a> 
-									<a class="btn btn-danger" th:data-id="${item.username}"
-										th:data-name="${item.username}"
-										onclick="showConfirmModalDialog(this.getAttribute('data-id'), this.getAttribute('data-name'))">
-										<i class="fa-solid fa-trash-can"></i>
-									</a>
-							</td>
 						</tr>
 					</tbody>
-					<script>
-						function showConfirmModalDialog(id, name) {
-							$('#username').text(name);
-							$('#yesOption').attr('href',
-									'/admin/accounts/delete/' + id);
-							$('#noOption').attr('href', '/admin/accounts');
-							$('#confirmationId').modal('show');
-						}
-					</script>
-					<div class="modal fade" id="confirmationId" tabindex="-1"
-						role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title">Xác nhận</h5>
-									<button type="button" class="close" data-dismiss="modal"
-										aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
-								<div class="modal-body">
-									Bạn chắc chắn xóa tài khoản "<span id="username"></span>"?
-								</div>
-								<div class="modal-footer">
-									<a id="yesOption" type="button" class="btn btn-danger">Đồng ý</a>
-									<a id="noOption" type="button" class="btn btn-secondary"
-										data-dismiss="modal">Hủy</a>
-								</div>
-							</div>
-						</div>
-					</div>
 				</table>
 			</div>
 		</div>

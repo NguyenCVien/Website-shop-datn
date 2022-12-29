@@ -23,7 +23,7 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping({ "/authority", "/admin/authority" })
-public class authorityController {
+public class AuthorityController {
     @Autowired
     AuthorityService authorityService;
 
