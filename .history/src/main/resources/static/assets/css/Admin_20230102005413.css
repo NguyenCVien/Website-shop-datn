@@ -48,6 +48,11 @@
     display: flex;
     margin: 2px;
 }
+.tr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .card-bottom{
     display: flex;
     justify-content: center;

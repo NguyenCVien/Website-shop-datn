@@ -17,7 +17,7 @@
 					<input type="hidden" th:field="*{isEdit}">
 						<div class="col-sm-4 img">
 							<div class="row">
-								<img id="image1" th:field="*{image1}" name="image1"
+								<img  id="image1" th:field="*{image1}" name="image1"
 									th:src="${product.image1 != null? '/admin/product/images/' + product.image1 : '/assets/images/no-image-product.jpg'}"
 									src="/assets/images/noimage.jpg" class="big-img" alt="">
 							</div>
@@ -44,24 +44,19 @@
 						</div>
 						<div class="col-sm-8 ses ">
 							<div class="row">
-								<div class="form-group col-sm-3" hidden>
-									<div>image1:</div>
-									<input th:field="*{image1}"  name="image2"  
-										placeholder="Unit Price" class="form-control mt-2">
-								</div>
-								<div class="form-group col-sm-3" hidden>
+								<div class="form-group col-sm-3" >
 									<div>image2:</div>
-									<input th:field="*{image2}"  name="image2"  
+									<input th:field="*{image2}"  name="image2"  required
 										placeholder="Unit Price" class="form-control mt-2">
 								</div>
-								<div class="form-group col-sm-3" hidden>
+								<div class="form-group col-sm-3" >
 									<div>image3:</div>
-									<input th:field="*{image3}"  name="image3"  
+									<input th:field="*{image3}"  name="image3"  required
 										placeholder="Unit Price" class="form-control mt-2">
 								</div>
-								<div class="form-group col-sm-3" hidden>
+								<div class="form-group col-sm-3" >
 									<div>image4:</div>
-									<input th:field="*{image4}" name="image4" 
+									<input th:field="*{image4}" name="image4" required
 										placeholder="Unit Price" class="form-control mt-2">
 								</div>
 								<div class="form-group col-sm-6">
@@ -77,7 +72,7 @@
 								</div>
 								<div class="form-group col-sm-3">
 									<div>Sale:</div>
-									<select name="hotSale" th:field="*{hotSale}" id="hotSale" class="form-control mt-2">
+									<select name="hotSale" id="hotSale" class="form-control mt-2">
 										<option name="hotSale" value="white-img.png">No Hot Sale</option>
 										<option name="hotSale" value="hot-icon.gif">Hot Sale</option>
 									</select>
@@ -107,7 +102,7 @@
 								</div>
 								<div class="form-group col-sm-3 ">
 									<div>Đánh giá:</div>
-									<select name="image5" th:field="*{image5}" id="image5" class="form-control mt-2">
+									<select name="image5" id="image5" class="form-control mt-2">
 										<option name="image5" value="5sao.png">5 Sao</option>
 										<option name="image5" value="4sao.png">4 Sao</option>
 										<option name="image5" value="3sao.png">3 Sao</option>

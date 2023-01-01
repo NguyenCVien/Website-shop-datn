@@ -117,11 +117,12 @@ public class ProductAdminController {
             }
             productService.save(entity);
             model.addAttribute("message", "Thêm sản phẩm mới thành công!");
+            return new ModelAndView("forward:/admin/product", model);
         } catch (Exception e) {
             model.addAttribute("message", "Vui lòng thêm hình ảnh cho sản phẩm!");
+            return new ModelAndView("forward:/admin/product/add", model);
         }
 
-        return new ModelAndView("forward:/admin/product", model);
     }
 
     @GetMapping("/images/{filename:.+}")

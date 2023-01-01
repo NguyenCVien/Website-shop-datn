@@ -77,9 +77,9 @@
 								</div>
 								<div class="form-group col-sm-3">
 									<div>Sale:</div>
-									<select name="hotSale" th:field="*{hotSale}" id="hotSale" class="form-control mt-2">
-										<option name="hotSale" value="white-img.png">No Hot Sale</option>
-										<option name="hotSale" value="hot-icon.gif">Hot Sale</option>
+									<select name="hotSale"  id="hotSale" class="form-control mt-2">
+										<option th:field="hotSale" name="hotSale" value="white-img.png">No Hot Sale</option>
+										<option th:field="hotSale" name="hotSale" value="hot-icon.gif">Hot Sale</option>
 									</select>
 								</div>
 							</div>
@@ -107,7 +107,7 @@
 								</div>
 								<div class="form-group col-sm-3 ">
 									<div>Đánh giá:</div>
-									<select name="image5" th:field="*{image5}" id="image5" class="form-control mt-2">
+									<select name="image5" id="image5" class="form-control mt-2">
 										<option name="image5" value="5sao.png">5 Sao</option>
 										<option name="image5" value="4sao.png">4 Sao</option>
 										<option name="image5" value="3sao.png">3 Sao</option>
