@@ -84,20 +84,19 @@ $scope.order = {
     purchase() {
         var order = angular.copy(this);
         // Thực hiện đặt hàng
-        if($scope.order.total > 100000  ){
-            $http.post("/rest/orders", order).then(resp => {
-                alert("Đặt hàng thành công!");
-                $scope.cart.clear();
-                location.href = "/orderHistory/detail/" + resp.data.orderId;
-            })
-                .catch(error => {
-                    alert("Đặt hàng thất bại!")
-                    console.log(error)
-                })
-        }else{
+        if($scope.order.total < 100000  ){
             alert("Vui lòng thêm sản phẩm trước khi đặt hàng!");
         }
-        
+        $http.post("/rest/orders", order).then(resp => {
+            alert("Đặt hàng thành công!");
+            $scope.cart.clear();
+            location.href = "/orderHistory/detail/" + resp.data.orderId;
+        })
+            .catch(error => {
+                alert("Đặt hàng thất bại!")
+                console.log(error)
+            })
+
     }
 }
 

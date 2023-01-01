@@ -94,10 +94,10 @@ $scope.order = {
                     alert("Đặt hàng thất bại!")
                     console.log(error)
                 })
-        }else{
-            alert("Vui lòng thêm sản phẩm trước khi đặt hàng!");
         }
-        
+        if($scope.order.total < 30000  ){
+        alert("Vui lòng thêm sản phẩm trước khi đặt hàng!");
+        }
     }
 }
 

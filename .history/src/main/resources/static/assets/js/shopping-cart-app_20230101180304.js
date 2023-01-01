@@ -67,7 +67,7 @@ $scope.order = {
     telePhone:"",
     name: "",
     email: "",
-    total: $scope.cart.amount + 30000,
+    total: $scope.cart.amount,
     status: "Đang chờ xác nhận",
     account: { username: $("#username").text() },
     get orderDetails() {
@@ -84,20 +84,19 @@ $scope.order = {
     purchase() {
         var order = angular.copy(this);
         // Thực hiện đặt hàng
-        if($scope.order.total > 100000  ){
-            $http.post("/rest/orders", order).then(resp => {
-                alert("Đặt hàng thành công!");
-                $scope.cart.clear();
-                location.href = "/orderHistory/detail/" + resp.data.orderId;
-            })
-                .catch(error => {
-                    alert("Đặt hàng thất bại!")
-                    console.log(error)
-                })
-        }else{
+        if($scope.order.amount < 0  ){
             alert("Vui lòng thêm sản phẩm trước khi đặt hàng!");
         }
-        
+        $http.post("/rest/orders", order).then(resp => {
+            alert("Đặt hàng thành công!");
+            $scope.cart.clear();
+            location.href = "/orderHistory/detail/" + resp.data.orderId;
+        })
+            .catch(error => {
+                alert("Đặt hàng thất bại!")
+                console.log(error)
+            })
+
     }
 }
 

@@ -84,7 +84,7 @@ $scope.order = {
     purchase() {
         var order = angular.copy(this);
         // Thực hiện đặt hàng
-        if($scope.order.total > 100000  ){
+        try {
             $http.post("/rest/orders", order).then(resp => {
                 alert("Đặt hàng thành công!");
                 $scope.cart.clear();
@@ -94,10 +94,14 @@ $scope.order = {
                     alert("Đặt hàng thất bại!")
                     console.log(error)
                 })
-        }else{
-            alert("Vui lòng thêm sản phẩm trước khi đặt hàng!");
+        } catch (error) {
+            if($scope.order.total < 100000  ){
+                alert("Vui lòng thêm sản phẩm trước khi đặt hàng!");
+            }
         }
         
+        
+
     }
 }
 

@@ -94,10 +94,10 @@ $scope.order = {
                     alert("Đặt hàng thất bại!")
                     console.log(error)
                 })
-        }else{
-            alert("Vui lòng thêm sản phẩm trước khi đặt hàng!");
+            
         }
-        
+        alert("Vui lòng thêm sản phẩm trước khi đặt hàng!");
+
     }
 }
 
