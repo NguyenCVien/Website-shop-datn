@@ -1,0 +1,77 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
+
+<body>
+	<main>
+		<form action="/admin/orders/saveOrUpdate" method="post"
+			enctype="multipart/form-data" th:object="${order}">
+			<div class="card">
+				<div class="card-header card bg-secondary text-white"
+					style="text-align: center">
+					<h2><i class="fa-solid fa-pen-to-square"></i> [[${order.isEdit ? 'Chỉnh sửa đơn hàng' : 'Thêm mới đơn hàng'}]]</h2>
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<input type="hidden" th:field="*{isEdit}">
+						<div class="col-sm-12 ses ">
+							<div class="row">
+								<div class="form-group col-sm-6">
+									<label for="productId">Mã đơn hàng: </label> 
+									<input type="text" readonly class="form-control" name="orderId" id="productId"
+										th:field="*{orderId}" aria-describedby="productIdHid">
+								</div>
+								<div class="form-group col-sm-6">
+									<label for="username"> Tên tài khoản</label> 
+									<input class="form-control" name="account" id="username" required
+											th:field="*{account.username}" readonly>
+								</div>
+								<div class="form-group col-sm-6">
+									<label for="productId">Họ và tên: </label> 
+									<input type="text"  class="form-control" name="name" id="productId"
+										th:field="*{name}" aria-describedby="productIdHid">
+								</div>
+								<div class="form-group col-sm-6">
+									<div>Ngày đặt hàng:</div>
+									<input th:field="*{createDay}" type="date" name="createDay"
+										id="password" aria-describedby="passwordHid"
+										placeholder="Create Date" class="form-control mt-2">
+								</div>
+								<div class="form-group col-sm-6">
+									<div>Số điện thoại:</div>
+									<input th:field="*{telePhone}" type="number" name="telePhone"
+										placeholder="Phone Number" class="form-control mt-2">
+								</div>
+								<div class="form-group col-sm-6">
+									<div>Email:</div>
+									<input th:field="*{email}" type="email" name="email"
+										class="form-control mt-2">
+								</div>
+								<div class="col">
+									<div>Địa chỉ:</div>
+									<textarea th:field="*{address}" placeholder="Address"
+										style="height: 190px" class="mt-2 form-control description"></textarea>
+								</div>
+								<div class="form-group col-sm-6">
+									<div>total:</div>
+									<input th:field="*{total}"  name="total"
+										class="form-control mt-2">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-footer text-center mt-5">
+					<button class="btn btn-primary mr-3"
+						th:text="${order.isEdit? 'Cập nhật':'Lưu'}">
+						Lưu <i class="fa-solid fa-plus"></i>
+					</button>
+					<a th:href="@{/admin/orders}" class="btn btn-success mr-2">Danh
+						sách đơn hàng</a>
+					</a>
+				</div>
+			</div>
+		</form>
+	</main>
+</body>
+</html>

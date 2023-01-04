@@ -1,0 +1,42 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" 
+    th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
+<body>
+	<main>
+        <div class="card mb-4">
+			<div class="card-header card bg-primary text-white"
+				style="text-align: center">
+				<h3><i class="fa-solid fa-pen-to-square"></i> Danh sách tài khoản</h3>
+			</div>
+        <div class="card-body">
+            <div th:if="${message != null}" class="alert alert-primary"
+                role="alert"> 
+                <i>[[${message}]]</i>
+            </div>
+            <table id="datatablesSimple">
+					<thead class="bg-light ">
+						<tr>
+							<th>Hình ảnh</th>
+							<th>Họ và tên</th>
+							<th>Email</th>
+							<th>Số điện thoại</th>
+							<th>Địa chỉ</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="item: ${accounts}">
+							<td>
+								<img th:src="@{|/assets/images/${item.image}|}" class="img--item">
+							</td>
+							<td th:utext="${item.fullname}"></td>
+							<td th:utext="${item.email}"></td>
+							<td>0[[${item.telePhone}]]</td> 
+							<td th:utext="${item.address}"></td>					
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
