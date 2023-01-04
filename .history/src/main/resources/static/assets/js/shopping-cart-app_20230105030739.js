@@ -84,15 +84,9 @@ $scope.order = {
     purchase() {
         var order = angular.copy(this);
         // Thực hiện đặt hàng
-        if($scope.order.total < 40000 ) {
+        if($scope.order.total < 100000 ) {
             alert("Vui lòng thêm sản phẩm trước khi đặt hàng!");
-        }else if($scope.order.name == ""){
-                alert("Vui lòng nhập đầy đủ thông tin!");
-        }else if($scope.order.telePhone == ""){
-                alert("Vui lòng nhập đầy đủ thông tin!");
-        }else if($scope.order.email == ""){
-                alert("Vui lòng nhập đầy đủ thông tin!");
-        }else if($scope.order.address == ""){
+        }else if($scope.order.name == null){
                 alert("Vui lòng nhập đầy đủ thông tin!");
         }else{
             $http.post("/rest/orders", order).then(resp => {

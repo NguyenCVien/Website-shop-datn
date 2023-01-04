@@ -84,27 +84,21 @@ $scope.order = {
     purchase() {
         var order = angular.copy(this);
         // Thực hiện đặt hàng
-        if($scope.order.total < 40000 ) {
-            alert("Vui lòng thêm sản phẩm trước khi đặt hàng!");
-        }else if($scope.order.name == ""){
-                alert("Vui lòng nhập đầy đủ thông tin!");
-        }else if($scope.order.telePhone == ""){
-                alert("Vui lòng nhập đầy đủ thông tin!");
-        }else if($scope.order.email == ""){
-                alert("Vui lòng nhập đầy đủ thông tin!");
-        }else if($scope.order.address == ""){
-                alert("Vui lòng nhập đầy đủ thông tin!");
-        }else{
+        if($scope.order.total > 100000 && $scope.order.name.length > 0 
+            && $scope.order.telePhone > 0 && $scope.order.email > 0) {
             $http.post("/rest/orders", order).then(resp => {
                 alert("Đặt hàng thành công!");
                 $scope.cart.clear();
                 location.href = "/orderHistory/detail/" + resp.data.orderId;
             })
-            .catch(error => {
-                alert("Đặt hàng thất bại!")
-                console.log(error)
-            })
+                .catch(error => {
+                    alert("Đặt hàng thất bại!")
+                    console.log(error)
+                })
+        }else{
+            alert("Vui lòng thêm sản phẩm trước khi đặt hàng!");
         }
+        
     }
 }
 

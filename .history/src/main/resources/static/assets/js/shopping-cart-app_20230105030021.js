@@ -67,6 +67,8 @@ $scope.order = {
     telePhone:"",
     name: "",
     email: "",
+    total: $scope.cart.amount + 30000,
+    status: "Đang chờ xác nhận",
     account: { username: $("#username").text() },
     get orderDetails() {
         return $scope.cart.items.map(item => {
@@ -74,23 +76,30 @@ $scope.order = {
                 product: { productId: item.productId },
                 price: item.unitPrice,
                 discount: item.discount,
-                quantity: item.qty
+                quantity: item.qty,
+                amount: item.qty*(item.unitPrice-((item.unitPrice*item.discount)/100))
             }
         });
     },
     purchase() {
         var order = angular.copy(this);
         // Thực hiện đặt hàng
-        $http.post("/rest/orders", order).then(resp => {
-            alert("Đặt hàng thành công!");
-            $scope.cart.clear();
-            location.href = "/order/detail/" + resp.data.orderId;
-        })
+        if($scope.order.total < 100000 ) {
+            alert("Vui lòng thêm sản phẩm trước khi đặt hàng!");
+        }else if($scope.order.name.length < 0 
+            && $scope.order.telePhone < 0 && $scope.order.email < 0){
+                alert("Vui lòng nhập đầy đủ thông tin!");
+        }else{
+            $http.post("/rest/orders", order).then(resp => {
+                alert("Đặt hàng thành công!");
+                $scope.cart.clear();
+                location.href = "/orderHistory/detail/" + resp.data.orderId;
+            })
             .catch(error => {
                 alert("Đặt hàng thất bại!")
                 console.log(error)
             })
-
+        }
     }
 }
 
