@@ -6,16 +6,18 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
         <div class="card">
             <b class="mt-2 mb-2 card-header text-center" style="font-size: 20px">[[#{order.list}]]</b>
             <div class="order-status">
-                <a th:href=@{/orderHistory/confirmation}><label onmousemove="mDown(this)"><i class="fa-solid fa-circle-check"></i> [[#{order.waiting}]]</label></a>
-                <a th:href=@{/orderHistory/transported}><label onmousemove="mDown(this)"><i class="fa-solid fa-truck"></i> [[#{order.Being_transported}]]</label></a>
-                <a th:href=@{/orderHistory/delivery}><label onmousemove="mDown(this)"><i class="fa-solid fa-road"></i> [[#{order.Delivery_in_progress}]]</label></a>
-                <a th:href=@{/orderHistory/delivered}><label onmousemove="mDown(this)"><i class="fa-solid fa-face-smile"></i> [[#{order.Delivered}]]</label></a>
+                <a th:href=@{/orderHistory/confirmation}><label onmousewheel="mDown(this)"><i class="fa-solid fa-circle-check"></i> [[#{order.waiting}]]</label></a>
+                <a th:href=@{/orderHistory/transported}><label><i class="fa-solid fa-truck"></i> [[#{order.Being_transported}]]</label></a>
+                <a th:href=@{/orderHistory/delivery}><label><i class="fa-solid fa-road"></i> [[#{order.Delivery_in_progress}]]</label></a>
+                <a th:href=@{/orderHistory/delivered}><label><i class="fa-solid fa-face-smile"></i> [[#{order.Delivered}]]</label></a>
             </div>
             <script>
                 function mDown(obj) {
                     obj.style.color = "red";
                 }
-            </script>
+                
+                
+                </script>
             <div th:if="${message != null}" class="alert alert-primary"
                 role="alert"> 
                 <i>[[${message}]]</i>
