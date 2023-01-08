@@ -4,13 +4,19 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 <body>
     <main class="container-fluid ml-3">
         <div class="card">
-            <b class="mt-2 mb-2 card-header text-center" style="font-size: 20px">[[#{order.list}]]</b>
-            <div class="order-status">
-                <a th:href=@{/orderHistory/confirmation}><label>[[#{order.waiting}]]</label></a>
-                <a th:href=@{/orderHistory/transported}><label>[[#{order.Being_transported}]]</label></a>
-                <a th:href=@{/orderHistory/delivery}><label>[[#{order.Delivery_in_progress}]]</label></a>
-                <a th:href=@{/orderHistory/delivered}><label>[[#{order.Delivered}]]</label></a>
-            </div>
+            <b class="mt-2 mb-2 card-header text-center" style="font-size: 20px">
+                <i class="fa-solid fa-clock-rotate-left"></i> [[#{order.list}]]</b>
+                <div class="order-status">
+                    <a th:href=@{/orderHistory/confirmation}><label onmousemove="mDown(this)"><i class="fa-solid fa-circle-check"></i> [[#{order.waiting}]]</label></a>
+                    <a th:href=@{/orderHistory/transported}><label onmousemove="mDown(this)"><i class="fa-solid fa-truck"></i> [[#{order.Being_transported}]]</label></a>
+                    <a th:href=@{/orderHistory/delivery}><label onmousemove="mDown(this)"><i class="fa-solid fa-road"></i> [[#{order.Delivery_in_progress}]]</label></a>
+                    <a th:href=@{/orderHistory/delivered}><label onmousemove="mDown(this)"><i class="fa-solid fa-face-smile"></i> [[#{order.Delivered}]]</label></a>
+                </div>
+                <script>
+                    function mDown(obj) {
+                        obj.style.color = "red";
+                    }
+                </script>
             <table class="table table-hover" id="datatablesSimple">
 				<thead class="bg-light ">
                     <tr>
@@ -21,6 +27,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                         <th>[[#{order.phone}]]</th>
                         <th>Email</th>
                         <th>[[#{order.address}]]</th>
+                        <th>[[#{cart.status}]]</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -33,6 +40,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                         <td>[[${order.telePhone}]]</td>
                         <td>[[${order.email}]]</td>
                         <td>[[${order.address}]]</td>
+                        <td style="color: red; font-weight: bold;">[[${order.status}]]</td>
                         
                         <th>
                             <a th:href="@{|/orderHistory/detail/${order.orderId}|}" class="btn btn-default">

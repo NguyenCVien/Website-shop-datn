@@ -8,7 +8,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
         <div class="container">
             <form>
                 <div class="text-center">
-                    <h2 class="alert alert-success mb-5"><i class="fa-solid fa-file-signature"></i> <lable th:text="#{checkout.title}"></lable></h2>
+                    <h3 class="mt-3 mb-5"><i class="fa-solid fa-file-signature"></i> <lable th:text="#{checkout.title}"></lable></h3>
                 </div>
                 <div class="row">
                     <div class="col-md-4 order-md-2 mb-4">
@@ -17,7 +17,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                             <div class="d-block my-3">
                                 <div class="custom-control custom-radio">
                                     <input id="httt-1" name="httt_ma" type="radio" class="custom-control-input" required=""
-                                        value="1">
+                                        value="1" checked="checked">
                                     <label class="custom-control-label" for="httt-1"><lable th:text="#{checkout.Cash}"></lable></label>
                                 </div>
                                 <div class="custom-control custom-radio">
@@ -45,7 +45,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                         <div class="row">
                             <div class="col-md-6">
                                 <label><i class="fa-solid fa-pen-nib"></i> <lable th:text="#{checkout.name}"></lable></label>
-                                <input ng-model="order.name" type="text" class="form-control" required>
+                                <input ng-model="order.name" minlength="4" type="text" class="form-control" required autofocus>
                             </div>
                             <div class="col-md-6">
                                 <label><i class="fa-solid fa-calendar-days"></i> <lable th:text="#{order.date}"></lable>:</label>
@@ -53,15 +53,15 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label><i class="fa-solid fa-phone"></i> <lable th:text="#{order.phone}"></lable>:</label>
-                                <input ng-model="order.telePhone" type="text" class="form-control" required>
+                                <input ng-model="order.telePhone" type="text" minlength="10" maxlength="10" class="form-control" required>
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label><i class="fa-solid fa-pen-nib"></i> Email:</label>
-                                <input ng-model="order.email" type="text" class="form-control" required>
+                                <input ng-model="order.email" type="email" class="form-control" required>
                             </div>
                             <div class="col-md-12 mt-3">
                                 <div><i class="fa-solid fa-location-dot"></i> <lable th:text="#{order.address}"></lable>:</div>
-                                <textarea ng-model="order.address" class="form-control mt-2" required placeholder="Vd: 21 Phú Thạnh 1, Hòa Minh, Đà Nẵng."></textarea>
+                                <textarea rows="3" ng-model="order.address" class="form-control mt-2" required placeholder="VD: 21 Phú Thạnh 1, Hòa Minh, Đà Nẵng."></textarea>
                             </div>
                             <div class="form-group col-sm-3 mt-3" hidden>
                                 <label>[[#{checkout.acc}]]</label>
@@ -74,28 +74,31 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                         <table class="table table-hover table-condensed"> 
                             <thead> 
                                 <tr> 
-                                <th style="width:10%"><lable th:text="#{cart.code}"></lable></th> 
-                                <th style="width:30%"><lable th:text="#{cart.name}"></lable></th> 
-                                <th style="width:15%"><lable th:text="#{cart.price}"></lable></th> 
-                                <th style="width:15%" th:text="#{cart.discount}"></th> 
-                                <th style="width:10%"><lable th:text="#{cart.qty}"></lable></th> 
-                                <th style="width:30%"><lable th:text="#{cart.amount}"></lable></th> 
-                                <th style="width:10%"> </th> 
+                                <th><lable th:text="#{cart.code}"></lable></th> 
+                                <th><lable th:text="#{cart.image}"></lable></th> 
+                                <th><lable th:text="#{cart.name}"></lable></th> 
+                                <th><lable th:text="#{cart.price}"></lable></th> 
+                                <th th:text="#{cart.discount}"></th> 
+                                <th><lable th:text="#{cart.qty}"></lable></th> 
+                                <th><lable th:text="#{cart.amount}"></lable></th> 
+                                <th> </th> 
                                 </tr> 
                             </thead>
                             <tbody>
                             <tr ng-repeat="item in cart.items" >
                                 <td>{{item.productId}}</a></td>
+                                <td>
+                                    <img ng-src="/assets/images/{{item.image1}}" class="img--item">
+                                </td>
                                 <td>{{item.name}}</td>
                                 <td>{{item.unitPrice | number : 0}} <sup>đ</sup></td>
                                 <td>{{item.discount | number : 0}}%</td>
                                 <td><input ng-change="cart.saveToLocalStorage()" ng-model="item.qty" type="number" min="1" style="width: 60px;"></td>
-                                <td hidden><label ng-change="cart.saveToLocalStorage()" ng-model="item.status" value="Đang chờ xác nhận"></td>
                                 <td>{{item.qty*(item.unitPrice-((item.unitPrice*item.discount)/100)) | number : 0}} <sup>đ</sup></td>
                                 <td>
-                                <button ng-click="cart.remove(item.productId)" class="btn btn-sm btn-danger">
+                                <!-- <button ng-click="cart.remove(item.productId)" class="btn btn-sm btn-danger">
                                     <i class="fa-regular fa-trash-can"></i>
-                                </button>
+                                </button> -->
                                 </td>
                             </tr>
                             </tbody>         

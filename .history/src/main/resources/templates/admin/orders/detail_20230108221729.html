@@ -6,7 +6,7 @@
     <main th:object="${order}" class="container">
         <form class="container">
             <div class="text-center">
-                <h2 class="alert alert-success mb-5"><lable th:text="#{detail.title}"></lable></h2>
+                <h2 class="alert mb-5"><i class="fa-solid fa-circle-info"></i> <lable th:text="#{detail.title}"></lable></h2>
             </div>
             <div class="col-md-12 order-md-1">
                 <div class="row">                  
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="card card-primary mt-5">
-                <div class="card-header"><lable th:text="#{product.title}"></lable></div>
+                <div class="card-header"><i class="fa-solid fa-list"></i> <lable th:text="#{product.title}"></lable></div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -46,6 +46,7 @@
                             <th><lable th:text="#{cart.discount}"></lable></th>
                             <th><lable th:text="#{cart.qty}"></lable></th>
                             <th><lable th:text="#{cart.amount}"></lable></th>
+                            <th><lable>Tổng tiền phải trả</lable></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,13 +55,14 @@
                             <td>[[*{order.orderId}]]</td>
                             <td>[[*{product.productId}]]</td>
                             <td>
-                                <img th:src="@{|/assets/images/*{order.product.image1}|}">
+                                <img th:src="@{|/assets/images/${detail.product.image1}|}" class="img--stt">
                             </td>
                             <td>[[*{product.name}]]</td>
-                            <td>[[*{#numbers.formatInteger(price, 0, 'WHITESPACE')}]]<sup>đ</sup></td> 
+                            <td>[[*{#numbers.formatInteger(price, 0, 'DEFAULT')}]]<sup>đ</sup></td> 
                             <td>[[*{discount}]]%</td>
                             <td>[[*{quantity}]]</td>  
-                            <td>[[*{#numbers.formatInteger((price-(price*discount)/100) * quantity, 0, 'WHITESPACE')}]] VND</td>             
+                            <td>[[*{#numbers.formatInteger((price-(price*discount)/100) * quantity, 0, 'DEFAULT')}]]<sup>đ</sup></td>   
+                            <td style="color: red; font-weight: bold;">[[*{#numbers.formatInteger(order.total, 0, 'DEFAULT')}]]<sup>đ</sup></td>              
                         </tr>
                     </tbody>
                 </table>
@@ -68,15 +70,15 @@
             </div>
             
         </form>
-        <div class="text-center mt-3"> 
+        <div class="text-center mt-2 mb-3"> 
             <a th:href="@{/admin/orders}" >
                 <button class="btn btn-success">
-                    Danh sách đơn hàng
+                    <i class="fa-solid fa-list"></i> Danh sách đơn hàng
                 </button></a>
-            <a th:href="@{/admin/orderDetails}" >
+            <!-- <a th:href="@{/admin/orderDetails}" >
                 <button class="btn btn-primary">
                     Danh sách đơn chi tiết
-                </button></a>
+                </button></a> -->
         </div>
     </main>
 </body>

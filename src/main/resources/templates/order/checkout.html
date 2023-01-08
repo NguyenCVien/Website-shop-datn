@@ -53,7 +53,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label><i class="fa-solid fa-phone"></i> <lable th:text="#{order.phone}"></lable>:</label>
-                                <input ng-model="order.telePhone" type="number" minlength="10" class="form-control" required>
+                                <input ng-model="order.telePhone" type="text" minlength="10" maxlength="10" class="form-control" required>
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label><i class="fa-solid fa-pen-nib"></i> Email:</label>
