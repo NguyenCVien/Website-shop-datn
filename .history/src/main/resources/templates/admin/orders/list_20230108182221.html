@@ -1,0 +1,61 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
+<body>
+	<main>
+		<div class="card">
+			<div class="card-header card bg-primary text-white"
+				style="text-align: center">
+				<h3><i class="fa-solid fa-list"></i> Danh sách đơn hàng</h3>
+			</div>
+			<div class="card-body">
+				<div th:if="${message != null}" class="alert alert-primary"
+					role="alert">
+					<i>[[${message}]]</i>
+				</div>
+				<table id="datatablesSimple">
+					<div class="order-status">
+						<a th:href=@{/orderHistory/confirmation}><label onmousemove="mDown(this)"><i class="fa-solid fa-circle-check"></i> [[#{order.waiting}]]</label></a>
+						<a th:href=@{/orderHistory/transported}><label onmousemove="mDown(this)"><i class="fa-solid fa-truck"></i> [[#{order.Being_transported}]]</label></a>
+						<a th:href=@{/orderHistory/delivery}><label onmousemove="mDown(this)"><i class="fa-solid fa-road"></i> [[#{order.Delivery_in_progress}]]</label></a>
+						<a th:href=@{/orderHistory/delivered}><label onmousemove="mDown(this)"><i class="fa-solid fa-face-smile"></i> [[#{order.Delivered}]]</label></a>
+					</div>
+				<thead class="bg-light ">
+						<tr>
+							<th>No.</th>
+							<th>Mã đơn</th>
+							<th>Tên khách hàng</th>
+							<th>Ngày đặt hàng</th>
+							<th>Số điện thoại</th>
+							<th>Email</th>
+							<th>Địa chỉ</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="item, state: ${orders}">
+							<td>[[${state.index}]]</td> 
+							<td th:utext="${item.orderId}"></td>
+							<td th:utext="${item.name}"></td>
+							<td th:utext="${item.createDay}"></td>
+							<td th:utext="${item.telePhone}"></td>
+							<td th:utext="${item.email}"></td>
+							<td th:utext="${item.address}"></td>
+							<td>
+								<div class="btn-group btn-group-xs">
+									<a th:href="@{|/admin/orders/detail/${item.orderId}|}" class="btn btn-default">
+										<i class="fa-solid fa-magnifying-glass-plus"></i>
+									</a>
+									<a class="btn btn-warning mr-2"
+										th:href="@{'/admin/orders/edit/' + ${item.orderId}}">
+										<i class="fa-regular fa-pen-to-square"></i>
+									</a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

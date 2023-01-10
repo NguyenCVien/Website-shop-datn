@@ -1,0 +1,60 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
+<body>
+    <main class="container-fluid ml-3">
+        <div class="card">
+            <b class="mt-2 mb-2 card-header text-center" style="font-size: 20px">Danh sách trạng thái đơn hàng</b>
+            <div class="order-status">
+                <a th:href=@{/admin/orderDetails/confirmation}><label>[[#{order.waiting}]]</label></a>
+                <a th:href=@{/admin/orderDetails/transported}><label>[[#{order.Being_transported}]]</label></a>
+                <a th:href=@{/admin/orderDetails/delivery}><label>[[#{order.Delivery_in_progress}]]</label></a>
+                <a th:href=@{/admin/orderDetails/delivered}><label><label>[[#{order.Delivered}]]</label></a>
+            </div>
+            <table class="table table-hover" id="datatablesSimple">
+				<thead class="bg-light ">
+                    <tr>
+                        <th>No.</th>
+                        <th>[[#{order.Code_orders}]]</th>
+                        <th>[[#{order.name}]]</th>
+                        <th>[[#{order.date}]]</th>                       
+                        <th>[[#{order.phone}]]</th>
+                        <th>Email</th>
+                        <th>[[#{order.address}]]</th>
+                        <!-- <th>[[#{cart.status}]]</th> -->
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each=" order,state: ${orders}">
+                        <td>[[${state.index}]]</td>
+                        <td>[[${order.orderId}]]</td>
+                        <td>[[${order.name}]]</td>
+                        <td>[[${order.createDay}]]</td>
+                        <td>[[${order.telePhone}]]</td>
+                        <td>[[${order.email}]]</td>              
+                        <td>[[${order.address}]]</td> 
+                        <!-- <td>[[${order.status}]]</td> -->
+                        <th>
+                            <a th:href="@{|/admin/orders/detail/${order.order.orderId}|}" class="btn btn-default">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            </a>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center mb-3 "> 
+                <a th:href="@{/admin/orders}" >
+                    <button class="btn btn-success">
+                        Danh sách đơn hàng
+                    </button></a>
+                <a th:href="@{/admin/orderDetails}" >
+                    <button class="btn btn-primary">
+                        Danh sách đơn chi tiết
+                    </button></a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

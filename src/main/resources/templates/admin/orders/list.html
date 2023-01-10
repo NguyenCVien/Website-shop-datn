@@ -41,19 +41,31 @@
 					<i>[[${message}]]</i>
 				</div>
 				<table id="datatablesSimple">
-				<thead class="bg-light ">
+					<div class="order-status">
+						<a th:href=@{/admin/orderDetails/confirmation}><label onmousemove="mDown(this)"><i class="fa-solid fa-circle-check"></i> [[#{order.waiting}]]</label></a>
+						<a th:href=@{/admin/orderDetails/transported}><label onmousemove="mDown(this)"><i class="fa-solid fa-truck"></i> [[#{order.Being_transported}]]</label></a>
+						<a th:href=@{/admin/orderDetails/delivery}><label onmousemove="mDown(this)"><i class="fa-solid fa-road"></i> [[#{order.Delivery_in_progress}]]</label></a>
+						<a th:href=@{/admin/orderDetails/delivered}><label onmousemove="mDown(this)"><i class="fa-solid fa-face-smile"></i> [[#{order.Delivered}]]</label></a>
+					</div>
+					<script>
+						function mDown(obj) {
+							obj.style.color = "red";
+						}
+					</script>
+				<thead class="bg-light">
 						<tr>
-							<th>Mã</th>
+							<th>Mã đơn</th>
 							<th>Tên khách hàng</th>
 							<th>Ngày đặt hàng</th>
 							<th>Số điện thoại</th>
 							<th>Email</th>
 							<th>Tổng đơn</th>
+							<th>Địa chỉ</th>
 							<th>Trạng thái</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="item, state: ${orders}"> 
+						<tr th:each="item, state: ${orders}">
 							<td th:utext="${item.orderId}"></td>
 							<td th:utext="${item.name}"></td>
 							<td th:utext="${item.createDay}"></td>
@@ -61,6 +73,8 @@
 							<td th:utext="${item.email}"></td>
 							<td>[[*{#numbers.formatInteger(item.total, 0, 'DEFAULT')}]] đ</td>
 							<td th:utext="${item.status}"></td>
+							<td th:utext="${item.address}"></td>
+							<td style="color: red; font-weight: bold;">[[${item.status}]]</td>
 							<td>
 								<div class="btn-group btn-group-xs">
 									<a th:href="@{|/admin/orders/detail/${item.orderId}|}" class="btn btn-default">
