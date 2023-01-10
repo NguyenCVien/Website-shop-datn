@@ -3,23 +3,11 @@ package com.websiteshop.AdminController;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,9 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.websiteshop.entity.Order;
-import com.websiteshop.entity.OrderDetail;
 import com.websiteshop.model.AccountDto;
 import com.websiteshop.model.OrderDto;
 import com.websiteshop.service.AccountService;
@@ -50,6 +36,22 @@ public class OrderAdminController {
 	@Autowired
 	OrderDetailService orderDetailService;
 
+	@GetMapping("updateStatus")
+	public ModelAndView updateStatusOrder(ModelMap model, @RequestParam(name = "orderid") Long orderid,
+			@RequestParam(name = "status") String status) {
+
+
+		Order acceptInv =  orderService.findById(orderid);
+		if (acceptInv == null) {
+			return new ModelAndView("forward:/admin/orders", model);
+		}
+		acceptInv.setStatus(status);
+		System.out.println(status);
+		orderService.save(acceptInv);
+		model.addAttribute("message", "Đã cập nhật trạng thái");
+		return new ModelAndView("forward:/admin/orders", model);
+	}
+	
 	@ModelAttribute("accounts")
 	public List<AccountDto> getAccounts() {
 		return accountService.findAll().stream().map(item -> {

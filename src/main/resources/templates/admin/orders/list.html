@@ -8,6 +8,33 @@
 				style="text-align: center">
 				<h3><i class="fa-solid fa-list"></i> Danh sách đơn hàng</h3>
 			</div>
+			<div class="modal fade" id="exampleModal-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-3" aria-hidden="true" style="display: none;">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLabel-3">Trạng thái</h5>
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">×</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													<div class="form-group text-center">
+														<select class="form-control optionorder">
+															<option selected value="Đang chờ xác nhận" name="Đang chờ xác nhận">Đang chờ xác nhận</option>
+															<option value="Đang vận chuyển" name="Đang vận chuyển">Đang vận chuyển</option>
+															<option value="Đang giao hàng" name="Đang giao hàng">Đang giao hàng</option>
+															<option value="Đã giao hàng" name="Đã giao hàng">Đã giao hàng</option>
+														</select>
+													</div>
+
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-success submitstatus">Duyệt</button>
+													<button type="button" class="btn btn-light" data-dismiss="modal">Thoát</button>
+												</div>
+											</div>
+										</div>
+									</div>
 			<div class="card-body">
 				<div th:if="${message != null}" class="alert alert-primary"
 					role="alert">
@@ -16,33 +43,36 @@
 				<table id="datatablesSimple">
 				<thead class="bg-light ">
 						<tr>
-							<th>No.</th>
-							<th>Mã đơn</th>
+							<th>Mã</th>
 							<th>Tên khách hàng</th>
 							<th>Ngày đặt hàng</th>
 							<th>Số điện thoại</th>
 							<th>Email</th>
-							<th>Địa chỉ</th>
+							<th>Tổng đơn</th>
+							<th>Trạng thái</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="item, state: ${orders}">
-							<td>[[${state.index}]]</td> 
+						<tr th:each="item, state: ${orders}"> 
 							<td th:utext="${item.orderId}"></td>
 							<td th:utext="${item.name}"></td>
 							<td th:utext="${item.createDay}"></td>
 							<td th:utext="${item.telePhone}"></td>
 							<td th:utext="${item.email}"></td>
-							<td th:utext="${item.address}"></td>
+							<td>[[*{#numbers.formatInteger(item.total, 0, 'DEFAULT')}]] đ</td>
+							<td th:utext="${item.status}"></td>
 							<td>
 								<div class="btn-group btn-group-xs">
 									<a th:href="@{|/admin/orders/detail/${item.orderId}|}" class="btn btn-default">
 										<i class="fa-solid fa-magnifying-glass-plus"></i>
 									</a>
-									<a class="btn btn-warning mr-2"
+									<!--  <a class="btn btn-warning mr-2"
 										th:href="@{'/admin/orders/edit/' + ${item.orderId}}">
 										<i class="fa-regular fa-pen-to-square"></i>
-									</a>
+									</a>-->
+									<button class="btn btn-primary editmodal" data-toggle="modal" data-target="#exampleModal-3"
+										th:attr="data-orderid=${item.orderId}"><span style="color: white;">Duyệt</span>
+									</button>
 								</div>
 							</td>
 						</tr>
@@ -50,6 +80,7 @@
 				</table>
 			</div>
 		</div>
+	<script src="/src/main/resources/static/assets/js/oder.js"></script>
 	</main>
 </body>
 </html>

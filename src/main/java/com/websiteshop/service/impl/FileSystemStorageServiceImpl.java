@@ -6,13 +6,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-
-import org.apache.commons.io.FilenameUtils;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.websiteshop.config.StorageProperties;
 import com.websiteshop.exception.StorageException;
 import com.websiteshop.exception.StorageFileNotFoundException;
@@ -77,14 +74,4 @@ public class FileSystemStorageServiceImpl implements StorageService {
 		Path destinationFile = rootLocation.resolve(Paths.get(storedFilename)).normalize().toAbsolutePath();
 		Files.delete(destinationFile);
 	}
-
-	// @Override
-	// public void init() {//khoi tao thu muc
-	// try {
-	// Files.createDirectories(rootLocation);
-	// System.out.println(rootLocation.toString());
-	// } catch (Exception e) {
-	// throw new StorageFileNotFoundException("Could not initialize storage: " + e);
-	// }
-	// }
 }

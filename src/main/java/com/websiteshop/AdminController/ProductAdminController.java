@@ -3,6 +3,9 @@ package com.websiteshop.AdminController;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -13,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -98,7 +102,7 @@ public class ProductAdminController {
     }
 
     @PostMapping("saveOrUpdate")
-    public ModelAndView saveOrUpdate(ModelMap model,
+    public ModelAndView saveOrUpdate(ModelMap model, @Valid
             @ModelAttribute("product") ProductDto dto,
             BindingResult result) {
 
@@ -113,12 +117,15 @@ public class ProductAdminController {
                 entity.setImage1(storageService.getStoredFilename(dto.getImage1File(),
                         dto.getImage1File().getOriginalFilename()));
                 storageService.store(dto.getImage1File(), entity.getImage1());
+                productService.save(entity);
+                model.addAttribute("message", "Lưu thành công!");
 
+            }else {
+                model.addAttribute("message", "Vui lòng thêm hình ảnh cho sản phẩm!");
+                return new ModelAndView("forward:/admin/product", model);
             }
-            productService.save(entity);
-            model.addAttribute("message", "Thêm sản phẩm mới thành công!");
         } catch (Exception e) {
-            model.addAttribute("message", "Vui lòng thêm hình ảnh cho sản phẩm!");
+            model.addAttribute("message", "Hình ảnh không được quá 200MB");
         }
 
         return new ModelAndView("forward:/admin/product", model);
@@ -135,22 +142,24 @@ public class ProductAdminController {
                 .body(file);
     }
 
-    @SuppressWarnings("deprecation")
+    //@SuppressWarnings("deprecation")
     @GetMapping("delete/{productId}")
     public ModelAndView delete(ModelMap model, @PathVariable("productId") Long productId) throws IOException {
 
-        Optional<Product> opt = productService.findById(productId);
+    	try {
+    		 Optional<Product> opt = productService.findById(productId);
 
-        if (opt.isPresent()) {
-            if (!StringUtils.isEmpty(opt.get().getImage1())) {
-                storageService.delete(opt.get().getImage1());
-            }
-            productService.delete(opt.get());
-            model.addAttribute("message", "Product is deleted!");
-        } else if (!opt.isPresent()) {
-            return new ModelAndView("/admin/dist/404", model);
-        }
-
+    	        if (opt.isPresent()) {
+//    	            if (!StringUtils.isEmpty(opt.get().getImage1())) {
+//    	                storageService.delete(opt.get().getImage1());
+//    	            }
+    	            productService.delete(opt.get());
+    	            model.addAttribute("message", "Sản phẩm đã được xóa!");
+    	        }
+		} catch (Exception e) {
+			return new ModelAndView("forward:/admin/product/list", model);
+		}
+       
         return new ModelAndView("forward:/admin/product/list", model);
     }
 

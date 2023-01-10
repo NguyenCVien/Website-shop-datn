@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -22,6 +24,23 @@ public class OrderRestController {
 
     @Autowired
     OrderService orderService;
+    
+    @PostMapping("updatestatus")
+	@ResponseBody
+	public String updateStatusOrder(@RequestParam(name = "orderid") Long orderid,
+			@RequestParam(name = "status") String status) {
+
+
+		Order acceptInv =  orderService.findById(orderid);
+		if (acceptInv == null) {
+			return "0";
+		}
+		// -set new status
+		acceptInv.setStatus(status);
+		System.out.println(status);
+		orderService.save(acceptInv);
+		return "1";
+	}
 
     @GetMapping()
     public List<Order> getAll() {
