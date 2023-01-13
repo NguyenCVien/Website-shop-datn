@@ -16,9 +16,9 @@
 				<table id="datatablesSimple">
             <thead class="bg-light ">
 						<tr>
-							<th>Mã bình luận</th>
-							<th>Tài khoản</th>
-							<th>Mã sản phẩm</th>
+							<th>Mã</th>
+							<th>Tên tài khoản</th>
+							<th>Tên sản phẩm</th>
 							<th>Mô tả</th>
 						</tr>
 					</thead>
@@ -26,7 +26,7 @@
 						<tr th:each="item: ${comments}">
 							<td th:utext="${item.commentId}"></td>
 							<td th:utext="${item.username}"></td>
-							<td th:utext="${item.productId}"></td>
+							<td th:utext="${item.product.name}"></td>
 							<td th:utext="${item.description}"></td>
 							<td>
 								<div class="btn-group btn-group-xs" >
