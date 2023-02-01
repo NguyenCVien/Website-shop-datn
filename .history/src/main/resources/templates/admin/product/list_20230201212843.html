@@ -43,12 +43,12 @@
                     <div class="btn-group btn-group-xs">
                       <a class="btn btn-warning mr-2"
                         th:href="@{'/admin/product/edit/' + ${item.productId}}">
-                        <b>Chỉnh sửa</b>
+                        Chỉnh sửa
                       </a> 
                       <a class="btn btn-danger" th:data-id="${item.productId}"
                         th:data-name="${item.name}"
                         onclick="showConfirmModalDialog(this.getAttribute('data-id'), this.getAttribute('data-name'))">
-                        <b>Xóa</b> 
+                        Xóa
                       </a>
                     </div>
                   </td>
