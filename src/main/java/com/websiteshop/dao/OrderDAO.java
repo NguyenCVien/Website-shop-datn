@@ -27,5 +27,8 @@ public interface OrderDAO extends JpaRepository<Order, Long> {
 
 	@Query(value = "SELECT * FROM Orders WHERE status =?1", nativeQuery = true)
 	List<Order> findByStatus(String status);
+	
+	@Query("UPDATE Order set status = ?1 where OrderId = ?2")
+	Order updateStatus(String status, Long orderId);
 
 }

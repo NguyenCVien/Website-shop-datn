@@ -30,6 +30,12 @@ public class OrderServiceImpl implements OrderService {
 	@Autowired
 	OrderDetailDAO ddao;
 
+	
+	@Override
+	public Order updateStatus(String status, Long orderId) {
+		return odao.updateStatus(status, orderId);
+	}
+
 	@Override
 	public Order create(JsonNode orderData) {
 		ObjectMapper mapper = new ObjectMapper();

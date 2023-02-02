@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import com.websiteshop.entity.Order;
 import com.websiteshop.model.AccountDto;
@@ -36,21 +35,38 @@ public class OrderAdminController {
 	@Autowired
 	OrderDetailService orderDetailService;
 
-	@GetMapping("updateStatus")
-	public ModelAndView updateStatusOrder(ModelMap model, @RequestParam(name = "orderid") Long orderid,
-			@RequestParam(name = "status") String status) {
-
-
-		Order acceptInv =  orderService.findById(orderid);
-		if (acceptInv == null) {
-			return new ModelAndView("forward:/admin/orders", model);
-		}
-		acceptInv.setStatus(status);
-		System.out.println(status);
-		orderService.save(acceptInv);
-		model.addAttribute("message", "Đã cập nhật trạng thái");
-		return new ModelAndView("forward:/admin/orders", model);
-	}
+//	@PostMapping("updateStatus/{orderId}","{status}")
+//	public ModelAndView updateStatusOrder(ModelMap model, @PathVariable Long orderId,
+//			@PathVariable String status) {
+//
+//
+//		Order order =  orderService.findById(orderId);
+//		if (order == null) {
+//			return new ModelAndView("forward:/admin/orders", model);
+//		}
+//		//order.setStatus(status);
+//		System.out.println(status);
+//		System.out.println(orderId);
+//		
+//		orderService.updateStatus(status, orderId);
+//		model.addAttribute("message", "Đã cập nhật trạng thái");
+//		return new ModelAndView("forward:/admin/orders", model);
+//	}
+//	@GetMapping("updateStatus")
+//	public ModelAndView updateStatusOrder(ModelMap model, @RequestParam(name = "orderId") Long orderid,
+//			@RequestParam(name = "status") String status) {
+//
+//
+//		Order acceptInv =  orderService.findById(orderid);
+//		if (acceptInv == null) {
+//			return new ModelAndView("forward:/admin/orders", model);
+//		}
+//		acceptInv.setStatus(status);
+//		System.out.println(status);
+//		orderService.save(acceptInv);
+//		model.addAttribute("message", "Đã cập nhật trạng thái");
+//		return new ModelAndView("forward:/admin/orders", model);
+//	}
 	
 	@ModelAttribute("accounts")
 	public List<AccountDto> getAccounts() {

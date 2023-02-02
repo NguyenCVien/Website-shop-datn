@@ -121,7 +121,10 @@ public class ProductAdminController {
                 model.addAttribute("message", "Lưu thành công!");
 
             }else {
-                model.addAttribute("message", "Vui lòng thêm hình ảnh cho sản phẩm!");
+            	 //entity.setImage1("no-image-product.jpg");
+            	 productService.save(entity);
+                 model.addAttribute("message", "Lưu thành công!");
+                //model.addAttribute("message", "Vui lòng thêm hình ảnh cho sản phẩm!");
                 return new ModelAndView("forward:/admin/product", model);
             }
         } catch (Exception e) {

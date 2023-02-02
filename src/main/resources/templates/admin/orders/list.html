@@ -29,12 +29,13 @@
 
 												</div>
 												<div class="modal-footer">
-													<button type="button" class="btn btn-success submitstatus">Duyệt</button>
+													<a th:href="@{/admin/orders/updateStatus}" type="button" class="btn btn-success submitstatus">Duyệt</a>
 													<button type="button" class="btn btn-light" data-dismiss="modal">Thoát</button>
 												</div>
 											</div>
 										</div>
 									</div>
+									
 			<div class="card-body">
 				<div th:if="${message != null}" class="alert alert-primary"
 					role="alert">
@@ -67,8 +68,9 @@
 										<i class="fa-solid fa-magnifying-glass-plus"></i>
 									</a>
 									<button class="btn btn-primary editmodal" data-toggle="modal" data-target="#exampleModal-3"
-										th:attr="data-orderid=${item.orderId}"><span>Duyệt</span>
+										th:attr="orderId=${item.orderId}"><span>Duyệt</span>
 									</button>
+									<input type="text"  />
 								</div>
 							</td>
 						</tr>
