@@ -46,7 +46,7 @@
 								<input type="file" name="image1File" style="height: 45px"
 									onchange="chooseFile(this)" placeholder="Product Image"
 									aria-describedby="productImageHid"
-									class="form-control mt-2 choose-img" id="productImage"> 
+									class="form-control mt-2 choose-img" id="productImage" required> 
 							</div>
 						</div>
 						<div class="col-sm-8 ses ">
@@ -138,7 +138,7 @@
 								<div class="col">
 									<div>Mô tả:</div>
 									<textarea th:field="*{discription}" placeholder="Description"
-										style="height: 190px" class="mt-2 form-control description"></textarea>
+										 class="mt-2 form-control description"></textarea>
 								</div>
 							</div>
 						</div>
