@@ -70,7 +70,7 @@
 				</ul>
 			</li>
 			<li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
-				<a style="text-decoration: none;" th:href="@{/admin/accounts}">
+				<a style="text-decoration: none;" th:href="@{/admin/accounts/list}">
 					<i class="fa-solid fa-lock-open icon"></i> 
 					<label th:text="#{nav.admin}"></label></a>
 			</li>

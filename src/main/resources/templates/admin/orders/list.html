@@ -8,8 +8,28 @@
 				style="text-align: center">
 				<h3><i class="fa-solid fa-list"></i> Danh sách đơn hàng</h3>
 			</div>
+			<div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <form th:action="@{/admin/orders/list}">
+                                            <div class="form-inline float-left">
+                                              <input type="text" class="form-control" name="name" id="name"
+                                               aria-describedby="helpId" placeholder="Tên khách hàng">
+                                                <button class="btn btn-outline-primary ml-2">Tìm kiếm</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="row mt-5" th:if="${!orderPage.hasContent()}">
+                                  <div class="col">
+                                    <div class="alert alert-danger" role="alert">
+                                      <strong>Không tìm thấy đơn hàng trùng khớp</strong>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
 			<div class="modal fade" id="exampleModal-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-3" aria-hidden="true" style="display: none;">
-										<div class="modal-dialog" role="document">
+										<div class="modal-dialog modal-sm" role="document">
 											<div class="modal-content">
 												<div class="modal-header">
 													<h5 class="modal-title" id="exampleModalLabel-3">Trạng thái</h5>
@@ -20,16 +40,15 @@
 												<div class="modal-body">
 													<div class="form-group text-center">
 														<select class="form-control optionorder">
-															<option selected value="Đang chờ xác nhận" name="Đang chờ xác nhận">Đang chờ xác nhận</option>
-															<option value="Đang vận chuyển" name="Đang vận chuyển">Đang vận chuyển</option>
-															<option value="Đang giao hàng" name="Đang giao hàng">Đang giao hàng</option>
-															<option value="Đã giao hàng" name="Đã giao hàng">Đã giao hàng</option>
+															<option  selected value="Chờ duyệt" name="choduyet">Chờ duyệt</option>
+															<option  value="Hoàn thành" name="hoanthanh">Hoàn thành</option>
+															<option  value="Đã hủy"name="dahuy">Đã hủy</option>
 														</select>
 													</div>
 
 												</div>
 												<div class="modal-footer">
-													<a th:href="@{/admin/orders/updateStatus}" type="button" class="btn btn-success submitstatus">Duyệt</a>
+													<button type="button" class="btn btn-success submitstatus">Duyệt</button>
 													<button type="button" class="btn btn-light" data-dismiss="modal">Thoát</button>
 												</div>
 											</div>
@@ -41,7 +60,7 @@
 					role="alert">
 					<i>[[${message}]]</i>
 				</div>
-				<table id="datatablesSimple">
+				<table class="table table-hover">
 				<thead class="bg-light">
 						<tr>
 							<th>Mã đơn</th>
@@ -51,10 +70,11 @@
 							<th>Email</th>
 							<th>Tổng đơn</th>
 							<th>Trạng thái</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="item, state: ${orders}">
+						<tr th:each="item, state: ${orderPage.content}">
 							<td th:utext="${item.orderId}"></td>
 							<td th:utext="${item.name}"></td>
 							<td th:utext="${item.createDay}"></td>
@@ -68,17 +88,53 @@
 										<i class="fa-solid fa-magnifying-glass-plus"></i>
 									</a>
 									<button class="btn btn-primary editmodal" data-toggle="modal" data-target="#exampleModal-3"
-										th:attr="orderId=${item.orderId}"><span>Duyệt</span>
+										><span>Duyệt</span>
 									</button>
-									<input type="text"  />
 								</div>
 							</td>
 						</tr>
 					</tbody>
 				</table>
+				<div class="card-footer text-muted">
+                          <form action="">
+                            <div class="form-inline float-left">
+                              <label class="mr-3" for="size">Kích thước: </label>
+                              <select name="size" id="size" class="form-control"
+                              onchange="this.form.submit()">
+                                <option th:selected="${orderPage.size == 5}" value="5">5</option>
+                                <option th:selected="${orderPage.size == 10}" value="10">10</option>
+                                <option th:selected="${orderPage.size == 15}" value="15">15</option>
+                                <option th:selected="${orderPage.size == 20}" value="20">20</option>
+                                <option th:selected="${orderPage.size == 30}" value="30">30</option>
+                              </select>
+                            </div>
+                          </form>
+                           <nav aria-label="Page navigation"
+                           th:if="${orderPage.totalPages > 0}">
+                            <ul class="pagination justify-content-center">
+                              <li th:class="${1 == orderPage.number + 1} ? 'page-item active' : 'page-item'">
+                                <a th:href="@{/admin/orders/list(name=${name}, size=${orderPage.size}, page=${1})}"
+                                class="page-link">Đầu</a>
+                              </li>
+
+                              <li class="page-item active"
+                              th:each="pageNumber : ${pageNumbers}"
+                              th:if="${orderPage.totalPages > 1}"
+                              th:class="${pageNumber == orderPage.number + 1} ? 'page-item active' : 'page-item'">
+                              <a th:href="@{/admin/orders/list(name=${name}, size=${orderPage.size}, page=${pageNumber})}"
+                              class="page-link"
+                              th:text="${pageNumber}"></a>
+                              </li>
+
+                              <li th:class="${orderPage.totalPages == orderPage.number + 1} ? 'page-item active' : 'page-item'">
+                                <a th:href="@{/admin/orders/list(name=${name}, size=${orderPage.size}, page=${orderPage.totalPages})}"
+                                class="page-link">Cuối</a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
 			</div>
 		</div>
-	<script src="/src/main/resources/static/assets/js/oder.js"></script>
 	</main>
 </body>
 </html>

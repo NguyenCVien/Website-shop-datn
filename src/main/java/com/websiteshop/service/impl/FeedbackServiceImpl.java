@@ -3,6 +3,8 @@ package com.websiteshop.service.impl;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import com.websiteshop.dao.FeedbackDAO;
 import com.websiteshop.entity.Feedback;
@@ -12,6 +14,17 @@ import com.websiteshop.service.FeedbackService;
 public class FeedbackServiceImpl implements FeedbackService {
 	@Autowired
 	FeedbackDAO fdao;
+
+	
+	@Override
+	public Page<Feedback> findByUsernameContaining(String username, Pageable pageable) {
+		return fdao.findByUsernameContaining(username, pageable);
+	}
+
+	@Override
+	public Page<Feedback> findAll(Pageable pageable) {
+		return fdao.findAll(pageable);
+	}
 
 	@Override
 	public List<Feedback> findAll() {

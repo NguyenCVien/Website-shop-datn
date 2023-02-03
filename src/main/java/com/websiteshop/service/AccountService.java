@@ -79,8 +79,6 @@ public interface AccountService {
 
 	List<Account> findByUsernameContaining(String username);
 
-	Page<Account> findByUsernameContaining(String username, Pageable pageable);
-
 	public List<Account> getAdministrators();
 
 	void loginFormOAuth2(OAuth2AuthenticationToken oauth2);
@@ -90,5 +88,7 @@ public interface AccountService {
 	public void updatePassword(Account account, String newPassword);
 
 	public Account get(String resetPasswordToken);
+
+	Page<Account> findByFullnameContaining(String fullname, Pageable pageable);
 
 }

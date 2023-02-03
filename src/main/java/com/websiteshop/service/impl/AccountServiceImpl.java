@@ -4,9 +4,6 @@ package com.websiteshop.service.impl;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
-
-import javax.validation.constraints.Null;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
@@ -18,13 +15,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.stereotype.Service;
-
-import org.springframework.ui.Model;
-
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.websiteshop.dao.AccountDAO;
 import com.websiteshop.entity.Account;
 import com.websiteshop.service.AccountService;
@@ -36,8 +28,13 @@ public class AccountServiceImpl implements AccountService {
 
     @Autowired
     AccountService accountService;
-
+    
     @Override
+	public Page<Account> findByFullnameContaining(String fullname, Pageable pageable) {
+		return adao.findByFullnameContaining(fullname, pageable);
+	}
+
+	@Override
     public Optional<Account> findById(String id) {
         return adao.findById(id);
     }
@@ -194,12 +191,6 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public List<Account> findByUsernameContaining(String username) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Page<Account> findByUsernameContaining(String username, Pageable pageable) {
         // TODO Auto-generated method stub
         return null;
     }

@@ -3,6 +3,8 @@ package com.websiteshop.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.websiteshop.entity.Authority;
@@ -24,5 +26,9 @@ public interface AuthorityService {
 	public void delete(Authority entity);
 
 	public void deleteAll();
+
+	Page<Authority> findAll(Pageable pageable);
+
+	Page<Authority> findByAccountContaining(String username, Pageable pageable);
 
 }

@@ -9,6 +9,26 @@
                 <div class="card-header card bg-primary text-white" style="text-align: center">
                 <h3><i class="fa-solid fa-list"></i> Danh sách quyền truy cập</h3>
             </div>
+            <!--  <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <form th:action="@{/admin/authority}">
+                                            <div class="form-inline float-left">
+                                              <input type="text" class="form-control" name="username" id="username"
+                                               aria-describedby="helpId" placeholder="Tên tài khoản">
+                                                <button class="btn btn-outline-primary ml-2">Tìm kiếm</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="row mt-5" th:if="${!authorityPage.hasContent()}">
+                                  <div class="col">
+                                    <div class="alert alert-danger" role="alert">
+                                      <strong>Không tìm thấy tên tài khoản trùng khớp</strong>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>-->
                 <div class="card-body">
                     <div th:if="${message != null}" class="alert alert-danger"
                         role="alert"> 
@@ -24,7 +44,7 @@
                             </tr>
                         </thead>
                         <tbody >
-                            <tr th:each="au: ${authority}">            
+                            <tr th:each="au: ${authorityPage.content}">            
                                 <td>[[${au.id}]]</td>
                                 <td>[[${au.account.username}]]</td>
                                 <td>[[${au.role.roleId}]]</td>
@@ -72,7 +92,44 @@
                             </div>
                         </div>
                     </table>
-                    
+                    <div class="card-footer text-muted">
+                          <form action="">
+                            <div class="form-inline float-left">
+                              <label class="mr-3" for="size">Kích thước: </label>
+                              <select name="size" id="size" class="form-control"
+                              onchange="this.form.submit()">
+                                <option th:selected="${authorityPage.size == 5}" value="5">5</option>
+                                <option th:selected="${authorityPage.size == 10}" value="10">10</option>
+                                <option th:selected="${authorityPage.size == 15}" value="15">15</option>
+                                <option th:selected="${authorityPage.size == 20}" value="20">20</option>
+                                <option th:selected="${authorityPage.size == 30}" value="30">30</option>
+                              </select>
+                            </div>
+                          </form>
+                           <nav aria-label="Page navigation"
+                           th:if="${authorityPage.totalPages > 0}">
+                            <ul class="pagination justify-content-center">
+                              <li th:class="${1 == authorityPage.number + 1} ? 'page-item active' : 'page-item'">
+                                <a th:href="@{/admin/authority(name=${name}, size=${authorityPage.size}, page=${1})}"
+                                class="page-link">Đầu</a>
+                              </li>
+
+                              <li class="page-item active"
+                              th:each="pageNumber : ${pageNumbers}"
+                              th:if="${authorityPage.totalPages > 1}"
+                              th:class="${pageNumber == authorityPage.number + 1} ? 'page-item active' : 'page-item'">
+                              <a th:href="@{/admin/authority(name=${name}, size=${authorityPage.size}, page=${pageNumber})}"
+                              class="page-link"
+                              th:text="${pageNumber}"></a>
+                              </li>
+
+                              <li th:class="${authorityPage.totalPages == authorityPage.number + 1} ? 'page-item active' : 'page-item'">
+                                <a th:href="@{/admin/authority(name=${name}, size=${authorityPage.size}, page=${authorityPage.totalPages})}"
+                                class="page-link">Cuối</a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
                 </div>
             </div>
         </div>

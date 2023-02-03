@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.websiteshop.dao.AccountDAO;
@@ -23,6 +25,16 @@ public class AuthorityServiceImpl implements AuthorityService {
     AccountDAO acdao;
 
     @Override
+	public Page<Authority> findByAccountContaining(String username, Pageable pageable) {
+		return dao.findByAccountContaining(username, pageable);
+	}
+
+	@Override
+	public Page<Authority> findAll(Pageable pageable) {
+		return dao.findAll(pageable);
+	}
+
+	@Override
     public List<Authority> findAuthoritiesOfAdministrators() {
         List<Account> accounts = acdao.getAdministratiors();
         return dao.authoritiesOf(accounts);
