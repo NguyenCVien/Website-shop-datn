@@ -5,8 +5,6 @@ import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
-
 import com.websiteshop.entity.Authority;
 
 public interface AuthorityService {
@@ -29,6 +27,6 @@ public interface AuthorityService {
 
 	Page<Authority> findAll(Pageable pageable);
 
-	Page<Authority> findByAccountContaining(String username, Pageable pageable);
+	Page<Authority> findByIdContaining(String id, Pageable pageable);
 
 }

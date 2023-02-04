@@ -25,8 +25,8 @@ public class AuthorityServiceImpl implements AuthorityService {
     AccountDAO acdao;
 
     @Override
-	public Page<Authority> findByAccountContaining(String username, Pageable pageable) {
-		return dao.findByAccountContaining(username, pageable);
+	public Page<Authority> findByIdContaining(String id, Pageable pageable) {
+		return dao.findByIdContaining(id, pageable);
 	}
 
 	@Override

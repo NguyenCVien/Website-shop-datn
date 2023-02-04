@@ -59,7 +59,7 @@
                   <td>[[${item.discount}]]%</td>
                   <td th:utext="${item.EnteredDay}"></td>
                   <td th:utext="${item.category.name}"></td>
-                  <td class="btn-bottom">
+                  <td style="height:95px;" class="btn-bottom">
                     <div class="btn-group btn-group-xs">
                       <a class="btn btn-warning mr-2"
                         th:href="@{'/admin/product/edit/' + ${item.productId}}">
@@ -80,7 +80,7 @@
                 $('#productName').text(name);
                 $('#yesOption').attr('href',
                     '/admin/product/delete/' + id);
-                $('#noOption').attr('href', '/admin/product');
+                $('#noOption').attr('href', '/admin/product/list');
                 $('#confirmationId').modal('show');
               }
             </script>

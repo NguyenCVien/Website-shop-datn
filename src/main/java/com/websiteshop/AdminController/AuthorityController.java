@@ -18,14 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.websiteshop.entity.Authority;
-import com.websiteshop.entity.Feedback;
-import com.websiteshop.entity.Role;
 import com.websiteshop.model.AccountDto;
 import com.websiteshop.model.AuthorityDto;
 import com.websiteshop.service.AccountService;
 import com.websiteshop.service.AuthorityService;
-import com.websiteshop.service.RoleService;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -51,7 +47,7 @@ public class AuthorityController {
 
     @GetMapping("")
 	public String search(ModelMap model,
-		@RequestParam(name = "username", required = false) String username,
+		@RequestParam(name = "id", required = false) String id,
 		@RequestParam("page") Optional<Integer> page,
 		@RequestParam("size") Optional<Integer> size) {
 		 int currentPage = page.orElse(1);
@@ -59,9 +55,10 @@ public class AuthorityController {
 		 Pageable pageable = PageRequest.of(currentPage-1, pageSize);
 		 Page<Authority> resultPage = null;
 		 
-		 if(StringUtils.hasText(username)) {
-			 resultPage = authorityService.findByAccountContaining(username, pageable);
-			 model.addAttribute("username", username);
+		 if(StringUtils.hasText(id)) {
+			 //int newID = Integer.parseInt(id);
+			 resultPage = authorityService.findByIdContaining(id, pageable);
+			 model.addAttribute("id", id);
 		 }else {
 			 resultPage = authorityService.findAll(pageable);
 		 }

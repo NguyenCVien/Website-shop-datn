@@ -1,7 +1,6 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org" 
     th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
-
 <body>
     <main>
         <div class="container-fluid px-4">
@@ -9,13 +8,13 @@
                 <div class="card-header card bg-primary text-white" style="text-align: center">
                 <h3><i class="fa-solid fa-list"></i> Danh sách quyền truy cập</h3>
             </div>
-            <!--  <div class="card-body">
+              <!--  <div class="card-body">
                                 <div class="row">
                                     <div class="col">
                                         <form th:action="@{/admin/authority}">
                                             <div class="form-inline float-left">
-                                              <input type="text" class="form-control" name="username" id="username"
-                                               aria-describedby="helpId" placeholder="Tên tài khoản">
+                                              <input type="number" class="form-control" name="id" id="id"
+                                               aria-describedby="helpId" placeholder="ID">
                                                 <button class="btn btn-outline-primary ml-2">Tìm kiếm</button>
                                             </div>
                                         </form>
@@ -24,7 +23,7 @@
                                 <div class="row mt-5" th:if="${!authorityPage.hasContent()}">
                                   <div class="col">
                                     <div class="alert alert-danger" role="alert">
-                                      <strong>Không tìm thấy tên tài khoản trùng khớp</strong>
+                                      <strong>Không tìm thấy ID trùng khớp</strong>
                                     </div>
                                   </div>
                                 </div>
@@ -37,7 +36,7 @@
                     <table class="table table-hover">
                         <thead >
                             <tr>
-                                <th>Id</th>
+                                <th>ID</th>
                                 <th>Username</th>
                                 <th>Role</th>
                                 <th style="width: 10%;"></th>
