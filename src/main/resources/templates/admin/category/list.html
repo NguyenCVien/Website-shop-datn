@@ -46,7 +46,7 @@ th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
                 <tr th:each="category, isStat : ${categoryPage.content}">
                   <td scope="row">[[${category.categoryId}]]</td>
                   <td th:text="${category.name}"></td>
-                  <td class="btn-button">
+                  <td>
                       <a class="btn btn-warning mr-2"
                         th:href="@{'/admin/categories/edit/' + ${category.categoryId}}">
                         <i class="fas fa-edit"></i>
