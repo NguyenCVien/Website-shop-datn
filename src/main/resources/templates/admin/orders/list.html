@@ -69,8 +69,8 @@
 										data-target="#exampleModal-3">
 										<span>Duyệt</span>
 									</button>
-									<form th:object="${LISTSTATUS}"
-										action="/admin/orders/updateStatus/${item.orderId}" method="get">
+									<form th:action="@{/admin/orders/updateStatus}" th:object="${LISTSTATUS}"
+										 method="POST">
 										<div class="modal fade" id="exampleModal-3" tabindex="-1"
 											role="dialog" aria-labelledby="exampleModalLabel-3"
 											aria-hidden="true" style="display: none;">
@@ -86,9 +86,18 @@
 													</div>
 													<div class="modal-body">
 														<div class="form-group text-center">
-															<select th:field="*{id}" class="form-control">
+															<select th:field="*{status}" class="form-control">
 																<option th:each="item : ${list_status}"
-																	th:value="${item.id}" th:text="${item.status}">1</option>
+																	th:value="${item.status}" th:text="${item.status}">1</option>
+															</select>
+														</div>
+
+													</div>
+													<div class="modal-body">
+														<div class="form-group text-center">
+															<select th:field="*{orderId}" class="form-control">
+																<option th:each="item : ${orders}"
+																	th:value="${item.orderId}" th:text="${item.orderId}">1</option>
 															</select>
 														</div>
 

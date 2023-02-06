@@ -1,6 +1,9 @@
 package com.websiteshop.model;
 
-public class listStatus {
+import java.io.Serializable;
+
+public class listStatus implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String status;
 	private Long orderId;
