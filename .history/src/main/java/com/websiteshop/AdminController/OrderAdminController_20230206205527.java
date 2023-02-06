@@ -68,7 +68,7 @@ public class OrderAdminController {
 			orderService.save(order);
 			model.addAttribute("message", "Đã cập nhật trạng thái");
 
-			return new ModelAndView("redirect:/admin/orders/list", model);
+			return new ModelAndView("forward:/admin/orders/list", model);
 		} catch (Exception e) {
 			return new ModelAndView("redirect:/admin/orders/list", model);
 		}

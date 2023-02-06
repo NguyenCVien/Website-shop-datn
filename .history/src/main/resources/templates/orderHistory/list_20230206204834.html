@@ -11,7 +11,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                     <a th:href=@{/orderHistory/confirmation}><label class="status_cart_item"><i class="fa-solid fa-circle-check"></i> Chờ Xác Nhận</label></a>
                     <a th:href=@{/orderHistory/transported}><label class="status_cart_item"><i class="fa-solid fa-truck"></i> Chờ Vận Chuyển</label></a>
                     <a th:href=@{/orderHistory/delivered}><label class="status_cart_item"><i class="fa-solid fa-face-smile"></i> Đã Giao Hàng</label></a>
-                    <a th:href=@{/orderHistory/cancel}><label class="status_cart_item"><i class="fa-solid fa-road"></i> Đã Hủy</label></a>
+                    <a th:href=@{/orderHistory/delivery}><label class="status_cart_item"><i class="fa-solid fa-road"></i> Đã Hủy</label></a>
                 </div>
                 <script>
                     let a_click = document.querySelector('.status_cart_item')

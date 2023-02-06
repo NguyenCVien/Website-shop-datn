@@ -74,7 +74,7 @@ public class OrderHistoryController {
 
     @GetMapping("/cancel")
     public String listDelivery(Model model, HttpServletRequest request) {
-        String status = "Đã hủy";
+        String status = "Hủy";
         String username = request.getRemoteUser();
         model.addAttribute("orders", odao.findByStatus(status, username));
         return "orderHistory/list";
