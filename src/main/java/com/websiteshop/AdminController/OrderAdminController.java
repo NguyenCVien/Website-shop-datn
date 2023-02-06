@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,10 +23,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.util.StringUtils;
-
 import com.websiteshop.model.listStatusDao;
+import com.websiteshop.entity.Category;
 import com.websiteshop.entity.Order;
 import com.websiteshop.model.AccountDto;
+import com.websiteshop.model.CategoryDto;
 import com.websiteshop.model.OrderDto;
 import com.websiteshop.model.listStatus;
 import com.websiteshop.service.AccountService;
@@ -50,23 +50,40 @@ public class OrderAdminController {
 
 	@ModelAttribute("list_status")
 	public List<listStatus> getlistStatus() {
-		return ls.getAll();
+		return ls.getAll().stream().map(item -> {
+			listStatus dto = new listStatus();
+			BeanUtils.copyProperties(item, dto);
+			return dto;
+		}).toList();
 	}
 
-	@GetMapping("updateStatus/{orderId}")
-	public ModelAndView updateStatusOrder(ModelMap model, @PathVariable("orderId") Long orderId, @ModelAttribute("LISTSTATUS") listStatus status) {
+	@PostMapping("updateStatus")
+	public ModelAndView updateStatusOrder(ModelMap model, @ModelAttribute("LISTSTATUS") listStatus status, BindingResult result) {
 
-		Order order = orderService.findById(orderId);
+		Order order = orderService.findById(status.getOrderId());
 		if (order == null) {
 			return new ModelAndView("forward:/admin/orders/list", model);
 		}
 		 //order.setStatus(status);
 		System.out.println(status.getStatus());
-		System.out.println(orderId);
-
-		orderService.updateStatus(status.getStatus(), orderId);
+		System.out.println(status.getOrderId());
+		
+		//Order entity = new Order();
+		//BeanUtils.copyProperties(order, entity);
+		order.setStatus(status.getStatus());
+		//orderService.updateStatus(status.getStatus(), status.getOrderId());
+		orderService.save(order);
 		model.addAttribute("message", "Đã cập nhật trạng thái");
 		return new ModelAndView("forward:/admin/orders/list", model);
+	}
+	
+	@ModelAttribute("orders")
+	public List<OrderDto> getOrder() {
+		return orderService.findAll().stream().map(item -> {
+			OrderDto dto = new OrderDto();
+			BeanUtils.copyProperties(item, dto);
+			return dto;
+		}).toList();
 	}
 
 	@ModelAttribute("accounts")
