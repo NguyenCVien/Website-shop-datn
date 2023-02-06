@@ -153,15 +153,20 @@ public class ProductAdminController {
                 entity.setImage1(storageService.getStoredFilename(dto.getImage1File(),
                         dto.getImage1File().getOriginalFilename()));
                 storageService.store(dto.getImage1File(), entity.getImage1());
-
+            } else {
+                // entity.setImage1("no-image-product.jpg");
+                productService.save(entity);
+                model.addAttribute("message", "Lưu thành công!");
+                // model.addAttribute("message", "Vui lòng thêm hình ảnh cho sản phẩm!");
+                return new ModelAndView("forward:/admin/product", model);
             }
             productService.save(entity);
-            model.addAttribute("message", "Thêm sản phẩm mới thành công!");
+            model.addAttribute("message", "Success!");
         } catch (Exception e) {
             model.addAttribute("message", "Vui lòng thêm hình ảnh cho sản phẩm!");
         }
 
-        return new ModelAndView("forward:/admin/product/list", model);
+        return new ModelAndView("forward:/admin/product", model);
     }
 
     @GetMapping("/images/{filename:.+}")

@@ -60,42 +60,48 @@ public class ProductAdminController {
     }
 
     @GetMapping("list")
-    public String search(ModelMap model,
-            @RequestParam(name = "name", required = false) String name,
-            @RequestParam("page") Optional<Integer> page,
-            @RequestParam("size") Optional<Integer> size) {
-        int currentPage = page.orElse(1);
-        int pageSize = size.orElse(5);
-        Pageable pageable = PageRequest.of(currentPage - 1, pageSize);
-        Page<Product> resultPage = null;
-
-        if (StringUtils.hasText(name)) {
-            resultPage = productService.findByNameContaining(name, pageable);
-            model.addAttribute("name", name);
-        } else {
-            resultPage = productService.findAll(pageable);
-        }
-
-        int totalPages = resultPage.getTotalPages();
-        if (totalPages > 0) {
-            int start = Math.max(1, currentPage - 2);
-            int end = Math.min(currentPage + 2, totalPages);
-
-            if (totalPages > 5) {
-                if (end == totalPages)
-                    start = end - 5;
-                else if (start == 1)
-                    end = start + 5;
-            }
-            List<Integer> pageNumbers = IntStream.rangeClosed(start, end)
-                    .boxed()
-                    .collect(Collectors.toList());
-            model.addAttribute("pageNumbers", pageNumbers);
-        }
-
-        model.addAttribute("productPage", resultPage);
+    public String list(Model model) {
+        List<Product> list = productService.findAll();
+        model.addAttribute("products", list);
         return "admin/product/list";
     }
+    // @GetMapping("list")
+    // public String search(ModelMap model,
+    // @RequestParam(name = "name", required = false) String name,
+    // @RequestParam("page") Optional<Integer> page,
+    // @RequestParam("size") Optional<Integer> size) {
+    // int currentPage = page.orElse(1);
+    // int pageSize = size.orElse(5);
+    // Pageable pageable = PageRequest.of(currentPage - 1, pageSize);
+    // Page<Product> resultPage = null;
+
+    // if (StringUtils.hasText(name)) {
+    // resultPage = productService.findByNameContaining(name, pageable);
+    // model.addAttribute("name", name);
+    // } else {
+    // resultPage = productService.findAll(pageable);
+    // }
+
+    // int totalPages = resultPage.getTotalPages();
+    // if (totalPages > 0) {
+    // int start = Math.max(1, currentPage - 2);
+    // int end = Math.min(currentPage + 2, totalPages);
+
+    // if (totalPages > 5) {
+    // if (end == totalPages)
+    // start = end - 5;
+    // else if (start == 1)
+    // end = start + 5;
+    // }
+    // List<Integer> pageNumbers = IntStream.rangeClosed(start, end)
+    // .boxed()
+    // .collect(Collectors.toList());
+    // model.addAttribute("pageNumbers", pageNumbers);
+    // }
+
+    // model.addAttribute("productPage", resultPage);
+    // return "admin/product/list";
+    // }
 
     @RequestMapping("")
     public String list_2(ModelMap model, @RequestParam("cid") Optional<Long> cid) {
