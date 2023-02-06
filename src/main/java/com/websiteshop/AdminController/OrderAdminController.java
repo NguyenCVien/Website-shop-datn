@@ -25,9 +25,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.util.StringUtils;
 
+import com.websiteshop.model.listStatusDao;
 import com.websiteshop.entity.Order;
 import com.websiteshop.model.AccountDto;
 import com.websiteshop.model.OrderDto;
+import com.websiteshop.model.listStatus;
 import com.websiteshop.service.AccountService;
 import com.websiteshop.service.OrderDetailService;
 import com.websiteshop.service.OrderService;
@@ -43,61 +45,30 @@ public class OrderAdminController {
 
 	@Autowired
 	OrderDetailService orderDetailService;
-	
-	@GetMapping("list")
-	public String search(ModelMap model,
-		@RequestParam(name = "name", required = false) String name,
-		@RequestParam("page") Optional<Integer> page,
-		@RequestParam("size") Optional<Integer> size) {
-		 int currentPage = page.orElse(1);
-		 int pageSize = size.orElse(5);
-		 Pageable pageable = PageRequest.of(currentPage-1, pageSize, Sort.by("name"));
-		 Page<Order> resultPage = null;
-		 
-		 if(StringUtils.hasText(name)) {
-			 resultPage = orderService.findByNameContaining(name, pageable);
-			 model.addAttribute("name", name);
-		 }else {
-			 resultPage = orderService.findAll(pageable);
-		 }
-		 
-		 int totalPages = resultPage.getTotalPages();
-			if(totalPages > 0) {
-				int start = Math.max(1, currentPage-2);
-				int end = Math.min(currentPage+2, totalPages);
-				
-				if(totalPages > 5) {
-					if(end == totalPages) start = end - 5;
-					else if (start == 1) end = start + 5;
-				}
-				List<Integer> pageNumbers = IntStream.rangeClosed(start, end)
-						.boxed()
-						.collect(Collectors.toList());
-				model.addAttribute("pageNumbers", pageNumbers);
-			}
-			
-			model.addAttribute("orderPage", resultPage);
-			return "admin/orders/list";
-		}
 
-	@PostMapping("updateStatus/{orderId}, {status}")
-	public ModelAndView updateStatusOrder(ModelMap model, @PathVariable Long orderId,
-			@PathVariable String status) {
+	listStatusDao ls = new listStatusDao();
 
-
-		Order order =  orderService.findById(orderId);
-		if (order == null) {
-			return new ModelAndView("forward:/admin/orders", model);
-		}
-		//order.setStatus(status);
-		System.out.println(status);
-		System.out.println(orderId);
-		
-		orderService.updateStatus(status, orderId);
-		model.addAttribute("message", "Đã cập nhật trạng thái");
-		return new ModelAndView("forward:/admin/orders", model);
+	@ModelAttribute("list_status")
+	public List<listStatus> getlistStatus() {
+		return ls.getAll();
 	}
-	
+
+	@GetMapping("updateStatus/{orderId}")
+	public ModelAndView updateStatusOrder(ModelMap model, @PathVariable("orderId") Long orderId, @ModelAttribute("LISTSTATUS") listStatus status) {
+
+		Order order = orderService.findById(orderId);
+		if (order == null) {
+			return new ModelAndView("forward:/admin/orders/list", model);
+		}
+		 //order.setStatus(status);
+		System.out.println(status.getStatus());
+		System.out.println(orderId);
+
+		orderService.updateStatus(status.getStatus(), orderId);
+		model.addAttribute("message", "Đã cập nhật trạng thái");
+		return new ModelAndView("forward:/admin/orders/list", model);
+	}
+
 	@ModelAttribute("accounts")
 	public List<AccountDto> getAccounts() {
 		return accountService.findAll().stream().map(item -> {
@@ -105,6 +76,42 @@ public class OrderAdminController {
 			BeanUtils.copyProperties(item, dto);
 			return dto;
 		}).toList();
+	}
+
+	@GetMapping("list")
+	public String search(ModelMap model, @RequestParam(name = "name", required = false) String name,
+			@RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size) {
+
+		model.addAttribute("LISTSTATUS", new listStatus());
+		int currentPage = page.orElse(1);
+		int pageSize = size.orElse(5);
+		Pageable pageable = PageRequest.of(currentPage - 1, pageSize, Sort.by("name"));
+		Page<Order> resultPage = null;
+
+		if (StringUtils.hasText(name)) {
+			resultPage = orderService.findByNameContaining(name, pageable);
+			model.addAttribute("name", name);
+		} else {
+			resultPage = orderService.findAll(pageable);
+		}
+
+		int totalPages = resultPage.getTotalPages();
+		if (totalPages > 0) {
+			int start = Math.max(1, currentPage - 2);
+			int end = Math.min(currentPage + 2, totalPages);
+
+			if (totalPages > 5) {
+				if (end == totalPages)
+					start = end - 5;
+				else if (start == 1)
+					end = start + 5;
+			}
+			List<Integer> pageNumbers = IntStream.rangeClosed(start, end).boxed().collect(Collectors.toList());
+			model.addAttribute("pageNumbers", pageNumbers);
+		}
+
+		model.addAttribute("orderPage", resultPage);
+		return "admin/orders/list";
 	}
 
 	@GetMapping("add")
@@ -151,8 +158,7 @@ public class OrderAdminController {
 	}
 
 	@PostMapping("saveOrUpdate")
-	public ModelAndView saveOrUpdate(ModelMap model,
-			@ModelAttribute("order") OrderDto dto, BindingResult result) {
+	public ModelAndView saveOrUpdate(ModelMap model, @ModelAttribute("order") OrderDto dto, BindingResult result) {
 
 		if (result.hasErrors()) {
 			return new ModelAndView("admin/orders/addOrEdit");
@@ -182,7 +188,7 @@ public class OrderAdminController {
 			model.addAttribute("message", "Vui lòng xóa đơn chi tiết trước khi xóa đơn hàng!");
 		}
 
-		return new ModelAndView("forward:/admin/orders", model);
+		return new ModelAndView("forward:/admin/orders/list", model);
 	}
 
 }
