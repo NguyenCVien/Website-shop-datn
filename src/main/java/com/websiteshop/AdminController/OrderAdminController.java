@@ -24,10 +24,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.util.StringUtils;
 import com.websiteshop.model.listStatusDao;
-import com.websiteshop.entity.Category;
 import com.websiteshop.entity.Order;
 import com.websiteshop.model.AccountDto;
-import com.websiteshop.model.CategoryDto;
 import com.websiteshop.model.OrderDto;
 import com.websiteshop.model.listStatus;
 import com.websiteshop.service.AccountService;
@@ -64,17 +62,14 @@ public class OrderAdminController {
 		if (order == null) {
 			return new ModelAndView("forward:/admin/orders/list", model);
 		}
-		 //order.setStatus(status);
-		System.out.println(status.getStatus());
-		System.out.println(status.getOrderId());
-		
-		//Order entity = new Order();
-		//BeanUtils.copyProperties(order, entity);
 		order.setStatus(status.getStatus());
-		//orderService.updateStatus(status.getStatus(), status.getOrderId());
-		orderService.save(order);
-		model.addAttribute("message", "Đã cập nhật trạng thái");
-		return new ModelAndView("forward:/admin/orders/list", model);
+		try {
+			orderService.save(order);
+			model.addAttribute("message", "Đã cập nhật trạng thái");
+			return new ModelAndView("redirect:/admin/orders/list", model);
+		} catch (Exception e) {
+			return new ModelAndView("redirect:/admin/orders/list", model);
+		}
 	}
 	
 	@ModelAttribute("orders")
