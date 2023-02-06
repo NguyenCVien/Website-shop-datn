@@ -9,6 +9,26 @@ th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
             style="text-align: center">
             <h3><i class="fa-solid fa-list"></i> Danh sách loại hàng</h3>
           </div>
+          <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <form th:action="@{/admin/categories}">
+                                            <div class="form-inline float-left">
+                                              <input type="text" class="form-control" name="name" id="name"
+                                               aria-describedby="helpId" placeholder="Tên loại hàng">
+                                                <button class="btn btn-outline-primary ml-2">Tìm kiếm</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="row mt-5" th:if="${!categoryPage.hasContent()}">
+                                  <div class="col">
+                                    <div class="alert alert-danger" role="alert">
+                                      <strong>Không tìm thấy loại hàng trùng khớp</strong>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
         <div class="card-body">
             <div th:if="${message != null}" class="alert alert-primary"
                   role="alert"> 
@@ -23,7 +43,7 @@ th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
                 </tr>
               </thead>
               <tbody>
-                <tr th:each="category, isStat : ${category}">
+                <tr th:each="category, isStat : ${categoryPage.content}">
                   <td scope="row">[[${category.categoryId}]]</td>
                   <td th:text="${category.name}"></td>
                   <td class="btn-button">
@@ -71,6 +91,44 @@ th:replace="~{/admin/dist/fragment :: dynamic(~{::main})}">
                   </div>
               </div>
             </table>
+            <div class="card-footer text-muted">
+                          <form action="">
+                            <div class="form-inline float-left">
+                              <label class="mr-3" for="size">Kích thước: </label>
+                              <select name="size" id="size" class="form-control"
+                              onchange="this.form.submit()">
+                                <option th:selected="${categoryPage.size == 5}" value="5">5</option>
+                                <option th:selected="${categoryPage.size == 10}" value="10">10</option>
+                                <option th:selected="${categoryPage.size == 15}" value="15">15</option>
+                                <option th:selected="${categoryPage.size == 20}" value="20">20</option>
+                                <option th:selected="${categoryPage.size == 30}" value="30">30</option>
+                              </select>
+                            </div>
+                          </form>
+                           <nav aria-label="Page navigation"
+                           th:if="${categoryPage.totalPages > 0}">
+                            <ul class="pagination justify-content-center">
+                              <li th:class="${1 == categoryPage.number + 1} ? 'page-item active' : 'page-item'">
+                                <a th:href="@{/admin/categories(name=${name}, size=${categoryPage.size}, page=${1})}"
+                                class="page-link">Đầu</a>
+                              </li>
+
+                              <li class="page-item active"
+                              th:each="pageNumber : ${pageNumbers}"
+                              th:if="${categoryPage.totalPages > 1}"
+                              th:class="${pageNumber == categoryPage.number + 1} ? 'page-item active' : 'page-item'">
+                              <a th:href="@{/admin/categories(name=${name}, size=${categoryPage.size}, page=${pageNumber})}"
+                              class="page-link"
+                              th:text="${pageNumber}"></a>
+                              </li>
+
+                              <li th:class="${categoryPage.totalPages == categoryPage.number + 1} ? 'page-item active' : 'page-item'">
+                                <a th:href="@{/admin/categories(name=${name}, size=${categoryPage.size}, page=${categoryPage.totalPages})}"
+                                class="page-link">Cuối</a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
           </div>
         </div>
       </div>

@@ -3,19 +3,28 @@ package com.websiteshop.AdminController;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.websiteshop.entity.Comment;
+import com.websiteshop.entity.Product;
 import com.websiteshop.model.AccountDto;
 import com.websiteshop.model.CommentDto;
 import com.websiteshop.model.ProductDto;
@@ -53,12 +62,41 @@ public class CommentAdminController {
 		}).toList();
 	}
 
-	@RequestMapping("")
-	public String list(Model model) {
-		List<Comment> list = commentService.findAll();
-		model.addAttribute("comments", list);
-		return "admin/comments/list";
-	}
+	@GetMapping("")
+	public String search(ModelMap model,
+		@RequestParam(name = "username", required = false) String username,
+		@RequestParam("page") Optional<Integer> page,
+		@RequestParam("size") Optional<Integer> size) {
+		 int currentPage = page.orElse(1);
+		 int pageSize = size.orElse(5);
+		 Pageable pageable = PageRequest.of(currentPage-1, pageSize);
+		 Page<Comment> resultPage = null;
+		 
+		 if(StringUtils.hasText(username)) {
+			 resultPage = commentService.findByUsernameContaining(username, pageable);
+			 model.addAttribute("username", username);
+		 }else {
+			 resultPage = commentService.findAll(pageable);
+		 }
+		 
+		 int totalPages = resultPage.getTotalPages();
+			if(totalPages > 0) {
+				int start = Math.max(1, currentPage-2);
+				int end = Math.min(currentPage+2, totalPages);
+				
+				if(totalPages > 5) {
+					if(end == totalPages) start = end - 5;
+					else if (start == 1) end = start + 5;
+				}
+				List<Integer> pageNumbers = IntStream.rangeClosed(start, end)
+						.boxed()
+						.collect(Collectors.toList());
+				model.addAttribute("pageNumbers", pageNumbers);
+			}
+			
+			model.addAttribute("commentPage", resultPage);
+			return "admin/comments/list";
+		}
 
 	@GetMapping("add")
 	public String add(Model model) {

@@ -6,18 +6,7 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
         <div class="card">
             <b class="mt-2 mb-2 card-header text-center" style="font-size: 20px">
                 <i class="fa-solid fa-clock-rotate-left"></i> [[#{order.list}]]</b>
-                <div class="order-status">
-                    <a th:href=@{/orderHistory/confirmation}><label onmousemove="mDown(this)"><i class="fa-solid fa-circle-check"></i> [[#{order.waiting}]]</label></a>
-                    <a th:href=@{/orderHistory/transported}><label onmousemove="mDown(this)"><i class="fa-solid fa-truck"></i> [[#{order.Being_transported}]]</label></a>
-                    <a th:href=@{/orderHistory/delivery}><label onmousemove="mDown(this)"><i class="fa-solid fa-road"></i> [[#{order.Delivery_in_progress}]]</label></a>
-                    <a th:href=@{/orderHistory/delivered}><label onmousemove="mDown(this)"><i class="fa-solid fa-face-smile"></i> [[#{order.Delivered}]]</label></a>
-                </div>
-                <script>
-                    function mDown(obj) {
-                        obj.style.color = "red";
-                    }
-                </script>
-            <table class="table table-hover" id="datatablesSimple">
+            <table class="table table-hover">
 				<thead class="bg-light ">
                     <tr>
                         <th>No.</th>
@@ -50,18 +39,6 @@ th:replace="~{/layout/fragment :: dynamic(~{::main})}">
                     </tr>
                 </tbody>
             </table>
-            <ul class="pagination" style="margin-left: 630px;">
-			<li class="page-item"><a class="page-link"
-				href="/orderHistory/view/page?page=0">First</a></li>
-			<li class="page-item"><a class="page-link"
-				href="/orderHistory/view/page?page=0">1</a></li>
-			<li class="page-item"><a class="page-link"
-				href="/orderHistory/view/page?page=1">2</a></li>
-                <li class="page-item"><a class="page-link"
-                    href="/orderHistory/view/page?page=2">3</a></li>
-			<li class="page-item"><a class="page-link"
-				href="/orderHistory/view/page?page=1">Last</a></li>
-		</ul>
         </div>
     </main>
 </body>

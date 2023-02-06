@@ -13,11 +13,6 @@
                     <div class="row poly-cart">
                         <div class="col-sm-5 img-detail">
                             <img class="img-1" th:src="@{|/assets/images/*{image1}|}">
-                            <div class="row mt-4 img-child"> 
-                                <img th:src="@{|/assets/images/*{image2}|}">
-                                <img th:src="@{|/assets/images/*{image3}|}">
-                                <img th:src="@{|/assets/images/*{image4}|}">
-                            </div>
                         </div>
                         <div class="col-sm-7">
                             <fieldset style="line-height: 30px;">
@@ -33,7 +28,7 @@
                                 <div class="form-group">
                                     <li><a th:href="@{|/comments/add/${productId}|}"><lable th:text="#{detail.feedb}"></a></lable>:</li>
                                     <div class="bot mt-4">
-                                        <a th:href="@{/product/list}" class="btn btn-warning mr-3">
+                                        <a th:href="@{/}" class="btn btn-warning mr-3">
                                             <i class="fa fa-angle-left"></i> <lable th:text="#{product.btn.continute}"></lable>
                                         </a>
                                         <button th:attr="ng-click=@{|cart.add(${item.productId})|}"

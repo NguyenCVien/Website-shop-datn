@@ -21,7 +21,7 @@ $(document).ready(function() {
         console.log(newstatus);//show ra giá trị của biến
         console.log(orderid);//show ra giá trị của biến
 
-        $.post("/rest/orders/updatestatus",{//pt post
+        $.post("/updatestatus",{//pt post
             "orderid":orderid,
             "status":newstatus}
             )

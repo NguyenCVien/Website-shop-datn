@@ -89,4 +89,6 @@ public interface OrderService {
 
 	void deleteOrderByUsername(String username);
 
+	Order updateStatus(String status, Long orderId);
+
 }

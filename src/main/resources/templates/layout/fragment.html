@@ -29,7 +29,7 @@
 			<li><a th:href="@{/}"><img class="imgHome"
 					src="/assets/images/img_logoHome.png" alt=""></a></li>
 			<li>
-				<form th:action="@{/view/page}" class="nav-search">
+				<form th:action="@{/}" class="nav-search">
 					<input type="text" name="name" id="name" aria-describedby="helpId"
 						placeholder=" Bạn tìm gì...">
 					<button>
@@ -65,7 +65,7 @@
 			</li>
 			<li
 				th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
-				<a style="text-decoration: none;" th:href="@{/admin/accounts}"> 
+				<a style="text-decoration: none;" th:href="@{/admin/accounts/list}"> 
 					<i class="fa-solid fa-lock-open icon"></i> 
 					<label>[[#{nav.admin}]]</label></a>
 			</li>

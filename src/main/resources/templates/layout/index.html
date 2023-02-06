@@ -36,7 +36,7 @@
 			<li class="ml-4"><a th:href="@{/}"><img class="imgHome"
 					src="/assets/images/img_logoHome.png" alt=""></a></li>
 			<li>
-				<form th:action="@{/product/search}" class="nav-search">
+				<form th:action="@{/}" class="nav-search">
 					<input type="text" name="name" id="name" aria-describedby="helpId"
 						placeholder=" Bạn tìm gì...">
 					<button>
@@ -70,7 +70,7 @@
 				</ul>
 			</li>
 			<li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
-				<a style="text-decoration: none;" th:href="@{/admin/accounts}">
+				<a style="text-decoration: none;" th:href="@{/admin/accounts/list}">
 					<i class="fa-solid fa-lock-open icon"></i> 
 					<label th:text="#{nav.admin}"></label></a>
 			</li>
@@ -163,7 +163,7 @@
 			<img src="/assets/images/slide_banner3.png" alt="" class="m">
 		</div>
 	</div>
-	<div class="page">
+	<!--  <div class="page">
 		<div class="row">
 			<div class="col">
 				<a th:href="@{/product/list/hotsale}">
@@ -177,8 +177,8 @@
 					<label>[[#{maquee.title}]]</label> <i class="fas fa-heart"></i>
 				</marquee>
 			</Strong>
-		</div> -->
-	</div>
+		</div> 
+	</div>-->
 
 	<!--           main             -->
 	<div class="row">

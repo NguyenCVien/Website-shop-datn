@@ -48,7 +48,7 @@ public class ProductController {
         if (cid.isPresent()) {
             List<Product> list = productService.findByCategoryId(cid.get());
             model.addAttribute("items", list);
-            return "product/list";
+            return "product/listOfCategory";
         }
 
         Page<Product> pageProduct = null;
