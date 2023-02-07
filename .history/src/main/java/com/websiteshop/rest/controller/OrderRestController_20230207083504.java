@@ -18,12 +18,12 @@ import com.websiteshop.entity.Order;
 import com.websiteshop.service.OrderService;
 
 @RestController
-@CrossOrigin("*")
-@RequestMapping("/rest/orders")
 public class OrderRestController {
 
 	@Autowired
 	OrderService orderService;
+
+	//
 
 	@GetMapping()
 	public List<Order> getAll() {

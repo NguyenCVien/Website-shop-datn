@@ -163,7 +163,7 @@ public class ProductAdminController {
             model.addAttribute("message", "Vui lòng thêm hình ảnh cho sản phẩm!");
         }
 
-        return new ModelAndView("redirect:/admin/product/list", model);
+        return new ModelAndView("forward:/admin/product/list", model);
     }
 
     @GetMapping("/images/{filename:.+}")
