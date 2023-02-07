@@ -20,33 +20,18 @@ import com.websiteshop.service.OrderService;
 @RestController
 public class OrderRestController {
 
-    @Autowired
-    OrderService orderService;
-    
-    @PostMapping(value = "/updatestatus")
-	@ResponseBody
-	public String updateStatusOrder(@RequestParam(name = "orderid") Long orderid,
-			@RequestParam(name = "status") String status) {
+	@Autowired
+	OrderService orderService;
 
+	//
 
-		Order acceptInv =  orderService.findById(orderid);
-		if (acceptInv == null) {
-			return "0";
-		}
-		// -set new status
-		acceptInv.setStatus(status);
-		System.out.println(status);
-		orderService.save(acceptInv);
-		return "1";
+	@GetMapping()
+	public List<Order> getAll() {
+		return orderService.findAll();
 	}
 
-    @GetMapping()
-    public List<Order> getAll() {
-        return orderService.findAll();
-    }
-
-    @PostMapping()
-    public Order create(@RequestBody JsonNode orderData) {
-        return orderService.create(orderData);
-    }
+	@PostMapping()
+	public Order create(@RequestBody JsonNode orderData) {
+		return orderService.create(orderData);
+	}
 }
