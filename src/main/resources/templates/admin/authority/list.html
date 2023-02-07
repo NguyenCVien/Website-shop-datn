@@ -8,26 +8,6 @@
                 <div class="card-header card bg-primary text-white" style="text-align: center">
                 <h3><i class="fa-solid fa-list"></i> Danh sách quyền truy cập</h3>
             </div>
-              <!--  <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <form th:action="@{/admin/authority}">
-                                            <div class="form-inline float-left">
-                                              <input type="number" class="form-control" name="id" id="id"
-                                               aria-describedby="helpId" placeholder="ID">
-                                                <button class="btn btn-outline-primary ml-2">Tìm kiếm</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="row mt-5" th:if="${!authorityPage.hasContent()}">
-                                  <div class="col">
-                                    <div class="alert alert-danger" role="alert">
-                                      <strong>Không tìm thấy ID trùng khớp</strong>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>-->
                 <div class="card-body">
                     <div th:if="${message != null}" class="alert alert-danger"
                         role="alert"> 
@@ -47,7 +27,7 @@
                                 <td>[[${au.id}]]</td>
                                 <td>[[${au.account.username}]]</td>
                                 <td>[[${au.role.roleId}]]</td>
-                                <td class="btn-button btn-bottom">
+                                <td>
                                     <a class="btn btn-warning mr-2"
 										th:href="@{'/authority/edit/' + ${au.id}}">
 										<i class="fa-regular fa-pen-to-square"></i>
