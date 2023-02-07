@@ -2,11 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org" 
 th:replace="~{/layout/fragment :: dynamic(~{::main})}">
 <body>
-<main class="container">
+<main class="container" >
 	<div id="wrapper">
 		<div class="container">
 			<div class="row justify-content-around">
-				<form action="/register/save" class="col-md-5 bg-light p-3 my-3 shadow" 
+				<form action="/register/save" class="col-md-6 bg-light p-3 my-3 shadow" 
 					method="post" th:object="${account}">
 					<div class="card-title mb-5 text-uppercase">[[#{regist.title}]]</div>
 					<div class="row">
